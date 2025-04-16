@@ -70,7 +70,7 @@ function Category({ category, stores, categories }) {
                                     </div>
                                 </div>
                                 <div className="col-lg-5 col-md-12">
-                                    <h1>Todays {category.Title} Coupons &amp; Offers</h1>
+                                    <h1 className='pageH1'>Todays {category.Title} Coupons &amp; Offers</h1>
                                     <div className="divider-line mt-2 mb-2" />
                                     <div className="">
                                         <table>
@@ -92,7 +92,7 @@ function Category({ category, stores, categories }) {
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12">
-                                    <h1>Similar Categories</h1>
+                                    <div className='pageH1'>Similar Categories</div>
                                     <div className="divider-line mt-2 mb-2" />
                                     <div className="similarCat">
                                         <ul>

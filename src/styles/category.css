@@ -58,7 +58,7 @@
 }
 .store-bg-1 {
     padding: 20px;
-    background-image: linear-gradient(to right, #18702c, #2ec4b58b);
+    background-image: linear-gradient(to right, #FF6F00, #d57632);
     color: #fff;
     font-weight: 500;
     border-radius: 5px;
@@ -105,7 +105,7 @@
     width: 60%;
     height: auto;
 }
-.store-bg-1 h1{
+.store-bg-1 .pageH1{
     font-weight: 600;
     color: #fff;
     margin-top: 15px;
@@ -289,4 +289,9 @@
     .categorySection {
         padding: 1rem 0;
     }
+}
+.pageH1{
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }

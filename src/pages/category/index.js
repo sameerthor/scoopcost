@@ -39,6 +39,7 @@ function CategoryListing({ categories }) {
                             </ul>
                         </div>
                     </div>
+                    <h1 className='text-center pageH1'>All Categories</h1>
                     <div className="row row-cols-2">
                         {categories.map((category, index) => (
                             <div className="col-lg-2 col-md-3 col-sm-4 category-box" key={index}>
@@ -49,7 +50,7 @@ function CategoryListing({ categories }) {
                                                 width={100}
                                                 height={100}
                                                 src={category.Image?.url ? process.env.NEXT_PUBLIC_IMAGE_URL+category.Image?.url : "/images/default-placeholder.png"}
-                                                alt={category.Title || "Category"}
+                                                alt={(category.Title) + " Icon" || "Category Icon" }
                                             />
                                         </MainDomainLink>
                                     </div>

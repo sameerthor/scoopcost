@@ -55,13 +55,14 @@ export default function Header() {
             <button
               className="navbar-toggler order-lg-3"
               type="button"
+              area-label="Click here to toggle navigation"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNav"
             >
               <span className="navbar-toggler-icon"></span>
             </button>
             <MainDomainLink className="navbar-brand brandLogo" href="/">
-             <img src="/images/saves-right-logo.webp" alt="logo" />
+             <img src="/images/coupontix-logo.webp" alt="logo" />
             </MainDomainLink>
             <div className="dummyBox"></div>
           </div>

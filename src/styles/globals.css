@@ -79,7 +79,7 @@ box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 max-width: 1250px;
 }
 .navbar .searchForm{
-border: 1px solid #000;
+border: 1px solid var(--primary-color);
 padding-left: .5rem;
 position: relative;
 }
@@ -177,7 +177,7 @@ letter-spacing: .5px;
   line-height: 1;
 }
 .footer-logo span{
-  color: #18702c;
+  color: var(--primary-color)
 }
 .about-scoop p{
   font-size: .9rem;
@@ -207,7 +207,7 @@ letter-spacing: .5px;
   align-items: center;
   justify-content: center;
 }
-.footer-links h3{
+.footer-links .linksHeading{
   font-weight: 600;
   font-size: 1rem;
   text-transform: uppercase;
@@ -256,7 +256,7 @@ letter-spacing: .5px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #18702c;
+  background-color: var(--primary-color);
   border: none;
   outline: none;
   cursor: pointer;
@@ -273,7 +273,7 @@ letter-spacing: .5px;
   }
 }
 #scrollToTop:active{
-  background-color: #18702c;
+  background-color: var(--primary-color);
 }
 
 .breadcrumb ul{
@@ -324,7 +324,7 @@ letter-spacing: .5px;
 }
 .subscribe-item form button{
   width: 25%;
-  background-color: #18702c;
+  background-color: var(--primary-color);
   color: #fff;
   padding: .5rem;
   border-radius: 0 4px 4px 0;
@@ -383,10 +383,10 @@ letter-spacing: .5px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #18702c;
+  border: 1px solid var(--primary-color);
 }
 .subscribe-item form input:focus{
- border: 1px solid #18702c;
+ border: 1px solid var(--primary-color);
  border-right: none;
 }
 .footer-box .subscribe span{
@@ -460,7 +460,7 @@ align-items: center;
   position: fixed;
   bottom: 0;
   z-index: 99;
-  background-color: #18702c;
+  background-color: var(--primary-color);
   width: 100%;
   padding: 3rem 1rem;
   display: flex;
@@ -560,6 +560,9 @@ align-items: center;
 
 .brandLogo img{
   object-fit: contain;
+}
+.footer-logo{
+  margin-bottom: 1rem;
 }
 .footer-logo img{
   object-fit: contain;

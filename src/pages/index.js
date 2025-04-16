@@ -43,7 +43,8 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             {/* Home Banner Section */}
             {/* Home Banner Section with react-responsive-carousel */}
             <section className='homeImageBanner'>
-               <a href="/stores"> <img src="/images/saving-right-banner.png" alt="shop now" /></a>
+                <h1>Shop now to get discount</h1>
+               <a href="/stores" aria-label="Shop Now and get discount" title='Shop Now and get discount'> <img src="/images/coupontix-banner.webp" alt="shop now" /></a>
             </section>
             <section className="homeBanner">
                 <div className="container">

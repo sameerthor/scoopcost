@@ -250,15 +250,15 @@ export default function StorePage({ store, relatedStores }) {
                       const dealText = dealMatch ? dealMatch[0] : "Special Offer";
                       return (
                         <tr key={coupon.id} className="border">
-                          <td className="p-2 border">{dealText}</td>
+                          <td className="p-2 border text-center"><span className='deal-badge'>{dealText}</span></td>
                           <td className="p-2 border">{coupon.Title}</td>
                           <td className="p-2 border">
                             {coupon.coupon_code ? (
-                              <span>
+                              <span className='coupon-code'>
                                 {coupon.coupon_code}
                               </span>
                             ) : (
-                              <span>Hot Deal 🔥</span>
+                              <span className='hot-deal'>Hot Deal 🔥</span>
                             )}
                           </td>
                         </tr>
