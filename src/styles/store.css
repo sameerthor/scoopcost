@@ -2463,4 +2463,8 @@ margin-bottom: 1.5rem;
     border-radius: 4rem;
     padding: .5rem 1rem;
 }
-/* =========== */
+.listCoupns h2{
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}

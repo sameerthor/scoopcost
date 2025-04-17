@@ -62,12 +62,14 @@ export default function App({ Component, pageProps }) {
       {hasConsent === null && (
         <div className="consent-banner">
           <p>We use cookies to enhance your experience. Do you consent to analytics tracking?</p>
+          <div className='BtnBxx'>
           <button onClick={handleAccept} className="btn btn-primary">
             Accept
           </button>
           <button onClick={handleReject} className="btn btn-secondary">
             Reject
           </button>
+          </div>
         </div>
       )}
       <Component {...pageProps} />
