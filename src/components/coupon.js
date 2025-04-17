@@ -110,7 +110,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   return (
     <>
 {index % 3 === 0 && (
-  <h2>{h2_heading[index % 3].replace("Storename", storeName)}</h2>
+  <h2>{h2_heading[index / 3].replace("Storename", storeName)}</h2>
 ) }
     <div className="hugecouponBox">
       <div className="coupon-item">

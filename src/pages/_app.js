@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }) {
       {hasConsent && (
         <>
           <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-S35JBVCMSK"
+            src="https://www.googletagmanager.com/gtag/js?id=G-H2HZ4FVHVD"
             strategy="afterInteractive"
           />
           <Script id="google-analytics" strategy="afterInteractive">
@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-S35JBVCMSK');
+              gtag('config', 'G-H2HZ4FVHVD');
             `}
           </Script>
         </>
