@@ -3,15 +3,6 @@ import { useEffect } from 'react';
 import MainDomainLink from '@/components/MainDomainLink';
 
 export default function Footer() {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://security-seal.emsign.com/generateSeal?width=175';
-        script.async = false;
-        const sealContainer = document.getElementById('securitySealContainer');
-        if (sealContainer) {
-          sealContainer.appendChild(script);
-        }
-      }, []);
 
     return (
         <>

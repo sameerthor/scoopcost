@@ -89,7 +89,7 @@ export default function StorePage({ store, relatedStores }) {
       <section>
         <div className="container">
           <div className="affiDisc">
-            <p>coupontix may earn a commission when you use coupons on this page. <MainDomainLink href="/affiliate-disclosure">Learn More</MainDomainLink></p>
+            <p>coupontix may earn a commission when you use coupons on this page. <MainDomainLink href="/affiliate-disclosure">Read our affiliate disclosure.</MainDomainLink></p>
           </div>
           <div className="breadcrumb">
             <ul>
@@ -314,8 +314,12 @@ export default function StorePage({ store, relatedStores }) {
                     </div>
                     <div className="row input mx-auto">
                       <form className="d-block" role="post">
+                      <label htmlFor="thought" className="d-block">
+                          <i className="fa-regular fa-user" /> What's in your mind <span>*</span>
+                        </label>
                         <textarea
-                          name=""
+                          name="thought"
+                          id='thought'
                           className="col-sm-12 col-md-10 col-lg-10 d-block"
                           rows={10}
                           placeholder="Input your thought ..."
@@ -326,6 +330,8 @@ export default function StorePage({ store, relatedStores }) {
                           <i className="fa-regular fa-user" /> Name <span>*</span>
                         </label>
                         <input
+                          id="name"
+                          name='name'
                           type="text"
                           placeholder="Name"
                           required=""
@@ -335,6 +341,8 @@ export default function StorePage({ store, relatedStores }) {
                           <i className="fa-regular fa-envelope" /> Email <span>*</span>
                         </label>
                         <input
+                          id="email"
+                          name='email'
                           type="email"
                           className="col-sm-12 col-md-10 col-lg-10 d-block"
                           placeholder="Enter your email address"
@@ -344,6 +352,8 @@ export default function StorePage({ store, relatedStores }) {
                           <i className="fa-solid fa-globe" /> Website
                         </label>
                         <input
+                          id="url"
+                          name='url'
                           type="text"
                           className="col-sm-12 col-md-10 col-lg-10 d-block"
                           placeholder="website url"

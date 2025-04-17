@@ -207,9 +207,9 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
             <div className="termsBox">
               {coupon.term_condition != "" &&
-                <a className="showTncBox tnc" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} href="javascript:void(0)" title="Show T &amp; C">Terms &amp; Conditions</a>
+                <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} title="Show T &amp; C">Terms &amp; Conditions</button>
               }
-             <a className="showTncBox tnc" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} href="javascript:void(0)" title="Show T &amp; C">Coupon History</a>
+             <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show T &amp; C">Coupon History</button>
             </div>
           </div>
 
@@ -281,7 +281,7 @@ window.open(url, "_blank");
                 </div>
               </div>
             </div>
-            <div className="termsBox"> <a className="showTncBox tnc" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} href="javascript:void(0)" title="Show T &amp; C">Coupon History</a></div>
+            <div className="termsBox"> <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show T &amp; C">Coupon History</button></div>
           </div>
         </div>
       </div>
