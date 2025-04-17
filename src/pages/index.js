@@ -5,6 +5,7 @@ import Link from 'next/link';
 import "@/styles/home.css";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import MainDomainLink from '@/components/MainDomainLink';
 
 
 export default function HomePage({ categories,topRatedStores,featuredStores,topOnlineStores }) {
@@ -44,7 +45,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             {/* Home Banner Section with react-responsive-carousel */}
             <section className='homeImageBanner'>
                 <h1>Shop now to get discount</h1>
-               <a href="/stores" aria-label="Shop Now and get discount" title='Shop Now and get discount'> <img src="/images/coupontix-banner.webp" alt="shop now" /></a>
+               <a href="/stores" aria-label="Shop Now and get discount" title='Shop Now and get discount'> <img
+                  loading='lazy'
+                  src="/images/coupontix-banner.webp" alt="shop now" /></a>
             </section>
             <section className="homeBanner">
                 <div className="container">
@@ -84,64 +87,76 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <h2 className='secHeading'>Explore Category</h2>
                     <div className="row row-cols-2">
                         <div className="col-lg-2 col-md-4">
-                            <a className="catItem" href='/category/Health-and-Wellness'>
+                            <MainDomainLink className="catItem" href='/category/Health-and-Wellness'>
                                 <div className="imageBox">
-                                    <img src="/images/health.png" alt="health-and-wellness" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/health.png" alt="health-and-wellness Icon" />
                                 </div>
                                 <div className="catTitle">
                                     Health & Wellness
                                 </div>
-                            </a>
+                            </MainDomainLink>
                         </div>
                         <div className="col-lg-2 col-md-4">
-                            <a className="catItem" href='/category/Beauty-Products'>
+                            <MainDomainLink className="catItem" href='/category/Beauty-Products'>
                                 <div className="imageBox">
-                                    <img src="/images/beauty.png" alt="beauty" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/beauty.png" alt="beauty Icon" />
                                 </div>
                                 <div className="catTitle">
                                     Beauty Product
                                 </div>
-                            </a>
+                            </MainDomainLink>
                         </div>
                         <div className="col-lg-2 col-md-4">
-                            <a className="catItem" href='category/Online-Courses'>
+                            <MainDomainLink className="catItem" href='category/Online-Courses'>
                                 <div className="imageBox">
-                                    <img src="/images/online-courses.png" alt="online-courses" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/online-courses.png" alt="online-courses Icon" />
                                 </div>
                                 <div className="catTitle">
                                     Online Courses
                                 </div>
-                            </a>
+                            </MainDomainLink>
                         </div>
                         <div className="col-lg-2 col-md-4">
-                            <a className="catItem" href='/category/Software'>
+                            <MainDomainLink className="catItem" href='/category/Software'>
                                 <div className="imageBox">
-                                    <img src="/images/software.png" alt="software" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/software.png" alt="software Icon" />
                                 </div>
                                 <div className="catTitle">
                                     Software
                                 </div>
-                            </a>
+                            </MainDomainLink>
                         </div>
                         <div className="col-lg-2 col-md-4">
-                            <a className="catItem" href='/category/Stationery'>
+                            <MainDomainLink className="catItem" href='/category/Stationery'>
                                 <div className="imageBox">
-                                    <img src="/images/stationery.png" alt="stationery" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/stationery.png" alt="stationery Icon" />
                                 </div>
                                 <div className="catTitle">
                                     Stationery
                                 </div>
-                            </a>
+                            </MainDomainLink>
                         </div>
                         <div className="col-lg-2 col-md-4">
-                            <a className="catItem" href='/category/Clothing-and-Accessories'>
+                            <MainDomainLink className="catItem" href='/category/Clothing-and-Accessories'>
                                 <div className="imageBox">
-                                    <img src="/images/clothing.png" alt="clothing" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/clothing.png" alt="clothing Icon" />
                                 </div>
                                 <div className="catTitle">
                                     Clothing & Accessories
                                 </div>
-                            </a>
+                            </MainDomainLink>
                         </div>
                     </div>
                 </div>
@@ -153,7 +168,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className="pplItem" href='https://allcleartravel-co-uk.coupontix.com/'> 
                                 <div className="pplImg">
-                                    <img src="/images/AllClear-logo-Standard.svg" alt="all-clear" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/AllClear-logo-Standard.svg" alt="all-clear" />
                                 </div>
                                 <div className='pplTitle'>
                                 Enjoy 15% Off on Europe and Worldwide Travel Insurance.
@@ -166,7 +183,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className="pplItem" href='https://americangrazedbeef.coupontix.com/'> 
                                 <div className="pplImg">
-                                    <img src="/images/americangrazedbeef.webp" alt="americangrazedbeef" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/americangrazedbeef.webp" alt="americangrazedbeef" />
                                 </div>
                                 <div className='pplTitle'>
                                 Enjoy Free Delivery on orders over $175. Shop now!
@@ -179,7 +198,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className="pplItem" href='https://curiebod.coupontix.com/'> 
                                 <div className="pplImg">
-                                    <img src="/images/curie.avif" alt="curie" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/curie.avif" alt="curie" />
                                 </div>
                                 <div className='pplTitle'>
                                 Spend $35+ to get a free shipping offer from Curie.
@@ -192,7 +213,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className="pplItem" href='https://hitchfit.coupontix.com/'> 
                                 <div className="pplImg">
-                                    <img src="/images/hitchfit.png" alt="hitchfit" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/hitchfit.png" alt="hitchfit" />
                                 </div>
                                 <div className='pplTitle'>
                                 Up to 20% Off - Save Big at hitchfit.com
@@ -205,7 +228,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className="pplItem" href='https://artofliving-org.coupontix.com/'> 
                                 <div className="pplImg">
-                                    <img src="/images/art-of-living.png" alt="art-of-living" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/art-of-living.png" alt="art-of-living" />
                                 </div>
                                 <div className='pplTitle'>
                                 Art of Living Deal - 10% Off + Money Back Gaurantee
@@ -218,7 +243,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className="pplItem" href='https://arabellahair.coupontix.com/'> 
                                 <div className="pplImg">
-                                    <img src="/images/arabella.avif" alt="arabella" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/arabella.avif" alt="arabella" />
                                 </div>
                                 <div className='pplTitle'>
                                 Enjoy Free Shipping on all orders in the US. Shop now!
@@ -231,7 +258,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className="pplItem" href='https://shopgoldleaf.coupontix.com/'> 
                                 <div className="pplImg">
-                                    <img src="/images/shopgoldleaf.webp" alt="shopgoldleaf" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/shopgoldleaf.webp" alt="shopgoldleaf" />
                                 </div>
                                 <div className='pplTitle'>
                                 Goldleaf free shipping on domestic orders over $75.
@@ -244,7 +273,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className="pplItem" href='https://reebok.coupontix.com/'> 
                                 <div className="pplImg">
-                                    <img src="/images/reebok.avif" alt="reebok" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/reebok.avif" alt="reebok" />
                                 </div>
                                 <div className='pplTitle'>
                                     Reebok Promo Code - Get 15% Off
@@ -257,7 +288,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className="pplItem" href='https://eztaxreturn.coupontix.com/'> 
                                 <div className="pplImg">
-                                    <img src="/images/e-z.webp" alt="e-z" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/e-z.webp" alt="e-z" />
                                 </div>
                                 <div className='pplTitle'>
                                 20% Off on Tax Preparation Services - Redeem Your Discount.
@@ -270,7 +303,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className="pplItem" href='https://grammarly.coupontix.com/'> 
                                 <div className="pplImg">
-                                    <img src="/images/grammerly.png" alt="grammerly" />
+                                    <Image
+                width={400}
+                 height={400} src="/images/grammerly.png" alt="grammerly" />
                                 </div>
                                 <div className='pplTitle'>
                                 Save Big Today - 10% Off on Paraphrasing Tool
@@ -296,7 +331,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
-                                        <img src="/images/etsy.webp" alt="etsy" />
+                                        <Image
+                width={400}
+                 height={400} src="/images/etsy.webp" alt="etsy" />
                                      </div>
                                      <div className="off">
                                             Flat  20% off
@@ -312,7 +349,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
-                                        <img src="/images/expressvpn.svg" alt="express-vpn" />
+                                        <Image
+                width={400}
+                 height={400} src="/images/expressvpn.svg" alt="express-vpn" />
                                      </div>
                                      <div className="off">
                                             Up to 20% off
@@ -328,7 +367,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox" style={{background: "#002d7a"}}>
-                                        <img src="/images/freshbook.svg" alt="freshbook" />
+                                        <Image
+                width={400}
+                 height={400} src="/images/freshbook.svg" alt="freshbook" />
                                      </div>
                                      <div className="off">
                                             Up to 40% off
@@ -344,7 +385,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
-                                        <img src="/images/ice-barrel.avif" alt="ice-barrel" />
+                                        <Image
+                width={400}
+                 height={400} src="/images/ice-barrel.avif" alt="ice-barrel" />
                                      </div>
                                      <div className="off">
                                             Up to 30% off
@@ -360,7 +403,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
-                                        <img src="/images/kohler.svg" alt="kohler" />
+                                        <Image
+                width={400}
+                 height={400} src="/images/kohler.svg" alt="kohler" />
                                      </div>
                                      <div className="off">
                                             Up to 40% off
@@ -376,7 +421,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
-                                        <img src="/images/mac.png" alt="mac" />
+                                        <Image
+                width={400}
+                 height={400} src="/images/mac.png" alt="mac" />
                                      </div>
                                      <div className="off">
                                             Up to 10% off
@@ -401,7 +448,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                                 width={50}
                                                 height={50}
                                                 src={category.Image?.url ? process.env.NEXT_PUBLIC_IMAGE_URL + category.Image?.url : "/images/default-placeholder.png"}
-                                                alt={category.Title || "Category"}
+                                                alt={(category.Title) + ' Icon' || "Category"}
                                             /></span>
                                             {category.Title}
                                         </a>
@@ -423,7 +470,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://costco.coupontix.com/' className="toprated">
                                 <div className="topratedTop">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/costco.webp'
                                         alt='costco'
                                     />
@@ -444,7 +493,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://enemasupply.coupontix.com/' className="toprated">
                                 <div className="topratedTop">
-                                    <img
+                                    <Image
+                                     width={400}
+                                     height={400}
                                         src='/images/enemasupply.avif'
                                         alt='enemasupply'
                                     />
@@ -465,7 +516,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://disneystore.coupontix.com/' className="toprated">
                                 <div className="topratedTop">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/disney-store.svg'
                                         alt='disney-store'
                                     />
@@ -486,7 +539,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://eggwhitesint.coupontix.com/' className="toprated">
                                 <div className="topratedTop">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/eggwhite.jpg'
                                         alt='eggwhite'
                                     />
@@ -507,7 +562,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://traversebayfarms.coupontix.com/' className="toprated">
                                 <div className="topratedTop">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/traverse-bay.webp'
                                         alt='traverse-bay'
                                     />
@@ -528,7 +585,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://udemy.coupontix.com/' className="toprated">
                                 <div className="topratedTop">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/udemy.svg'
                                         alt='udemy'
                                     />
@@ -549,7 +608,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://vitabalance-net.coupontix.com/' className="toprated">
                                 <div className="topratedTop">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/vitabalance.png'
                                         alt='vitabalance'
                                     />
@@ -570,7 +631,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://zacalife.coupontix.com/' className="toprated">
                                 <div className="topratedTop">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/zaca.webp'
                                         alt='zaca-life'
                                     />
@@ -591,7 +654,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://hugoboss.coupontix.com/' className="toprated">
                                 <div className="topratedTop">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/hugo-boss.jpg'
                                         alt='hogo-boss'
                                     />
@@ -612,7 +677,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://kendrascott.coupontix.com/' className="toprated">
                                 <div className="topratedTop">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/kendra.svg'
                                         alt='hogo-boss'
                                     />
@@ -642,7 +709,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://barkbox.coupontix.com/' className="pickedStore">
                                 <div className="imgBox">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/bark-box.svg'
                                         alt='bark-box'
                                     />
@@ -655,7 +724,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://bestbuy.coupontix.com/' className="pickedStore">
                                 <div className="imgBox">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/best-buy.jpg'
                                         alt='best-buy'
                                     />
@@ -668,7 +739,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://cartfuel-io.coupontix.com/' className="pickedStore">
                                 <div className="imgBox">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/cartfuel.svg'
                                         alt='cartfuel'
                                     />
@@ -681,7 +754,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://catbirdnyc.coupontix.com/' className="pickedStore">
                                 <div className="imgBox" style={{ background: "#000"}}>
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/catbird.webp'
                                         alt='catbird'
                                     />
@@ -694,7 +769,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://portionsmaster.coupontix.com/' className="pickedStore">
                                 <div className="imgBox">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/partions.webp'
                                         alt='pationsmaster'
                                     />
@@ -707,7 +784,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://samsonite.coupontix.com/' className="pickedStore">
                                 <div className="imgBox">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/samsnight.png'
                                         alt='samsnight'
                                     />
@@ -720,7 +799,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://thenorthface.coupontix.com/' className="pickedStore">
                                 <div className="imgBox">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/north-face.svg'
                                         alt='north-face'
                                     />
@@ -733,7 +814,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://catbirdnyc.coupontix.com/' className="pickedStore">
                                 <div className="imgBox">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/torrid.png'
                                         alt='catbird'
                                     />
@@ -746,7 +829,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://rhinokeyorganizer.coupontix.com/' className="pickedStore">
                                 <div className="imgBox">
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/rhinokey.avif'
                                         alt='rhinokey'
                                     />
@@ -759,7 +844,9 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col">
                             <a href='https://sfuelsgolonger.coupontix.com/' className="pickedStore">
                                 <div className="imgBox" style={{ background: "#137bba"}}>
-                                    <img
+                                    <Image
+                width={400}
+                 height={400}
                                         src='/images/sfuels.svg'
                                         alt='sfuels'
                                     />

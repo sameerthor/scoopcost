@@ -107,7 +107,7 @@ box-shadow: none;
 border-radius: 0;
 border: none;
 background-color: var(--primary-color);
-color: #fff;
+color: #000;
 font-weight: 600;
 text-transform: uppercase;
 font-size: .8rem;
@@ -325,7 +325,7 @@ letter-spacing: .5px;
 .subscribe-item form button{
   width: 25%;
   background-color: var(--primary-color);
-  color: #fff;
+  color: #000;
   padding: .5rem;
   border-radius: 0 4px 4px 0;
   border: none;
@@ -384,6 +384,7 @@ letter-spacing: .5px;
   justify-content: center;
   align-items: center;
   border: 1px solid var(--primary-color);
+  color: #000;
 }
 .subscribe-item form input:focus{
  border: 1px solid var(--primary-color);

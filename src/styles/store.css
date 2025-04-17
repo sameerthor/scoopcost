@@ -1159,7 +1159,7 @@ body{
 .subscribe-item form button{
   width: 25%;
   background-color: var(--primary-color);
-  color: #fff;
+  color: #000;
   padding: .5rem;
   border-radius: 0 4px 4px 0;
   border: none;
@@ -1221,7 +1221,7 @@ table {
   font-weight: 600;
   padding: 6px 10px;
   border-radius: 20px;
-  color: white;
+  color: #000;
   font-size: 14px;
   justify-content: center;
   align-items: center;
@@ -1231,34 +1231,34 @@ table {
   background-color: #ff6f00;
 }
 .summary-container tbody tr:nth-of-type(2) .deal-badge{
-  background-color: #d32f2f;
+  background-color: #E47777;
 }
 .summary-container tbody tr:nth-of-type(3) .deal-badge{
-  background-color: #00897b;
+  background-color: #00A897;
 }
 .summary-container tbody tr:nth-of-type(4) .deal-badge{
-  background-color: #6a1b9a;
+  background-color: #BB79E7;
 }
 .summary-container tbody tr:nth-of-type(5) .deal-badge{
   background-color: #ff6f00;
 }
 .summary-container tbody tr:nth-of-type(6) .deal-badge{
-  background-color: #d32f2f;
+  background-color: #E47777;
 }
 .summary-container tbody tr:nth-of-type(7) .deal-badge{
-  background-color: #00897b;
+  background-color: #00A897;
 }
 .summary-container tbody tr:nth-of-type(8) .deal-badge{
-  background-color: #6a1b9a;
+  background-color: #BB79E7;
 }
 .summary-container tbody tr:nth-of-type(9) .deal-badge{
   background-color: #ff6f00;
 }
 .summary-container tbody tr:nth-of-type(10) .deal-badge{
-  background-color: #d32f2f;
+  background-color: #E47777;
 }
 .summary-container tbody tr:nth-of-type(11) .deal-badge{
-  background-color: #00897b;
+  background-color: #00A897;
 }
 .summary-container tbody tr:nth-of-type(12) .deal-badge{
   background-color: #6a1b9a;
@@ -1273,7 +1273,7 @@ table {
 }
 .summary-container .coupon-code {
   font-weight: 600;
-  background: #1e88e5;
+  background: #115A9C;
   color: white;
   padding: 6px 12px;
   border-radius: 6px;
@@ -1281,7 +1281,7 @@ table {
 }
 
 .summary-container .hot-deal {
-  color: #ff5722 !important;
+  color: #A32A00  !important;
   font-weight: 600;
   font-size: 15px;
 }
@@ -1729,12 +1729,19 @@ margin-bottom: 1.5rem;
   align-items: center;
 
 }
-.listCoupns .coupon-item .coupnBox .termsBox a{
+.listCoupns .coupon-item .coupnBox .termsBox .tncBtns{
   font-size: .75rem;
   color: #006de4;
   font-weight: 600;
   padding-left: .5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
+.listCoupns .coupon-item .coupnBox .termsBox .tncBtns:hover{
+ background-color: transparent;
+}
+
 .listCoupns .coupon-item .coupnBox .termsBox p{
   font-size: .75rem;
   color: #4D4D4D;
@@ -1743,7 +1750,7 @@ margin-bottom: 1.5rem;
  padding-right: .5rem;
  width: 100%;
 }
-.listCoupns .coupon-item .coupnBox .couponBtn button , .listCoupns .coupon-item .coupnBox .couponBtndesc button{
+.listCoupns .coupon-item .coupnBox .couponBtn .coupon-button , .listCoupns .coupon-item .coupnBox .couponBtndesc .coupon-button{
   position: relative;
   top: 30%;
   border: none;
@@ -1752,7 +1759,7 @@ margin-bottom: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
   font-size: .9rem;
-  color: #fff;
+  color: #000;
   background-color: var(--primary-color);
   display: inline-flex;
   align-items: center;
@@ -1760,8 +1767,9 @@ margin-bottom: 1.5rem;
   margin-right: .5rem;
   border-radius: 4px;
 }
-.listCoupns .coupon-item .coupnBox .couponBtn button:hover{
+.listCoupns .coupon-item .coupnBox .couponBtn .coupon-button:hover{
   background-color: #2b2222;
+  color: #fff;
 }
 .listCoupns .coupon-item .coupnBox .couponBtn button svg , .listCoupns .coupon-item .coupnBox .couponBtndesc button svg{
  fill: #fff;
@@ -1818,7 +1826,7 @@ margin-bottom: 1.5rem;
   justify-content: center;
   font-size: .68rem;
   font-weight: 500;
-  color: #fff;
+  color: #000;
   background-color: var(--primary-color);
   padding: .1rem .35rem;
   border-radius: 2px;
@@ -1998,14 +2006,13 @@ margin-bottom: 1.5rem;
  border: none;
  outline: none;
  padding: .3rem;
- font-size: 500;
  background-color: var(--primary-color);
  margin-top: .5rem;
  border-radius: 4px;
  width: 100%;
  font-size: .8rem;
  letter-spacing: .5px;
- color: #fff;
+ color: #000;
 }
 
 .whyTrustus{
@@ -2264,7 +2271,7 @@ margin-bottom: 1.5rem;
     font-weight: 500;
    }
    @media(min-width:700px){
-    .termsBox a:nth-of-type(2){
+    .termsBox button:nth-of-type(2){
       display: none;
     }
    }
@@ -2272,7 +2279,7 @@ margin-bottom: 1.5rem;
     .termsBox{
       justify-content: space-between;
     }
-    .termsBox a:nth-of-type(2){
+    .termsBox button:nth-of-type(2){
      margin-right: .5rem;
     }
     .listCoupns .coupon-item .coupnBox .termsBox a{
@@ -2451,7 +2458,7 @@ margin-bottom: 1.5rem;
     border: none;
     outline: none;
     background-color: var(--primary-color);
-    color: #fff;
+    color: #000;
     font-weight: 500;
     border-radius: 4rem;
     padding: .5rem 1rem;

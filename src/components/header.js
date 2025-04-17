@@ -55,7 +55,7 @@ export default function Header() {
             <button
               className="navbar-toggler order-lg-3"
               type="button"
-              area-label="Click here to toggle navigation"
+              aria-label="Click here to toggle navigation"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNav"
             >

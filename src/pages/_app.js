@@ -35,8 +35,10 @@ export default function App({ Component, pageProps }) {
   return (
     <main>
       <Head>
+      <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
         <style>{dom.css()}</style>
       </Head>
+     
       <Header />
       {/* Google Analytics - Only load if user consents */}
       {hasConsent && (

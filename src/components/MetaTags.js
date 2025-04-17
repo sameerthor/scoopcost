@@ -7,8 +7,9 @@ const MetaTags = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const { origin } = window.location;
-      setCanonicalUrl(origin); // Only the domain + subdomain, no path/query/hash
+      const { origin, pathname } = window.location;
+      const cleanUrl = origin + pathname; // excludes query and hash
+      setCanonicalUrl(cleanUrl);
     }
   }, []);
 
