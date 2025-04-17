@@ -31,6 +31,8 @@ const getHeading = (title) => {
   return "";
 };
 export default function Coupon({ expiryDate, index, coupon, storeImage, storeName, affiliateUrl, homeUrl, storeSlug, storeId, storeCreateTime,usesSubdomain }) {
+  const h2_heading = [ "Working Storename Coupon Code", "Storename Best Discount Code", "Storename Promo Codes 2025", "Storname Coupons 2025"];
+
   const accordionId = `accordion-${index}`;
   const collapseId = `collapse-${index}`;
   const historyAccordionId = `historyAccordionId-${index}`;
@@ -106,7 +108,10 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
 
   return (
-
+    <>
+{index % 3 === 0 && (
+  <h2>{h2_heading[index % 3].replace("Storename", storeName)}</h2>
+) }
     <div className="hugecouponBox">
       <div className="coupon-item">
         <div className="discountBox">
@@ -458,6 +463,6 @@ window.open(url, "_blank");
         }
       </>
     </div>
-
+    </>
   );
 }
