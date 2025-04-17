@@ -135,7 +135,7 @@ function Category({ category, stores, categories }) {
                                                                 : `/${store.Slug}`
                                                         }>
                                                             <img
-                                                                src={"https://admin.coupontix.com/" + store.store_image.url || "/images/default-placeholder.png"}
+                                                                src={"https://admin.coupontix.com/" + store.store_image?.url || "/images/default-placeholder.png"}
                                                                 alt={coupon.Title}
                                                                 title={`${store.Title} coupons`}
                                                             />

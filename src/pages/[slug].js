@@ -75,6 +75,57 @@ export default function StorePage({ store, relatedStores }) {
   const toggleCommentBox = () => {
     setShowCommentBox(!showCommentBox);
   };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://coupontix.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": `${store.data.Title} coupon code`,
+        "item": "https://coupontix.com/"+store.data.Slug
+      }
+    ]
+  }
+
+
+
+  const saleEvents = store.data.Coupons.map((coupon) => ({
+    "@context": "http://schema.org",
+    "@type": "SaleEvent",
+    "name": coupon.Title, // Dynamic name based on coupon title
+    "description": coupon.Content, // Dynamic description
+    "image": `${process.env.NEXT_PUBLIC_IMAGE_URL}/${store.data.store_image?.url}` , // Default or dynamic image
+    "url": `https://coupontix.com/${store.data.Slug}#c=${coupon.id}`, // Dynamic URL
+    "startDate": "2025-03-10", // Use dynamic start date if available
+    "endDate": "2025-06-09", // Use dynamic end date if available
+    "performer": { 
+      "@type": "Organization", 
+      "name": store.data.Title // Static or dynamic performer based on coupon details
+    },
+    "eventStatus": "http://schema.org/EventScheduled",
+    "eventAttendanceMode": "http://schema.org/OnlineEventAttendanceMode",
+    "location": { 
+      "@type": "VirtualLocation", 
+      "url": store.data.home_url
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "http://schema.org/LimitedAvailability",
+      "price": "0", // Adjust dynamically if needed
+      "priceCurrency": "USD",
+      "validFrom": "2025-03-10",
+      "url": `https://coupontix.com/${store.data.Slug}`
+    }
+  }));
+  
   return (
     <>
       <Head>
@@ -84,6 +135,10 @@ export default function StorePage({ store, relatedStores }) {
         <meta name="twitter:description" content={store.data.seo.metaDescription} />
         <meta property="og:title" content={store.data.seo.metaTitle} />
         <meta property="article:section" content={store.data.seo.metaDescription} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        {saleEvents.map((schema, i) => (
+          <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        ))}
       </Head>
       <MetaTags />
       <section>
@@ -117,7 +172,7 @@ export default function StorePage({ store, relatedStores }) {
                     <div className="header-store-thumb">
                       <a rel="nofollow" target="_blank" title={store.data.Title} href={store.data.affiliate_url}>
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${store.data.store_image.url}`}
+                          src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${store?.data?.store_image?.url}`}
                           alt={`${store.data.Title} Store Logo`}
                           width={128}
                           height={128}
@@ -155,7 +210,7 @@ export default function StorePage({ store, relatedStores }) {
                       expiryDate={coupon.expiry_date}
                       index={index}
                       coupon={coupon}
-                      storeImage={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${store.data.store_image.url}`}
+                      storeImage={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${store.data.store_image?.url}`}
                       storeName={store.data.Title}
                       affiliateUrl={store.data.affiliate_url}
                       homeUrl={store.data.home_url}
@@ -174,36 +229,47 @@ export default function StorePage({ store, relatedStores }) {
                   <p>Check verified proof of manual testing for {store.data.Title}</p>
                   <div className="row">
                     {store.data.Coupons
-                      .filter(coupon => coupon.coupon_type === "Code") // ✅ Filter only "Code" type coupons
+                      .filter(coupon => coupon.coupon_type === "Code")
                       .map((coupon) => (
-                        <div key={coupon.id} className="col-md-6 mb-1 p-1">
-                          <div className="historyItem">
-                            <div className="historyHeader">
-                              <span>{getHeading(coupon.Title)}</span>
-                              <span className="code">{coupon.coupon_code || "No Code"}</span>
-                              <span>{coupon.last_used_at && !isNaN(coupon.last_used_at)
-                                ? `Used ${formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })}`
-                                : ''}</span>
-                            </div>
-                            <div className="historyImg">
-                              <a href="#" onClick={() => setScreenshotURL(`${process.env.NEXT_PUBLIC_IMAGE_URL}${coupon.screenshot?.url}`)}
-                                data-bs-toggle="modal" data-bs-target="#maximizeImage">
-                                <Image
-                                  src={
-                                    coupon?.screenshot?.formats?.medium?.url
-                                      ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${coupon.screenshot.formats.medium.url}`
-                                      : "/images/history-img.webp"
+                        coupon?.screenshot && (
+                          <div key={coupon.id} className="col-md-6 mb-1 p-1">
+                            <div className="historyItem">
+                              <div className="historyHeader">
+                                <span>{getHeading(coupon.Title)}</span>
+                                <span className="code">{coupon.coupon_code || "No Code"}</span>
+                                <span>
+                                  {coupon.last_used_at && !isNaN(coupon.last_used_at)
+                                    ? `Used ${formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })}`
+                                    : ""}
+                                </span>
+                              </div>
+                              <div className="historyImg">
+                                <a
+                                  href="javascript:void(0)"
+                                  onClick={() =>
+                                    setScreenshotURL(`${process.env.NEXT_PUBLIC_IMAGE_URL}${coupon.screenshot?.url}`)
                                   }
-                                  alt={coupon.Title || "Coupon Image"}
-                                  width={400} // replace with actual width
-                                  height={250} // replace with actual height
-                                  loading="lazy"
-                                />
-                              </a>
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#maximizeImage"
+                                >
+                                  <Image
+                                    src={
+                                      coupon?.screenshot?.formats?.medium?.url
+                                        ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${coupon.screenshot.formats.medium.url}`
+                                        : "/images/history-img.webp"
+                                    }
+                                    alt={coupon.Title || "Coupon Image"}
+                                    width={400}
+                                    height={250}
+                                    loading="lazy"
+                                  />
+                                </a>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        )
                       ))}
+
                   </div>
                 </div>
 
@@ -322,7 +388,7 @@ export default function StorePage({ store, relatedStores }) {
                     </div>
                     <div className="row input mx-auto">
                       <form className="d-block" role="post">
-                      <label htmlFor="thought" className="d-block">
+                        <label htmlFor="thought" className="d-block">
                           <i className="fa-regular fa-user" /> What's in your mind <span>*</span>
                         </label>
                         <textarea
@@ -684,8 +750,8 @@ export async function getStaticProps({ params }) {
     // Process extra info
     if (store.extra_info) {
       storeData.data.extra_info = store.extra_info
-        .replace(/XXX/g, firstCouponCode)
-        .replace(/XX/g, store.Coupons?.length || 0);
+        .replaceAll('XXX', firstCouponCode)
+        .replaceAll('XX', store.Coupons?.length || 0);
     }
 
     if (store.store_h1) {
