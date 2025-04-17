@@ -116,12 +116,13 @@ export default function StorePage({ store, relatedStores }) {
                   <div className="header-thumb">
                     <div className="header-store-thumb">
                       <a rel="nofollow" target="_blank" title={store.data.Title} href={store.data.affiliate_url}>
-                        <img
-                          width="128"
-                          height="128"
+                        <Image
                           src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${store.data.store_image.url}`}
+                          alt={`${store.data.Title} Store Logo`}
+                          width={128}
+                          height={128}
                           className="attachment-wpcoupon_small_thumb size-wpcoupon_small_thumb"
-                          alt={`${store.data.Title} Logo`}
+                          loading="lazy"
                         />
                       </a>
                     </div>
@@ -187,9 +188,16 @@ export default function StorePage({ store, relatedStores }) {
                             <div className="historyImg">
                               <a href="#" onClick={() => setScreenshotURL(`${process.env.NEXT_PUBLIC_IMAGE_URL}${coupon.screenshot?.url}`)}
                                 data-bs-toggle="modal" data-bs-target="#maximizeImage">
-                                <img
-                                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${coupon.screenshot?.formats?.medium?.url}` || "/images/history-img.webp"}
-                                  alt={coupon.Title}
+                                <Image
+                                  src={
+                                    coupon?.screenshot?.formats?.medium?.url
+                                      ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${coupon.screenshot.formats.medium.url}`
+                                      : "/images/history-img.webp"
+                                  }
+                                  alt={coupon.Title || "Coupon Image"}
+                                  width={400} // replace with actual width
+                                  height={250} // replace with actual height
+                                  loading="lazy"
                                 />
                               </a>
                             </div>
@@ -375,14 +383,14 @@ export default function StorePage({ store, relatedStores }) {
                       <div className="col-md-6">
                         <div className="founder">
                           <div className="img">
-                          <Image 
-  src="/images/co-founder.webp" 
-  alt="founder" 
-  height={60} 
-  width={60} 
-  quality={10} // Low quality for fast loading
-  loading="lazy" // Lazy load images
-/>
+                            <Image
+                              src="/images/co-founder.webp"
+                              alt="founder"
+                              height={60}
+                              width={60}
+                              quality={10} // Low quality for fast loading
+                              loading="lazy" // Lazy load images
+                            />
                           </div>
                           <div className="name">
                             <p>Rudresh <a href="https://www.linkedin.com/in/rudreh-dubey-86426b1a2/" target="_blank" title="Connect on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="#0077B5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></p>
@@ -531,7 +539,13 @@ export default function StorePage({ store, relatedStores }) {
               ></button>
             </div> */}
             <div className="modal-body">
-              <img src={screenshotURL} alt="" />
+              <Image
+                src={screenshotURL || "/images/fallback.webp"}
+                alt=""
+                width={400} // replace with actual width
+                height={250} // replace with actual height
+                loading="lazy"
+              />
             </div>
 
           </div>
@@ -687,7 +701,7 @@ export async function getStaticProps({ params }) {
     // Process SEO metaTitle
     if (store.seo?.metaTitle) {
       const hasCouponCode = !!firstCouponCode;
-    
+
       let metaTitle = store.seo.metaTitle
         .replace(/Storename/g, store.Title)
         .replace(/XXX/g, hasCouponCode ? firstCouponCode : moment().format('YYYY'))
@@ -695,12 +709,12 @@ export async function getStaticProps({ params }) {
         .replace(/%percentage%/g, perc + "%")
         .replace(/%%Year%%/g, moment().format('YYYY'))
         .replace(/\d{4}/, moment().format('YYYY'));
-    
+
       // If no coupon code, replace leading "Code is" or similar phrase
       if (!hasCouponCode) {
-  metaTitle = metaTitle.replace(/(\b(?:Coupon )?Code is\b)(?!.*Coupon Code)/i, 'Coupon Code');
+        metaTitle = metaTitle.replace(/(\b(?:Coupon )?Code is\b)(?!.*Coupon Code)/i, 'Coupon Code');
       }
-    
+
       // If title is below 50 characters and doesn't already contain "Discount"
       if (metaTitle.length < 50 && !metaTitle.includes("Discount")) {
         const lastCodeIndex = metaTitle.lastIndexOf("Code");
@@ -708,7 +722,7 @@ export async function getStaticProps({ params }) {
           metaTitle = metaTitle.substring(0, lastCodeIndex) + "Discount Code" + metaTitle.substring(lastCodeIndex + 4);
         }
       }
-    
+
       storeData.data.seo.metaTitle = metaTitle;
     }
 
