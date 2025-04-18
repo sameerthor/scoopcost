@@ -674,7 +674,14 @@ export async function getStaticProps({ params }) {
   const storeData = await storeRes.json();
 
   const store = storeData.data // Get the first (and only) store matching the slug
+  
+  if (!store) {
+    return {
+      notFound: true,
+    };
+  }
 
+    
   // 2. If store exists, fetch related stores from the same category
   var relatedStores = [];
   if (store && store.store_category) {
