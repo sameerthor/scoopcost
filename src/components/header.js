@@ -67,7 +67,7 @@ export default function Header() {
             <div className="dummyBox"></div>
           </div>
 
-          <form className="d-flex ms-auto order-lg-2 searchForm">
+          <div className="d-flex ms-auto order-lg-2 searchForm">
             
           <ReactSearchBox
                             placeholder="Search Store"
@@ -98,7 +98,7 @@ export default function Header() {
                         />
                           <button class="btn btn-outline-success" type="button">Search</button>
            
-          </form>
+          </div>
 
           <div className="collapse navbar-collapse justify-content-center order-lg-1" id="navbarNav">
             <ul className="navbar-nav navLinks">

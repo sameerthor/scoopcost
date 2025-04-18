@@ -9,7 +9,7 @@ export default function Footer() {
  <footer className="footer-box px-lg-5 px-md-3 px-2">
             <div className="row mx-auto">
                 <div className="col-lg-5 col-md-12 col-sm-12 mb-3 about-scoop footer-items">
-                    <div className="footer-logo">  <img src="/images/coupontix-logo.webp" alt="logo" /></div>
+                    <div className="footer-logo">  <img src="/images/coupontix-logo.webp" loading="lazy" alt="logo" /></div>
                     <p>Greetings! Welcome to coupontix.com, your ultimate destination for an extensive collection of coupons and deals. Discover unbeatable prices on top brands across various products and services. Keep an eye out for more updates!</p>
                    
                 </div>
@@ -33,10 +33,10 @@ export default function Footer() {
                     <div className="linksHeading">Stay Updated</div>
                     <div className="subscribe">
                         <div className="subscribe-item">
-                            <form action="">
+                            <div action="" className="form">
                                 <input type="text" placeholder="Your Email" />
                                 <button>Subscribe</button>
-                            </form>
+                            </div>
                         </div>
                         <span>You can opt out of our newsletters at any time. See our privacy policy.</span>
                     </div>
@@ -52,7 +52,7 @@ export default function Footer() {
                     <div className="isoBox">
                         <div className="isoItem">
                             <div>
-                                <img src="/images/iso-white.png" alt="iso" />
+                                <img src="/images/iso-white.png" loading="lazy" alt="iso" />
                             </div>
                             <p>
                                 ISO 27001 <br />
@@ -61,7 +61,7 @@ export default function Footer() {
                         </div>
                         <div className="isoItem">
                             <div>
-                                <img src="/images/ssl-white.png" alt="ssl" />
+                                <img src="/images/ssl-white.png" loading="lazy" alt="ssl" />
                             </div>
                             <p>
                                 SSL Certified Site <br />

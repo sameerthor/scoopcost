@@ -654,3 +654,13 @@
     text-transform: uppercase;
     font-size: .9rem;
 }
+@media(min-width: 1000px){
+    .homeImageBanner img{
+        height: 90vh;
+    }
+}
+@media(max-width: 550px){
+    .homeImageBanner img{
+        height: 180px;
+    }
+}

@@ -166,14 +166,14 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <h2 className='secHeading'>Most Popular Brands</h2>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col mb-3">
-                            <a className="pplItem" href='https://allcleartravel-co-uk.coupontix.com/'> 
+                            <a className="pplItem" href='https://coupontix.com/adalysis-coupons'> 
                                 <div className="pplImg">
                                     <Image
                 width={400}
-                 height={400} src="/images/AllClear-logo-Standard.svg" alt="all-clear" />
+                 height={400} src="/images/adalysis.svg" alt="adalysis" />
                                 </div>
                                 <div className='pplTitle'>
-                                Enjoy 15% Off on Europe and Worldwide Travel Insurance.
+                                Exclusive Discount - Up to 20% Off on PPC Campaign Management Software
                                 </div>
                                 <div className='btn'>
                                     UP TO 40% OFF
@@ -181,137 +181,137 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className="pplItem" href='https://americangrazedbeef.coupontix.com/'> 
+                            <a className="pplItem" href='https://coupontix.com/kinkyangel.co.uk'> 
                                 <div className="pplImg">
                                     <Image
                 width={400}
-                 height={400} src="/images/americangrazedbeef.webp" alt="americangrazedbeef" />
+                 height={400} src="/images/angel-clothing.webp" alt="angel-clothing" />
                                 </div>
                                 <div className='pplTitle'>
-                                Enjoy Free Delivery on orders over $175. Shop now!
+                                Special Discount - Claim Your 20% Off Discount
                                 </div>
                                 <div className='btn'>
-                                   Free Delivery
+                                  UP TO 20% OFF
                                 </div>
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className="pplItem" href='https://curiebod.coupontix.com/'> 
+                            <a className="pplItem" href='https://coupontix.com/apollomoda-coupons'> 
                                 <div className="pplImg">
                                     <Image
                 width={400}
-                 height={400} src="/images/curie.avif" alt="curie" />
+                 height={400} src="/images/apollo.webp" alt="apollo-modo" />
                                 </div>
                                 <div className='pplTitle'>
-                                Spend $35+ to get a free shipping offer from Curie.
+                                20% Off on Sneakers - Save Big Today
                                 </div>
                                 <div className='btn'>
-                                Free Shipping 
+                               Grab 20% Off
                                 </div>
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className="pplItem" href='https://hitchfit.coupontix.com/'> 
+                            <a className="pplItem" href='https://coupontix.com/coconutcloud.net'> 
                                 <div className="pplImg">
                                     <Image
                 width={400}
-                 height={400} src="/images/hitchfit.png" alt="hitchfit" />
+                 height={400} src="/images/coconut-cloud.avif" alt="coconut-cloud" />
                                 </div>
                                 <div className='pplTitle'>
-                                Up to 20% Off - Save Big at hitchfit.com
+                                Get up to $20 Off - Save Big on Hot Chocolate
                                 </div>
                                 <div className='btn'>
-                                    UP TO 20% OFF
+                                    Save UP TO $20
                                 </div>
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className="pplItem" href='https://artofliving-org.coupontix.com/'> 
+                            <a className="pplItem" href='https://coupontix.com/coaxcopenhagen-coupons'> 
                                 <div className="pplImg">
                                     <Image
                 width={400}
-                 height={400} src="/images/art-of-living.png" alt="art-of-living" />
+                 height={400} src="/images/coax-copenhegen.webp" alt="coax-copenhegen" />
                                 </div>
                                 <div className='pplTitle'>
-                                Art of Living Deal - 10% Off + Money Back Gaurantee
+                                Get 20% Off - Save More on Lingerie & Bodysuits
                                 </div>
                                 <div className='btn'>
-                                    UP TO 15% OFF
+                                    UP TO $100 OFF
                                 </div>
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className="pplItem" href='https://arabellahair.coupontix.com/'> 
-                                <div className="pplImg">
+                            <a className="pplItem" href='https://coupontix.com/dronelicense.eu'> 
+                                <div className="pplImg p-1" style={{background: "#000", borderRadius: "4px"}}>
                                     <Image
                 width={400}
-                 height={400} src="/images/arabella.avif" alt="arabella" />
+                 height={400} src="/images/drone-class.avif" alt="drone-class" />
                                 </div>
                                 <div className='pplTitle'>
-                                Enjoy Free Shipping on all orders in the US. Shop now!
+                                Special Discount - 10% Off on Annual Subscription Plans
                                 </div>
                                 <div className='btn'>
-                                   Free Shipping
+                                  UP TO 10% OFF
                                 </div>
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className="pplItem" href='https://shopgoldleaf.coupontix.com/'> 
+                            <a className="pplItem" href='https://coupontix.com/decoupagenapkins-coupon'> 
                                 <div className="pplImg">
                                     <Image
                 width={400}
-                 height={400} src="/images/shopgoldleaf.webp" alt="shopgoldleaf" />
+                 height={400} src="/images/decoupage.avif" alt="decoupage" />
                                 </div>
                                 <div className='pplTitle'>
-                                Goldleaf free shipping on domestic orders over $75.
+                                New Customer Discount - 10% Off on your first order
                                 </div>
                                 <div className='btn'>
-                                  Free Shipping 
+                                  SAVE 10% OFF
                                 </div>
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className="pplItem" href='https://reebok.coupontix.com/'> 
+                            <a className="pplItem" href='https://coupontix.com/desertandforest-coupons'> 
                                 <div className="pplImg">
                                     <Image
                 width={400}
-                 height={400} src="/images/reebok.avif" alt="reebok" />
+                 height={400} src="/images/d-f-clothing.webp" alt="d-f-clothing" />
                                 </div>
                                 <div className='pplTitle'>
-                                    Reebok Promo Code - Get 15% Off
+                                Up to 25% Off Promo Code - Save Big on Your Order
                                 </div>
                                 <div className='btn'>
-                                Redeem 15% Off 
+                                Redeem 25% Off 
                                 </div>
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className="pplItem" href='https://eztaxreturn.coupontix.com/'> 
+                            <a className="pplItem" href='https://coupontix.com/diymoldtest-coupons'> 
                                 <div className="pplImg">
                                     <Image
                 width={400}
-                 height={400} src="/images/e-z.webp" alt="e-z" />
+                 height={400} src="/images/diy-mold.avif" alt="diy-mold" />
                                 </div>
                                 <div className='pplTitle'>
-                                20% Off on Tax Preparation Services - Redeem Your Discount.
+                                First Order Discount - Claim $10 Off
                                 </div>
                                 <div className='btn'>
-                               20% Off 
+                               UP TO $10 Off 
                                 </div>
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className="pplItem" href='https://grammarly.coupontix.com/'> 
+                            <a className="pplItem" href='https://coupontix.com/ekrin-coupons/'> 
                                 <div className="pplImg">
                                     <Image
                 width={400}
-                 height={400} src="/images/grammerly.png" alt="grammerly" />
+                 height={400} src="/images/ekrin-logo.png" alt="ekrin" />
                                 </div>
                                 <div className='pplTitle'>
-                                Save Big Today - 10% Off on Paraphrasing Tool
+                                Special Discount - Claim Your 30% Off Discount
                                 </div>
                                 <div className='btn'>
-                               30% Off 
+                               UP TO 30% Off 
                                 </div>
                             </a>
                         </div>
@@ -324,34 +324,34 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <h2 className='secHeading'>Today's Top Coupon Codes</h2>
                     <div className="row row-cols-lg-6 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://etsy.coupontix.com/'>
+                            <a className='codeItem' href='https://coupontix.com/ezeasproducts-com-au-coupons'>
                                 <div className='codeHeader'>
-                                    Etsy Offer
+                                EzeAs Products
                                         
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
                                         <Image
                 width={400}
-                 height={400} src="/images/etsy.webp" alt="etsy" />
+                 height={400} src="/images/eseas.webp" alt="eseas" />
                                      </div>
                                      <div className="off">
-                                            Flat  20% off
+                                           UP TO 10% OFF
                                       </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://expressvpn.coupontix.com/'>
+                            <a className='codeItem' href='https://coupontix.com/gummee.life/'>
                                 <div className='codeHeader'>
-                                    Express VPN Offer
+                                Gummee Offer
                                         
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
                                         <Image
                 width={400}
-                 height={400} src="/images/expressvpn.svg" alt="express-vpn" />
+                 height={400} src="/images/gummee.webp" alt="gummee" />
                                      </div>
                                      <div className="off">
                                             Up to 20% off
@@ -360,73 +360,73 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://freshbooks.coupontix.com/'>
+                            <a className='codeItem' href='https://coupontix.com/getterms.io'>
                                 <div className='codeHeader'>
-                                    Freshbook Offer
-                                        
-                                </div>
-                                <div className='codeFooter'>
-                                     <div className="imgBox" style={{background: "#002d7a"}}>
-                                        <Image
-                width={400}
-                 height={400} src="/images/freshbook.svg" alt="freshbook" />
-                                     </div>
-                                     <div className="off">
-                                            Up to 40% off
-                                      </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='codeItem' href='https://icebarrel.coupontix.com/'>
-                                <div className='codeHeader'>
-                                    Ice Barrel Offer
+                                   GetTerms Offer
                                         
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
                                         <Image
                 width={400}
-                 height={400} src="/images/ice-barrel.avif" alt="ice-barrel" />
-                                     </div>
-                                     <div className="off">
-                                            Up to 30% off
-                                      </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='codeItem' href='https://kohler.coupontix.com/'>
-                                <div className='codeHeader'>
-                                    Kohler Offer
-                                        
-                                </div>
-                                <div className='codeFooter'>
-                                     <div className="imgBox">
-                                        <Image
-                width={400}
-                 height={400} src="/images/kohler.svg" alt="kohler" />
-                                     </div>
-                                     <div className="off">
-                                            Up to 40% off
-                                      </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='codeItem' href='https://maccosmetics.coupontix.com/'>
-                                <div className='codeHeader'>
-                                MAC Cosmetics 
-                                        
-                                </div>
-                                <div className='codeFooter'>
-                                     <div className="imgBox">
-                                        <Image
-                width={400}
-                 height={400} src="/images/mac.png" alt="mac" />
+                 height={400} src="/images/getterms.png" alt="getterms" />
                                      </div>
                                      <div className="off">
                                             Up to 10% off
+                                      </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='codeItem' href='https://coupontix.com/geneticlabsaustralia-coupons/'>
+                                <div className='codeHeader'>
+                                Genetic Labs Australia 
+                                        
+                                </div>
+                                <div className='codeFooter'>
+                                     <div className="imgBox" style={{ background: "#000"}}>
+                                        <Image
+                width={400}
+                 height={400} src="/images/genetic-lab.avif" alt="genetic-lab" />
+                                     </div>
+                                     <div className="off">
+                                           Free Shiping
+                                      </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='codeItem' href='https://coupontix.com/happydownloads.net/'>
+                                <div className='codeHeader'>
+                                HappyDownloads Offer
+                                        
+                                </div>
+                                <div className='codeFooter'>
+                                     <div className="imgBox">
+                                        <Image
+                width={400}
+                 height={400} src="/images/happy-download.webp" alt="happy-download" />
+                                     </div>
+                                     <div className="off">
+                                            Up to 20% off
+                                      </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='codeItem' href='https://coupontix.com/hoooyi-coupons/'>
+                                <div className='codeHeader'>
+                                Hoooyi Offer
+                                        
+                                </div>
+                                <div className='codeFooter'>
+                                     <div className="imgBox" style={{ background: "#000"}}>
+                                        <Image
+                width={400}
+                 height={400} src="/images/hooyi.avif" alt="hoooyi" />
+                                     </div>
+                                     <div className="off">
+                                            Up to 20% off
                                       </div>
                                 </div>
                             </a>
@@ -468,13 +468,13 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <h2>Top Rated Stores</h2>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col">
-                            <a href='https://costco.coupontix.com/' className="toprated">
+                            <a href='https://coupontix.com/nailsbestbuy-coupons/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/costco.webp'
-                                        alt='costco'
+                                        src='/images/inails.webp'
+                                        alt='inails'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -482,22 +482,22 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         <small>Get Deal</small>
                                     </div>
                                     <div className="discount">
-                                        20% OFF
+                                        10% OFF
                                     </div>
                                     <div className="description">
-                                    Take 10% Off on Engagement Rings at catbirdnyc.com.
+                                    iNail Supply Promo Code - Save 15% Off
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://enemasupply.coupontix.com/' className="toprated">
+                            <a href='https://coupontix.com/level8cases-coupons' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                                      width={400}
                                      height={400}
-                                        src='/images/enemasupply.avif'
-                                        alt='enemasupply'
+                                        src='/images/level8.avif'
+                                        alt='level8'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -505,21 +505,21 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         <small>Get Deal</small>
                                     </div>
                                     <div className="discount">
-                                        20% OFF
+                                        15% OFF
                                     </div>
                                     <div className="description">
-                                    enemasupply.com - Enjoy free shipping on all orders over $50. Shop now!
+                                    Exclusive Discount - 15% Off on Lightweight Luggage
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://disneystore.coupontix.com/' className="toprated">
+                            <a href='https://coupontix.com/mrimin-coupons' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/disney-store.svg'
+                                        src='/images/mrimin.webp'
                                         alt='disney-store'
                                     />
                                 </div>
@@ -528,114 +528,45 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         <small>Get Deal</small>
                                     </div>
                                     <div className="discount">
-                                        40% OFF
+                                        20% OFF
                                     </div>
                                     <div className="description">
-                                    Disney Store Deal - Enjoy Free Shipping on orders over $75 in the US.
+                                    Up to 20% Off - Save More on Pleasure Toys
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://eggwhitesint.coupontix.com/' className="toprated">
-                                <div className="topratedTop">
+                            <a href='https://coupontix.com/moomenn-coupons/' className="toprated">
+                                <div className="topratedTop" style={{ background: "#000"}}>
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/eggwhite.jpg'
-                                        alt='eggwhite'
+                                        src='/images/moomen.avif'
+                                        alt='moomen'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
                                     <div className="storeName">
                                         <small>Get Code</small>
-                                    </div>
-                                    <div className="discount">
-                                        20% OFF
-                                    </div>
-                                    <div className="description">
-                                    Egg Whites International - Buy Omega-3 Fish Oil (3 Bottles) at a discount 15% Off.
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://traversebayfarms.coupontix.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/traverse-bay.webp'
-                                        alt='traverse-bay'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Code</small>
-                                    </div>
-                                    <div className="discount">
-                                        15% OFF
-                                    </div>
-                                    <div className="description">
-                                    Shop now and get 10% Off on Tart Cherry Juice Concentrate.
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://udemy.coupontix.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/udemy.svg'
-                                        alt='udemy'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Deal</small>
-                                    </div>
-                                    <div className="discount">
-                                        20% OFF
-                                    </div>
-                                    <div className="description">
-                                    Apply Udemy Promo Code to get 20% Off on all orders.
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://vitabalance-net.coupontix.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/vitabalance.png'
-                                        alt='vitabalance'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Deal</small>
                                     </div>
                                     <div className="discount">
                                         10% OFF
                                     </div>
                                     <div className="description">
-                                       Vita Balance Deal - 15% Off + Free Shipping
+                                        Up to 20% Off Coupon Code - Save Big on Modest Clothing
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://zacalife.coupontix.com/' className="toprated">
+                            <a href='https://coupontix.com/naturesoil-coupons/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/zaca.webp'
-                                        alt='zaca-life'
+                                        src='/images/natures.jpg'
+                                        alt='natures'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -643,22 +574,22 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         <small>Get Code</small>
                                     </div>
                                     <div className="discount">
-                                        15% OFF
+                                        20% OFF
                                     </div>
                                     <div className="description">
-                                    Subscribe and save 15% Off on your entire order at Zaca.
+                                    Up to 20% Off Coupon Code - Exclusive Offer on Fragrance Oils
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://hugoboss.coupontix.com/' className="toprated">
+                            <a href='https://coupontix.com/oakcitybeardcompany-coupons' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/hugo-boss.jpg'
-                                        alt='hogo-boss'
+                                        src='/images/oakcity.webp'
+                                        alt='oakcity'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -669,19 +600,88 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         20% OFF
                                     </div>
                                     <div className="description">
-                                    Hugo Boss Deal - 15% Off + Free Shipping
+                                    Up to 20% Off - Save Big on Beard Care Products
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://kendrascott.coupontix.com/' className="toprated">
+                            <a href='https://coupontix.com/organicformulashop-coupons' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/kendra.svg'
-                                        alt='hogo-boss'
+                                        src='/images/organic.avif'
+                                        alt='organic'
+                                    />
+                                </div>
+                                <div className="topRatedBottom">
+                                    <div className="storeName">
+                                        <small>Get Deal</small>
+                                    </div>
+                                    <div className="discount">
+                                        15% OFF
+                                    </div>
+                                    <div className="description">
+                                    15% Off on Hipp Dutch Organic Formula - Save Big Today
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a href='https://coupontix.com/ca-outsmarted-coupons' className="toprated">
+                                <div className="topratedTop">
+                                    <Image
+                width={400}
+                 height={400}
+                                        src='/images/outsmarted.avif'
+                                        alt='outsmarted'
+                                    />
+                                </div>
+                                <div className="topRatedBottom">
+                                    <div className="storeName">
+                                        <small>Get Code</small>
+                                    </div>
+                                    <div className="discount">
+                                        30% OFF
+                                    </div>
+                                    <div className="description">
+                                    Up to 30% Off - Save Big on Outsmarted The Family Bundle
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a href='https://coupontix.com/santasofficialnorthpolemail-coupons' className="toprated">
+                                <div className="topratedTop">
+                                    <Image
+                width={400}
+                 height={400}
+                                        src='/images/santa.webp'
+                                        alt='santa'
+                                    />
+                                </div>
+                                <div className="topRatedBottom">
+                                    <div className="storeName">
+                                        <small>Get Deal</small>
+                                    </div>
+                                    <div className="discount">
+                                        20% OFF
+                                    </div>
+                                    <div className="description">
+                                    Up to 20% Off - Save More on Personalized Letters
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a href='https://coupontix.com/omoshiroiblock-coupons' className="toprated">
+                                <div className="topratedTop" style={{ background: "#000"}}>
+                                    <Image
+                width={400}
+                 height={400}
+                                        src='/images/omoshiroi.png'
+                                        alt='omoshiroi'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -689,10 +689,10 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         <small>Get code</small>
                                     </div>
                                     <div className="discount">
-                                        10% OFF
+                                        15% OFF
                                     </div>
                                     <div className="description">
-                                    Up to 20% Off on Kendra Scott
+                                    Omoshiroi Block Promo Code - Unlock 15% Off
                                     </div>
                                 </div>
                             </a>
@@ -707,13 +707,43 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <h2>Top Online Stores</h2>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col">
-                            <a href='https://barkbox.coupontix.com/' className="pickedStore">
+                            <a href='https://coupontix.com/saucewarehouse-coupons' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/bark-box.svg'
-                                        alt='bark-box'
+                                        src='/images/sauce.avif'
+                                        alt='Sauce Warehouse Coupon'
+                                    />
+                                </div>
+                                <div className="dealCout">
+                                    9 Deals
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a href='https://coupontix.com/solti-coupons' className="pickedStore">
+                                <div className="imgBox">
+                                    <Image
+                width={400}
+                 height={400}
+                                        src='/images/solti.avif'
+                                        alt='salti'
+                                    />
+                                </div>
+                                <div className="dealCout">
+                                    10 Deals
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a href='https://coupontix.com/sunnysunday.ca/' className="pickedStore">
+                                <div className="imgBox">
+                                    <Image
+                width={400}
+                 height={400}
+                                        src='/images/sunny-sunday.webp'
+                                        alt='sunny-sunday'
                                     />
                                 </div>
                                 <div className="dealCout">
@@ -722,28 +752,13 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://bestbuy.coupontix.com/' className="pickedStore">
+                            <a href='http://coupontix.com/tampaschoolofrealestate-coupons/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/best-buy.jpg'
-                                        alt='best-buy'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    9 Deals
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://cartfuel-io.coupontix.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/cartfuel.svg'
-                                        alt='cartfuel'
+                                        src='/images/tampa-school.avif'
+                                        alt='tampa-school'
                                     />
                                 </div>
                                 <div className="dealCout">
@@ -752,13 +767,28 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://catbirdnyc.coupontix.com/' className="pickedStore">
-                                <div className="imgBox" style={{ background: "#000"}}>
+                            <a href='https://coupontix.com/thewatermachine-coupons' className="pickedStore">
+                                <div className="imgBox">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/catbird.webp'
-                                        alt='catbird'
+                                        src='/images/water-machine.avif'
+                                        alt='water-machine'
+                                    />
+                                </div>
+                                <div className="dealCout">
+                                    7 Deals
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a href='https://coupontix.com/turnedninja-coupons' className="pickedStore">
+                                <div className="imgBox">
+                                    <Image
+                width={400}
+                 height={400}
+                                        src='/images/turned-ninja.png'
+                                        alt='turned-ninja'
                                     />
                                 </div>
                                 <div className="dealCout">
@@ -767,92 +797,62 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://portionsmaster.coupontix.com/' className="pickedStore">
+                            <a href='https://coupontix.com/viralecomadz-coupons' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/partions.webp'
-                                        alt='pationsmaster'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    9 Deals
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://samsonite.coupontix.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/samsnight.png'
-                                        alt='samsnight'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    9 Deals
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://thenorthface.coupontix.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/north-face.svg'
+                                        src='/images/viral-ecom.avif'
                                         alt='north-face'
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    9 Deals
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://catbirdnyc.coupontix.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/torrid.png'
-                                        alt='catbird'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    9 Deals
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://rhinokeyorganizer.coupontix.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/rhinokey.avif'
-                                        alt='rhinokey'
-                                    />
-                                </div>
-                                <div className="dealCout">
                                     7 Deals
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://sfuelsgolonger.coupontix.com/' className="pickedStore">
-                                <div className="imgBox" style={{ background: "#137bba"}}>
+                            <a href='https://coupontix.com/wave-hawaii-coupons' className="pickedStore">
+                                <div className="imgBox">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/sfuels.svg'
-                                        alt='sfuels'
+                                        src='/images/wave-hawai.avif'
+                                        alt='wave-hawaii'
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    7 Deals
+                                    9 Deals
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a href='https://coupontix.com/yerbae-coupons' className="pickedStore">
+                                <div className="imgBox">
+                                    <Image
+                width={400}
+                 height={400}
+                                        src='/images/yerbae.avif'
+                                        alt='yerbae'
+                                    />
+                                </div>
+                                <div className="dealCout">
+                                    8 Deals
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a href='https://coupontix.com/zojila-coupons' className="pickedStore">
+                                <div className="imgBox">
+                                    <Image
+                width={400}
+                 height={400}
+                                        src='/images/zozila.webp'
+                                        alt='zozila'
+                                    />
+                                </div>
+                                <div className="dealCout">
+                                    9 Deals
                                 </div>
                             </a>
                         </div>
