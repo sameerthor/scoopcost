@@ -69,6 +69,7 @@ font-family: 'Montserrat', sans-serif;
 .navbar .brandLogo img{
 object-fit: contain;
 width: 200px;
+height: 32px;
 }
 .navbar{
 padding: 18px 0;
@@ -302,7 +303,7 @@ letter-spacing: .5px;
   color: #222222;
   line-height: 1.4;
 }
-.subscribe-item form{
+.subscribe-item .form{
   border: 1px solid #bab6b6;
   display: flex;
   margin: 2rem auto;
@@ -311,18 +312,18 @@ letter-spacing: .5px;
   border-radius: 3px;
 }
 @media(max-width:1000px){
-  .subscribe-item form{
+  .subscribe-item .form{
       width: 100%;
   }
 }
-.subscribe-item form input{
+.subscribe-item .form input{
   width: 78%;
   border: none;
   outline: none;
   padding: .5rem 1rem;
   color: #111111;
 }
-.subscribe-item form button{
+.subscribe-item .form button{
   width: 25%;
   background-color: var(--primary-color);
   color: #000;
@@ -342,11 +343,11 @@ letter-spacing: .5px;
   }
 }
 @media(max-width:500px){
-  .subscribe-item form button{
+  .subscribe-item .form button{
       width: 30%;
       font-size: .75rem;
   }
-  .subscribe-item form input{
+  .subscribe-item .form input{
       font-size: .8rem;
   }
 
@@ -355,7 +356,7 @@ letter-spacing: .5px;
   padding-top: 0;
   padding-bottom: 0;
 }
-.footer-box .subscribe-item form {
+.footer-box .subscribe-item .form {
   border: 1px solid transparent;
   margin: 0rem auto;
   background-color: transparent;
@@ -367,17 +368,17 @@ letter-spacing: .5px;
   padding-top: 0;
   padding-bottom: 0;
 }
-.subscribe-item form input::placeholder{
+.subscribe-item .form input::placeholder{
   font-weight: 500;
   font-size: .8rem;
 }
- .subscribe-item form input{
+ .subscribe-item .form input{
   font-weight: 500;
   font-size: .8rem;
   border: 1px solid #fff;
   border-right: none;
 }
-.footer-box .subscribe-item form button{
+.footer-box .subscribe-item .form button{
   font-size: .65rem;
   text-align: center;
   display: inline-flex;
@@ -386,7 +387,7 @@ letter-spacing: .5px;
   border: 1px solid var(--primary-color);
   color: #000;
 }
-.subscribe-item form input:focus{
+.subscribe-item .form input:focus{
  border: 1px solid var(--primary-color);
  border-right: none;
 }
@@ -618,4 +619,7 @@ font-weight: 600;
   top: 50px;
   left: 0%;
   border: 1px solid #ddd;
+}
+.breadcrumb a{
+  color: #1a0dab;
 }

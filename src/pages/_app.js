@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import "@/styles/globals.css";
 import Head from "next/head";
+
 import { useEffect, useState } from "react"
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config, dom } from '@fortawesome/fontawesome-svg-core';
@@ -8,6 +9,7 @@ config.autoAddCss = false;
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Script from 'next/script';
+import MyComponent from "@/components/MyComponent";
 import CookieConsent from "@/components/CookieConsent";
 
 export default function App({ Component, pageProps }) {
@@ -75,6 +77,7 @@ export default function App({ Component, pageProps }) {
       <Component {...pageProps} />
       <Footer />
       <CookieConsent />
+      <MyComponent /> 
 
     </main>)
 }

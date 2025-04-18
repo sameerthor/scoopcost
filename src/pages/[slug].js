@@ -148,11 +148,11 @@ export default function StorePage({ store, relatedStores }) {
           </div>
           <div className="breadcrumb">
             <ul>
-              <li><MainDomainLink href="/">coupontix.com</MainDomainLink> &gt;</li>
+              <li><MainDomainLink href="/" title='coupontix.com'>coupontix.com</MainDomainLink> &gt;</li>
               <li>{store.data.Title} coupon code</li>
             </ul>
             <div className="storeCat">
-              <MainDomainLink href={`/category/${store.data.store_category.Slug}`}>{store.data.store_category.Title}</MainDomainLink>
+              <MainDomainLink title='categoy page' href={`/category/${store.data.store_category.Slug}`}>{store.data.store_category.Title}</MainDomainLink>
             </div>
           </div>
         </div>
@@ -244,8 +244,7 @@ export default function StorePage({ store, relatedStores }) {
                                 </span>
                               </div>
                               <div className="historyImg">
-                                <a
-                                  href="javascript:void(0)"
+                                <button
                                   onClick={() =>
                                     setScreenshotURL(`${process.env.NEXT_PUBLIC_IMAGE_URL}${coupon.screenshot?.url}`)
                                   }
@@ -263,7 +262,7 @@ export default function StorePage({ store, relatedStores }) {
                                     height={250}
                                     loading="lazy"
                                   />
-                                </a>
+                                </button>
                               </div>
                             </div>
                           </div>

@@ -57,7 +57,7 @@ body{
   color: #2e2e2e;
 }
 .breadcrumb ul li a{
- color: #0066ff;
+ color: #1a0dab;
 }
 @media(max-width: 600px){
   .breadcrumb{
@@ -2234,10 +2234,17 @@ margin-bottom: 1.5rem;
    color: var(--primary-color);
    font-weight: 600;
    }
+
    .testHistory .historyItem .historyImg img{
     max-width: 100%;
     width: 100%;
     object-fit: contain;
+  }
+  .testHistory .historyItem .historyImg button{
+   border: none;
+   outline: none;
+   background-color: transparent;
+   display: block;
   }
   .user-ratting svg{
     width: 16px;
@@ -2467,4 +2474,20 @@ margin-bottom: 1.5rem;
   font-weight: 600;
   font-size: 1.25rem;
   margin-bottom: 1rem;
+}
+a{
+  color: #1a0dab;
+  
+}
+.whyTrustus a{
+  text-decoration: underline;
+}
+.about-store a{
+  text-decoration: underline;
+}
+.faq-section a{
+  text-decoration: underline;
+}
+.affiDisc a{
+  text-decoration: underline;
 }
