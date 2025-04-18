@@ -1,5 +1,5 @@
 import styles from './MyComponent.module.css';
 
 export default function MyComponent() {
-  return <h1 className={styles.title}>Hello</h1>;
+  return <div className={styles.title}>Hello</div>;
 }
