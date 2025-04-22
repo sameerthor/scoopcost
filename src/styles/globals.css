@@ -62,7 +62,7 @@ box-sizing: border-box;
 font-family: 'Montserrat', sans-serif;
 }
 :root {
---primary-color: #FF6F00; 
+--primary-color: #8e24aa; 
 --secondary-color: #ff6900;
 }
 
@@ -108,7 +108,7 @@ box-shadow: none;
 border-radius: 0;
 border: none;
 background-color: var(--primary-color);
-color: #000;
+color: #fff;
 font-weight: 600;
 text-transform: uppercase;
 font-size: .8rem;
@@ -167,7 +167,7 @@ letter-spacing: .5px;
 .footer-box{
   padding-top: 3rem;
   padding-bottom: 2rem;
-  background-color: #18702c1c;
+  background-color: #ede7f6;  
 }
 .about-scoop h1{
   font-weight: 900;
@@ -385,7 +385,7 @@ letter-spacing: .5px;
   justify-content: center;
   align-items: center;
   border: 1px solid var(--primary-color);
-  color: #000;
+  color: #fff;
 }
 .subscribe-item .form input:focus{
  border: 1px solid var(--primary-color);

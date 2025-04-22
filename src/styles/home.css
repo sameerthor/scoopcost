@@ -451,7 +451,7 @@
     border: none;
     outline: none;
     border-radius: 4px;
-    color: #000;
+    color: #fff;
  }
 
 /* new cat */
@@ -556,7 +556,7 @@
    text-align: center;
    width: 100%;
    background-color: var(--primary-color);
-   color: #000;
+   color: #fff;
    letter-spacing: .5px;
   }
   .topCouponCode{
@@ -575,7 +575,7 @@
   }
 
   .topCouponCode .codeHeader{
-    background: linear-gradient(109deg, #016bb6 1.27%, #0143b6 100%);
+    background: linear-gradient(135deg, #8e24aa, #c158dc);
     height: 100px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -597,7 +597,7 @@
   .topCouponCode .codeFooter{
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 16px;
-    border: 1px solid  #0143b6;
+    border: 1px solid  #8e24aa;
     min-height: 5rem;
     border-top: none;
    }
@@ -650,7 +650,7 @@
     padding: .5rem 1rem;
     border-radius: 4px;
     background-color: var(--primary-color);
-    color: #000;
+    color: #fff;
     text-transform: uppercase;
     font-size: .9rem;
 }
@@ -664,3 +664,87 @@
         height: 180px;
     }
 }
+
+/* new popular */
+.newPopular {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 60px 0;
+  }
+  
+  .newPopular .brand-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  
+  .newPopular .card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .newPopular .card:hover {
+    transform: translateY(-5px);
+    box-shadow: none;
+  }
+  
+  .newPopular .card-body {
+    padding: 30px 20px;
+  }
+  .newPopular .card-body .brand-logo{
+   display: block;
+   max-width: 100%;
+   margin: auto;
+   object-fit: contain;
+  }
+  .newPopular .card-body .text-primary{
+   font-size: .8rem;
+   font-weight: 500;
+  }
+  .newPopular .brand-logo {
+    max-height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .newPopular .brand-discount {
+    font-weight: 600;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .newPopular .brand-button {
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 6px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .newPopular .btn-purple {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .newPopular .btn-purple:hover {
+    background-color: #6700d8;
+    color: white;
+  }
+  /* featured store */
+  .featuredStore{
+   padding-bottom: 3rem;
+  }
+  .featuredStore .col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+  }
+  .featuredStore .col:hover{
+    border: 1px solid var(--primary-color);
+  }
+  .featuredStore img{
+   max-width: 100%;
+   object-fit: contain;
+  }

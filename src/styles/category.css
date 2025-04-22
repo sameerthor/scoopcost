@@ -38,7 +38,7 @@
 }
 .category-title a span{
    display: block;
-   color: #8F4100;
+   color: var(--primary-color);
    font-weight: 600;
    letter-spacing: .5px;
    text-align: center;
@@ -58,7 +58,7 @@
 }
 .store-bg-1 {
     padding: 20px;
-    background-image: linear-gradient(to right, #FF6F00, #d57632);
+    background: linear-gradient(135deg, #8e24aa, #c158dc);
     color: #fff;
     font-weight: 500;
     border-radius: 5px;
@@ -246,7 +246,7 @@
     font-weight: 600;
     padding: .4rem 1rem;
     background-color: var(--primary-color);;
-    color: #000;
+    color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 4px;

@@ -112,11 +112,11 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 {index % 3 === 0 && (
   <h2>{h2_heading[index / 3].replace("Storename", storeName)}</h2>
 ) }
-    <div className="hugecouponBox">
-      <div className="coupon-item">
-        <div className="discountBox">
-          <div className="offBox">
-            <div dangerouslySetInnerHTML={{ __html: getHeading(coupon.Title) }}></div>
+    <div className="purpleCouponBox">
+      <div className="coupon-container">
+        <div className="left-section">
+          <div className="discount-box">
+              <div dangerouslySetInnerHTML={{ __html: getHeading(coupon.Title) }}></div>
           </div>
           <div className="isValid">
             <span>Verified</span>
@@ -128,43 +128,40 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
               </svg>
             </span>
           </div>
+          <div className="feedback">
+              <button title="Did this worked?" aria-label='Did this worked?' data-bs-toggle="modal" data-bs-target="#feedbackModal">😊</button>
+              <button title="This did not work" aria-label='This did not work' data-bs-toggle="modal" data-bs-target="#feedbackModal">😞</button>
+          </div>
         </div>
-        <div className="coupnBox">
-          <div className="coupondesc">
-            <div>
-              <div className="svgBox">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.2735 6.60866L7.38683 0.721994C7.14016 0.475327 6.80016 0.335327 6.44683 0.335327H1.66683C0.933496 0.335327 0.333496 0.935327 0.333496 1.66866V6.44866C0.333496 6.80199 0.473496 7.14199 0.726829 7.38866L6.6135 13.2753C7.1335 13.7953 7.98016 13.7953 8.50016 13.2753L13.2802 8.49533C13.8002 7.97533 13.8002 7.13533 13.2735 6.60866ZM3.3335 4.33533C2.78016 4.33533 2.3335 3.88866 2.3335 3.33533C2.3335 2.78199 2.78016 2.33533 3.3335 2.33533C3.88683 2.33533 4.3335 2.78199 4.3335 3.33533C4.3335 3.88866 3.88683 4.33533 3.3335 4.33533Z"
-                    fill="#1A1A1A"
-                  ></path>
-                </svg>
-                <span className={coupon.coupon_type === 'Code' ? 'c-code' : 'c-sale'}>
-                  {coupon.coupon_type === 'Code' ? 'Code' : 'Deal'}
-                </span>
+
+        <div className="right-section">
+          <div className='badgeFeedback'>
+              <div className="badge">
+                    {coupon.coupon_type === 'Code' ? 'Code' : 'Deal'}
               </div>
-              <h3>
+              <div className="feedback">
+                  <button title="Did this worked?" aria-label='Did this worked?' data-bs-toggle="modal" data-bs-target="#feedbackModal">😊</button>
+                  <button title="This did not work" aria-label='This did not work' data-bs-toggle="modal" data-bs-target="#feedbackModal">😞</button>
+              </div> 
+          </div>
+          <h3 className="title">
                 <a title={coupon.Title} rel="nofollow" className="coupon-link" href={affiliateUrl}>
                   {coupon.Title}
                 </a>
-              </h3>
-              <p className="couponDesc">
-                {isExpanded ? coupon.Content : coupon.Content.slice(0, maxChars) + (showMore ? "..." : "")}
+          </h3>
+          <p className="description">
+              {isExpanded ? coupon.Content : coupon.Content.slice(0, maxChars) + (showMore ? "..." : "")}
                 {showMore && (
                   <a className="moreBtn" href="#" onClick={(e) => { e.preventDefault(); setIsExpanded(!isExpanded); }}>
                     {isExpanded ? " Show Less" : " Show More"}
                   </a>
                 )}
-              </p>
-              <div className="couponBtndesc">
+          </p>
 
-                {coupon.coupon_type === 'Code' ? (
+          <div className="code-box">
+            <span>{coupon.coupon_code}</span>
+           
+            {coupon.coupon_type === 'Code' ? (
                   <button onClick={async (e) => {
                     await trackCouponUsage(coupon.id);
                     // Set the copied_code in localStorage (no need to await as it's synchronous)
@@ -189,12 +186,12 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
                   }}
                     data-type="code"
-                    className="coupon-code coupon-button"
-                    href="javscript:void()">
-                    <span className="code-text" rel="nofollow">{coupon.coupon_code}</span>
+                    className="copy-btn"
+                    >
+                   Copy Code
                   </button>
                 ) : (
-                  <button rel="nofollow" href="javascript:void(0)" className="coupon-deal coupon-button" onClick={async (e) => {
+                  <button rel="nofollow" className="copy-btn dealBtn" onClick={async (e) => {
                     await trackCouponUsage(coupon.id);
 
                     await localStorage.setItem('copied_code', coupon.id)
@@ -206,87 +203,13 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                     Get Deal
                   </button>
                 )}
-
-              </div>
-            </div>
-
-            <div className="termsBox">
-              {coupon.term_condition != "" &&
-                <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} title="Show T &amp; C">Terms &amp; Conditions</button>
-              }
-             <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show T &amp; C">Coupon History</button>
-            </div>
           </div>
 
-          <div className="couponBtn">
-            {coupon.coupon_type === 'Code' ? (
-              <button onClick={async (e) => {
-                await trackCouponUsage(coupon.id);
-                // Set the copied_code in localStorage (no need to await as it's synchronous)
-                localStorage.setItem('copied_code', coupon.id);
-
-                // Copy the coupon code to the clipboard
-                navigator.clipboard.writeText(coupon.coupon_code).then(() => {
-                  //                                        console.log("Coupon code copied to clipboard");
-                }).catch((error) => {
-                  console.error("Error copying to clipboard: ", error);
-                });
-
-                // Open the store's page in a new tab
-const baseDomain = 'coupontix.com';
-
-const url = usesSubdomain
-  ? `https://${storeSlug}.${baseDomain}/#c=${coupon.id}`
-  : `/${storeSlug}/#c=${coupon.id}`
-
-window.open(url, "_blank");
-                // Log the affiliate URL
-
-                // Open the affiliate URL in the same window after a short delay (to ensure proper sequence)
-                setTimeout(() => {
-                  window.open(affiliateUrl, "_self");
-                }, 100);  // Delay added to ensure actions don't overlap
-
-              }}
-                data-type="code"
-                className="coupon-code coupon-button"
-                href="javscript:void()">
-                <span className="code-text" rel="nofollow">{coupon.coupon_code}</span>
-              </button>
-            ) : (
-              <button className="coupon-deal coupon-button" onClick={async (e) => {
-                await trackCouponUsage(coupon.id);
-                await localStorage.setItem('copied_code', coupon.id)
-                const baseDomain = 'coupontix.com';
-
-const url = usesSubdomain
-  ? `https://${storeSlug}.${baseDomain}/`
-  : `/${storeSlug}`
-
-window.open(url, "_blank");
-                setTimeout(() => {
-                  window.open(affiliateUrl, "_self");
-                }, 100);
-              }}>
-                Get Deal <i className="shop icon"></i>
-              </button>
-            )}
-
-            <div className="cpnratebx">
-              <div className="user-ratting">
-                <div className="coupon-vote" onClick={() => isWorked(coupon.id, 'Yes')} data-tooltip="This worked" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm177.6 62.1C192.8 334.5 218.8 352 256 352s63.2-17.5 78.4-33.9c9-9.7 24.2-10.4 33.9-1.4s10.4 24.2 1.4 33.9c-22 23.8-60 49.4-113.6 49.4s-91.7-25.5-113.6-49.4c-9-9.7-8.4-24.9 1.4-33.9s24.9-8.4 33.9 1.4zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-                  </svg>
-                </div>
-                <div className="coupon-vote" onClick={() => isWorked(coupon.id, 'No')} data-tooltip="This worked" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM174.6 384.1c-4.5 12.5-18.2 18.9-30.7 14.4s-18.9-18.2-14.4-30.7C146.9 319.4 198.9 288 256 288s109.1 31.4 126.6 79.9c4.5 12.5-2 26.2-14.4 30.7s-26.2-2-30.7-14.4C328.2 358.5 297.2 336 256 336s-72.2 22.5-81.4 48.1zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div className="termsBox"> <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show T &amp; C">Coupon History</button></div>
+          <div className="footer">
+             {coupon.term_condition != "" &&
+                <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} title="Show T &amp; C">Terms &amp; Conditions</button>
+              }
+             <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show History">Coupon History</button>
           </div>
         </div>
       </div>

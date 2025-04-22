@@ -47,7 +47,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                 <h1>Shop now to get discount</h1>
                <a href="/stores" aria-label="Shop Now and get discount" title='Shop Now and get discount'> <img
                   loading='lazy'
-                  src="/images/coupontix-banner.webp" alt="shop now" /></a>
+                  src="/images/suproffer-banner.webp" alt="shop now" /></a>
             </section>
             <section className="homeBanner">
                 <div className="container">
@@ -82,243 +82,103 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                 </div>
             </section>
 
-            <section className='newCat'>
+           
+            <section className="newPopular">
                 <div className="container">
-                    <h2 className='secHeading'>Explore Category</h2>
-                    <div className="row row-cols-2">
-                        <div className="col-lg-2 col-md-4">
-                            <MainDomainLink className="catItem" href='/category/Health-and-Wellness'>
-                                <div className="imageBox">
-                                    <Image
-                width={400}
-                 height={400} src="/images/health.png" alt="health-and-wellness Icon" />
+                    <h3 className="secHeading">Most Popular Brands</h3>
+                    <div className="row row-col-2 row-cols-lg-5 row-cols-md-3 g-3">
+                        <div className="col mb-4">
+                            <div className="card text-center">
+                                <div className="card-body">
+                                <Image
+                                    src="/images/adalysis.svg"
+                                    alt="Adalysis"
+                                    width={140}
+                                    height={140}
+                                    className="brand-logo"
+                                    />
+                                    
+                                <div className="text-primary mb-2">Exclusive Discount</div>
+                                <p className="brand-discount">Up to 40% OFF</p>
+                                <a href='/' className="btn btn-purple brand-button">Shop Now</a>
                                 </div>
-                                <div className="catTitle">
-                                    Health & Wellness
-                                </div>
-                            </MainDomainLink>
+                            </div>
                         </div>
-                        <div className="col-lg-2 col-md-4">
-                            <MainDomainLink className="catItem" href='/category/Beauty-Products'>
-                                <div className="imageBox">
-                                    <Image
-                width={400}
-                 height={400} src="/images/beauty.png" alt="beauty Icon" />
+                        <div className="col mb-4">
+                            <div className="card text-center">
+                                <div className="card-body">
+                                <Image
+                                    src="/images/adalysis.svg"
+                                    alt="Adalysis"
+                                    width={140}
+                                    height={140}
+                                    className="brand-logo"
+                                    />
+                                    
+                                <div className="text-primary mb-2">Exclusive Discount</div>
+                                <p className="brand-discount">Up to 40% OFF</p>
+                                <a href='/' className="btn btn-purple brand-button">Shop Now</a>
                                 </div>
-                                <div className="catTitle">
-                                    Beauty Product
-                                </div>
-                            </MainDomainLink>
+                            </div>
                         </div>
-                        <div className="col-lg-2 col-md-4">
-                            <MainDomainLink className="catItem" href='category/Online-Courses'>
-                                <div className="imageBox">
-                                    <Image
-                width={400}
-                 height={400} src="/images/online-courses.png" alt="online-courses Icon" />
+                        <div className="col mb-4">
+                            <div className="card text-center">
+                                <div className="card-body">
+                                <Image
+                                    src="/images/adalysis.svg"
+                                    alt="Adalysis"
+                                    width={140}
+                                    height={140}
+                                    className="brand-logo"
+                                    />
+                                    
+                                <div className="text-primary mb-2">Exclusive Discount</div>
+                                <p className="brand-discount">Up to 40% OFF</p>
+                                <a href='/' className="btn btn-purple brand-button">Shop Now</a>
                                 </div>
-                                <div className="catTitle">
-                                    Online Courses
-                                </div>
-                            </MainDomainLink>
+                            </div>
                         </div>
-                        <div className="col-lg-2 col-md-4">
-                            <MainDomainLink className="catItem" href='/category/Software'>
-                                <div className="imageBox">
-                                    <Image
-                width={400}
-                 height={400} src="/images/software.png" alt="software Icon" />
+                        <div className="col mb-4">
+                            <div className="card text-center">
+                                <div className="card-body">
+                                <Image
+                                    src="/images/adalysis.svg"
+                                    alt="Adalysis"
+                                    width={140}
+                                    height={140}
+                                    className="brand-logo"
+                                    />
+                                    
+                                <div className="text-primary mb-2">Exclusive Discount</div>
+                                <p className="brand-discount">Up to 40% OFF</p>
+                                <a href='/' className="btn btn-purple brand-button">Shop Now</a>
                                 </div>
-                                <div className="catTitle">
-                                    Software
-                                </div>
-                            </MainDomainLink>
+                            </div>
                         </div>
-                        <div className="col-lg-2 col-md-4">
-                            <MainDomainLink className="catItem" href='/category/Stationery'>
-                                <div className="imageBox">
-                                    <Image
-                width={400}
-                 height={400} src="/images/stationery.png" alt="stationery Icon" />
+                        <div className="col mb-4">
+                            <div className="card text-center">
+                                <div className="card-body">
+                                <Image
+                                    src="/images/adalysis.svg"
+                                    alt="Adalysis"
+                                    width={140}
+                                    height={140}
+                                    className="brand-logo"
+                                    />
+                                    
+                                <div className="text-primary mb-2">Exclusive Discount</div>
+                                <p className="brand-discount">Up to 40% OFF</p>
+                                <a href='/' className="btn btn-purple brand-button">Shop Now</a>
                                 </div>
-                                <div className="catTitle">
-                                    Stationery
-                                </div>
-                            </MainDomainLink>
+                            </div>
                         </div>
-                        <div className="col-lg-2 col-md-4">
-                            <MainDomainLink className="catItem" href='/category/Clothing-and-Accessories'>
-                                <div className="imageBox">
-                                    <Image
-                width={400}
-                 height={400} src="/images/clothing.png" alt="clothing Icon" />
-                                </div>
-                                <div className="catTitle">
-                                    Clothing & Accessories
-                                </div>
-                            </MainDomainLink>
-                        </div>
+
+                    {/* Add more cards as needed... */}
+
                     </div>
                 </div>
             </section>
-            <section className='pplBrands'>
-                <div className="container">
-                    <h2 className='secHeading'>Most Popular Brands</h2>
-                    <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
-                        <div className="col mb-3">
-                            <a className="pplItem" href='https://coupontix.com/adalysis-coupons'> 
-                                <div className="pplImg">
-                                    <Image
-                width={400}
-                 height={400} src="/images/adalysis.svg" alt="adalysis" />
-                                </div>
-                                <div className='pplTitle'>
-                                Exclusive Discount - Up to 20% Off on PPC Campaign Management Software
-                                </div>
-                                <div className='btn'>
-                                    UP TO 40% OFF
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className="pplItem" href='https://coupontix.com/kinkyangel.co.uk'> 
-                                <div className="pplImg">
-                                    <Image
-                width={400}
-                 height={400} src="/images/angel-clothing.webp" alt="angel-clothing" />
-                                </div>
-                                <div className='pplTitle'>
-                                Special Discount - Claim Your 20% Off Discount
-                                </div>
-                                <div className='btn'>
-                                  UP TO 20% OFF
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className="pplItem" href='https://coupontix.com/apollomoda-coupons'> 
-                                <div className="pplImg">
-                                    <Image
-                width={400}
-                 height={400} src="/images/apollo.webp" alt="apollo-modo" />
-                                </div>
-                                <div className='pplTitle'>
-                                20% Off on Sneakers - Save Big Today
-                                </div>
-                                <div className='btn'>
-                               Grab 20% Off
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className="pplItem" href='https://coupontix.com/coconutcloud.net'> 
-                                <div className="pplImg">
-                                    <Image
-                width={400}
-                 height={400} src="/images/coconut-cloud.avif" alt="coconut-cloud" />
-                                </div>
-                                <div className='pplTitle'>
-                                Get up to $20 Off - Save Big on Hot Chocolate
-                                </div>
-                                <div className='btn'>
-                                    Save UP TO $20
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className="pplItem" href='https://coupontix.com/coaxcopenhagen-coupons'> 
-                                <div className="pplImg">
-                                    <Image
-                width={400}
-                 height={400} src="/images/coax-copenhegen.webp" alt="coax-copenhegen" />
-                                </div>
-                                <div className='pplTitle'>
-                                Get 20% Off - Save More on Lingerie & Bodysuits
-                                </div>
-                                <div className='btn'>
-                                    UP TO $100 OFF
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className="pplItem" href='https://coupontix.com/dronelicense.eu'> 
-                                <div className="pplImg p-1" style={{background: "#000", borderRadius: "4px"}}>
-                                    <Image
-                width={400}
-                 height={400} src="/images/drone-class.avif" alt="drone-class" />
-                                </div>
-                                <div className='pplTitle'>
-                                Special Discount - 10% Off on Annual Subscription Plans
-                                </div>
-                                <div className='btn'>
-                                  UP TO 10% OFF
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className="pplItem" href='https://coupontix.com/decoupagenapkins-coupon'> 
-                                <div className="pplImg">
-                                    <Image
-                width={400}
-                 height={400} src="/images/decoupage.avif" alt="decoupage" />
-                                </div>
-                                <div className='pplTitle'>
-                                New Customer Discount - 10% Off on your first order
-                                </div>
-                                <div className='btn'>
-                                  SAVE 10% OFF
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className="pplItem" href='https://coupontix.com/desertandforest-coupons'> 
-                                <div className="pplImg">
-                                    <Image
-                width={400}
-                 height={400} src="/images/d-f-clothing.webp" alt="d-f-clothing" />
-                                </div>
-                                <div className='pplTitle'>
-                                Up to 25% Off Promo Code - Save Big on Your Order
-                                </div>
-                                <div className='btn'>
-                                Redeem 25% Off 
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className="pplItem" href='https://coupontix.com/diymoldtest-coupons'> 
-                                <div className="pplImg">
-                                    <Image
-                width={400}
-                 height={400} src="/images/diy-mold.avif" alt="diy-mold" />
-                                </div>
-                                <div className='pplTitle'>
-                                First Order Discount - Claim $10 Off
-                                </div>
-                                <div className='btn'>
-                               UP TO $10 Off 
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className="pplItem" href='https://coupontix.com/ekrin-coupons/'> 
-                                <div className="pplImg">
-                                    <Image
-                width={400}
-                 height={400} src="/images/ekrin-logo.png" alt="ekrin" />
-                                </div>
-                                <div className='pplTitle'>
-                                Special Discount - Claim Your 30% Off Discount
-                                </div>
-                                <div className='btn'>
-                               UP TO 30% Off 
-                                </div>
-                            </a>
-                        </div>
-                        
-                    </div>
-                </div>
-            </section>
+
             <section className='topCouponCode'>
                 <div className="container">
                     <h2 className='secHeading'>Today's Top Coupon Codes</h2>
@@ -431,34 +291,6 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </div>
                             </a>
                         </div>
-                    </div>
-                </div>
-            </section>
-            {/* Explore Categories Section */}
-            <section className="container-fluid categories-box">
-                <div className="container">
-                    <h2>Shop by categories</h2>
-                    <div className="row">
-                        {categories.data.map((category, index) => (
-                            <div key={index} className="col-lg-3 col-md-6 col-sm-6 category-item">
-                                <div className="category-brand container">
-                                    <div className="d-flex justify-content-center align-items-center text-align-center">
-                                        <a href={`category/${category.Slug}`}>
-                                            <span>   <Image
-                                                width={50}
-                                                height={50}
-                                                src={category.Image?.url ? process.env.NEXT_PUBLIC_IMAGE_URL + category.Image?.url : "/images/default-placeholder.png"}
-                                                alt={(category.Title) + ' Icon' || "Category"}
-                                            /></span>
-                                            {category.Title}
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="more-btn">
-                        <a href="/category" className="btn btn-primary">Explore More</a>
                     </div>
                 </div>
             </section>
@@ -930,6 +762,193 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     </div>
                     <div className="more-btn">
                         <a href="/all-blogs" className="btn btn-primary">More Blogs</a>
+                    </div>
+                </div>
+            </section>
+            <section className='featuredStore'>
+                <div className="container">
+                <h2 className='secHeading'>Featured Stored</h2>
+                    <div className="row row-cols-lg-6 row-cols-md-4 row-cols-sm-3 row-cols-3">
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/sauce.avif'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/eseas.webp'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/gummee.webp'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/getterms.png'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/happy-download.webp'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/level8.avif'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/mrimin.webp'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/natures.jpg'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/oakcity.webp'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/organic.avif'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/outsmarted.avif'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/sunny-sunday.webp'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/tampa-school.avif'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/water-machine.avif'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/viral-ecom.avif'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/wave-hawai.avif'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/yerbae.avif'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
+                        <div className='col p-0'>
+                            <a href="/" aria-label='store'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/sauce.avif'
+                                    alt='Sauce Warehouse Coupon'
+                                            />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

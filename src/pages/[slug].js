@@ -144,11 +144,11 @@ export default function StorePage({ store, relatedStores }) {
       <section>
         <div className="container">
           <div className="affiDisc">
-            <p>coupontix may earn a commission when you use coupons on this page. <MainDomainLink href="/affiliate-disclosure">Read our affiliate disclosure.</MainDomainLink></p>
+            <p>suproffer may earn a commission when you use coupons on this page. <MainDomainLink href="/affiliate-disclosure">Read our affiliate disclosure.</MainDomainLink></p>
           </div>
           <div className="breadcrumb">
             <ul>
-              <li><MainDomainLink href="/" title='coupontix.com'>coupontix.com</MainDomainLink> &gt;</li>
+              <li><MainDomainLink href="/" title='suproffer.com'>coupontix.com</MainDomainLink> &gt;</li>
               <li>{store.data.Title} coupon code</li>
             </ul>
             <div className="storeCat">
@@ -441,144 +441,99 @@ export default function StorePage({ store, relatedStores }) {
               </div>
 
               <section className="whyTrustus">
-                <div className="container">
-                  <div className="row justify-content-center">
-                    <div className='sidebarHeading text-center'>Why Trust Us?</div>
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="founder">
-                          <div className="img">
-                            <Image
-                              src="/images/co-founder.webp"
-                              alt="founder"
-                              height={60}
-                              width={60}
-                              quality={10} // Low quality for fast loading
-                              loading="lazy" // Lazy load images
-                            />
-                          </div>
-                          <div className="name">
-                            <p>Rudresh <a href="https://www.linkedin.com/in/rudreh-dubey-86426b1a2/" target="_blank" title="Connect on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="#0077B5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></p>
-                            <span>Founder &amp; CEO coupontix.com</span>
-                          </div>
-                        </div>
-                        <div className="founderNote">
-                          <p>
-                            Rudresh Dubey is an experienced affiliate marketer having more than ten years experience in digital marketing, specializing in coupons industry. As the founder of coupontix.com, he has built a reliable platform that provides fully tested and verified coupon codes. His journey in affiliate marketing began a decade ago with the goal of helping customers save money while shopping online. <MainDomainLink href="/">coupontix.com</MainDomainLink> has transformed that vision into a thriving business that helps shoppers worldwide.
-                          </p>
-                          <p>
-                            Rudresh’s approach to affiliate marketing sets him apart in the competitive coupon market. His expertise in understanding consumer needs helps keep the platform user-friendly and relevant. We have a team of coupon experts who select the best discount codes in different product categories from fashion and electronics to travel and software. By offering only the genuine and working coupons, <MainDomainLink href="/">coupontix.com</MainDomainLink> has become a go-to destination for online shoppers.
-                          </p>
-
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="ourExpert">
-                          <div className='expHead'>Meet Coupon  Experts</div>
-                          <div className="expertPara">
-                            <p>
-                              With an efficient coupon team of 6 people, Coupontix put the right effort to share updated and verified coupon codes. Our team reviews and coupons regularly. We have put a comment section on each coupon page. If a coupon doesn't work, the team makes sure to find the right coupon and also try to improve the services.
-
-                            </p>
-                            <p>
-                              If you notice anything that isn’t right, you can report the issue to us, and we’ll address it promptly.
-                            </p>
-
-                          </div>
-                          <div className="listExpert">
-                            <ul>
-                              <li>
-                                <small>
-                                  <Image
-                                    src="/images/dinesh-v.webp"
-                                    alt="expert"
-                                    height={30}
-                                    width={30}
-                                    quality={10} // Low quality for fast loading
-                                    loading="lazy" // Lazy load images
-                                  />
-                                  Dinesh
-                                </small>
-                                <span className="exp">8 Years Experience</span>
-                              </li>
-                              <li>
-                                <small>
-                                  <Image
-                                    src="/images/mashma-m.webp"
-                                    alt="expert"
-                                    height={30}
-                                    width={30}
-                                    quality={10}
-                                    loading="lazy"
-                                  />
-                                  Mashma
-                                </small>
-                                <span className="exp">6 Years Experience</span>
-                              </li>
-                              <li>
-                                <small>
-                                  <Image
-                                    src="/images/tanay-s.webp"
-                                    alt="expert"
-                                    height={30}
-                                    width={30}
-                                    quality={10}
-                                    loading="lazy"
-                                  />
-                                  Tanay
-                                </small>
-                                <span className="exp">6 Years Experience</span>
-                              </li>
-                              <li>
-                                <small>
-                                  <Image
-                                    src="/images/sikha.webp"
-                                    alt="expert"
-                                    height={30}
-                                    width={30}
-                                    quality={10}
-                                    loading="lazy"
-                                  />
-                                  Sikha
-                                </small>
-                                <span className="exp">5 Years Experience</span>
-                              </li>
-                              <li>
-                                <small>
-                                  <Image
-                                    src="/images/yash-c.webp"
-                                    alt="expert"
-                                    height={30}
-                                    width={30}
-                                    quality={10}
-                                    loading="lazy"
-                                  />
-                                  Yash
-                                </small>
-                                <span className="exp">4 Years Experience</span>
-                              </li>
-                              <li>
-                                <small>
-                                  <Image
-                                    src="/images/yunush.webp"
-                                    alt="expert"
-                                    height={30}
-                                    width={30}
-                                    quality={10}
-                                    loading="lazy"
-                                  />
-                                  Yusuf
-                                </small>
-                                <span className="exp">3 Years Experience</span>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+      <div className="container">
+        <div className="sidebarHeading">Why Trust Us?</div>
+        <div className="row g-4">
+          {/* Left Column */}
+          <div className="col-md-6 mb-3">
+            <div className="card-custom">
+              <div className="founder">
+                <div className="img">
+                  <img src="/images/co-founder.webp" alt="Rudresh Dubey" />
                 </div>
-              </section>
+                <div className="name">
+                  <p>
+                    Rudresh{" "}
+                    <a
+                      href="https://www.linkedin.com/in/rudreh-dubey-86426b1a2/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="LinkedIn"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="#0077B5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+                    </a>
+                  </p>
+                  <span>Founder & CEO @ suproffer.com</span>
+                </div>
+              </div>
+              <div className="founderNote">
+                <p>
+                Rudresh Dubey is an experienced affiliate marketer having more than ten years experience in digital marketing, specializing in coupons industry. As the founder of coupontix.com, he has built a reliable platform that provides fully tested and verified coupon codes. His journey in affiliate marketing began a decade ago with the goal of helping customers save money while shopping online. <a href="/">suproffer.com</a> has transformed that vision into a thriving business that helps shoppers worldwide.
+                </p>
+                <p>
+                Rudresh’s approach to affiliate marketing sets him apart in the competitive coupon market. His expertise in understanding consumer needs helps keep the platform user-friendly and relevant. We have a team of coupon experts who select the best discount codes in different product categories from fashion and electronics to travel and software. By offering only the genuine and working coupons, <a href="/">suproffer.com</a> has become a go-to destination for online shoppers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="col-md-6 ">
+            <div className="card-custom ourExpert">
+              <div className="expHead">Meet Our Coupon Experts</div>
+              <div className="expertPara">
+                <p>
+                With an efficient coupon team of 6 people, Coupontix put the right effort to share updated and verified coupon codes. Our team reviews and coupons regularly. We have put a comment section on each coupon page. If a coupon doesn't work, the team makes sure to find the right coupon and also try to improve the services.
+
+
+                </p>
+                <p>If you notice anything that isn’t right, you can report the issue to us, and we’ll address it promptly.</p>
+              </div>
+              <div className="listExpert">
+                <ul>
+                  <li>
+                    <small>
+                      <img src="/images/dinesh-v.webp" alt="dinesh" /> Dinesh
+                    </small>
+                    <span className="exp">8 Years</span>
+                  </li>
+                  <li>
+                    <small>
+                      <img src="/images/mashma-m.webp" alt="mashma" /> Mashma
+                    </small>
+                    <span className="exp">6 Years</span>
+                  </li>
+                  <li>
+                    <small>
+                      <img src="/images/tanay-s.webp" alt="tanay" /> Tanay
+                    </small>
+                    <span className="exp">6 Years</span>
+                  </li>
+                  <li>
+                    <small>
+                      <img src="/images/sikha.webp" alt="sikha" /> Sikha
+                    </small>
+                    <span className="exp">5 Years</span>
+                  </li>
+                  <li>
+                    <small>
+                      <img src="/images/yash-c.webp" alt="yash" /> Yash
+                    </small>
+                    <span className="exp">4 Years</span>
+                  </li>
+                  <li>
+                    <small>
+                      <img src="/images/yunush.webp" alt="Yusuf" /> Yusuf
+                    </small>
+                    <span className="exp">3 Years</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
             </div>
           </div>
         </div>

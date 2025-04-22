@@ -62,7 +62,7 @@ export default function Header() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <MainDomainLink className="navbar-brand brandLogo" href="/">
-             <img src="/images/coupontix-logo.webp" alt="logo" />
+             <img src="/images/suproffer-logo.webp" alt="logo"  loading="lazy"/>
             </MainDomainLink>
             <div className="dummyBox"></div>
           </div>
