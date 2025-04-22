@@ -139,10 +139,6 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
               <div className="badge">
                     {coupon.coupon_type === 'Code' ? 'Code' : 'Deal'}
               </div>
-              <div className="feedback">
-                  <button title="Did this worked?" aria-label='Did this worked?' data-bs-toggle="modal" data-bs-target="#feedbackModal">😊</button>
-                  <button title="This did not work" aria-label='This did not work' data-bs-toggle="modal" data-bs-target="#feedbackModal">😞</button>
-              </div> 
           </div>
           <h3 className="title">
                 <a title={coupon.Title} rel="nofollow" className="coupon-link" href={affiliateUrl}>
