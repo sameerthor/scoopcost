@@ -16,56 +16,83 @@ export default function cookiePolicy({ cookiePolicy }) {
             <section className="sitePolicy">            
                 <div className="container">                   
                     <div className="row">
-                        <h1 className="text-center">SuprOffer Cookie Policy</h1>
-                        <p>This Cookie Policy explains how SuprOffer (the “Website”) uses cookies and similar technologies to collect information when you visit our site. It explains what cookies are, how we use them and how you can manage your cookie settings. 
-                        </p>
-                        <h2>What are Cookies? 
-                        </h2>
-                        <p>Cookies are small text files stored on your device such as a computer, mobile phone or tablet when you visit a website. They help the website recognize your device and remember certain information such as your preferences, browsing history and language settings. Cookies are used to make websites work more efficiently as well as to provide information to the owners of the site. </p>
-                        <h2>How SuprOffer Uses Cookies?</h2>
-                        <p>We use cookies to create a better browsing experience for you. Our cookies help us to: 
-                        </p>
-                        <ul>
-                            <li>Understand how visitors interact with our site so we can improve navigation, speed, and content. </li>
-                            <li>Save your settings such as language, location, and choices for a more personalized experience. </li>
-                            <li>Show you more relevant coupons and deals based on your browsing habits. </li>
-                            <li>Keep the site running smoothly and ensure users can access features like logins or saving favorite deals. </li>
-                        </ul>
+                        <h1 className="text-center">Suproffer Cookie Policy</h1>
                         <p>
-                        Some cookies are temporary (session cookies) while others remain on your device until you delete them (persistent cookies). 
+                        At Suproffer, we use cookies to make your browsing experience easier, faster and more personalized. This Cookie Policy explains how Suproffer (the “Website”) uses cookies and similar technologies to collect information when you visit our site. It explains what cookies are, how we use them and how you can manage your cookie preferences.
                         </p>
-                        <h2>Third-Party Cookies</h2>
+                        <div className='h2'>
+                        What are Cookies?
+                        </div>
                         <p>
-                        In addition to our cookies (first-party cookies), we may allow trusted third-party services like ad networks, partners and analytic tools to place cookies on your device. Third-party cookies are not under our control, therefore, we suggest that you read their individual cookie policies for more information.
+                        Cookies are small text files stored on your device (such as a computer or smartphone) when you visit a website. These files help websites remember your preferences, recognize you on future visits, and improve your overall experience. Cookies help the website remember certain information such as your preferences, browsing history and language settings. Some cookies are temporary (session cookies) and disappear once you close your browser. While others remain on your device until you delete them (persistent cookies).
                         </p>
-                        <h2>How to Control Cookies</h2>
-                        <p>You have complete control over your cookies. Most web browsers allow you to:</p>
+                        <div className='h2'>
+                        Purpose of Using Cookies
+                        </div>
+                        <p>Suproffer uses cookies for several important reasons:</p>
                         <ul>
-                            <li>Accept or decline cookies
+                            <li>Some cookies are necessary to make the website work properly. </li>
+                            <li>
+                            Cookies help remember your settings like your preferred language, location, or last-searched deals.
                             </li>
-                            <li>Delete stored cookies</li>
-                            <li>Set alerts before cookies are saved
+                            <li>
+                            We may use cookies to show you coupons and offers based on your activity and interests.
                             </li>
-                            <li>Block third party cookies
+                            <li>
+                            Cookies help us understand how users interact with the website so we can improve our content, design and performance.
                             </li>
                         </ul>
-                        <p>To manage cookies:</p>
-                        <ul>
-                                <li>Check your browser settings under ‘Privacy’ or ‘Security’</li>
-                                <li>Use ‘Incognito’ or ‘Private Browsing’ modes to prevent cookie storage.</li>
-                                <li>Use browser extensions or plugins for advanced cookie control. </li>
-                        </ul>
-                        <p>Disabling cookies may affect how the website works and some features may not be available. </p>
-                        <h2>Changes to this Cookie Policy
-                        </h2>
+                        <div className='h2'>
+                        Third-Party Cookies
+                        </div>
                         <p>
-                        We may occasionally update this Cookie Policy. When we do, we’ll post the updated policy on this page with the new effective date. Your continued use of the website after any such changes constitutes your acceptance of the new Cookie Policy. We encourage you to review this Cookie Policy periodically. 
+                        In some cases, third party tools like analytics, advertising platforms or partners may place cookies on your device. These third-party cookies can track your browsing behavior across different websites. These cookies are governed by the third party policies and we do not control these cookies directly. For details on how these services use your data, we recommend reviewing their individual cookie or privacy policies. 
+                        </p>
+                        <div className='h2'>
+                        How to Manage Your Cookie Preferences
 
+                        </div>
+                        <p>
+                        You have control over how cookies are used on your device. Most web browsers let you:
                         </p>
+<<<<<<< HEAD
                         <h2>Contact Us
                         </h2>
                         <p>If you have any questions about this Cookie Policy, please contact us at <MainDomainLink href="/contact">https://SuprOffer.com/contact.</MainDomainLink></p>
                         <p>By using SuprOffer, you consent to the use of cookies as described in this Cookie Policy. 
+=======
+                        <ul>
+                            <li>Accept or decline all cookies. </li>
+                            <li>Delete specific cookies or all cookies.</li>
+                            <li>Block third-party cookies.</li>
+                            <li>Set alerts before cookies are saved. </li>
+                        </ul>
+                        <p>
+                        To manage cookies:
+                        </p>
+                        <ul>
+                            <li>Check your browser settings under ‘Privacy’ or ‘Security’ tab. </li>
+                            <li>Use ‘Incognito’ or ‘Private Browsing’ to prevent cookie storage.</li>
+                            <li>Use browser extensions or plugins to manage tracking and cookie use more effectively.</li>
+                        </ul>
+                        <p>
+                        Turning off certain cookies may limit some features of the website and may affect how the website works.
+                        </p>
+                        <div className='h2'>
+                        Updates to this Cookie Policy
+                        </div>
+                        <p>
+                        We may occasionally revise this Cookie Policy to reflect changes in technology, legal requirements or how we use cookies. When we do, we’ll post an updated policy on this page with the new effective date. Your continued use of the website after such changes constitutes your acceptance of the revised Cookie Policy. We recommend you to review this Cookie Policy periodically.
+                        </p>
+                        <div className='h2'>
+                        Contact Us
+                        </div>
+                        <p>
+                        If you have any questions or concerns about this Cookie Policy, reach out to us at <a href="https://suproffer.com/contact">https://suproffer.com/contact.</a>
+                        </p>
+                        <p>
+                        By using Suproffer, you consent to use cookies as described in this Cookie Policy.
+>>>>>>> 6487ef87a0d164aeb9c9b2a7e45a920e3925a513
                         </p>
                     </div> 
                 </div>   

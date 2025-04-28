@@ -16,99 +16,125 @@ export default function privacyPolicy({ privacyPolicy }) {
             <section className="sitePolicy">            
                 <div className="container">                   
                     <div className="row">
-                        <h1 className='text-center'> SuprOffer Privacy Policy</h1>
+                        <h1 className='text-center'> Suproffer Privacy Policy </h1>
                         <p>
-                        At SuprOffer, your privacy matters. This Privacy Policy explains how we collect, use, and share your personal information when you use our website. By using SavesesRight, you agree to the terms outlined below. If you do not agree please do not use our site or services.
+                             Welcome to Suproffer! Your privacy matters to us and we are committed to protecting your personal data. This Privacy Policy explains how we collect, use, share and protect your information when you browse our website or use our services. By accessing Suproffer, you agree to the terms outlined in this policy.
                         </p>
-                        <h2>What Information We Collect</h2>
-                        <p>We collect two types of information when you visit or use SuprOffer:</p>
+                        <div className='h2'>
+                        Information We Collect
+                        </div>
                         <p>
-                           <b>a. Information Your Provide Directly
-                           </b>
-                        </p>
-                        <p>
-                        If you create an account, we may collect your name, email address, and any other personal details. We only collect this when you voluntarily provide it such as when you sign up for our newsletter or contact us. 
-                        </p>
-                        <p>
-                                <b>b. Information We Collect Automatically
-                                </b>
-                        </p>
-                        <p>
-                            We collect information about how you use our website such as the pages you visit, the coupons you view and the links you click. We may also collect information about your device including your IP address, browser type, operating system and location. Also, we use cookies and similar technologies to collect information about your browsing activities and preferences. 
-                        </p>
-                        <h2>How We Use Your Information</h2>
-                        <p>
-                        We may use your details to improve your user experience with SuprOffer and to provide services that are relevant to you. We may use your information to:
-                        </p>
-                        <ul>
-                            <li>Show you relevant coupon codes, discounts, and deals. 
-                            </li>
-                            <li>Improve the functionality, performance and layout of our website. 
-                            </li>
-                            <li>Respond to your questions or feedback. </li>
-                            <li>Send your promotional emails and updates (only if you opt-in).
-                            </li>
-                            <li>Prevent fraud and ensure secure use of our services. 
-                            </li>
-                            <li>Enforce our Terms of Use. 
-                            </li>
-                        </ul>
-                        <h2>How We Share Your Information</h2>
-                        <p>
-                        We respect your privacy. We do not sell, trade or rent your personal data. However, we may share your information in these limited circumstances:
-                        </p>
-                        <ul>
-                                <li>With trusted service providers who help us operate our website such as hosting providers, analytics providers and email marketing services. These providers are contractually obligated to protect your personal information. 
-                                </li>
-                                <li>We may share your personal information to the extent that you have used a coupon from SuprOffer offered by a third party merchant. We will not share your information with third parties unless you directly interact with their offer. 
-                                </li>
-                                <li>We may disclose your information to law enforcement agencies, government authorities, or other third parties if required by law or legal purposes, or if we believe it is necessary to protect the rights, property or safety of SuprOffer or its users. 
-                                </li>
-                        </ul>
-                        <h2>How We Protect Your Data</h2>
-                        <p>
-                        We care about the security of your information. We use reasonable measures to protect your data from unauthorized access, use or disclosure. However, no method of transmission over internet or electronic storage is completely secure. Therefore, while we strive to protect your details securely we cannot guarantee absolute safety.
+                        We collect two types of information when you visit or use Suproffer:
 
                         </p>
-                        <h2>Links to Third-Party Websites</h2>
-                        <p>Our site includes coupons and deals from other websites. Please note:</p>
-                        <ul>
-                            <li>We do not control those third-party sites.
-                            </li>
-                            <li>Each site has its own privacy policy which may differ from us.</li>
-                            <li>We are not responsible for their data practices, content or safety.</li>
-                        </ul>
                         <p>
-                        We recommend reviewing the privacy policy of any external site before interacting with it.
-                        </p>
-                        <h2>Children’s Privacy
-                        </h2>
-                        <p>Our website is not intended for children under the age of 13 (or the applicable age of consent in your jurisdiction). We do not knowingly collect personal information from children. If we discover we have received data from a child under thirteen, we will delete it immediately.</p>
-                        <h2>Your Rights and Choices</h2>
-                        <p>You have full control over your personal data. You can:
-                        </p>
-                        <ul>
-                                <li>Access and view your data
+                            <strong>i. Personal Information
+                            </strong>
+                            <p>
+                            This refers to any data that can identify you as an individual. It may include:
+
+                            </p>
+                            <ul>
+                                <li>Your name and email address (if you sign up for our newsletter or contact us). 
                                 </li>
-                                <li>Update or correct your personal details.
+                                <li>Any other personal details you voluntarily provide via forms or account creation. 
                                 </li>
-                                <li>Request deletion of your information.
+                            </ul>
+                            <p>
+                                <strong>ii. Non-Personal Information
+                                </strong>
+                            </p>
+                            <p>
+                            We also collect data automatically when you use our site. This includes your IP address, browser type, device model, location, and operating system. Also, we gather user behavior such as pages visited, time spent on site, and clicks on coupons or affiliate links.
+                            </p>
+                            <p>
+                            We use cookies and similar technologies to gather this data. Read our <a href="https://suproffer.com/cookie-policy">Cookie Policy</a> to learn more. 
+                            </p>
+                            <div className='h2'>
+                            How We Use Your Information
+
+                            </div>
+                            <p>
+                            We use your data to enhance your experience and maintain the performance of Suproffer. We may use  your information to:
+
+                            </p>
+                            <ul>
+                                <li>Show you relevant coupons, discount codes, and deals. 
                                 </li>
-                                <li>Unsubscribe from emails or newsletters.</li>
-                                <li>Refuse cookies from browser settings. </li>
-                        </ul>
-                        <p>To make any of these changes or requests, contact us using the link below. </p>
-                        <h2>International Data Transfers</h2>
-                        <p>If you are using SuprOffer from outside our country of operation, your data may be processed and stored in a country with different data laws. By using our website, you agree to the transfer of your data internationally. </p>
-                        <h2>Changes to this Privacy Policy
-                        </h2>
-                        <p>We may update this Privacy Policy from time to time. When we do, we’ll post the updated policy on this page with the new effective date. Your continued use of the website after any such changes constitutes your acceptance of the new Privacy Policy. We recommend you to review our Privacy Policy periodically. 
+                                <li>Improve our website and user experience.</li>
+                                <li>Send email updates, exclusive deals and offers (only if you opt-in).</li>
+                                <li>Ensure security, detect abuse, and protect against fraud.</li>
+                                <li>Enforce our Terms of Use.</li>
+                            </ul>
+                            <div className='h2'>
+                            Sharing of Information
+                            </div>
+                            <p>
+                            Your trust is essential to us. We do not sell or trade your personal data. We may share limited info with trusted partners like analytics providers and email marketing services who help us operate smoothly. These providers are contractually bound to keep your data secure and confidential. We may also disclose your information if we are required to comply with a law, enforce our site policies or protect Suproffer and its users.
+                            </p>
+                            <div className='h2'>
+                            Data Security
+                            </div>
+                            <p>
+                            We use various security measures to protect your data. 
+                            </p>
+                            <ul>
+                                <li>Encryption: Sensitive data is encrypted in transit using secure protocols.</li>
+                                <li>Access Controls: Only authorized personnel have access to your personal data.</li>
+                                <li>Monitoring & Updates: Our systems are regularly monitored and updated to prevent breaches.</li>
+                            </ul>
+                            <p>
+                            While we do our best to safeguard your data, no online system can guarantee complete security.
+                            </p>
+                            <div className='h2'>
+                            Links to Third-Party Websites
+                            </div>
+                            <p>
+                            Suproffer Privacy Policy applies only to our services. Our website includes links to third-party websites that we do not control. These sites have their own privacy policies which are different from us and we do not control these third-party sites. Also, we are not responsible for their data practices, content or safety. We recommend you to review the policies of any linked websites before sharing personal data or using their promotions.
+                            </p>
+                            <div className='h2'>
+                            Children's Privacy
+
+                            </div>
+                            <p>
+                            Suproffer is designed for users aged 13 and above. We do not knowingly collect personal information from children under thirteen years of age. If you find that a child has provided us with their data please contact us immediately and we will take appropriate steps to remove it.
+                            </p>
+                            <div className='h2'>
+                            Your Rights and Choices
+
+                            </div>
+                            <p>
+                            You have the right to:
+                            </p>
+                            <ul>
+                                <li>Access or review the information we have about you. </li>
+                                <li>Update or delete your personal data upon request.</li>
+                                <li>Unsubscribe from our emails or newsletters at any time.</li>
+                                <li>Refuse cookies from browser settings.</li>
+                            </ul>
+                            <div className='h2'>
+                            International Data Transfers
+                            </div>
+                            <p>
+                            If you are using Suproffer from outside our country of operation, your information may be processed and stored with different data laws. By using our site, you agree to data transfer internationally.
+                            </p>
+                            <div className='h2'>
+                            Updates to this Privacy Policy
+                            </div>
+                            <p>
+                            We may update this policy from time to time to reflect legal requirements or service improvements. When we do, we will post the latest version here with a new date. We encourage you to review our Privacy Policy periodically to stay informed. If you do not agree with any part of the updated policy, you may discontinue using our services.
+                            </p>
+                            <div className='h2'>
+                            Contact Us
+                            </div>
+                            <p>
+                            Have questions, concerns or requests about your privacy? We are here to help. Reach out to us at <a href="https://suproffer.com/contact"> https://suproffer.com/contact</a>
+                            </p>
+                            <p>
+                            By using Suproffer, you consent to the terms described in this Privacy Policy. 
+
+                            </p>
                         </p>
-                        <h2>Contact Us</h2>
-                        <p>If you have any questions about this Privacy Policy, please contact us at <MainDomainLink href="/contact">https://SuprOffer.com/contact</MainDomainLink>.</p>
-                        <p>
-                        By using SuprOffer, you consent to the terms described in this Privacy Policy. 
-                        </p>    
                     </div>
                 </div>   
             </section>
