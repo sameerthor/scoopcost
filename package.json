@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 3003",
+    "start": "next start -p $PORT",
     "lint": "next lint",
     "postbuild": "node scripts/update-excludes.js && next-sitemap"
   },
