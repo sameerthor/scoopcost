@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const https = require('https')
 
-const API_URL = 'https://admin.SuprOffer.com/api/stores?fields[1]=Slug&pagination[pageSize]=4000'
+const API_URL = 'https://admin.suproffer.com/store-search/'
 const OUT_PATH = path.join(__dirname, '..', 'excluded-slugs.json')
 
 function fetchJson(url) {
@@ -25,9 +25,9 @@ function fetchJson(url) {
 async function run() {
   try {
     const json = await fetchJson(API_URL)
-    const stores = json.data || json
+    const stores = json
 
-    const excluded = stores.map(s => s.Slug).filter(Boolean)
+    const excluded = stores.map(s => s.slug).filter(Boolean)
 
     fs.writeFileSync(OUT_PATH, JSON.stringify(excluded, null, 2))
     console.log(`✅ excluded-slugs.json updated with ${excluded.length} slugs`)

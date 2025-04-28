@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://SuprOffer.com
+Host: https://suproffer.com
 
 # Sitemaps
-Sitemap: https://SuprOffer.com/sitemap.xml
+Sitemap: https://suproffer.com/sitemap.xml
