@@ -55,12 +55,6 @@ export default function cookiePolicy({ cookiePolicy }) {
                         <p>
                         You have control over how cookies are used on your device. Most web browsers let you:
                         </p>
-<<<<<<< HEAD
-                        <h2>Contact Us
-                        </h2>
-                        <p>If you have any questions about this Cookie Policy, please contact us at <MainDomainLink href="/contact">https://SuprOffer.com/contact.</MainDomainLink></p>
-                        <p>By using SuprOffer, you consent to the use of cookies as described in this Cookie Policy. 
-=======
                         <ul>
                             <li>Accept or decline all cookies. </li>
                             <li>Delete specific cookies or all cookies.</li>
@@ -92,7 +86,6 @@ export default function cookiePolicy({ cookiePolicy }) {
                         </p>
                         <p>
                         By using Suproffer, you consent to use cookies as described in this Cookie Policy.
->>>>>>> 6487ef87a0d164aeb9c9b2a7e45a920e3925a513
                         </p>
                     </div> 
                 </div>   
