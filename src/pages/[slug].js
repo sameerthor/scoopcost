@@ -2,6 +2,7 @@ import MainDomainLink from '@/components/MainDomainLink';
 import MetaTags from '@/components/MetaTags';
 import Head from 'next/head';
 import Coupon from '../components/coupon';
+import _ from 'lodash'
 import "@/styles/store.css";
 import moment from 'moment';
 import dynamic from "next/dynamic";
@@ -32,16 +33,18 @@ const getHeading = (title) => {
   // Check for "Free Shipping"
   if (/free shipping/i.test(title)) {
     return "Free Shipping";
+  }else{
+    return "Best Deal";
   }
 
   return "";
 };
 
 const calculateCoupons = (store) => {
-  if (!store.Coupons || !Array.isArray(store.Coupons)) return "";
+  if (!store.coupon_set || !Array.isArray(store.coupon_set)) return "";
 
-  const deals = store.Coupons.filter(coupon => coupon.coupon_type === "Sale").length;
-  const codes = store.Coupons.filter(coupon => coupon.coupon_code && coupon.coupon_code.trim() !== "").length;
+  const deals = store.coupon_set.filter(coupon => coupon.coupon_type === "Sale").length;
+  const codes = store.coupon_set.filter(coupon => coupon.coupon_code && coupon.coupon_code.trim() !== "").length;
 
   let result = [];
   if (deals > 0) result.push(`${deals} deal${deals > 1 ? 's' : ''}`);
@@ -51,25 +54,25 @@ const calculateCoupons = (store) => {
 
   return result.join(" & ");
 };
-export default function StorePage({ store, relatedStores }) {
-  const storeDescription = store.data.store_description;
+export default function StorePage({ store, relStores }) {
+  const storeDescription = store.store_description;
   const paragraphs = storeDescription.split("</p>");
   const [activeCouponsType, setActiveCouponsType] = useState("All");
   const [screenshotURL, setScreenshotURL] = useState("");
 
-  const totalOffers = store.data.Coupons.length;
-  const activeCoupons = store.data.Coupons.filter(
-    (coupon) => coupon.coupon_type === "Code"
+  const totalOffers = store.coupon_set.length;
+  const activeCoupons = store.coupon_set.filter(
+    (coupon) => coupon.coupon_type === "code"
   ).length;
-  const freeShipping = store.data.Coupons.some((coupon) =>
-    coupon.Title.toLowerCase().includes("free shipping")
+  const freeShipping = store.coupon_set.some((coupon) =>
+    coupon.title.toLowerCase().includes("free shipping")
   )
     ? 1
     : 0;
-  const bestOffer = store.data.Coupons.reduce((best, coupon) => {
-    const match = coupon.Title.match(/(\d+)% Off/);
+  const bestOffer = store.coupon_set.reduce((best, coupon) => {
+    const match = coupon.title.match(/(\d+)% Off/);
     const discount = match ? parseInt(match[1], 10) : 0;
-    return discount > best.discount ? { text: coupon.Title, discount } : best;
+    return discount > best.discount ? { text: coupon.title, discount } : best;
   }, { text: "No Offer", discount: 0 }).text;
   const [showCommentBox, setShowCommentBox] = useState(false);
   const toggleCommentBox = () => {
@@ -84,37 +87,37 @@ export default function StorePage({ store, relatedStores }) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://coupontix.com"
+        "item": "https://suproffer.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": `${store.data.Title} coupon code`,
-        "item": "https://coupontix.com/"+store.data.Slug
+        "name": `${store.title} coupon code`,
+        "item": "https://suproffer.com/"+store.slug
       }
     ]
   }
 
 
 
-  const saleEvents = store.data.Coupons.map((coupon) => ({
+  const saleEvents = store.coupon_set.map((coupon) => ({
     "@context": "http://schema.org",
     "@type": "SaleEvent",
-    "name": coupon.Title, // Dynamic name based on coupon title
+    "name": coupon.title, // Dynamic name based on coupon title
     "description": coupon.Content, // Dynamic description
-    "image": `${process.env.NEXT_PUBLIC_IMAGE_URL}/${store.data.store_image?.url}` , // Default or dynamic image
-    "url": `https://coupontix.com/${store.data.Slug}#c=${coupon.id}`, // Dynamic URL
+    "image": `${store.image}` , // Default or dynamic image
+    "url": `https://suproffer.com/${store.slug}#c=${coupon.id}`, // Dynamic URL
     "startDate": "2025-03-10", // Use dynamic start date if available
     "endDate": "2025-06-09", // Use dynamic end date if available
     "performer": { 
       "@type": "Organization", 
-      "name": store.data.Title // Static or dynamic performer based on coupon details
+      "name": store.title // Static or dynamic performer based on coupon details
     },
     "eventStatus": "http://schema.org/EventScheduled",
     "eventAttendanceMode": "http://schema.org/OnlineEventAttendanceMode",
     "location": { 
       "@type": "VirtualLocation", 
-      "url": store.data.home_url
+      "url": store.home_url
     },
     "offers": {
       "@type": "Offer",
@@ -122,19 +125,19 @@ export default function StorePage({ store, relatedStores }) {
       "price": "0", // Adjust dynamically if needed
       "priceCurrency": "USD",
       "validFrom": "2025-03-10",
-      "url": `https://coupontix.com/${store.data.Slug}`
+      "url": `https://suproffer.com/${store.slug}`
     }
   }));
   
   return (
     <>
       <Head>
-        <title>{store.data.seo.metaTitle}</title>
-        <meta name="description" content={store.data.seo.metaDescription} />
-        <meta name="twitter:title" content={store.data.seo.metaTitle} />
-        <meta name="twitter:description" content={store.data.seo.metaDescription} />
-        <meta property="og:title" content={store.data.seo.metaTitle} />
-        <meta property="article:section" content={store.data.seo.metaDescription} />
+        <title>{store.seo_title}</title>
+        <meta name="description" content={store.seo_description} />
+        <meta name="twitter:title" content={store.seo_title} />
+        <meta name="twitter:description" content={store.seo_description} />
+        <meta property="og:title" content={store.seo_title} />
+        <meta property="article:section" content={store.seo_description} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
         {saleEvents.map((schema, i) => (
           <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
@@ -148,11 +151,11 @@ export default function StorePage({ store, relatedStores }) {
           </div>
           <div className="breadcrumb">
             <ul>
-              <li><MainDomainLink href="/" title='suproffer.com'>coupontix.com</MainDomainLink> &gt;</li>
-              <li>{store.data.Title} coupon code</li>
+              <li><MainDomainLink href="/" title='suproffer.com'>suproffer.com</MainDomainLink> &gt;</li>
+              <li>{store.title} coupon code</li>
             </ul>
             <div className="storeCat">
-              <MainDomainLink title='categoy page' href={`/category/${store.data.store_category.Slug}`}>{store.data.store_category.Title}</MainDomainLink>
+              <MainDomainLink title='categoy page' href={`/category/${store.category.slug}`}>{store.category.title}</MainDomainLink>
             </div>
           </div>
         </div>
@@ -163,17 +166,18 @@ export default function StorePage({ store, relatedStores }) {
             <div className="contentBox">
               <div className="storeHeader row row-cols-2">
                 <div className="header-content col-8 p-0">
-                  <h1>{store.data.store_h1}</h1>
-                  <p className="dealAvl">{calculateCoupons(store.data)}</p>
-                  <p>Flat {getHeading(store.data.Coupons[0].Title)} at {store.data.Title}</p>
+                  <h1>                                        {store.store_h1.replace("%%Year%%", moment().format('YYYY'))}
+                  </h1>
+                  <p className="dealAvl">{calculateCoupons(store)}</p>
+                  <p>Flat {getHeading(store.coupon_set[0].title)} at {store.title}</p>
                 </div>
                 <aside className="col-4 p-0">
                   <div className="header-thumb">
                     <div className="header-store-thumb">
-                      <a rel="nofollow" target="_blank" title={store.data.Title} href={store.data.affiliate_url}>
+                      <a rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${store?.data?.store_image?.url}`}
-                          alt={`${store.data.Title} Store Logo`}
+                          src={`${store.image}`}
+                          alt={`${store.title} Store Logo`}
                           width={128}
                           height={128}
                           className="attachment-wpcoupon_small_thumb size-wpcoupon_small_thumb"
@@ -182,7 +186,7 @@ export default function StorePage({ store, relatedStores }) {
                       </a>
                     </div>
                     <div className="star-rating stars">
-                      <RatingBox key={'store_' + store.id} store_id={store.data.id} store_title={store.data.Title} />
+                      <RatingBox key={'store_' + store.id} store={store}  />
                     </div>
                   </div>
                 </aside>
@@ -197,7 +201,7 @@ export default function StorePage({ store, relatedStores }) {
             <div className="p-0">
 
               <div className="store-listing listCoupns">
-                {store.data.Coupons
+                {store.coupon_set
                   .filter(coupon => {
                     if (activeCouponsType === 'All') return true;
                     if (activeCouponsType === 'Code') return coupon.coupon_type === 'Code';
@@ -210,32 +214,32 @@ export default function StorePage({ store, relatedStores }) {
                       expiryDate={coupon.expiry_date}
                       index={index}
                       coupon={coupon}
-                      storeImage={`${process.env.NEXT_PUBLIC_IMAGE_URL}/${store.data.store_image?.url}`}
-                      storeName={store.data.Title}
-                      affiliateUrl={store.data.affiliate_url}
-                      homeUrl={store.data.home_url}
-                      storeSlug={store.data.Slug}
-                      storeId={store.data.id}
-                      storeCreateTime={store.data.createdAt}
-                      usesSubdomain={store.data.uses_subdomain}
+                      storeImage={`${store.image}`}
+                      storeName={store.title}
+                      affiliateUrl={store.affiliate_url}
+                      homeUrl={store.home_url}
+                      storeSlug={store.slug}
+                      storeId={store.id}
+                      storeCreateTime={store.createdAt}
+                      usesSubdomain={store.subdomain}
                     />
                   ))
                 }
               </div>
 
-              {store.data.Coupons.some(coupon => coupon.screenshot && coupon.screenshot.url && coupon.coupon_type === "Code") && (
+              {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot!="" && coupon.coupon_type === "code") && (
                 <div className="testHistory">
-                  <div className="sidebarHeading">{store.data.Title} Coupon Code Test History</div>
-                  <p>Check verified proof of manual testing for {store.data.Title}</p>
+                  <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
+                  <p>Check verified proof of manual testing for {store.title}</p>
                   <div className="row">
-                    {store.data.Coupons
-                      .filter(coupon => coupon.coupon_type === "Code")
+                    {store.coupon_set
+                      .filter(coupon => coupon.coupon_type === "code")
                       .map((coupon) => (
                         coupon?.screenshot && (
                           <div key={coupon.id} className="col-md-6 mb-1 p-1">
                             <div className="historyItem">
                               <div className="historyHeader">
-                                <span>{getHeading(coupon.Title)}</span>
+                                <span>{getHeading(coupon.title)}</span>
                                 <span className="code">{coupon.coupon_code || "No Code"}</span>
                                 <span>
                                   {coupon.last_used_at && !isNaN(coupon.last_used_at)
@@ -246,18 +250,18 @@ export default function StorePage({ store, relatedStores }) {
                               <div className="historyImg">
                                 <button
                                   onClick={() =>
-                                    setScreenshotURL(`${process.env.NEXT_PUBLIC_IMAGE_URL}${coupon.screenshot?.url}`)
+                                    setScreenshotURL(`${coupon.screenshot}`)
                                   }
                                   data-bs-toggle="modal"
                                   data-bs-target="#maximizeImage"
                                 >
                                   <Image
                                     src={
-                                      coupon?.screenshot?.formats?.medium?.url
-                                        ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${coupon.screenshot.formats.medium.url}`
+                                      coupon?.screenshot
+                                        ? `${coupon.screenshot}`
                                         : "/images/history-img.webp"
                                     }
-                                    alt={coupon.Title || "Coupon Image"}
+                                    alt={coupon.title || "Coupon Image"}
                                     width={400}
                                     height={250}
                                     loading="lazy"
@@ -275,11 +279,11 @@ export default function StorePage({ store, relatedStores }) {
               )}
 
               <div className='about-store'>
-                <div className="sidebarHeading">About {store.data.Title}</div>
+                <div className="sidebarHeading">About {store.title}</div>
                 <div dangerouslySetInnerHTML={{ __html: paragraphs[0] + "</p>" }} />
               </div>
               <div className="offerToday">
-                <div className='sidebarHeading'>Today's Offer for {store.data.Title}</div>
+                <div className='sidebarHeading'>Today's Offer for {store.title}</div>
                 <table>
                   <tbody>
                     <tr>
@@ -304,11 +308,11 @@ export default function StorePage({ store, relatedStores }) {
               <div className='about-store'>
                 <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
               </div>
-              <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.data.extra_info }}>
+              <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
 
               </div>
               <div className="couponOffer summary-container">
-                <div class="sidebarHeading">Coupon Summary for {store.data.Title}</div>
+                <div class="sidebarHeading">Coupon Summary for {store.title}</div>
                 <table border="1" cellspacing="0" cellpadding="0">
                   <thead>
                     <tr>
@@ -318,13 +322,13 @@ export default function StorePage({ store, relatedStores }) {
                     </tr>
                   </thead>
                   <tbody>
-                    {store.data.Coupons.map((coupon) => {
-                      const dealMatch = coupon.Title.match(/(\d+% Off)/);
+                    {store.coupon_set.map((coupon) => {
+                      const dealMatch = coupon.title.match(/(\d+% Off)/);
                       const dealText = dealMatch ? dealMatch[0] : "Special Offer";
                       return (
                         <tr key={coupon.id} className="border">
                           <td className="p-2 border text-center"><span className='deal-badge'>{dealText}</span></td>
-                          <td className="p-2 border">{coupon.Title}</td>
+                          <td className="p-2 border">{coupon.title}</td>
                           <td className="p-2 border">
                             {coupon.coupon_code ? (
                               <span className='coupon-code'>
@@ -340,27 +344,27 @@ export default function StorePage({ store, relatedStores }) {
                   </tbody>
                 </table>
               </div>
-              {store.data.Contact != "" &&
+              {store.contact != "" &&
                 <div className="contactBox">
-                  <div class="sidebarHeading">Contact {store.data.Title}</div>
-                  <p>{store.data.Contact}</p>
+                  <div class="sidebarHeading">Contact {store.title}</div>
+                  <p>{store.contact}</p>
                 </div>
               }
 
-              {relatedStores.slice(2).length > 0 && (
+              {relStores.slice(2).length > 0 && (
                 <div className="topStore mb-4">
-                  <div className="sidebarHeading">Related Stores for {store.data.Title}</div>
+                  <div className="sidebarHeading">Related Stores for {store.title}</div>
                   <ul>
-                    {relatedStores.slice(2).map((store, index) => (
+                    {relStores.slice(2).map((store, index) => (
                       <li key={index}>
                         <MainDomainLink
                           href={
                             store.uses_subdomain
-                              ? `https://${store.Slug}.coupontix.com`
-                              : `/${store.Slug}-coupons`
+                              ? `https://${store.slug}.suproffer.com`
+                              : `/${store.slug}-coupons`
                           }
                         >
-                          {store.Title}
+                          {store.title}
                         </MainDomainLink>
                       </li>
                     ))}
@@ -468,7 +472,7 @@ export default function StorePage({ store, relatedStores }) {
               </div>
               <div className="founderNote">
                 <p>
-                Rudresh Dubey is an experienced affiliate marketer having more than ten years experience in digital marketing, specializing in coupons industry. As the founder of coupontix.com, he has built a reliable platform that provides fully tested and verified coupon codes. His journey in affiliate marketing began a decade ago with the goal of helping customers save money while shopping online. <a href="/">suproffer.com</a> has transformed that vision into a thriving business that helps shoppers worldwide.
+                Rudresh Dubey is an experienced affiliate marketer having more than ten years experience in digital marketing, specializing in coupons industry. As the founder of suproffer.com, he has built a reliable platform that provides fully tested and verified coupon codes. His journey in affiliate marketing began a decade ago with the goal of helping customers save money while shopping online. <a href="/">suproffer.com</a> has transformed that vision into a thriving business that helps shoppers worldwide.
                 </p>
                 <p>
                 Rudresh’s approach to affiliate marketing sets him apart in the competitive coupon market. His expertise in understanding consumer needs helps keep the platform user-friendly and relevant. We have a team of coupon experts who select the best discount codes in different product categories from fashion and electronics to travel and software. By offering only the genuine and working coupons, <a href="/">suproffer.com</a> has become a go-to destination for online shoppers.
@@ -483,7 +487,7 @@ export default function StorePage({ store, relatedStores }) {
               <div className="expHead">Meet Our Coupon Experts</div>
               <div className="expertPara">
                 <p>
-                With an efficient coupon team of 6 people, Coupontix put the right effort to share updated and verified coupon codes. Our team reviews and coupons regularly. We have put a comment section on each coupon page. If a coupon doesn't work, the team makes sure to find the right coupon and also try to improve the services.
+                With an efficient coupon team of 6 people, SuprOffer put the right effort to share updated and verified coupon codes. Our team reviews and coupons regularly. We have put a comment section on each coupon page. If a coupon doesn't work, the team makes sure to find the right coupon and also try to improve the services.
 
 
                 </p>
@@ -607,11 +611,11 @@ export default function StorePage({ store, relatedStores }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch('https://admin.coupontix.com/api/stores');
+  const res = await fetch('https://admin.suproffer.com/stores/');
   const stores = await res.json();
 
-  const paths = stores.data.map(store => ({
-    params: { slug: store.Slug },
+  const paths = stores.map(store => ({
+    params: { slug: store.slug },
   }));
 
   return { paths, fallback: "blocking" };
@@ -622,154 +626,66 @@ export async function getStaticProps({ params }) {
 
   const slug = params.slug || req.headers.get('host')?.split('.')[0];
 
-  // 1. Fetch the current store by slug
-  const storeRes = await fetch(
-    `https://admin.coupontix.com/api/stores/${slug}`
-  );
-  const storeData = await storeRes.json();
-
-  const store = storeData.data // Get the first (and only) store matching the slug
-  
-  if (!store) {
-    return {
-      notFound: true,
-    };
-  }
-
-    
-  // 2. If store exists, fetch related stores from the same category
-  var relatedStores = [];
-  if (store && store.store_category) {
-    const categoryId = store.store_category.id;
-    const relatedRes = await fetch(
-      `https://admin.coupontix.com/api/stores?filters[store_category][id][$eq]=${categoryId}&fields[0]=Title&fields[1]=Slug&fields[2]=uses_subdomain&pagination[limit]=4&filters[Slug][$not]=${params.slug}`
-    );
-    const relatedData = await relatedRes.json();
-    relatedStores = relatedData.data.map(store => ({
-      Title: store.Title,
-      Slug: store.Slug,
-      uses_subdomain: store.uses_subdomain
-    }));
-  }
-
-  // 3. Process the store data with your replacement logic
-  if (store) {
-    // Get related store links (limit to 2, exclude current store)
-    const baseDomain = 'coupontix.com'
-
-    const store_names = relatedStores
-      .filter(f => f.id !== store.id)
-      .slice(0, 2)
-      .map(item => {
-        const href = item.uses_subdomain
-          ? `https://${item.Slug}.${baseDomain}`
-          : `/${item.Slug}`
-        return `<a href="${href}">${item.Title}</a>`
-      })
-
-    // Get first coupon code (if exists)
-    const firstCouponCode = store.Coupons?.filter(x => x.coupon_type === 'Code')[0]?.coupon_code || "";
-    const firstCouponTitle = store.Coupons[0]?.Title || "";
-    let perc;
-
-    // Try to extract the percentage from the first coupon title
-    if (firstCouponTitle) {
-      const match = firstCouponTitle.match(/(\d+)%/);
-      perc = match ? match[1] : null;  // If a match is found, use it; otherwise, set to null
+  const res = await fetch('https://admin.suproffer.com/stores/' + slug + '/')
+    var store = await res.json()
+    if (store.detail) {
+        return {
+            notFound: true
+        };
     }
-
-    // Fallback to the last coupon if the first one doesn't have a percentage
-    if (perc === null && store.Coupons.length > 0) {
-      const lastCouponTitle = store.Coupons[store.Coupons.length - 1]?.Title || "";
-      const lastMatch = lastCouponTitle.match(/(\d+)%/);
-      perc = lastMatch ? lastMatch[1] : '30';  // Default to '30%' if no percentage is found
-    }
-    // Process store description
-    if (store.store_description) {
-      storeData.data.store_description = store.store_description
-        .replaceAll("%%storename%%", store.Title)
-        .replaceAll("%percentage% off", perc + "% Off")
-        .replaceAll("%percentage% off", perc + "% Off")
-        .replaceAll("%percentage% Off", perc + "% Off")
-        .replaceAll("%percentage% Off", perc + "% Off")
-        .replaceAll("%percentage% OFF", perc + "% Off")
-        .replaceAll("%percentage% OFF", perc + "% Off")
-        .replaceAll("%percentage%", perc + "%")
-        .replaceAll("%percentage%", perc + "%")
-        .replace(/XXX/g, firstCouponCode)
-        .replace(/XX/g, store.Coupons?.length || 0)
-        .replaceAll("%%currentmonth%%", moment().format('MMMM'))
-        .replaceAll("%%currentmonth%%", moment().format('MMMM'))
-        .replaceAll("%%currentyear%%", moment().format('YYYY'))
-        .replaceAll("currentyear%%", moment().format('YYYY'))
-        .replaceAll(
-          /%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%|%categorystore%, %categorystore%, %categorystore%|%categorystore% %categorystore%, %categorystore%|%categorystore% %categorystore% %categorystore%|%categorystore% %categorystore% and %categorystore%/gi,
-          store_names.join(", ")
-        );
-    }
-
-    // Process extra info
-    if (store.extra_info) {
-      storeData.data.extra_info = store.extra_info
-        .replaceAll('XXX', firstCouponCode)
-        .replaceAll('XX', store.Coupons?.length || 0);
-    }
-
-    if (store.store_h1) {
-      storeData.data.store_h1 = store.store_h1
-        .replace(/Storename/g, store.Title)
-        .replace(/XXX/g, firstCouponCode)
-        .replace(/CouponCount/g, store.Coupons?.length)
-        .replace(/%percentage%/g, perc + "%")
-        .replace(/%%Year%%/g, moment().format('YYYY'))
-        .replace(/\d{4}/, moment().format('YYYY')); // Replace any 4-digit year
-    }
-
-    // Process SEO metaTitle
-    if (store.seo?.metaTitle) {
-      const hasCouponCode = !!firstCouponCode;
-
-      let metaTitle = store.seo.metaTitle
-        .replace(/Storename/g, store.Title)
-        .replace(/XXX/g, hasCouponCode ? firstCouponCode : moment().format('YYYY'))
-        .replace(/CouponCount/g, store.Coupons?.length)
-        .replace(/%percentage%/g, perc + "%")
-        .replace(/%%Year%%/g, moment().format('YYYY'))
-        .replace(/\d{4}/, moment().format('YYYY'));
-
-      // If no coupon code, replace leading "Code is" or similar phrase
-      if (!hasCouponCode) {
-        metaTitle = metaTitle.replace(/(\b(?:Coupon )?Code is\b)(?!.*Coupon Code)/i, 'Coupon Code');
-      }
-
-      // If title is below 50 characters and doesn't already contain "Discount"
-      if (metaTitle.length < 50 && !metaTitle.includes("Discount")) {
-        const lastCodeIndex = metaTitle.lastIndexOf("Code");
-        if (lastCodeIndex !== -1) {
-          metaTitle = metaTitle.substring(0, lastCodeIndex) + "Discount Code" + metaTitle.substring(lastCodeIndex + 4);
+    store.coupon_set.map(coupon => {
+        if (coupon.title.includes("$")) {
+            return coupon.title = "Best Deal";
         }
-      }
+    });
 
-      storeData.data.seo.metaTitle = metaTitle;
+    var simCat = [];
+    if (store.category[0]) {
+        const resRelStores = await fetch(`https://backend.supercosts.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
+        var relStores = await resRelStores.json()
+        relStores = relStores.filter((s) => s.id !== store.id);
+        relStores = _.shuffle(relStores).slice(0, 12)
+        if (relStores.length <= 3) {
+            const rescat = await fetch(`https://backend.supercosts.com/categories/?limit=4&offset=${Math.ceil(parseInt(store.category[0].id) / 4)}`)
+            simCat = await rescat.json()
+
+        }
+
+    } else {
+        var relStores = [];
     }
 
-    // Process SEO metaTitle
-    if (store.seo?.metaDescription) {
-      storeData.data.seo.metaDescription = store.seo.metaDescription
-        .replace(/Storename/g, store.Title)
-        .replace(/XXX/g, firstCouponCode)
-        .replace(/CouponCount/g, store.Coupons?.length)
-        .replace(/%percentage%/g, perc + "%")
-        .replace(/%%Year%%/g, moment().format('YYYY'))
-        .replace(/\d{4}/, moment().format('YYYY')); // Replace any 4-digit year
-    }
+    const store_names = relStores.filter(f => f.id !== store.id).slice(0, 2).map(item => `<a href="/${item.slug}">${item.title}</a>`)
+    store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
+    store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%percentage% off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%pe­rcentage% Off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%percentage% Off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%pe­rcentage% OFF", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%percentage% OFF", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%pe­rcentage%", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%percentage%", store.coupon_set[0].title);
+    store.store_description = store.store_description.replace(/XXX/, store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
+    store.store_description = store.store_description.replace(/XX/, store.coupon_set.length);
+    store.store_description = store.store_description.replace('XXX', store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
+    store.store_description = store.store_description.replace('XX', store.coupon_set.length);
+    store.extra_info = store.extra_info.replace('XXX', store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
+    store.extra_info = store.extra_info.replace('XX', store.coupon_set.length);
+    store.store_description = store.store_description.replaceAll("%%currentmonth%%", moment().format('MMMM'));
+    store.store_description = store.store_description.replaceAll("%%curre­ntmonth%%", moment().format('MMMM'));
+    store.store_description = store.store_description.replaceAll("%%currentyear%%", moment().format('YYYY'));
+    store.store_description = store.store_description.replaceAll("currentyear%%", moment().format('YYYY'));
+    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%|%categorystore%, %categorystore%, %categorystore%|%categorystore% %categorystore%, %categorystore%|%categorystore% %categorystore% %categorystore%|%categorystore% %categorystore% and %categorystore%/gi, store_names.join(", "));
 
-  }
-  return {
-    props: {
-      store: storeData || null,
-      relatedStores
-    },
-    revalidate: 60, // In seconds
-  };
+    return {
+        props: {
+            store,
+            relStores,
+            simCat
+        },
+        // Next.js will attempt to re-generate the page:
+        // - When a request comes in
+        // - At most once every 10 seconds
+        revalidate: 60, // In seconds
+    }
 }

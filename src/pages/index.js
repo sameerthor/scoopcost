@@ -36,7 +36,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
     return (
         <>
             <NextSeo
-                title="CouponTix - Best Coupons & Deals"
+                title="SuprOffer - Best Coupons & Deals"
                 description="Find the best coupons, deals, and discounts for top brands"
             />
             <MetaTags />
@@ -184,7 +184,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <h2 className='secHeading'>Today's Top Coupon Codes</h2>
                     <div className="row row-cols-lg-6 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://coupontix.com/ezeasproducts-com-au-coupons'>
+                            <a className='codeItem' href='https://SuprOffer.com/ezeasproducts-com-au-coupons'>
                                 <div className='codeHeader'>
                                 EzeAs Products
                                         
@@ -202,7 +202,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://coupontix.com/gummee.life/'>
+                            <a className='codeItem' href='https://SuprOffer.com/gummee.life/'>
                                 <div className='codeHeader'>
                                 Gummee Offer
                                         
@@ -220,7 +220,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://coupontix.com/getterms.io'>
+                            <a className='codeItem' href='https://SuprOffer.com/getterms.io'>
                                 <div className='codeHeader'>
                                    GetTerms Offer
                                         
@@ -238,7 +238,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://coupontix.com/geneticlabsaustralia-coupons/'>
+                            <a className='codeItem' href='https://SuprOffer.com/geneticlabsaustralia-coupons/'>
                                 <div className='codeHeader'>
                                 Genetic Labs Australia 
                                         
@@ -256,7 +256,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://coupontix.com/happydownloads.net/'>
+                            <a className='codeItem' href='https://SuprOffer.com/happydownloads.net/'>
                                 <div className='codeHeader'>
                                 HappyDownloads Offer
                                         
@@ -274,7 +274,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://coupontix.com/hoooyi-coupons/'>
+                            <a className='codeItem' href='https://SuprOffer.com/hoooyi-coupons/'>
                                 <div className='codeHeader'>
                                 Hoooyi Offer
                                         
@@ -300,7 +300,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <h2>Top Rated Stores</h2>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col">
-                            <a href='https://coupontix.com/nailsbestbuy-coupons/' className="toprated">
+                            <a href='https://SuprOffer.com/nailsbestbuy-coupons/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -323,7 +323,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/level8cases-coupons' className="toprated">
+                            <a href='https://SuprOffer.com/level8cases-coupons' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                                      width={400}
@@ -346,7 +346,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/mrimin-coupons' className="toprated">
+                            <a href='https://SuprOffer.com/mrimin-coupons' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -369,7 +369,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/moomenn-coupons/' className="toprated">
+                            <a href='https://SuprOffer.com/moomenn-coupons/' className="toprated">
                                 <div className="topratedTop" style={{ background: "#000"}}>
                                     <Image
                 width={400}
@@ -392,7 +392,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/naturesoil-coupons/' className="toprated">
+                            <a href='https://SuprOffer.com/naturesoil-coupons/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -415,7 +415,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/oakcitybeardcompany-coupons' className="toprated">
+                            <a href='https://SuprOffer.com/oakcitybeardcompany-coupons' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -438,7 +438,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/organicformulashop-coupons' className="toprated">
+                            <a href='https://SuprOffer.com/organicformulashop-coupons' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -461,7 +461,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/ca-outsmarted-coupons' className="toprated">
+                            <a href='https://SuprOffer.com/ca-outsmarted-coupons' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -484,7 +484,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/santasofficialnorthpolemail-coupons' className="toprated">
+                            <a href='https://SuprOffer.com/santasofficialnorthpolemail-coupons' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -507,7 +507,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/omoshiroiblock-coupons' className="toprated">
+                            <a href='https://SuprOffer.com/omoshiroiblock-coupons' className="toprated">
                                 <div className="topratedTop" style={{ background: "#000"}}>
                                     <Image
                 width={400}
@@ -539,7 +539,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <h2>Top Online Stores</h2>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col">
-                            <a href='https://coupontix.com/saucewarehouse-coupons' className="pickedStore">
+                            <a href='https://SuprOffer.com/saucewarehouse-coupons' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -554,7 +554,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/solti-coupons' className="pickedStore">
+                            <a href='https://SuprOffer.com/solti-coupons' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -569,7 +569,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/sunnysunday.ca/' className="pickedStore">
+                            <a href='https://SuprOffer.com/sunnysunday.ca/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -584,7 +584,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='http://coupontix.com/tampaschoolofrealestate-coupons/' className="pickedStore">
+                            <a href='http://SuprOffer.com/tampaschoolofrealestate-coupons/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -599,7 +599,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/thewatermachine-coupons' className="pickedStore">
+                            <a href='https://SuprOffer.com/thewatermachine-coupons' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -614,7 +614,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/turnedninja-coupons' className="pickedStore">
+                            <a href='https://SuprOffer.com/turnedninja-coupons' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -629,7 +629,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/viralecomadz-coupons' className="pickedStore">
+                            <a href='https://SuprOffer.com/viralecomadz-coupons' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -644,7 +644,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/wave-hawaii-coupons' className="pickedStore">
+                            <a href='https://SuprOffer.com/wave-hawaii-coupons' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -659,7 +659,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/yerbae-coupons' className="pickedStore">
+                            <a href='https://SuprOffer.com/yerbae-coupons' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -674,7 +674,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://coupontix.com/zojila-coupons' className="pickedStore">
+                            <a href='https://SuprOffer.com/zojila-coupons' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -957,28 +957,11 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
 }
 
 export async function getStaticProps() {
-    // Fetch all store categories
-    const categoryRes = await fetch(`https://admin.coupontix.com/api/store-categories?pagination[pageSize]=8`);
-    const categoryData = await categoryRes.json();
 
-    // Fetch stores for each home_option
-    const topRatedRes = await fetch(`https://admin.coupontix.com/api/stores?pagination[pageSize]=18&filters[home_options][$eq]=Top Rated Stores&populate=*`);
-    const featuredRes = await fetch(`https://admin.coupontix.com/api/stores?pagination[pageSize]=18&filters[home_options][$eq]=Featured Stores&populate=*`);
-    const topOnlineRes = await fetch(`https://admin.coupontix.com/api/stores?pagination[pageSize]=18&filters[home_options][$eq]=Top Online Stores&populate=*`);
-
-    // Parse JSON responses
-    const [topRatedData, featuredData, topOnlineData] = await Promise.all([
-        topRatedRes.json(),
-        featuredRes.json(),
-        topOnlineRes.json(),
-    ]);
 
     return {
         props: {
-            categories: categoryData || [],
-            topRatedStores: topRatedData || [],
-            featuredStores: featuredData || [],
-            topOnlineStores: topOnlineData || [],
+          
         },
         revalidate: 10, // ISR - revalidate every 10 seconds
     };

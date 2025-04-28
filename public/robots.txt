@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://coupontix.com
+Host: https://SuprOffer.com
 
 # Sitemaps
-Sitemap: https://coupontix.com/sitemap.xml
+Sitemap: https://SuprOffer.com/sitemap.xml

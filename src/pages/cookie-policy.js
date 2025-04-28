@@ -10,19 +10,19 @@ export default function cookiePolicy({ cookiePolicy }) {
     return (
         <>
             <NextSeo
-                title="Coupontix - Best Coupons & Deals"
+                title="SuprOffer - Best Coupons & Deals"
                 description="Find the best coupons, deals, and discounts for top brands"
             />
             <section className="sitePolicy">            
                 <div className="container">                   
                     <div className="row">
-                        <h1 className="text-center">Coupontix Cookie Policy</h1>
-                        <p>This Cookie Policy explains how CouponTix (the “Website”) uses cookies and similar technologies to collect information when you visit our site. It explains what cookies are, how we use them and how you can manage your cookie settings. 
+                        <h1 className="text-center">SuprOffer Cookie Policy</h1>
+                        <p>This Cookie Policy explains how SuprOffer (the “Website”) uses cookies and similar technologies to collect information when you visit our site. It explains what cookies are, how we use them and how you can manage your cookie settings. 
                         </p>
                         <h2>What are Cookies? 
                         </h2>
                         <p>Cookies are small text files stored on your device such as a computer, mobile phone or tablet when you visit a website. They help the website recognize your device and remember certain information such as your preferences, browsing history and language settings. Cookies are used to make websites work more efficiently as well as to provide information to the owners of the site. </p>
-                        <h2>How CouponTix Uses Cookies?</h2>
+                        <h2>How SuprOffer Uses Cookies?</h2>
                         <p>We use cookies to create a better browsing experience for you. Our cookies help us to: 
                         </p>
                         <ul>
@@ -64,8 +64,8 @@ export default function cookiePolicy({ cookiePolicy }) {
                         </p>
                         <h2>Contact Us
                         </h2>
-                        <p>If you have any questions about this Cookie Policy, please contact us at <MainDomainLink href="/contact">https://coupontix.com/contact.</MainDomainLink></p>
-                        <p>By using CouponTix, you consent to the use of cookies as described in this Cookie Policy. 
+                        <p>If you have any questions about this Cookie Policy, please contact us at <MainDomainLink href="/contact">https://SuprOffer.com/contact.</MainDomainLink></p>
+                        <p>By using SuprOffer, you consent to the use of cookies as described in this Cookie Policy. 
                         </p>
                     </div> 
                 </div>   

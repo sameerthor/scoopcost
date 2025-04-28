@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const https = require('https')
 
-const API_URL = 'https://admin.coupontix.com/api/stores?fields[1]=Slug&pagination[pageSize]=4000'
+const API_URL = 'https://admin.SuprOffer.com/api/stores?fields[1]=Slug&pagination[pageSize]=4000'
 const OUT_PATH = path.join(__dirname, '..', 'excluded-slugs.json')
 
 function fetchJson(url) {

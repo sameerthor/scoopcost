@@ -10,26 +10,26 @@ export default function termsOfUse({ termsOfUse }) {
     return (
         <>
             <NextSeo
-                title="Coupontix - Best Coupons & Deals"
+                title="SuprOffer - Best Coupons & Deals"
                 description="Find the best coupons, deals, and discounts for top brands"
             />
             <section className="sitePolicy">            
                 <div className="container">                   
                     <div className="row">
-                        <h1 className="text-center">Coupontix Terms of use</h1>
+                        <h1 className="text-center">SuprOffer Terms of use</h1>
                         <p>
-                            Welcome to CouponTix (the “Website”). These Terms of Use explain how you can use our website and services. By accessing or using CouponTix, you agree to follow the rules outlined here. Please read everything carefully as it outlines your legal rights and obligations. 
+                            Welcome to SuprOffer (the “Website”). These Terms of Use explain how you can use our website and services. By accessing or using SuprOffer, you agree to follow the rules outlined here. Please read everything carefully as it outlines your legal rights and obligations. 
                         </p>
                         <h2>Acceptance of Terms </h2>
                         <p>
-                            By using CouponTix in any way - whether browsing, clicking on a deal or using a coupon, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our website. Your continued use of the site means you accept all current terms. 
+                            By using SuprOffer in any way - whether browsing, clicking on a deal or using a coupon, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our website. Your continued use of the site means you accept all current terms. 
                         </p>
                         <h2>Description of Our Service </h2>
-                        <p>CouponTix provides users with coupons, discounts, and promotional offers from various retailers and service providers. We do not sell the products or services offered by the merchants. Our role is to solely provide available coupons and offers to help you save money. </p>
+                        <p>SuprOffer provides users with coupons, discounts, and promotional offers from various retailers and service providers. We do not sell the products or services offered by the merchants. Our role is to solely provide available coupons and offers to help you save money. </p>
                         <h2>Use of the Website </h2>
                         <ul>
                             <li>You must be 18 years or older to use our site.</li>
-                            <li>You may use CouponTix for your personal, non-commercial use only.</li>
+                            <li>You may use SuprOffer for your personal, non-commercial use only.</li>
                             <li>You agree not to use the website for any unlawful purpose or in any way that could harm, disable, or impair the site.</li>
                             <li>You agree not to attempt to gain unauthorized access to any part of the website, other user accounts, or networks connected to the website.</li>
                             <li>You agree not to use any automated means such as bots or scrapers to collect information from the website without our written permission.</li>
@@ -40,26 +40,26 @@ export default function termsOfUse({ termsOfUse }) {
                        </p>
                        <ul>
                             <li>
-                                The coupons and deals displayed on CouponTix are provided by the merchants and are subject to their respective terms and conditions including expiry dates and eligibility requirements.
+                                The coupons and deals displayed on SuprOffer are provided by the merchants and are subject to their respective terms and conditions including expiry dates and eligibility requirements.
                             </li>
                             <li>
-                                CouponTix does not guarantee the validity, accuracy, availability or usability of any coupon or offer.
+                                SuprOffer does not guarantee the validity, accuracy, availability or usability of any coupon or offer.
                             </li>
                             <li>
                                 It is your responsibility to verify the terms and conditions of any coupon or offer before making a purchase or using the offer.
                             </li>
                             <li>
-                                CouponTix is not responsible for any errors, omissions or misrepresentations made by the merchants regarding their offers.
+                                SuprOffer is not responsible for any errors, omissions or misrepresentations made by the merchants regarding their offers.
                             </li>
                         </ul>
                         <h2>Intellectual Property</h2>
                         <p>
-                        The content on CouponTix including text, graphics, logo, and images is protected by copyright and other intellectual laws. You may not copy, reproduce or distribute any part of our website without written permission. The CouponTix name and logo are trademarks of CouponTix. You may not use these marks without our permission. 
+                        The content on SuprOffer including text, graphics, logo, and images is protected by copyright and other intellectual laws. You may not copy, reproduce or distribute any part of our website without written permission. The SuprOffer name and logo are trademarks of SuprOffer. You may not use these marks without our permission. 
 
                         </p>
                         <h2>Third-Party Links</h2>
                         <p>
-                        CouponTix contains links to third-party websites that are not owned or controlled by us. We are not responsible for the content, privacy policies or practices of any third-party websites. You access these websites at your own discretion.
+                        SuprOffer contains links to third-party websites that are not owned or controlled by us. We are not responsible for the content, privacy policies or practices of any third-party websites. You access these websites at your own discretion.
                         </p>
                         <h2>Limitation of Liability</h2>
                         <p>
@@ -71,7 +71,7 @@ export default function termsOfUse({ termsOfUse }) {
                             </li>
                         </ul>
                         <h2>Indemnification</h2>
-                        <p>By using CouponTix, you agree to indemnify and hold harmless CouponTix, its team, partners, and affiliates from and against any claims, losses, damages, obligations, or expenses (including reasonable legal fees) that arise from: 
+                        <p>By using SuprOffer, you agree to indemnify and hold harmless SuprOffer, its team, partners, and affiliates from and against any claims, losses, damages, obligations, or expenses (including reasonable legal fees) that arise from: 
                         </p>
                         <ul>
                             <li>Your use or access of the website. 
@@ -85,7 +85,7 @@ export default function termsOfUse({ termsOfUse }) {
 
                         </p>
                         <h2>Termination of Use</h2>
-                        <p>We reserve the right to suspend or terminate your access to CouponTix, if
+                        <p>We reserve the right to suspend or terminate your access to SuprOffer, if
                         </p>
                         <ul>
                             <li>You violate these Terms. </li>
@@ -101,9 +101,9 @@ export default function termsOfUse({ termsOfUse }) {
                         </p>
                         <h2>Contact Us</h2>
                         <p>
-                        Have a question or concern? We are here to help! Reach out at <MainDomainLink href="/contact">https://coupontix.com/contact</MainDomainLink>
+                        Have a question or concern? We are here to help! Reach out at <MainDomainLink href="/contact">https://SuprOffer.com/contact</MainDomainLink>
                         </p>
-                        <p>By using CouponTix, you acknowledge that you have read and understand these Terms of Use and agree to be bound by them. </p>
+                        <p>By using SuprOffer, you acknowledge that you have read and understand these Terms of Use and agree to be bound by them. </p>
                     </div> 
                 </div>   
             </section>

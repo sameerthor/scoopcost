@@ -10,22 +10,22 @@ export default function affiliateDisclosure({ affiliateDisclosure }) {
     return (
         <>
             <NextSeo
-                title="Coupontix - Best Coupons & Deals"
+                title="SuprOffer - Best Coupons & Deals"
                 description="Find the best coupons, deals, and discounts for top brands"
             />
 
             <section className="sitePolicy">            
                 <div className="container">                   
                     <div className="row">
-                        <h1 className="text-center">Coupontix Affiliate Disclosure</h1>
-                        <p>At CouponTix, transparency and honesty are the foundation of everything we do. You should know that CouponTix participates in affiliate marketing. This means that when you click on certain links on our website and make a purchase, we may earn a commission or referral fee. 
+                        <h1 className="text-center">SuprOffer Affiliate Disclosure</h1>
+                        <p>At SuprOffer, transparency and honesty are the foundation of everything we do. You should know that SuprOffer participates in affiliate marketing. This means that when you click on certain links on our website and make a purchase, we may earn a commission or referral fee. 
                         This Affiliate Disclosure explains how our site works and how we make money. 
                         </p>
                         <h2>What is Affiliate Marketing?</h2>
-                        <p>Affiliate marketing is a way for websites like CouponTix to earn by linking products or services offered by other companies (Merchants). When you click our affiliate links and then complete a transaction with the merchant, we may receive a small percentage of the sale or a set fee.</p>
+                        <p>Affiliate marketing is a way for websites like SuprOffer to earn by linking products or services offered by other companies (Merchants). When you click our affiliate links and then complete a transaction with the merchant, we may receive a small percentage of the sale or a set fee.</p>
                         <h2>How do Affiliate Links Work?</h2>
                         <p>
-                        When you click on a deal, coupon or promotion listed on CouponTix and then make a purchase from the merchant’s website, we may earn an affiliate commission. These links are a part of affiliate programs we participate in. 
+                        When you click on a deal, coupon or promotion listed on SuprOffer and then make a purchase from the merchant’s website, we may earn an affiliate commission. These links are a part of affiliate programs we participate in. 
 
                         </p>
                         <p>
@@ -65,7 +65,7 @@ export default function affiliateDisclosure({ affiliateDisclosure }) {
                         Please note:
                         </p>
                         <ul>
-                                <li>CouponTix does not sell or endorse products. We only link to third-party retailers.</li>
+                                <li>SuprOffer does not sell or endorse products. We only link to third-party retailers.</li>
                                 <li>We do not own or produce any of the items or services.</li>
                                 <li>We do not guarantee the quality and reliability of products or services.</li>
                                 <li>We do not receive any free products or perks for including any particular retailer. </li>
@@ -73,7 +73,7 @@ export default function affiliateDisclosure({ affiliateDisclosure }) {
                         <h2>Contact Us
                         </h2>
                         <p>
-                        If you have any questions about how affiliate links work on CouponTix, please contact us through our <a href="/contact">Contact Page</a> and we will be happy to clarify. 
+                        If you have any questions about how affiliate links work on SuprOffer, please contact us through our <a href="/contact">Contact Page</a> and we will be happy to clarify. 
                         </p>
                     </div> 
                 </div>   

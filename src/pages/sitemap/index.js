@@ -1,4 +1,4 @@
-const baseDomain = 'coupontix.com'
+const baseDomain = 'SuprOffer.com'
 
 const toUrl = (data) =>
   `<url><loc>${data.url}</loc></url>`
@@ -19,7 +19,7 @@ export async function getServerSideProps({ res }) {
   const urlList = []
 
   const result = await fetch(
-    'https://admin.coupontix.com/api/stores?fields[0]=Slug&fields[1]=uses_subdomain&pagination[pageSize]=4000'
+    'https://admin.SuprOffer.com/api/stores?fields[0]=Slug&fields[1]=uses_subdomain&pagination[pageSize]=4000'
   )
   const json = await result.json()
   const stores = json.data || json

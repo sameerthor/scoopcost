@@ -10,7 +10,7 @@ export default function contactPage({ contact }) {
     return (
         <>
             <NextSeo
-                title="CouponTix - Best Coupons & Deals"
+                title="SuprOffer - Best Coupons & Deals"
                 description="Find the best coupons, deals, and discounts for top brands"
             />
 
@@ -18,7 +18,7 @@ export default function contactPage({ contact }) {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 p-0">
-                            <h1 className="text-center">Contact Coupontix</h1>
+                            <h1 className="text-center">Contact SuprOffer</h1>
                             <form action="#NoWhere" className="contactForm row">
                                 <div className="row p-0 inputGroup">
                                     <div className="col-md-6 mb-3">

@@ -10,18 +10,18 @@ export default function privacyPolicy({ privacyPolicy }) {
     return (
         <>
             <NextSeo
-                title="Coupontix - Best Coupons & Deals"
+                title="SuprOffer - Best Coupons & Deals"
                 description="Find the best coupons, deals, and discounts for top brands"
             />
             <section className="sitePolicy">            
                 <div className="container">                   
                     <div className="row">
-                        <h1 className='text-center'> Coupontix Privacy Policy</h1>
+                        <h1 className='text-center'> SuprOffer Privacy Policy</h1>
                         <p>
-                        At CouponTix, your privacy matters. This Privacy Policy explains how we collect, use, and share your personal information when you use our website. By using SavesesRight, you agree to the terms outlined below. If you do not agree please do not use our site or services.
+                        At SuprOffer, your privacy matters. This Privacy Policy explains how we collect, use, and share your personal information when you use our website. By using SavesesRight, you agree to the terms outlined below. If you do not agree please do not use our site or services.
                         </p>
                         <h2>What Information We Collect</h2>
-                        <p>We collect two types of information when you visit or use CouponTix:</p>
+                        <p>We collect two types of information when you visit or use SuprOffer:</p>
                         <p>
                            <b>a. Information Your Provide Directly
                            </b>
@@ -38,7 +38,7 @@ export default function privacyPolicy({ privacyPolicy }) {
                         </p>
                         <h2>How We Use Your Information</h2>
                         <p>
-                        We may use your details to improve your user experience with CouponTix and to provide services that are relevant to you. We may use your information to:
+                        We may use your details to improve your user experience with SuprOffer and to provide services that are relevant to you. We may use your information to:
                         </p>
                         <ul>
                             <li>Show you relevant coupon codes, discounts, and deals. 
@@ -60,9 +60,9 @@ export default function privacyPolicy({ privacyPolicy }) {
                         <ul>
                                 <li>With trusted service providers who help us operate our website such as hosting providers, analytics providers and email marketing services. These providers are contractually obligated to protect your personal information. 
                                 </li>
-                                <li>We may share your personal information to the extent that you have used a coupon from Coupontix offered by a third party merchant. We will not share your information with third parties unless you directly interact with their offer. 
+                                <li>We may share your personal information to the extent that you have used a coupon from SuprOffer offered by a third party merchant. We will not share your information with third parties unless you directly interact with their offer. 
                                 </li>
-                                <li>We may disclose your information to law enforcement agencies, government authorities, or other third parties if required by law or legal purposes, or if we believe it is necessary to protect the rights, property or safety of CouponTix or its users. 
+                                <li>We may disclose your information to law enforcement agencies, government authorities, or other third parties if required by law or legal purposes, or if we believe it is necessary to protect the rights, property or safety of SuprOffer or its users. 
                                 </li>
                         </ul>
                         <h2>How We Protect Your Data</h2>
@@ -99,15 +99,15 @@ export default function privacyPolicy({ privacyPolicy }) {
                         </ul>
                         <p>To make any of these changes or requests, contact us using the link below. </p>
                         <h2>International Data Transfers</h2>
-                        <p>If you are using CouponTix from outside our country of operation, your data may be processed and stored in a country with different data laws. By using our website, you agree to the transfer of your data internationally. </p>
+                        <p>If you are using SuprOffer from outside our country of operation, your data may be processed and stored in a country with different data laws. By using our website, you agree to the transfer of your data internationally. </p>
                         <h2>Changes to this Privacy Policy
                         </h2>
                         <p>We may update this Privacy Policy from time to time. When we do, we’ll post the updated policy on this page with the new effective date. Your continued use of the website after any such changes constitutes your acceptance of the new Privacy Policy. We recommend you to review our Privacy Policy periodically. 
                         </p>
                         <h2>Contact Us</h2>
-                        <p>If you have any questions about this Privacy Policy, please contact us at <MainDomainLink href="/contact">https://coupontix.com/contact</MainDomainLink>.</p>
+                        <p>If you have any questions about this Privacy Policy, please contact us at <MainDomainLink href="/contact">https://SuprOffer.com/contact</MainDomainLink>.</p>
                         <p>
-                        By using CouponTix, you consent to the terms described in this Privacy Policy. 
+                        By using SuprOffer, you consent to the terms described in this Privacy Policy. 
                         </p>    
                     </div>
                 </div>   
