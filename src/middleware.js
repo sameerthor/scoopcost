@@ -57,7 +57,7 @@ export async function middleware(request) {
   const subdomain = host.replace(`.${baseDomain}`, '');
   const storeData = await fetchStoreData(subdomain);
 
-  if (!storeData || !storeData.data.subdomain) {
+  if (!storeData || !storeData.subdomain) {
     // Custom 404 page
     return NextResponse.rewrite(new URL('/404', request.url));
   }
