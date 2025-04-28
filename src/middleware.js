@@ -47,7 +47,7 @@ export async function middleware(request) {
 
     if (storeData.subdomain) {
       // SEO-friendly redirect instead of 404
-      return NextResponse.redirect(`https://${slug}.${baseDomain}${pathname}`, 308);
+      return NextResponse.redirect(`https://${slug}.${baseDomain}`, 308);
     }
 
     return NextResponse.next();
