@@ -1,193 +1,160 @@
-import MainDomainLink from '@/components/MainDomainLink';
-import MetaTags from '@/components/MetaTags';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import "@/styles/a-z.css";
 import { NextSeo } from "next-seo";
+import MainDomainLink from '@/components/MainDomainLink';
 
-export default function Stores({ allStores }) {
-  const baseDomain = 'coupontix.com'
+export default function Stores({ initialStoreData }) {
+    console.log(initialStoreData)
+    const [storeData, setStoreData] = useState(initialStoreData);
+    const [pageNumbers, setPageNumbers] = useState(
+        Object.keys(initialStoreData).reduce((acc, key) => ({ ...acc, [key]: 1 }), {})
+    );
+    const [loading, setLoading] = useState({});
+    const [hasMore, setHasMore] = useState(
+        Object.keys(initialStoreData).reduce((acc, key) => ({
+            ...acc,
+            [key]: initialStoreData[key]?.length > 0, // Check if initial data is available
+        }), {})
+    );
 
-  const [groupedStores, setGroupedStores] = useState({});
-  const [pageNumbers, setPageNumbers] = useState({});
-  const [displayedStores, setDisplayedStores] = useState({});
-  const [hasMore, setHasMore] = useState({});
-  const itemsPerPage = 10; // Number of stores to show per letter before "Load More"
+    const alphabets = ["0-9", ...Array.from({ length: 26 }, (_, i) => String.fromCharCode(97 + i))];
 
-  const alphabets = ["0-9", ...Array.from({ length: 26 }, (_, i) => String.fromCharCode(97 + i))];
+    const handleLoadMore = async (letter) => {
+        if (!hasMore[letter]) return; // If no more data, stop fetching
 
-  // Initialize data structures on component mount
-  useEffect(() => {
-    const groups = {};
-    const initialPageNumbers = {};
-    const initialDisplayedStores = {};
-    const initialHasMore = {};
+        setLoading((prev) => ({ ...prev, [letter]: true }));
+        try {
+            const nextPage = pageNumbers[letter] + 1;
+            const response = await fetch(
+                `https://admin.suproffer.com/store-page/alphabetical-filter/?letter=${letter}&page=${nextPage}`
+            );
+            const data = await response.json();
 
-    // Initialize for all letters
-    alphabets.forEach(letter => {
-      groups[letter] = [];
-      initialPageNumbers[letter] = 1;
-      initialDisplayedStores[letter] = [];
-      initialHasMore[letter] = false;
-    });
+            if (data.detail === "Invalid page.") {
+                setHasMore((prev) => ({ ...prev, [letter]: false }));
+            } else {
+                setStoreData((prev) => ({
+                    ...prev,
+                    [letter]: [...prev[letter], ...(data.results || [])],
+                }));
+                setPageNumbers((prev) => ({ ...prev, [letter]: nextPage }));
+            }
+        } catch (error) {
+            console.error(`Error loading more stores for ${letter}:`, error);
+        } finally {
+            setLoading((prev) => ({ ...prev, [letter]: false }));
+        }
+    };
 
-    // Group stores by first letter
-    allStores.forEach(store => {
-      const firstChar = store.Title.charAt(0).toLowerCase();
-      const letter = /[a-z]/.test(firstChar) ? firstChar : "0-9";
-      groups[letter]?.push(store);
-    });
+    const calculateCoupons = (coupons) => {
+        const dealCount = coupons.filter((x) => x.coupon_type === "deal").length;
+        const codeCount = coupons.filter((x) => x.coupon_type === "code").length;
+        const dealText = dealCount > 0 ? `${dealCount} deal${dealCount > 1 ? "s" : ""}` : "";
+        const codeText = codeCount > 0 ? `${codeCount} code${codeCount > 1 ? "s" : ""}` : "";
+        return [dealText, codeText].filter(Boolean).join(" & ");
+    };
 
-    // Set initial displayed stores and hasMore state
-    alphabets.forEach(letter => {
-      initialDisplayedStores[letter] = groups[letter]?.slice(0, itemsPerPage) || [];
-      initialHasMore[letter] = (groups[letter]?.length || 0) > itemsPerPage;
-    });
+    return (
+        <>
+            <NextSeo
+                title="All Stores for 2025"
+                description="Find out exclusive coupons for your products. Supercosts brings you the top discounts for over 1000 stores."
+            />
+            <section className="allStorePage">
+                <div className="container">
+                    <div className="storeBox">
+                        <div className="alpha-store">
+                            <h1 className="text-center">All Stores</h1>
+                            <div>
+                                <p className="all_list">
+                                    {alphabets.map((c) => (
+                                        <button
+                                            type="button"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                const target = document.querySelector(`#alpha${c.toUpperCase()}`);
+                                                if (target) {
+                                                    window.scrollTo({
+                                                        top: target.offsetTop - 30,
+                                                        behavior: "smooth",
+                                                    });
+                                                }
+                                            }}
+                                            className="getStore"
+                                            aria-label={`Scroll to ${c.toUpperCase()} section`}
+                                            key={c}
+                                        >
+                                            {c.toUpperCase()}
+                                        </button>
+                                    ))}
+                                </p>
+                            </div>
 
-    setGroupedStores(groups);
-    setPageNumbers(initialPageNumbers);
-    setDisplayedStores(initialDisplayedStores);
-    setHasMore(initialHasMore);
-  }, [allStores]);
-
-  const handleLoadMore = (letter) => {
-    if (!hasMore[letter]) return;
-
-    const nextPage = pageNumbers[letter] + 1;
-    const startIndex = (nextPage - 1) * itemsPerPage;
-    const newStores = groupedStores[letter]?.slice(startIndex, startIndex + itemsPerPage) || [];
-    
-    setDisplayedStores(prev => ({
-      ...prev,
-      [letter]: [...prev[letter], ...newStores]
-    }));
-
-    setPageNumbers(prev => ({
-      ...prev,
-      [letter]: nextPage
-    }));
-
-    setHasMore(prev => ({
-      ...prev,
-      [letter]: (groupedStores[letter]?.length || 0) > (nextPage * itemsPerPage)
-    }));
-  };
-
-  const calculateCoupons = (store) => {
-    if (!store.Coupons || !Array.isArray(store.Coupons)) return "";
-  
-    const deals = store.Coupons.filter(coupon => coupon.coupon_type === "Sale").length;
-    const codes = store.Coupons.filter(coupon => coupon.coupon_code && coupon.coupon_code.trim() !== "").length;
-  
-    let result = [];
-    if (deals > 0) result.push(`${deals} deal${deals > 1 ? 's' : ''}`);
-    if (codes > 0) result.push(`${codes} code${codes > 1 ? 's' : ''}`);
-  
-    return result.join(" & ");
-  };
-
-  return (
-    <>
-      <NextSeo
-        title="All Stores for 2025"
-        description="Here you will find the latest coupon codes and deals for top brands. Get huge discounts on everyday essentials and luxury items with our updated promo codes. We ensure you get the best discount codes for online shopping! "
-      />
-       <MetaTags />
-      <section className="allStorePage">
-        <div className="container">
-          <div className="storeBox">
-            <div className="alpha-store">
-              <h1 className="text-center">All Stores</h1>
-              <div>
-                <p className="all_list">
-                  {alphabets.map((c) => (
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        const target = document.querySelector(`#alpha${c.toUpperCase()}`);
-                        if (target) {
-                          window.scrollTo({
-                            top: target.offsetTop - 30,
-                            behavior: "smooth",
-                          });
-                        }
-                      }}
-                      className="getStore"
-                      aria-label={`Scroll to ${c.toUpperCase()} section`}
-                      key={c}
-                    >
-                      {c.toUpperCase()}
-                    </button>
-                  ))}
-                </p>
-              </div>
-
-              {alphabets.map((c) => (
-                <div className="storeList" id={`alpha${c.toUpperCase()}`} key={c}>
-                  {displayedStores[c]?.length > 0 ? (
-                    <>
-                      <ul>
-                        {displayedStores[c].map((store) => (
-                          <li key={store.id}>
-                            <MainDomainLink href={
-                                    store.uses_subdomain
-                                        ? `https://${store.Slug}.${baseDomain}`
-                                        : `/${store.Slug}`
-                                }>
-                              {store.Title}
-                              <span>{calculateCoupons(store)}</span>
-                            </MainDomainLink>
-                          </li>
-                        ))}
-                      </ul>
-                      {hasMore[c] && (
-                        <div className="loadMoreCoupon text-center">
-                          <button
-                            onClick={() => handleLoadMore(c)}
-                            className="load-more-btn"
-                          >
-                            Load More
-                          </button>
+                            {Object.keys(storeData).map((c) => (
+                                <div className="storeList" id={`alpha${c.toUpperCase()}`} key={c}>
+                                    {storeData[c].length > 0 ? (
+                                        <ul>
+                                            {storeData[c].map((item, index) => (
+                                                <li key={index}>
+                                                    <MainDomainLink href={`/${item.slug}`}>
+                                                        {item.title}
+                                                        <span>{calculateCoupons(item.coupon_set)}</span>
+                                                    </MainDomainLink>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    ) : (
+                                        <p className="no-data-message" style={{ textAlign: "center" }}>
+                                            No stores available for {c.toUpperCase()}.
+                                        </p>
+                                    )}
+                                    {hasMore[c] && storeData[c].length > 0 && (
+                                        <div className="loadMoreCoupon text-center">
+                                            <button
+                                                onClick={() => handleLoadMore(c)}
+                                                disabled={loading[c] || !hasMore[c]}
+                                                aria-live="polite"
+                                                className="load-more-btn"
+                                            >
+                                                {loading[c] ? "Loading..." : "Load More"}
+                                            </button>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
                         </div>
-                      )}
-                    </>
-                  ) : (
-                    <p className="no-data-message" style={{ textAlign: "center" }}>
-                      No stores available for {c.toUpperCase()}.
-                    </p>
-                  )}
+                    </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+            </section>
+        </>
+    );
 }
 
 export async function getStaticProps() {
-  try {
-    // Fetch all stores at once (no pagination)
-    const response = await fetch(
-      'https://admin.coupontix.com/api/stores?fields[0]=Title&fields[1]=Slug&fields[2]=uses_subdomain&populate[Coupons][populate]=screenshot&pagination[pageSize]=4000' // Adjust pageSize as needed
-    );
-    const { data } = await response.json();
+    const alphabets = ["0-9", ...Array.from({ length: 26 }, (_, i) => String.fromCharCode(97 + i))];
+    const storeData = {};
+
+    try {
+        const responses = await Promise.all(
+            alphabets.map((letter) =>
+                fetch(`https://admin.suproffer.com/store-page/alphabetical-filter/?letter=${letter}&page=1`)
+                    .then((res) => res.json())
+                    .then((data) => ({ [letter]: data.results || [] }))
+            )
+        );
+
+        responses.forEach((response) => {
+            Object.assign(storeData, response);
+        });
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
 
     return {
-      props: {
-        allStores: data || [],
-      },
-      revalidate: 60, // Revalidate every hour
+        props: {
+            initialStoreData: storeData,
+        },
+        revalidate: 10,
     };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return {
-      props: {
-        allStores: [],
-      },
-      revalidate: 60 , // Revalidate every hour even if error
-    };
-  }
 }

@@ -9,24 +9,28 @@ function CategoryListing({ categories }) {
     console.log(categories)
     const validImageSrc = (image) => image && (image.startsWith("/") || image.startsWith("http"));
 
-    const calculateCouponString = (stores) => {
-        const allCoupons = stores.flatMap(store => store.Coupons || []);
+    
+    const calculateCouponString = (storeSet) => {
+        const allCoupons = storeSet.results.flatMap(store => store.coupon_set);
 
-        const codeCount = allCoupons.filter(coupon => coupon.coupon_type === "Code").length;
-        const dealCount = allCoupons.filter(coupon => coupon.coupon_type === "Sale").length;
-
+        // Count "code" and "deal" types
+        const codeCount = allCoupons.filter(coupon => coupon.coupon_type === "code").length;
+        const dealCount = allCoupons.filter(coupon => coupon.coupon_type === "deal").length;
+      
+        // Generate the summary string
         const summaryParts = [];
         if (codeCount > 0) summaryParts.push(`${codeCount} ${codeCount > 1 ? 'Codes' : 'Code'}`);
         if (dealCount > 0) summaryParts.push(`${dealCount} ${dealCount > 1 ? 'Deals' : 'Deal'}`);
-
-        return summaryParts.length > 0 ? summaryParts.join(" | ") : ""; 
-    };
+      
+        const summary = summaryParts.join(" | ");
+        return summary;
+      };
 
     return (
         <>
             <NextSeo
                 title="Categories 2025"
-                description="Get the best online coupons and promo codes at Coupontix. Shoppers will save on electronics, fashion, beauty essentials, travel, sports goods, groceries, pet supplies, health products, and more. Use our latest coupon codes to enjoy big discounts to your favorite products."
+                description="Get the best online coupons and promo codes at SuprOffer. Shoppers will save on electronics, fashion, beauty essentials, travel, sports goods, groceries, pet supplies, health products, and more. Use our latest coupon codes to enjoy big discounts to your favorite products."
             />
              <MetaTags />
             <section className="categorySection">
@@ -34,7 +38,7 @@ function CategoryListing({ categories }) {
                     <div className="row">
                         <div className="breadcrumb">
                             <ul>
-                                <li><MainDomainLink href="/">coupontix.com</MainDomainLink> /</li>
+                                <li><MainDomainLink href="/">suproffer.com</MainDomainLink> /</li>
                                 <li>category</li>
                             </ul>
                         </div>
@@ -45,19 +49,19 @@ function CategoryListing({ categories }) {
                             <div className="col-lg-2 col-md-3 col-sm-4 category-box" key={index}>
                                 <div className="category-item">
                                     <div className="cat-img">
-                                        <MainDomainLink href={`/category/${category.Slug}`}>
+                                        <MainDomainLink href={`/category/${category.slug}`}>
                                             <Image
                                                 width={100}
                                                 height={100}
-                                                src={category.Image?.url ? process.env.NEXT_PUBLIC_IMAGE_URL+category.Image?.url : "/images/default-placeholder.png"}
-                                                alt={(category.Title) + " Icon" || "Category Icon" }
+                                                src={category.image ? category.image : "/images/default-placeholder.png"}
+                                                alt={(category.title) + " Icon" || "Category Icon" }
                                             />
                                         </MainDomainLink>
                                     </div>
                                     <div className="category-title">
-                                        <MainDomainLink href={`/category/${category.Slug}`}>
-                                            {category.Title}
-                                            <span>{calculateCouponString(category.stores || [])}</span>
+                                        <MainDomainLink href={`/category/${category.slug}`}>
+                                            {category.title}
+                                            <span>{calculateCouponString(category.store_set || [])}</span>
                                         </MainDomainLink>
                                     </div>
                                 </div>
@@ -70,29 +74,15 @@ function CategoryListing({ categories }) {
     );
 }
 
-export async function getStaticProps() {
-    // Fetch all store categories
-    const categoryRes = await fetch(`https://admin.coupontix.com/api/store-categories?pagination[pageSize]=4000`);
-    const { data: categories } = await categoryRes.json();
-
-    // Fetch all stores with coupons and categories
-    const storeRes = await fetch(`https://admin.coupontix.com/api/stores?fields[0]=Title&fields[1]=Slug&populate[Coupons][populate]=screenshot&populate[store_category][fields][0]=id&pagination[pageSize]=4000`);
-    const { data: stores } = await storeRes.json();
-
-    // Ensure stores is properly accessed
-    const storeList = stores || []; // Make sure it's an array
-
-    // Attach stores to their respective categories
-    const categoryData = categories.map(category => ({
-        ...category,
-        stores: storeList.filter(store => store.store_category && store.store_category.id === category.id)
-    }));
+export async function getStaticProps({ params }) {
+    const res = await fetch(`https://admin.suproffer.com/categories?ordering=title`);
+    const categories = await res.json();
 
     return {
         props: {
-            categories: categoryData || [],
+            categories,
         },
-        revalidate: 10, // ISR - revalidate every 10 seconds
+        revalidate: 10,
     };
 }
 

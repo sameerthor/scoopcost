@@ -13,7 +13,7 @@ export default function Header() {
   const [filterdata, setFilterdata] = useState([]);
 
     function fetchData() {
-      axios.get('https://admin.coupontix.com/api/stores?fields[0]=Title&fields[1]=Slug&fields[2]=uses_subdomain&pagination[pageSize]=4000')
+      axios.get('https://admin.SuprOffer.com/api/stores?fields[0]=Title&fields[1]=Slug&fields[2]=uses_subdomain&pagination[pageSize]=4000')
         .then(function (response) {
           var d = response.data.data.map(item => { return { key: item.Slug, value: item.Title,uses_subdomain:item.uses_subdomain } })
           setFilterdata(d);
@@ -80,9 +80,9 @@ export default function Header() {
                               const { key, uses_subdomain } = record.item
                             
                               if (uses_subdomain) {
-                                window.location.href = `https://${key}.coupontix.com`
+                                window.location.href = `https://${key}.SuprOffer.com`
                               } else {
-                                 window.location.href = `https://coupontix.com/${key}`
+                                 window.location.href = `https://SuprOffer.com/${key}`
                               }
                             }}
                                leftIcon={<svg

@@ -13,7 +13,7 @@ export default function Header() {
     const [filterdata, setFilterdata] = useState([]);
 
     function fetchData() {
-      axios.get('https://admin.coupontix.com/api/stores?fields[0]=Title&fields[1]=Slug&pagination[pageSize]=4000')
+      axios.get('https://admin.SuprOffer.com/api/stores?fields[0]=Title&fields[1]=Slug&pagination[pageSize]=4000')
         .then(function (response) {
           var d = response.data.data.map(item => { return { key: item.Slug, value: item.Title } })
           setFilterdata(d);

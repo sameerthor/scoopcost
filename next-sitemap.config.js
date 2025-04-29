@@ -1,11 +1,11 @@
 const excludedSlugs = require('./excluded-slugs.json')
 
 module.exports = {
-  siteUrl: 'https://coupontix.com',
-  generateRobotsTxt: true,
+  siteUrl: 'https://suproffer.com',
+  generateRobotsTxt: false,
   exclude: excludedSlugs.map(slug => `/${slug}`),
     generateIndexSitemap: false, // ❌ disables sitemap-index.xml
-  additionalSitemaps: ['https://coupontix.com/store-sitemap.xml'],
+  additionalSitemaps: ['https://suproffer.com/store-sitemap.xml'],
   transform: async (config, path) => {
     if (excludedSlugs.some(slug => path === `/${slug}` || path.startsWith(`/${slug}/`))) {
       return null

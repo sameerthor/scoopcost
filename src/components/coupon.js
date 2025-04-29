@@ -41,7 +41,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   const [copytext, setCopyText] = useState("Copy code");
   const [isExpanded, setIsExpanded] = useState(false);
   const maxChars = 40;
-  const showMore = coupon.Content.length > maxChars;
+  const showMore = coupon.content.length > maxChars;
 
   setTimeout(async () => {
     if (process.browser) {
@@ -51,7 +51,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         await setModalOpen(true);
         setTimeout(() => {
           // Determine the modal to open based on coupon type
-          let modalElement = coupon.coupon_type == "Code"
+          let modalElement = coupon.coupon_type == "code"
             ? document.getElementById('getCode' + c_id)
             : document.getElementById('getDeal' + c_id);
 
@@ -72,7 +72,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   async function trackCouponUsage(couponComponentId) {
     try {
       const response = await fetch(
-        `https://admin.coupontix.com/api/stores/${storeId}/coupons/${couponComponentId}/track-usage`,
+        `https://admin.SuprOffer.com/api/stores/${storeId}/coupons/${couponComponentId}/track-usage`,
         {
           method: 'POST',
           headers: {
@@ -90,7 +90,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   async function isWorked(couponComponentId, is_worked) {
     try {
       const response = await fetch(
-        `https://admin.coupontix.com/api/stores/${storeId}/coupons/${couponComponentId}/is-worked`,
+        `https://admin.SuprOffer.com/api/stores/${storeId}/coupons/${couponComponentId}/is-worked`,
         {
           method: 'POST',
           headers: {
@@ -109,14 +109,14 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
   return (
     <>
-{index % 3 === 0 && (
-  <h2>{h2_heading[index / 3].replace("Storename", storeName)}</h2>
-) }
+{index % 3 === 0 && index < 12 && (
+  <h2>{h2_heading[Math.floor(index / 3)].replace("Storename", storeName)}</h2>
+)}
     <div className="purpleCouponBox">
       <div className="coupon-container">
         <div className="left-section">
           <div className="discount-box">
-              <div dangerouslySetInnerHTML={{ __html: getHeading(coupon.Title) }}></div>
+              <div dangerouslySetInnerHTML={{ __html: getHeading(coupon.title) }}></div>
           </div>
           <div className="isValid">
             <span>Verified</span>
@@ -137,16 +137,16 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         <div className="right-section">
           <div className='badgeFeedback'>
               <div className="badge">
-                    {coupon.coupon_type === 'Code' ? 'Code' : 'Deal'}
+                    {coupon.coupon_type === 'code' ? 'Code' : 'Deal'}
               </div>
           </div>
           <h3 className="title">
-                <a title={coupon.Title} rel="nofollow" className="coupon-link" href={affiliateUrl}>
-                  {coupon.Title}
+                <a title={coupon.title} rel="nofollow" className="coupon-link" href={affiliateUrl}>
+                  {coupon.title}
                 </a>
           </h3>
           <p className="description">
-              {isExpanded ? coupon.Content : coupon.Content.slice(0, maxChars) + (showMore ? "..." : "")}
+              {isExpanded ? coupon.content : coupon.content.slice(0, maxChars) + (showMore ? "..." : "")}
                 {showMore && (
                   <a className="moreBtn" href="#" onClick={(e) => { e.preventDefault(); setIsExpanded(!isExpanded); }}>
                     {isExpanded ? " Show Less" : " Show More"}
@@ -157,7 +157,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
           <div className="code-box">
             <span>{coupon.coupon_code}</span>
            
-            {coupon.coupon_type === 'Code' ? (
+            {coupon.coupon_type === 'code' ? (
                   <button onClick={async (e) => {
                     await trackCouponUsage(coupon.id);
                     // Set the copied_code in localStorage (no need to await as it's synchronous)
@@ -225,10 +225,10 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
           <div className="card-body">
             <div className="historyBox tNcBox">
               <ul>
-                {coupon.last_used_at && !isNaN(coupon.last_used_at) && coupon.coupon_type == "Code"
+                {coupon.last_used_at && !isNaN(coupon.last_used_at) && coupon.coupon_type == "code"
                   ? <li>'{coupon.coupon_code}' promo code was used by shoppers {formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })} {coupon.is_worked && (coupon.is_worked == "Yes" ? "and it worked." : "and it didn't work.")}</li>
                   : ''}
-                {coupon.last_used_at && !isNaN(coupon.last_used_at) && coupon.coupon_type == "Sale"
+                {coupon.last_used_at && !isNaN(coupon.last_used_at) && coupon.coupon_type == "deal"
                   ? <li>This deal was used by shoppers {formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })} {coupon.is_worked && (coupon.is_worked == "Yes" ? "and it worked." : "and it didn't work.")}</li>
                   : ''}
                 <li>{`Added ${formatDistanceToNow(storeCreateTime, { addSuffix: true })}`} by {coupon.tested_by}</li>
@@ -238,7 +238,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         </div>
       </div>
       <>
-        {modalOpen && coupon.coupon_type === "Code" && (
+        {modalOpen && coupon.coupon_type === "code" && (
           <div
             className="modal fade"
             id={`getCode${coupon.id}`}
@@ -306,7 +306,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
       </>
       {/**********************************Coupon Pop-Up GET-deal Modal*********************************************** */}
       <>
-        {(coupon.coupon_type == "Sale" && modalOpen) &&
+        {(coupon.coupon_type == "deal" && modalOpen) &&
           <div
             className="modal fade"
             id={`getDeal${coupon.id}`}

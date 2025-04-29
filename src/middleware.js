@@ -13,7 +13,7 @@ async function fetchStoreData(identifier) {
   if (cached) return cached;
 
   // Fetch fresh data if not in cache
-  const res = await fetch(`https://admin.coupontix.com/api/stores/${identifier}`, {
+  const res = await fetch(`https://admin.suproffer.com/stores/${identifier}`, {
     next: { revalidate: 30 } // Optional: Next.js fetch caching
   });
 
@@ -29,7 +29,7 @@ export async function middleware(request) {
   const url = request.nextUrl.clone();
   const pathname = url.pathname;
 
-  const baseDomain = 'coupontix.com';
+  const baseDomain = 'suproffer.com';
   const isMainDomain = host === baseDomain || host === `www.${baseDomain}`;
 
   // Faster asset detection using regex
@@ -43,11 +43,11 @@ export async function middleware(request) {
     if (!slug) return NextResponse.next();
 
     const storeData = await fetchStoreData(slug);
-    if (!storeData?.data) return NextResponse.next();
+    if (!storeData) return NextResponse.next();
 
-    if (storeData.data.uses_subdomain) {
+    if (storeData.subdomain) {
       // SEO-friendly redirect instead of 404
-      return NextResponse.redirect(`https://${slug}.${baseDomain}${pathname}`, 308);
+      return NextResponse.redirect(`https://${slug}.${baseDomain}`, 308);
     }
 
     return NextResponse.next();
@@ -57,7 +57,7 @@ export async function middleware(request) {
   const subdomain = host.replace(`.${baseDomain}`, '');
   const storeData = await fetchStoreData(subdomain);
 
-  if (!storeData?.data || !storeData.data.uses_subdomain) {
+  if (!storeData || !storeData.subdomain) {
     // Custom 404 page
     return NextResponse.rewrite(new URL('/404', request.url));
   }

@@ -10,7 +10,7 @@ export default function privacyPolicy({ privacyPolicy }) {
     return (
         <>
             <NextSeo
-                title="Coupontix - Best Coupons & Deals"
+                title="SuprOffer - Best Coupons & Deals"
                 description="Find the best coupons, deals, and discounts for top brands"
             />
             <section className="sitePolicy">            

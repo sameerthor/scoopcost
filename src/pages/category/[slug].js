@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import arrayShuffle from 'array-shuffle';
 import moment from "moment";
-const baseDomain="coupontix.com"
+const baseDomain="suproffer.com"
 function Category({ category, stores, categories }) {
 
     const validImageSrc = (image) =>
@@ -41,8 +41,8 @@ function Category({ category, stores, categories }) {
     return (
         <>
             <NextSeo
-                title={category.seo?.metaTitle.replaceAll("%%currentyear%%", moment().format('YYYY')) || `${category.Title} Coupons`}
-                description={category.seo?.metaDescription.replaceAll("%%currentyear%%", moment().format('YYYY')) || `Best ${category.Title} coupons and deals`}
+                title={category.meta_title.replaceAll("%%currentyear%%", moment().format('YYYY')) || `${category.title} Coupons`}
+                description={category.meta_description.replaceAll("%%currentyear%%", moment().format('YYYY')) || `Best ${category.title} coupons and deals`}
             />
              <MetaTags />
             <section className="categorySection">
@@ -56,7 +56,7 @@ function Category({ category, stores, categories }) {
                                             <Image
                                                 src={validImageSrc(category.image) ? category.image : "/images/default-placeholder.png"}
                                                 className="cat-image"
-                                                alt={`${category.Title} coupons`}
+                                                alt={`${category.title} coupons`}
                                                 width={200}
                                                 height={81}
                                             />
@@ -70,22 +70,22 @@ function Category({ category, stores, categories }) {
                                     </div>
                                 </div>
                                 <div className="col-lg-5 col-md-12">
-                                    <h1 className='pageH1'>Todays {category.Title} Coupons &amp; Offers</h1>
+                                    <h1 className='pageH1'>Todays {category.title} Coupons &amp; Offers</h1>
                                     <div className="divider-line mt-2 mb-2" />
                                     <div className="">
                                         <table>
                                             <tbody>
                                                 <tr>
                                                     <th>🛍️ Total Offers</th>
-                                                    <td>{stores.reduce((count, store) => count + (store.Coupons?.length || 0), 0)}</td>
+                                                    <td>{stores.reduce((count, store) => count + (store.coupon_set?.length || 0), 0)}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>🏷️ Coupon Codes</th>
-                                                    <td>{stores.reduce((count, store) => count + (store.Coupons?.filter(x => x.coupon_type === 'Code').length || 0), 0)}</td>
+                                                    <td>{stores.reduce((count, store) => count + (store.coupon_set?.filter(x => x.coupon_type === 'code').length || 0), 0)}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>🛒 Free Shipping</th>
-                                                    <td>{stores.reduce((count, store) => count + (store.Coupons?.filter(x => x.Title?.toLowerCase().includes("shipping")).length || 0), 0)}</td>
+                                                    <td>{stores.reduce((count, store) => count + (store.coupon_set?.filter(x => x.title?.toLowerCase().includes("shipping")).length || 0), 0)}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -101,7 +101,7 @@ function Category({ category, stores, categories }) {
                                                 .slice(0, 4)
                                                 .map(item => (
                                                     <li key={item.id}>
-                                                        <MainDomainLink href={`/category/${item.Slug}`}>{item.Title}</MainDomainLink>
+                                                        <MainDomainLink href={`/category/${item.slug}`}>{item.title}</MainDomainLink>
                                                     </li>
                                                 ))}
                                         </ul>
@@ -113,31 +113,31 @@ function Category({ category, stores, categories }) {
                     <div className="subCatBox">
                         <div className="row">
                             {stores.map((store) => (
-                                store.Coupons?.map((coupon, index) => (
+                                store.coupon_set?.map((coupon, index) => (
                                     <div key={`${store.id}-${index}`} className="col-lg-4 col-md-6 col-sm-12 p-1 mb-2">
                                         <div className="storeItem">
                                             <div className="storeInfo">
                                                 <div className="storeData">
-                                                    <span className="discountValue">{getHeading(coupon.Title)}</span>
+                                                    <span className="discountValue">{getHeading(coupon.title)}</span>
                                                     <MainDomainLink href={
-                                                        store.uses_subdomain
-                                                            ? `https://${store.Slug}.${baseDomain}`
-                                                            : `/${store.Slug}`
+                                                        store.subdomain
+                                                            ? `https://${store.slug}.${baseDomain}`
+                                                            : `/${store.slug}`
                                                     } className="storeUrl">
-                                                        {store.Title}
+                                                        {store.title}
                                                     </MainDomainLink>
                                                 </div>
                                                 <div className="storeData">
                                                     <div className="storeImage">
-                                                        <MainDomainLink title={store.Title} href={
-                                                            store.uses_subdomain
-                                                                ? `https://${store.Slug}.${baseDomain}`
-                                                                : `/${store.Slug}`
+                                                        <MainDomainLink title={store.title} href={
+                                                            store.subdomain
+                                                                ? `https://${store.slug}.${baseDomain}`
+                                                                : `/${store.slug}`
                                                         }>
                                                             <img
-                                                                src={"https://admin.coupontix.com/" + store.store_image?.url || "/images/default-placeholder.png"}
-                                                                alt={coupon.Title}
-                                                                title={`${store.Title} coupons`}
+                                                                src={store.image || "/images/default-placeholder.png"}
+                                                                alt={coupon.title}
+                                                                title={`${store.title} coupons`}
                                                             />
                                                         </MainDomainLink>
                                                     </div>
@@ -145,11 +145,11 @@ function Category({ category, stores, categories }) {
                                             </div>
                                             <div className="storeData">
                                                 <MainDomainLink href={
-                                                    store.uses_subdomain
-                                                        ? `https://${store.Slug}.${baseDomain}`
-                                                        : `/${store.Slug}`
+                                                    store.subdomain
+                                                        ? `https://${store.slug}.${baseDomain}`
+                                                        : `/${store.slug}`
                                                 } className="storeName">
-                                                    <p dangerouslySetInnerHTML={{ __html: coupon.Title }} />
+                                                    <p dangerouslySetInnerHTML={{ __html: coupon.title }} />
                                                 </MainDomainLink>
                                             </div>
                                             <div className="dealBtnBox">
@@ -166,9 +166,9 @@ function Category({ category, stores, categories }) {
                                                 </div>
                                                 <p className="grabDeal">
                                                     <MainDomainLink href={
-                                                        store.uses_subdomain
-                                                            ? `https://${store.Slug}.${baseDomain}`
-                                                            : `/${store.Slug}`
+                                                        store.subdomain
+                                                            ? `https://${store.slug}.${baseDomain}`
+                                                            : `/${store.slug}`
                                                     }>
                                                         Get Deal
                                                         <svg
@@ -197,51 +197,52 @@ function Category({ category, stores, categories }) {
     );
 }
 
+// This function gets called at build time on server-side.
+// It may be called again, on a serverless function, if
+// revalidation is enabled and a new request comes in
 export async function getStaticProps({ params }) {
-    // Fetch category
-    const categoryRes = await fetch(
-        `https://admin.coupontix.com/api/store-categories?filters[Slug][$eq]=${params.slug}&pagination[pageSize]=4000&populate=*`
-    );
-    const categoryData = await categoryRes.json();
-    const category = categoryData.data[0];
 
-    if (!category) {
-        return { notFound: true };
+    const res = await fetch(`https://admin.suproffer.com/categories/${params.slug}`)
+    const category = await res.json()
+    if (category.detail) {
+        return {
+            notFound: true
+        };
     }
+    const stores = category.store_set.results;
 
-    // Fetch stores for this category
-    const storesRes = await fetch(
-        `https://admin.coupontix.com/api/stores?filters[store_category][Slug][$eq]=${params.slug}&fields[0]=Title&fields[1]=Slug&fields[2]=uses_subdomain&populate[store_image][fields][0]=url&populate[Coupons][populate]=screenshot&pagination[pageSize]=4000`
-    );
-    const storesData = await storesRes.json();
-    const stores = storesData.data || [];
-
-    // Fetch all categories for similar categories section
-    const categoriesRes = await fetch(
-        "https://admin.coupontix.com/api/store-categories?pagination[pageSize]=4000"
-    );
-    const categoriesData = await categoriesRes.json();
-    const categories = arrayShuffle(categoriesData.data || []);
-
+    const resCategories = await fetch(`https://admin.suproffer.com/categories/?ordering=-id`)
+    const categoriesData = await resCategories.json()
+    const categories = arrayShuffle(categoriesData);
     return {
         props: {
             category,
             stores,
             categories
         },
-        revalidate: 60,
-    };
+        // Next.js will attempt to re-generate the page:
+        // - When a request comes in
+        // - At most once every 10 seconds
+        revalidate: 60, // In seconds
+    }
 }
 
+// This function gets called at build time on server-side.
+// It may be called again, on a serverless function, if
+// the path has not been generated.
 export async function getStaticPaths() {
-    const res = await fetch('https://admin.coupontix.com/api/store-categories');
-    const categories = await res.json();
+    const res = await fetch('https://admin.suproffer.com/categories')
+    const categories = await res.json()
 
-    const paths = categories.data.map((category) => ({
-        params: { slug: category.Slug },
-    }));
+    // Get the paths we want to pre-render based on categories
+    const paths = categories.map((item) => ({
+        params: { slug: item.slug },
+    }))
 
-    return { paths, fallback: 'blocking' };
+    // We'll pre-render only these paths at build time.
+    // { fallback: 'blocking' } will server-render pages
+    // on-demand if the path doesn't exist.
+    return { paths, fallback: 'blocking' }
 }
 
 export default Category;
