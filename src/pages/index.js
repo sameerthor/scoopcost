@@ -85,7 +85,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
            
             <section className="newPopular">
                 <div className="container">
-                    <h3 className="secHeading">Most Popular Brands</h3>
+                    <div className="secHeading">Most Popular Brands</div>
                     <div className="row row-col-2 row-cols-lg-5 row-cols-md-3 g-3">
                         <div className="col mb-4">
                             <div className="card text-center">
@@ -181,7 +181,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
 
             <section className='topCouponCode'>
                 <div className="container">
-                    <h2 className='secHeading'>Today's Top Coupon Codes</h2>
+                    <div className='secHeading'>Today's Top Coupon Codes</div>
                     <div className="row row-cols-lg-6 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col mb-3">
                             <a className='codeItem' href='https://SuprOffer.com/ezeasproducts-com-au-coupons'>
@@ -297,7 +297,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             {/* Top Rated Stores Section */}
             <section className="topRatedStore">
                 <div className="container">
-                    <h2>Top Rated Stores</h2>
+                    <div className='secHeading'>Top Rated Stores</div>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col">
                             <a href='https://SuprOffer.com/nailsbestbuy-coupons/' className="toprated">
@@ -536,7 +536,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             {/* Top Online Stores Section */}
             <section className="online-store">
                 <div className="container">
-                    <h2>Top Online Stores</h2>
+                    <div className='secHeading'>Top Online Stores</div>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col">
                             <a href='https://SuprOffer.com/saucewarehouse-coupons' className="pickedStore">
@@ -701,7 +701,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             <section className="container-fluid tranding">
                 <div className="container">
                     <div className="row tranding-blog">
-                        <h2>Trending Blogs</h2>
+                        <div className='secHeading'>Trending Blogs</div>
                         {[
                             {
                                 title: 'List Of Amazon Upcoming Sale July 2023 | Prime Day Sale 50% OFF on...',
@@ -767,7 +767,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             </section>
             <section className='featuredStore'>
                 <div className="container">
-                <h2 className='secHeading'>Featured Stored</h2>
+                <div className='secHeading'>Featured Stored</div>
                     <div className="row row-cols-lg-6 row-cols-md-4 row-cols-sm-3 row-cols-3">
                         <div className='col p-0'>
                             <a href="/" aria-label='store'>

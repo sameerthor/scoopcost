@@ -38,7 +38,7 @@ export default function Footer() {
                                 <button>Subscribe</button>
                             </div>
                         </div>
-                        <span>You can opt out of our newsletters at any time. See our privacy policy.</span>
+                        <span>You can opt out of our newsletters at any time. See our <a className="privacyLink" href="https://suproffer.com/privacy-policy">privacy policy.</a></span>
                     </div>
                 </div>
             </div>

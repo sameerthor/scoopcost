@@ -623,3 +623,7 @@ font-weight: 600;
 .breadcrumb a{
   color: #1a0dab;
 }
+.subscribe .privacyLink{
+  color: #1a0dab;
+  text-decoration: underline;
+}
