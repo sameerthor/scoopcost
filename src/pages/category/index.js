@@ -44,6 +44,34 @@ function CategoryListing({ categories }) {
                         </div>
                     </div>
                     <h1 className='text-center pageH1'>All Categories</h1>
+                    <div className='catInfo allcatInfo'>
+                         <p>
+                         Welcome to our Categories Coupons page! At Suproffer, we bring together the best deals and discount codes across all major categories. From daily essentials to luxury items, we help you enjoy the best prices on your desired products and services. Whether you are upgrading your gadgets, refreshing your wardrobe, or booking your next vacation, Suproffer has handpicked coupon codes that will save you up to 40% Off on your online purchase. 
+
+                         </p>
+                         <p>
+                         On our website, you will find the top deals on home goods, fashion trends, beauty products, pet supplies, sports goods, toys & games, and more. We provide you with the best online discounts, seasonal sales, limited-time offers, free shipping deals, buy-one-get-one offers, and verified promo codes.
+                         </p>
+                         <h2>Explore Our Top Categories and Start Saving Today! </h2>
+                         <p>
+                        <strong> Electronics Coupons & Deals:</strong> Find great discounts on phones, laptops, smartwatches, headphones, speakers, and other high-tech electronics. Upgrade your tech collection without breaking the bank! 
+                         </p>
+                         <p>
+                         <strong>Fashion Deals & Discounts:</strong> Discover the latest offers for clothing, shoes, bags, and accessories for men, women, and kids from the most popular brands.
+                         </p>
+                         <p>
+                         <strong>Beauty Deals:</strong> Treat yourself to skincare, haircare, cosmetics, beauty tools, and makeup products at discounted prices you’ll love.
+                         </p>
+                         <p>
+                         <strong>Health & Fitness Coupons:</strong> Save big on gym equipment, supplements, yoga gear, and other health products that support your active lifestyle.
+                         </p>
+                         <p>
+                         <strong>Home & Kitchen Appliances Offers:</strong> Get huge discounts on small kitchen appliances, cookware, coffee machines, water purifiers, kitchenware, and other home products. Our home essentials coupons help you save a lot of money on your online shopping for top brands.
+                         </p>
+                         <p>
+                         <strong>Restaurants & Travel Coupons:</strong> Get great deals on hotel bookings, flights, car rentals, and vacation packages from travel providers.
+                         </p>
+                    </div>
                     <div className="row row-cols-2">
                         {categories.map((category, index) => (
                             <div className="col-lg-2 col-md-3 col-sm-4 category-box" key={index}>

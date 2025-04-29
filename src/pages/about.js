@@ -17,61 +17,101 @@ export default function aboutSaveright({ aboutSaveright }) {
             <section className="sitePolicy">            
                 <div className="container">                   
                     <div className="row">
-                        <h1 className="text-center">About SuprOffer</h1>
+                        <h1 className="text-center">About Suproffer</h1>
                         <p>
-                        Welcome to SuprOffer!
+                        Suproffer is your go-to platform for the best and verified coupon codes, discounts, and deals. We regularly bring active promo codes, daily deals, freebies, and free shipping offers from trusted online stores. Whether you are shopping for clothes, electronics, home essentials, or gifts or simply planning your next vacation, Suproffer helps you spend less and save more.
+                        </p>
+                        <p>
+                        We believe that saving money should be simple, stress-free and part of every online shopping experience. That’s why we have created a platform where deals are real, easy to use, and help you save money. From big brand names to niche online stores, our team constantly updates coupons and deals that actually work. Our users save an average of 15-40% on their purchases. 
+                        </p>
+                        <div className='h2'>
+                        What We Offer?
+                        </div>
+                        <p>
+                        We bring you the latest, easy-to-use and updated coupons and discounts. Every offer listed on Suproffer goes through a check, so you don’t have to worry about wasting your time with fake codes or expired promos. 
+                        </p>
+                        <p>
+                                <em>Here’s What You’ll Find at Suproffer </em>
+                        </p>
+                       <ul>
+                                <li><strong>Wide Category Coverage:</strong> We have thousands of coupons for different product categories including fashion, gadgets, groceries, toys, pet supplies or travel deals. </li>
+                                <li><strong>Latest Coupon Codes:</strong> Partnering with top brands and online retailers, we deliver exclusive discount codes you won’t find anywhere else. </li>
+                                <li><strong>Daily Updated Deals:</strong> Our offers are refreshed constantly so you always find what’s new and trending. From last minute tech deals to weekend fashion sales, we highlight the current deals and discounts. </li>
+                                <li><strong>Verified Offers Only:</strong> Every offer you find on Suproffer is checked for accuracy and usability. </li>
+                                <li><strong>User-friendly Filters:</strong> Whether you are a student, a parent, a gamer, or a pet owner, our filters help you find deals that actually matter to your lifestyle</li>
+                       </ul>
+                       <div className='h2'>
+                       How Suproffer Helps You Save More
+                       </div>
+                       <p>
+                       Suproffer simplifies the process of saving money on your online purchase. From major holidays like Black Friday and Cyber Monday to events like clearance sales, you will find the best deals and discounts here. Want to buy a new laptop? We’ll show you where to get the best price. Looking for a skincare bundle? We‘ll find the highest discount with free shipping.
+                       </p>
+                       <p>
+                       And Suproffer covers a wide range of categories
+                       </p>
+                       <ul>
+                            <li>Clothing & Accessories</li>
+                            <li>Electronics</li>
+                            <li>Home & Garden
+                            </li>
+                            <li>Beauty & Wellness</li>
+                            <li>Travel & Hotels</li>
+                            <li>Food & Grocery</li>
+                            <li>Education & Online Courses</li>
+                            <li>and many more…</li>
+                       </ul>
+                       <p>
+                            <em>Here’s How Customers Can Save with SuprOffer </em>
+                       </p>
+                       <div className='h2'>
+                       Browse by Category or Store Name
+                       </div>
+                       <p>
+                       Find coupons in your desired category like beauty, electronics, fashion, travel, health, and more. Or directly search by brand to see all active offers.
+                       </p>
+                       <div className='h2'>
+                       Pick the Best Deal or Coupon
+                       </div>
+                       <p>
+                       Our team checks and verifies every coupon. You just need to choose the right coupon for yourself that saves more money. 
+                       </p>
+                       <div className='h2'>
+                       Use the Promo Code
+                       </div>
+                       <p>
+                       Click to reveal the code, copy the code and paste it at checkout on the store’s site. 
 
-                        </p>
-                        <p>
-                        We are your go-to destination for verified coupon codes, unbeatable deals, and exclusive discounts from your favorite brands. Whether you are shopping for fashion, electronics, groceries or gifts, SuprOffer helps you save big with no extra effort.
-                        </p>
-                        <p>
-                        Every coupon is tested or verified before it goes live. We don’t list deals that don't actually save you money. Our users save between 10% to 40% on average on their online shopping.
-                        </p>
-                        <h2>Our Mission</h2>
-                        <p>
-                        At SuprOffer, our mission is simple: to help you save money effortlessly. We understand that everyone loves a good deal and we make it easy for you to discover fantastic savings on the products and services you want. We constantly refresh our offers so you are not stuck with expired codes. Our goal is to give you valid and useful coupons.
-                        </p>
-                        <h2>What We Offer?</h2>
-                        <p>
-                        We work hard to collect the latest coupons and offers from thousands of retailers and service providers. Whether you are looking for discounts on clothing, gadgets, beauty products, toys, sports goods, pet supplies, travel or anything else, we bring you the most up-to-date deals and promo codes.
-                        </p>
-                        <p>
-                        We partner with top retailers and trusted brands to bring you the best coupons, many of which are exclusive to SuprOffer users. Our deals are updated regularly, so you will always find the latest offers.
-                        </p>
-                        <h2>How SuprOffer Works?</h2>
-                        <p>
-                        Saving doesn’t sell products. Instead we are your saving hub. Our team scours the internet and partners directly with merchants to bring discounts, coupon codes or free shipping for saving opportunities. We aim to make it easy for you to: 
-                        </p>
-                        <ul>
-                                <li>Find deals relevant to your interests. 
-                                </li>
-                                <li>Quickly locate the discounts you are looking for.</li>
-                                <li>Unlock discounts you might not find anywhere else. </li>
-                        </ul>
-                        <h2>Here’s How Customers Can Save with SuprOffer</h2>
-                        <ul>
-                            <li>Browse: Find deals by category, store or product type.</li>
-                            <li>Click: Once you get a right coupon, copy the code and go to the retailer’s website.</li>
-                            <li>Save: Paste the code at checkout and enjoy the discount.</li>
-                        </ul>
-                        <h2>Why Choose SuprOffer? 
-                        </h2>
-                        <ul>
-                               <li>Convenience: We bring the best deals and coupons together in one easy-to-use website.</li>
-                               <li>Up-to-date Coupons: Our team makes sure to keep our listings current and remove expired coupons.</li>
-                               <li>Free to use: SuprOffer is completely free for you to use.</li>
-                               <li>Wide Selection: We cover a broad range of merchants and product categories.</li>
-                               <li>Secure Shopping: We respect your privacy and shopping freedom.</li>
-                        </ul>
-                        <h2>Our Commitment</h2>
-                        <p>
-                        We are committed to providing you with a user-friendly experience and great savings opportunities. While we work hard to ensure the accuracy of coupons and deals listed on our site, please remember that the terms and conditions of each offer are set by the individual merchants. It is always a good idea to check the details before making a purchase.
-                        </p>
-                        <h2>Get in Touch</h2>
-                        <p>
-                        We value your feedback! If you have any questions, suggestions or encounter any issues, please don’t hesitate to contact us at <a href="/contact">https://SuprOffer.com/contact</a>.
-                        </p>
+                       </p>
+                       <div className='h2'>
+                       Enjoy Your Savings
+                       </div>
+                       <p>
+                       Watch the price drop and enjoy the savings on your online purchase. Using our coupons will help you get products at much lower prices.
+                       </p>
+                       <div className='h2'>
+                       Our Core Values
+                       </div>
+                       <ul>
+                            <li><strong>Transparency:</strong> Every coupon code and deal listed on Suproffer is tested and verified. Our team makes sure to keep our coupon listings up-to-date and remove expired coupons. 
+                            </li>
+                            <li><strong>Customer-Centric Approach:</strong> Your experience comes first! From browning to buying, we provide a hassle-free experience. </li>
+                            <li><strong>Privacy:</strong> We value your privacy and shopping freedom. Your data stays private so you can shop with peace of mind.</li>
+                       </ul>
+                       <div className='h2'>
+                       So…How Does Suproffer Make Money?
+                       </div>
+                       <p>
+                       We work on an affiliate model. When you click a coupon on Suproffer, you are redirected to the store’s official website. If you end up buying something using the code, the retailer pays us a small commission at no extra cost to you. 
+                       </p>
+                       <p>
+                       While you enjoy the discount on your purchase, we earn a commission from the retailer to keep the platform running smoothly. This affiliate model allows us to continue finding and sharing the best deals online from fashion and beauty to tech and travel.
+                       </p>
+                       <div className='h2'>
+                       Get In Touch
+                       </div>
+                       <p>
+                       If you have any questions, suggestions or encounter any issues, please contact us at <a href="https://suproffer.com/contact-us">https://suproffer.com/contact-us</a>.
+                       </p>
                     </div> 
                 </div>   
             </section>        

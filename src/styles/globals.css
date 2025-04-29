@@ -496,7 +496,7 @@ align-items: center;
 }
 .consent-banner p{
 margin-right: 1rem;
-color: #000;
+color: #fff;
 font-weight: 600;
 }
 .consent-banner button{
@@ -622,4 +622,8 @@ font-weight: 600;
 }
 .breadcrumb a{
   color: #1a0dab;
+}
+.subscribe .privacyLink{
+  color: #1a0dab;
+  text-decoration: underline;
 }

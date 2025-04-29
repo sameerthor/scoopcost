@@ -148,9 +148,9 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
           <p className="description">
               {isExpanded ? coupon.content : coupon.content.slice(0, maxChars) + (showMore ? "..." : "")}
                 {showMore && (
-                  <a className="moreBtn" href="#" onClick={(e) => { e.preventDefault(); setIsExpanded(!isExpanded); }}>
+                  <button className="moreBtn"  onClick={(e) => { e.preventDefault(); setIsExpanded(!isExpanded); }}>
                     {isExpanded ? " Show Less" : " Show More"}
-                  </a>
+                  </button>
                 )}
           </p>
 

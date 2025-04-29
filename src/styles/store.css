@@ -1073,13 +1073,15 @@ body{
   font-weight: 600;
   padding: 10px 15px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   text-align: center;
   color: #fff;
   font-size: 15px;
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
+  letter-spacing: .5px;
+  outline: none;
   letter-spacing: .5px;
 }
 .modal .isWorked{
@@ -2349,6 +2351,7 @@ a{
 }
 .whyTrustus a{
   text-decoration: underline;
+  color: #1a0dab;
 }
 .about-store a{
   text-decoration: underline;
@@ -2566,9 +2569,7 @@ a{
    font-size: 1rem;
    margin-bottom: .7rem;
 }
-  .purpleCouponBox .feedback button{
-     font-size: 14px;
-  }
+ 
   .purpleCouponBox .feedback{
    justify-content: center;
  }
@@ -2609,6 +2610,9 @@ a{
     margin-bottom: 0;
   }
 }
+.modal .storeBtn a:nth-of-type(2){
+  background-color: #000;
+}
 
 /* why trust us */
 .whyTrustus {
@@ -2642,6 +2646,7 @@ a{
   padding: 30px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  min-height: 100%;
 }
 
 .whyTrustus .card-custom:hover {
@@ -2672,7 +2677,7 @@ a{
 .whyTrustus .founder .name span {
   display: block;
   font-size: 0.95rem;
-  color: #777;
+  color: #545454;
 }
 
 .whyTrustus .founderNote p {
@@ -2725,10 +2730,11 @@ a{
 }
 
 .whyTrustus .listExpert img {
-  border-radius: 50%;
   width: 32px;
   height: 32px;
   margin-right: 10px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .whyTrustus .exp {
@@ -2742,8 +2748,8 @@ a{
 }
 
 .whyTrustus a {
-  text-decoration: none;
-  color: #0077b5;
+  text-decoration: underline;
+  color: #1a0dab;
 }
 
 .whyTrustus a:hover {
@@ -2765,4 +2771,34 @@ a{
    font-size: 1.2rem;
    margin-bottom: 1rem;
 }
+}
+@media(max-width:560px){
+  .zeroMobPadding{
+    padding: 0;
+  }
+  .whyTrustus .founder .img img{
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+  }
+  .whyTrustus .founder .name p{
+    font-size: 1rem;
+  }
+  .whyTrustus .founder .name span{
+    font-size: .7rem;
+  }
+  .whyTrustus .founder a svg{
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+.description .moreBtn{
+	border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+	font-weight: 500;
+	color: #1a0dab;
+	text-decoration: underline;
+
 }

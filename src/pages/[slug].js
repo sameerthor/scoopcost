@@ -453,7 +453,7 @@ export default function StorePage({ store, relStores }) {
         <div className="sidebarHeading">Why Trust Us?</div>
         <div className="row g-4">
           {/* Left Column */}
-          <div className="col-md-6 mb-3">
+          <div className="col-md-6 mb-3 zeroMobPadding">
             <div className="card-custom">
               <div className="founder">
                 <div className="img">
@@ -476,26 +476,26 @@ export default function StorePage({ store, relStores }) {
               </div>
               <div className="founderNote">
                 <p>
-                Rudresh Dubey is an experienced affiliate marketer having more than ten years experience in digital marketing, specializing in coupons industry. As the founder of suproffer.com, he has built a reliable platform that provides fully tested and verified coupon codes. His journey in affiliate marketing began a decade ago with the goal of helping customers save money while shopping online. <a href="/">suproffer.com</a> has transformed that vision into a thriving business that helps shoppers worldwide.
+                Rudresh Dubey is an experienced affiliate marketer with over 10 years of experience in digital marketing. His journey in the coupon industry began a decade ago to help people save money while shopping online. As the founder of <a href="https://suproffer.com/">Suproffer.com</a>, Rudresh turned his vision into a reality by creating a trusted platform that offers only tested and verified coupon codes. What started as a small idea for online shoppers has now grown into a reliable name for deals and discounts. 
                 </p>
-                <p>
-                Rudresh’s approach to affiliate marketing sets him apart in the competitive coupon market. His expertise in understanding consumer needs helps keep the platform user-friendly and relevant. We have a team of coupon experts who select the best discount codes in different product categories from fashion and electronics to travel and software. By offering only the genuine and working coupons, <a href="/">suproffer.com</a> has become a go-to destination for online shoppers.
-                </p>
+               <p>
+               Rudresh's goal has always been simple - make online shopping affordable and stress-free. He leads a hardworking team of 6 members who carefully pick the best promo codes across many categories like fashion, electronics, travel, and software. Every coupon goes through a proper check to make sure it is genuine and active. <a href="https://suproffer.com/">Suproffer.com</a> has become a go-to destination for online buyers who want to save money without wasting time on fake deals or expired coupons. 
+               </p>
               </div>
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="col-md-6 ">
+          <div className="col-md-6 zeroMobPadding">
             <div className="card-custom ourExpert">
               <div className="expHead">Meet Our Coupon Experts</div>
               <div className="expertPara">
-                <p>
-                With an efficient coupon team of 6 people, SuprOffer put the right effort to share updated and verified coupon codes. Our team reviews and coupons regularly. We have put a comment section on each coupon page. If a coupon doesn't work, the team makes sure to find the right coupon and also try to improve the services.
-
-
-                </p>
-                <p>If you notice anything that isn’t right, you can report the issue to us, and we’ll address it promptly.</p>
+               <p>
+               <a href="https://suproffer.com/">Suproffer.com</a> has an efficient team of 6 coupon experts. Their job is to make sure users always get the best and latest offers. Our team focuses on creating a smooth and friendly user experience, so visitors can quickly find the right deals without getting misled. They keep an eye on every code and update the site regularly. We have also put a comment section on each coupon page. If a coupon doesn’t work, the team makes sure to fix the issue and try to improve the services based on user feedback. 
+               </p>
+               <p>
+               If you notice anything that isn’t right on our website, you can report the issue to us and we’ll address it shortly.
+               </p>
               </div>
               <div className="listExpert">
                 <ul>
@@ -530,10 +530,8 @@ export default function StorePage({ store, relStores }) {
                     <span className="exp">4 Years</span>
                   </li>
                   <li>
-                    <small>
-                      <img src="/images/yunush.webp" alt="Yusuf" /> Yusuf
-                    </small>
-                    <span className="exp">3 Years</span>
+                    <small><img src="/images/yunush.webp" alt="Yusuf" /> Yusuf</small>
+                    <span class="exp">3 Years</span>
                   </li>
                 </ul>
               </div>

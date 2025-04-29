@@ -295,3 +295,41 @@
     font-size: 1.4rem;
     margin-bottom: 1rem;
 }
+.catInfo{
+    margin-top: 1.5rem;
+}
+.catInfo p{
+    font-weight: 500;
+    line-height: 1.4;
+    color: #000;
+    margin-bottom: 1rem;
+    font-size: .9rem;
+}
+.catInfo p strong{
+ font-weight: 600;
+}
+.catInfo h2{
+    font-weight: 600;
+    line-height: 1.4;
+    color: #000;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+}
+.catInfo ul{
+   padding-left: 20px;
+}
+.catInfo ul li{
+    list-style-type: disc;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #000;
+    margin-bottom: .5rem;
+    font-size: .9rem;
+ }
+ .catInfo ul li p{
+  margin-bottom: 0;
+ }
+ .catInfo.allcatInfo{
+    padding: 0 1rem;
+    margin-bottom: .5rem;
+ }
