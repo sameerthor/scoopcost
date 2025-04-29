@@ -19,6 +19,9 @@
     text-align: justify;
     line-height: 1.4;
 }
+.sitePolicy p strong{
+   font-weight: 600;
+}
 .sitePolicy .h2{
     font-weight: 600;
     color: #2e2e2e;
@@ -43,6 +46,9 @@
     font-size: 1rem;
     text-align: justify;
     line-height: 1.4;
+}
+.sitePolicy ul li strong{
+    font-weight: 600;
 }
 .sitePolicy ol li{
     font-weight: 500;
