@@ -1073,13 +1073,15 @@ body{
   font-weight: 600;
   padding: 10px 15px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   text-align: center;
   color: #fff;
   font-size: 15px;
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
+  letter-spacing: .5px;
+  outline: none;
   letter-spacing: .5px;
 }
 .modal .isWorked{
@@ -2610,6 +2612,9 @@ a{
     margin-bottom: 0;
   }
 }
+.modal .storeBtn a:nth-of-type(2){
+  background-color: #000;
+}
 
 /* why trust us */
 .whyTrustus {
@@ -2643,6 +2648,7 @@ a{
   padding: 30px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  min-height: 100%;
 }
 
 .whyTrustus .card-custom:hover {

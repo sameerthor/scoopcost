@@ -110,6 +110,9 @@ function Category({ category, stores, categories }) {
                             </div>
                         </div>
                     </div>
+                    <div className='catInfo'>
+                          <div dangerouslySetInnerHTML={{ __html: category.body }} />
+                    </div>
                     <div className="subCatBox">
                         <div className="row">
                             {stores.map((store) => (
