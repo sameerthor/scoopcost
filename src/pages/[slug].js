@@ -302,6 +302,10 @@ export default function StorePage({ store, relStores }) {
                       <td className="p-2">🔥 Best Offer</td>
                       <td className="p-2 text-right font-medium">{bestOffer}</td>
                     </tr>
+                    <tr>
+                      <td className="p-2">Success Record</td>
+                      <td className="p-2 text-right font-medium">{bestOffer}</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
