@@ -2800,5 +2800,8 @@ a{
 	font-weight: 500;
 	color: #1a0dab;
 	text-decoration: underline;
-
+}
+.tNcBox.tNcTop{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }

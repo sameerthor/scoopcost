@@ -39,8 +39,9 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   const historyCollapseId = `historyCollapseId-${index}`;
   const [modalOpen, setModalOpen] = useState(false);
   const [copytext, setCopyText] = useState("Copy code");
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const maxChars = 40;
+
   const showMore = coupon.content.length > maxChars;
 
   setTimeout(async () => {
@@ -145,14 +146,22 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                   {coupon.title}
                 </a>
           </h3>
+
           <p className="description">
-              {isExpanded ? coupon.content : coupon.content.slice(0, maxChars) + (showMore ? "..." : "")}
-                {showMore && (
-                  <button className="moreBtn"  onClick={(e) => { e.preventDefault(); setIsExpanded(!isExpanded); }}>
-                    {isExpanded ? " Show Less" : " Show More"}
-                  </button>
-                )}
+            {isExpanded ? coupon.content : coupon.content.slice(0, maxChars) + (showMore ? "..." : "")}
+            {showMore && (
+              <button
+                className="moreBtn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsExpanded(!isExpanded);
+                }}
+              >
+                {isExpanded ? " Show Less" : " Show More"}
+              </button>
+            )}
           </p>
+
 
           <div className="code-box">
             <span>{coupon.coupon_code}</span>
@@ -211,9 +220,9 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
       </div>
       {coupon.term_condition != "" &&
         <div id={accordionId} className="accordion">
-          <div id={collapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
+          <div id={collapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
             <div className="card-body">
-              <div className="tNcBox">
+              <div className="tNcBox tNcTop">
                 <div dangerouslySetInnerHTML={{ __html: coupon.term_condition }} />
               </div>
             </div>
@@ -221,7 +230,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         </div>
       }
       <div id={historyAccordionId} className="accordion">
-        <div id={historyCollapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
+        <div id={historyCollapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
           <div className="card-body">
             <div className="historyBox tNcBox">
               <ul>
