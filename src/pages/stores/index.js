@@ -47,13 +47,7 @@ export default function Stores({ initialStoreData }) {
         }
     };
 
-    const calculateCoupons = (coupons) => {
-        const dealCount = coupons.filter((x) => x.coupon_type === "deal").length;
-        const codeCount = coupons.filter((x) => x.coupon_type === "code").length;
-        const dealText = dealCount > 0 ? `${dealCount} deal${dealCount > 1 ? "s" : ""}` : "";
-        const codeText = codeCount > 0 ? `${codeCount} code${codeCount > 1 ? "s" : ""}` : "";
-        return [dealText, codeText].filter(Boolean).join(" & ");
-    };
+   
 
     return (
         <>
@@ -141,7 +135,7 @@ export default function Stores({ initialStoreData }) {
                                                             : `/${item.slug}`
                                                     }>
                                                         {item.title}
-                                                        <span>{calculateCoupons(item.coupon_set)}</span>
+                                                        <span>{item.coupon_set.length} Codes</span>
                                                     </MainDomainLink>
                                                 </li>
                                             ))}

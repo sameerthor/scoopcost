@@ -815,19 +815,19 @@ export async function getStaticProps({ params }) {
     .replace(/Storename/g, title)
     .replace(/XXX/g, firstCouponCode)
     .replace(/CouponCount/g, couponCount)
-    .replace(/%/g, perc)
     .replace(/%percentage%/g, perc)
     .replace(/%%Year%%/g, currentYear)
-    .replace(/\d{4}/, currentYear);
+    .replace(/%/g, perc)
+
 
   store.store_h1 = store.store_h1
     .replace(/Storename/g, title)
     .replace(/XXX/g, firstCouponCode)
     .replace(/CouponCount/g, couponCount)
-    .replace(/%/g, perc)
     .replace(/%percentage%/g, perc)
     .replace(/%%Year%%/g, currentYear)
-    .replace(/\d{4}/, currentYear);
+    .replace(/%/g, perc)
+
 
   return {
     props: {

@@ -8,6 +8,9 @@ import {
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+
+const stripPTags = (html) => html.replace(/^<p>|<\/p>$/g, '');
+
 const getHeading = (title) => {
   if (!title) return "";
 
@@ -158,7 +161,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
             </h3>
 
             <p className="description">
-              {isExpanded ? coupon.content : coupon.content.slice(0, maxChars) + (showMore ? "..." : "")}
+              {stripPTags(isExpanded ? coupon.content : coupon.content.slice(0, maxChars) + (showMore ? "..." : ""))}
               {showMore && (
                 <button
                   className="moreBtn"
@@ -239,8 +242,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
               {coupon.term_condition != "" &&
                 <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} title="Show T &amp; C">Terms &amp; Conditions</button>
               }
-              {coupon.expires != "" &&
-                <span>{coupon.expires}</span>
+              {coupon.expires  &&
+                <span>Expires On:{coupon.expires}</span>
               }
               <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show History">Coupon History</button>
             </div>

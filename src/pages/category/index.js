@@ -13,17 +13,8 @@ function CategoryListing({ categories }) {
     const calculateCouponString = (storeSet) => {
         const allCoupons = storeSet.results.flatMap(store => store.coupon_set);
 
-        // Count "code" and "deal" types
-        const codeCount = allCoupons.filter(coupon => coupon.coupon_type === "code").length;
-        const dealCount = allCoupons.filter(coupon => coupon.coupon_type === "deal").length;
-      
-        // Generate the summary string
-        const summaryParts = [];
-        if (codeCount > 0) summaryParts.push(`${codeCount} ${codeCount > 1 ? 'Codes' : 'Code'}`);
-        if (dealCount > 0) summaryParts.push(`${dealCount} ${dealCount > 1 ? 'Deals' : 'Deal'}`);
-      
-        const summary = summaryParts.join(" | ");
-        return summary;
+       
+        return allCoupons.length + " Codes";
       };
 
     return (
