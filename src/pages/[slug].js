@@ -9,11 +9,14 @@ import dynamic from "next/dynamic";
 import { formatDistanceToNow } from "date-fns";
 import { useState, useEffect } from 'react'
 import Image from 'next/image';
+import { useRef } from 'react';
+
 
 const RatingBox = dynamic(() => import('@/components/ratingbox'),
   {
     ssr: false,
   });
+
 
 const getHeading = (title) => {
   if (!title) return "";
@@ -54,6 +57,7 @@ const calculateCoupons = (store) => {
 
   return result.join(" & ");
 };
+
 export default function StorePage({ store, relStores }) {
   const storeDescription = store.store_description;
   const paragraphs = storeDescription.split("</p>");
@@ -128,6 +132,11 @@ export default function StorePage({ store, relStores }) {
       "url": `https://suproffer.com/${store.slug}`
     }
   }));
+  const sectionRef = useRef(null);
+
+  const handleScroll = () => {
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   
   return (
     <>
@@ -207,6 +216,10 @@ export default function StorePage({ store, relStores }) {
               </div>
               <div className='about-store'>
                 <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
+              </div>
+              <div className='strBtns'>
+                  <a href={store.affiliate_url} target='_blank'> Visit this Store</a>
+                  <button onClick={handleScroll} title='read review'>Read Review</button>
               </div>
             </div>
         </div>
@@ -336,8 +349,13 @@ export default function StorePage({ store, relStores }) {
 
                       )}
 
-                      <div className='about-store'>
-                        <div className="sidebarHeading">About {store.title}</div>
+                      <div className='about-store' ref={sectionRef}>
+                        <div className="sidebarHeading ratingHeading">
+                          About {store.title} 
+                          <div className="star-rating stars reviewRatings">
+                           <RatingBox key={'store_' + store.id} store={store}  />
+                          </div>
+                        </div>
                         <div dangerouslySetInnerHTML={{ __html: paragraphs[0] + "</p>" }} />
                       </div>
                       <div className="offerToday regularAside">

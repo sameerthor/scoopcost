@@ -30,7 +30,7 @@ function CategoryListing({ categories }) {
         <>
             <NextSeo
                 title="Categories 2025"
-                description="Get the best online coupons and promo codes at SuprOffer. Shoppers will save on electronics, fashion, beauty essentials, travel, sports goods, groceries, pet supplies, health products, and more. Use our latest coupon codes to enjoy big discounts to your favorite products."
+                description="Browse our Category page to find the latest coupons, promo codes, and deals. Shoppers will save on electronics, fashion, beauty essentials, travel, sports goods, groceries, pet supplies, health products, and more. Use our updated coupon codes to enjoy big discounts on your favorite products & services."
             />
              <MetaTags />
             <section className="categorySection">

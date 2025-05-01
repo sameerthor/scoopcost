@@ -138,7 +138,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         <div className="right-section">
           <div className='badgeFeedback'>
               <div className="badge">
-                    {coupon.coupon_type === 'code' ? 'Code' : 'Deal'}
+                    {coupon.coupon_type === 'code' ? 'Code' : 'Code'}
               </div>
               <div className='badge'>
                   300 Times Used
@@ -361,7 +361,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                   </div>
                   <div className="modalCode d-flex align-items-center justify-content-center">
                     <span>
-                      Deal Activated{" "}
+                      Code Activated{" "}
                       <svg
                         height={25}
                         width={25}
