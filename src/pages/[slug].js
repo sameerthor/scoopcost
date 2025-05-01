@@ -224,6 +224,15 @@ export default function StorePage({ store, relStores }) {
               <a href={store.affiliate_url} target='_blank'> Visit this Store</a>
               <button onClick={handleScroll} title='read review'>Read Review</button>
             </div>
+          
+            
+            {store.contact != "" &&
+              <div className="contactBox">
+                <div class="sidebarHeading">Contact {store.title}</div>
+                <p>{store.contact}</p>
+              </div>
+            }
+                  
           </div>
         </div>
 
