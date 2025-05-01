@@ -26,16 +26,15 @@ const getHeading = (title) => {
   // Check for "Free Shipping"
   if (/free shipping/i.test(title)) {
     return "Free </br> Shipping";
-  } else {
-    return "Deal";
   }
 
   return "";
 };
 const baseDomain = 'suproffer.com';
 
-export default function Coupon({ expiryDate, index, coupon, storeImage, storeName, affiliateUrl, homeUrl, storeSlug, storeId, storeCreateTime, usesSubdomain, couponIndex }) {
+export default function Coupon({ expiryDate, index, coupon, storeImage, storeName, affiliateUrl, homeUrl, storeSlug, storeId, storeCreateTime, usesSubdomain }) {
   const [worked, setWorked] = useState(coupon.is_worked);
+  const [totalUsed, setTotalUsed] = useState(coupon.total_used);
 
   const h2_heading = ["Working Storename Coupon Code", "Storename Best Discount Code", "Storename Promo Codes 2025", "Storname Coupons 2025"];
 
@@ -77,6 +76,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   }, 800);
 
   async function trackCouponUsage(couponComponentId) {
+    setTotalUsed(totalUsed + 1);
     try {
       const response = await fetch(
         `https://admin.suproffer.com/stores/${storeSlug}/track-coupon-usage/${couponComponentId}/`,
@@ -95,6 +95,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   }
 
   async function isWorked(couponComponentId, is_worked) {
+    setTotalUsed(totalUsed + 1);
     try {
       const response = await fetch(
         `https://admin.suproffer.com/stores/${storeSlug}/coupon-worked/${couponComponentId}/`,
@@ -144,7 +145,10 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
           <div className="right-section">
             <div className='badgeFeedback'>
               <div className="badge">
-                {coupon.coupon_type === 'code' ? 'Code' : 'Deal'}
+                {coupon.coupon_type === 'code' ? 'Code' : 'Code'}
+              </div>
+              <div className='badge'>
+                {totalUsed} Times Used
               </div>
             </div>
             <h3 className="title">
@@ -152,19 +156,26 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                 {coupon.title}
               </a>
             </h3>
+
             <p className="description">
               {isExpanded ? coupon.content : coupon.content.slice(0, maxChars) + (showMore ? "..." : "")}
               {showMore && (
-                <button className="moreBtn" onClick={(e) => { e.preventDefault(); setIsExpanded(!isExpanded); }}>
+                <button
+                  className="moreBtn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsExpanded(!isExpanded);
+                  }}
+                >
                   {isExpanded ? " Show Less" : " Show More"}
                 </button>
               )}
             </p>
 
-            <div className="code-box">
-              <span>{coupon.coupon_code}</span>
+            {coupon.coupon_type === 'code' ? (
+              <div className="code-box">
+                <span>{coupon.coupon_code}</span>
 
-              {coupon.coupon_type === 'code' ? (
                 <button onClick={async (e) => {
                   await trackCouponUsage(coupon.id);
                   // Set the copied_code in localStorage (no need to await as it's synchronous)
@@ -178,11 +189,10 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                   });
 
                   const url = usesSubdomain
-                    ? `https://${storeSlug}.${baseDomain}#code=${couponIndex + 1}`
-                    : `/${storeSlug}#code=${couponIndex + 1}`
+                    ? `https://${storeSlug}.${baseDomain}#code=${index + 1}`
+                    : `/${storeSlug}#code=${index + 1}`
 
                   window.open(url, "_blank");
-
 
                   // Log the affiliate URL
 
@@ -197,30 +207,40 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                 >
                   Copy Code
                 </button>
-              ) : (
-                <button rel="nofollow" className="copy-btn dealBtn" onClick={async (e) => {
+
+
+
+              </div>
+            ) : (
+              <div className="code-box">
+                <span>********</span>
+
+                <button rel="nofollow" className="copy-btn" onClick={async (e) => {
                   await trackCouponUsage(coupon.id);
 
                   await localStorage.setItem('copied_code', coupon.id)
 
                   const url = usesSubdomain
-                    ? `https://${storeSlug}.${baseDomain}#deal=${couponIndex + 1}`
-                    : `/${storeSlug}#deal=${couponIndex + 1}`
+                    ? `https://${storeSlug}.${baseDomain}#code=${index + 1}`
+                    : `/${storeSlug}#code=${index + 1}`
 
                   window.open(url, "_blank");
-
                   setTimeout(() => {
                     window.open(affiliateUrl, "_self");
                   }, 100);
                 }}>
-                  Get Deal
+                  Show Code
                 </button>
-              )}
-            </div>
+
+              </div>
+            )}
 
             <div className="footer">
               {coupon.term_condition != "" &&
                 <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} title="Show T &amp; C">Terms &amp; Conditions</button>
+              }
+              {coupon.expires != "" &&
+                <span>{coupon.expires}</span>
               }
               <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show History">Coupon History</button>
             </div>
@@ -228,9 +248,9 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         </div>
         {coupon.term_condition != "" &&
           <div id={accordionId} className="accordion">
-            <div id={collapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
+            <div id={collapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
               <div className="card-body">
-                <div className="tNcBox">
+                <div className="tNcBox tNcTop">
                   <div dangerouslySetInnerHTML={{ __html: coupon.term_condition }} />
                 </div>
               </div>
@@ -238,7 +258,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
           </div>
         }
         <div id={historyAccordionId} className="accordion">
-          <div id={historyCollapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
+          <div id={historyCollapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
             <div className="card-body">
               <div className="historyBox tNcBox">
                 <ul>
@@ -360,7 +380,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                     </div>
                     <div className="modalCode d-flex align-items-center justify-content-center">
                       <span>
-                        Deal Activated{" "}
+                        Code Activated{" "}
                         <svg
                           height={25}
                           width={25}
