@@ -45,8 +45,9 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   const historyCollapseId = `historyCollapseId-${index}`;
   const [modalOpen, setModalOpen] = useState(false);
   const [copytext, setCopyText] = useState("Copy code");
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const maxChars = 40;
+
   const showMore = coupon.content.length > maxChars;
 
   setTimeout(async () => {

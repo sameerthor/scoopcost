@@ -70,6 +70,7 @@ body{
 }
 .storeContent{
   padding: 0 2rem;
+  justify-content: center;
 }
 .contentBox{
   margin-bottom: 1rem;
@@ -2590,7 +2591,14 @@ a{
 .purpleCouponBox .badgeFeedback{
   display: flex;
   align-items: center;
-  gap: 10px
+  gap: 10px;
+  justify-content: space-between;
+}
+.purpleCouponBox .badgeFeedback{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
 }
 
 @media(min-width:600px){
@@ -2800,5 +2808,105 @@ a{
 	font-weight: 500;
 	color: #1a0dab;
 	text-decoration: underline;
-
 }
+.tNcBox.tNcTop{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.storeContent{
+  display: flex;
+}
+.storeContent .offersnipet{
+  max-width: 300px;
+}
+.storeContent  .container{
+  max-width: 800px;
+  margin: 0;
+}
+.offersnipet {
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--primary-color);
+  width: 100%;
+ padding: .5rem;
+  border-radius: 5px;
+  margin-right: 2rem;
+}
+@media(min-widht:600px){
+  .contentBox {
+   margin-bottom: 0;
+}
+}
+.topAside aside .header-thumb{
+  align-items: center;
+  margin-left: 0;
+}
+.topAside.storeHeader .header-store-thumb{
+  justify-content: center;
+}
+.topAside aside{
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+}
+.topAside.storeHeader .header-store-thumb{
+  width: 80px;
+}
+.topAside.storeHeader .header-store-thumb a img{
+   width: 60px
+}
+@media(max-width: 991px){
+  .topAside{
+    display: none;
+  }
+}
+@media(min-width:991px){
+  .regularAside{
+    display: none;
+  }
+}
+.offerToday table tr td:nth-of-type(1){
+  display: flex;
+  min-width: 150px;
+}
+.strBtns{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.strBtns a{
+border-radius: 4px;
+padding: .5rem 1rem;
+font-size: .8rem;
+}
+.strBtns button{
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  font-size: .8rem;
+  border: none;
+  padding: none;
+  background-color: #000;
+  color: #fff;
+  }
+.strBtns a:nth-of-type(1){
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.strBtns a:nth-of-type(2){
+  background-color: #000;
+  color: #fff;
+}
+.reviewRatings .ratings button{
+ display: none;
+}
+.reviewRatings{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sidebarHeading.ratingHeading{
+  display: flex;
+  gap: 10px;
+}
+.reviewRatings .ratings p{
+  margin-top: 0;
+  margin-bottom: 0;
+ }

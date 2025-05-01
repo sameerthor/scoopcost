@@ -59,7 +59,7 @@ export default function Stores({ initialStoreData }) {
         <>
             <NextSeo
                 title="All Stores for 2025"
-                description="Find out exclusive coupons for your products. Supercosts brings you the top discounts for over 1000 stores."
+                description="Explore our All Stores page for the verified coupons, discount codes, and exclusive deals from top online stores. Save big on fashion, tech, travel, home goods, beauty products - all in one place. Updated regularly for maximum savings!"
             />
             <section className="allStorePage">
                 <div className="container">

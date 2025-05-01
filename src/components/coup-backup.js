@@ -2,23 +2,47 @@ import MainDomainLink from '@/components/MainDomainLink';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
+import FeedbackComponent from '../components/FeedbackComponent';
 
 import {
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+const getHeading = (title) => {
+  if (!title) return "";
 
-export default function Coupon({ expiryDate, index, coupon, storeImage, storeName, affiliateUrl, homeUrl, storeSlug, storeId, storeCreateTime }) {
+  // Check for percentage discount (e.g., "40% OFF")
+  const percentMatch = title.match(/(\d+)%/);
+  if (percentMatch) {
+      return `${percentMatch[1]}% </br> OFF`;
+  }
+
+  // Check for dollar discount (e.g., "$40 OFF")
+  const dollarMatch = title.match(/\$(\d+)/);
+  if (dollarMatch) {
+      return `$${dollarMatch[1]} </br> OFF`;
+  }
+
+  // Check for "Free Shipping"
+  if (/free shipping/i.test(title)) {
+      return "Free </br> Shipping";
+  }
+
+  return "";
+};
+export default function Coupon({ expiryDate, index, coupon, storeImage, storeName, affiliateUrl, homeUrl, storeSlug, storeId, storeCreateTime,usesSubdomain }) {
+  const h2_heading = [ "Working Storename Coupon Code", "Storename Best Discount Code", "Storename Promo Codes 2025", "Storname Coupons 2025"];
+
   const accordionId = `accordion-${index}`;
   const collapseId = `collapse-${index}`;
   const historyAccordionId = `historyAccordionId-${index}`;
   const historyCollapseId = `historyCollapseId-${index}`;
   const [modalOpen, setModalOpen] = useState(false);
   const [copytext, setCopyText] = useState("Copy code");
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const maxChars = 40;
-  const showMore = coupon.Content.length > maxChars;
-  
+
+  const showMore = coupon.content.length > maxChars;
 
   setTimeout(async () => {
     if (process.browser) {
@@ -28,7 +52,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         await setModalOpen(true);
         setTimeout(() => {
           // Determine the modal to open based on coupon type
-          let modalElement = coupon.coupon_type == "Code"
+          let modalElement = coupon.coupon_type == "code"
             ? document.getElementById('getCode' + c_id)
             : document.getElementById('getDeal' + c_id);
 
@@ -85,12 +109,15 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
 
   return (
-
-    <div className="hugecouponBox">
-      <div className="coupon-item">
-        <div className="discountBox">
-          <div className="offBox">
-            <div>15% <br /> OFF</div>
+    <>
+{index % 3 === 0 && index < 12 && (
+  <h2>{h2_heading[Math.floor(index / 3)].replace("Storename", storeName)}</h2>
+)}
+    <div className="purpleCouponBox">
+      <div className="coupon-container">
+        <div className="left-section">
+          <div className="discount-box">
+              <div dangerouslySetInnerHTML={{ __html: getHeading(coupon.title) }}></div>
           </div>
           <div className="isValid">
             <span>Verified</span>
@@ -102,43 +129,44 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
               </svg>
             </span>
           </div>
+          <div className="feedback">
+              <button title="Did this worked?" aria-label='Did this worked?' data-bs-toggle="modal" data-bs-target="#feedbackModal">😊</button>
+              <button title="This did not work" aria-label='This did not work' data-bs-toggle="modal" data-bs-target="#feedbackModal">😞</button>
+          </div>
         </div>
-        <div className="coupnBox">
-          <div className="coupondesc">
-            <div>
-              <div className="svgBox">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.2735 6.60866L7.38683 0.721994C7.14016 0.475327 6.80016 0.335327 6.44683 0.335327H1.66683C0.933496 0.335327 0.333496 0.935327 0.333496 1.66866V6.44866C0.333496 6.80199 0.473496 7.14199 0.726829 7.38866L6.6135 13.2753C7.1335 13.7953 7.98016 13.7953 8.50016 13.2753L13.2802 8.49533C13.8002 7.97533 13.8002 7.13533 13.2735 6.60866ZM3.3335 4.33533C2.78016 4.33533 2.3335 3.88866 2.3335 3.33533C2.3335 2.78199 2.78016 2.33533 3.3335 2.33533C3.88683 2.33533 4.3335 2.78199 4.3335 3.33533C4.3335 3.88866 3.88683 4.33533 3.3335 4.33533Z"
-                    fill="#1A1A1A"
-                  ></path>
-                </svg>
-                <span className={coupon.coupon_type === 'Code' ? 'c-code' : 'c-sale'}>
-                  {coupon.coupon_type === 'Code' ? 'Code' : 'Deal'}
-                </span>
-              </div>
-              <p>
-                <a title={coupon.Title} rel="nofollow" className="coupon-link" href={affiliateUrl}>
-                  {coupon.Title}
-                </a>
-              </p>
-              <p className="couponDesc">
-                {isExpanded ? coupon.Content : coupon.Content.slice(0, maxChars) + (showMore ? "..." : "")}
-                {showMore && (
-                  <a className="moreBtn" href="#" onClick={(e) => { e.preventDefault(); setIsExpanded(!isExpanded); }}>
-                    {isExpanded ? " Show Less" : " Show More"}
-                  </a>
-                )}
-              </p>
-              <div className="couponBtndesc">
 
-                {coupon.coupon_type === 'Code' ? (
+        <div className="right-section">
+          <div className='badgeFeedback'>
+              <div className="badge">
+                    {coupon.coupon_type === 'code' ? 'Code' : 'Deal'}
+              </div>
+          </div>
+          <h3 className="title">
+                <a title={coupon.title} rel="nofollow" className="coupon-link" href={affiliateUrl}>
+                  {coupon.title}
+                </a>
+          </h3>
+
+          <p className="description">
+            {isExpanded ? coupon.content : coupon.content.slice(0, maxChars) + (showMore ? "..." : "")}
+            {showMore && (
+              <button
+                className="moreBtn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsExpanded(!isExpanded);
+                }}
+              >
+                {isExpanded ? " Show Less" : " Show More"}
+              </button>
+            )}
+          </p>
+
+
+          <div className="code-box">
+            <span>{coupon.coupon_code}</span>
+           
+            {coupon.coupon_type === 'code' ? (
                   <button onClick={async (e) => {
                     await trackCouponUsage(coupon.id);
                     // Set the copied_code in localStorage (no need to await as it's synchronous)
@@ -163,12 +191,13 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
                   }}
                     data-type="code"
-                    className="coupon-code coupon-button"
-                    href="javscript:void()">
-                    <span className="code-text" rel="nofollow">{coupon.coupon_code}</span>
+                    className="copy-btn"
+                    >
+                   Copy Code
                   </button>
                 ) : (
-                  <button rel="nofollow" href="javascript:void(0)" className="coupon-deal coupon-button" onClick={async (e) => {
+                  
+                  <button rel="nofollow" className="copy-btn" onClick={async (e) => {
                     await trackCouponUsage(coupon.id);
 
                     await localStorage.setItem('copied_code', coupon.id)
@@ -177,88 +206,24 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       window.open(affiliateUrl, "_self");
                     }, 100);
                   }}>
-                    Get Deal
+                    Show Code
                   </button>
                 )}
-
-              </div>
-            </div>
-
-            <div className="termsBox">
-              {coupon.term_condition != "" &&
-                <a className="showTncBox tnc" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} href="javascript:void(0)" title="Show T &amp; C">Terms &amp; Conditions</a>
-              }
-              <a class="showTncBox tnc" data-bs-toggle="collapse" data-bs-target="#historyCollapseId-0" href="javascript:void(0)" title="Show T &amp; C">Coupon History</a>
-            </div>
           </div>
 
-          <div className="couponBtn">
-            {coupon.coupon_type === 'Code' ? (
-              <button onClick={async (e) => {
-                await trackCouponUsage(coupon.id);
-                // Set the copied_code in localStorage (no need to await as it's synchronous)
-                localStorage.setItem('copied_code', coupon.id);
-
-                // Copy the coupon code to the clipboard
-                navigator.clipboard.writeText(coupon.coupon_code).then(() => {
-                  //                                        console.log("Coupon code copied to clipboard");
-                }).catch((error) => {
-                  console.error("Error copying to clipboard: ", error);
-                });
-
-                // Open the store's page in a new tab
-                window.open(`/${storeSlug}/#c=${coupon.id}`, "_blank");
-
-                // Log the affiliate URL
-
-                // Open the affiliate URL in the same window after a short delay (to ensure proper sequence)
-                setTimeout(() => {
-                  window.open(affiliateUrl, "_self");
-                }, 100);  // Delay added to ensure actions don't overlap
-
-              }}
-                data-type="code"
-                className="coupon-code coupon-button"
-                href="javscript:void()">
-                <span className="code-text" rel="nofollow">{coupon.coupon_code}</span>
-              </button>
-            ) : (
-              <button className="coupon-deal coupon-button" onClick={async (e) => {
-                await trackCouponUsage(coupon.id);
-                await localStorage.setItem('copied_code', coupon.id)
-                window.open(`/${storeSlug}`, "_blank");
-                setTimeout(() => {
-                  window.open(affiliateUrl, "_self");
-                }, 100);
-              }}>
-                Get Deal <i className="shop icon"></i>
-              </button>
-            )}
-
-            <div className="cpnratebx">
-              <div className="user-ratting">
-                <div className="coupon-vote" onClick={() => isWorked(coupon.id, 'Yes')} data-tooltip="This worked">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm177.6 62.1C192.8 334.5 218.8 352 256 352s63.2-17.5 78.4-33.9c9-9.7 24.2-10.4 33.9-1.4s10.4 24.2 1.4 33.9c-22 23.8-60 49.4-113.6 49.4s-91.7-25.5-113.6-49.4c-9-9.7-8.4-24.9 1.4-33.9s24.9-8.4 33.9 1.4zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-                  </svg>
-                </div>
-                <div className="coupon-vote" onClick={() => isWorked(coupon.id, 'No')} data-tooltip="This worked">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM174.6 384.1c-4.5 12.5-18.2 18.9-30.7 14.4s-18.9-18.2-14.4-30.7C146.9 319.4 198.9 288 256 288s109.1 31.4 126.6 79.9c4.5 12.5-2 26.2-14.4 30.7s-26.2-2-30.7-14.4C328.2 358.5 297.2 336 256 336s-72.2 22.5-81.4 48.1zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-                  </svg>
-                </div>
-              </div>
-              <span className="voted-value">100% Success</span>
-            </div>
-            <div className="termsBox"> <a className="showTncBox tnc" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} href="javascript:void(0)" title="Show T &amp; C">Coupon History</a></div>
+          <div className="footer">
+             {coupon.term_condition != "" &&
+                <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} title="Show T &amp; C">Terms &amp; Conditions</button>
+              }
+             <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show History">Coupon History</button>
           </div>
         </div>
       </div>
       {coupon.term_condition != "" &&
         <div id={accordionId} className="accordion">
-          <div id={collapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
+          <div id={collapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
             <div className="card-body">
-              <div className="tNcBox">
+              <div className="tNcBox tNcTop">
                 <div dangerouslySetInnerHTML={{ __html: coupon.term_condition }} />
               </div>
             </div>
@@ -266,14 +231,14 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         </div>
       }
       <div id={historyAccordionId} className="accordion">
-        <div id={historyCollapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
+        <div id={historyCollapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
           <div className="card-body">
             <div className="historyBox tNcBox">
               <ul>
-                {coupon.last_used_at && !isNaN(coupon.last_used_at) && coupon.coupon_type == "Code"
+                {coupon.last_used_at && !isNaN(coupon.last_used_at) && coupon.coupon_type == "code"
                   ? <li>'{coupon.coupon_code}' promo code was used by shoppers {formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })} {coupon.is_worked && (coupon.is_worked == "Yes" ? "and it worked." : "and it didn't work.")}</li>
                   : ''}
-                {coupon.last_used_at && !isNaN(coupon.last_used_at) && coupon.coupon_type == "Sale"
+                {coupon.last_used_at && !isNaN(coupon.last_used_at) && coupon.coupon_type == "deal"
                   ? <li>This deal was used by shoppers {formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })} {coupon.is_worked && (coupon.is_worked == "Yes" ? "and it worked." : "and it didn't work.")}</li>
                   : ''}
                 <li>{`Added ${formatDistanceToNow(storeCreateTime, { addSuffix: true })}`} by {coupon.tested_by}</li>
@@ -283,7 +248,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         </div>
       </div>
       <>
-        {modalOpen && coupon.coupon_type === "Code" && (
+        {modalOpen && coupon.coupon_type === "code" && (
           <div
             className="modal fade"
             id={`getCode${coupon.id}`}
@@ -340,37 +305,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       Visit at {homeUrl || "Store"}
                     </a>
                   </div>
-                  <div className="isWorked">
-                    <h4>Did this worked?</h4>
-                    <div className="workedbtn">
-                      <a href="javascript:void(0)" onClick={() => setModalOpen(false)}
-                        className="btnVote">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 512 512"
-                          fill="#0ee032"
-                          width={16}
-                          height={16}
-                        >
-                          <path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
-                        </svg>
-                        Yes
-                      </a>
-                      <a href="javascript:void(0)" onClick={() => setModalOpen(false)}
-                        className="btnVote">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 512 512"
-                          fill="#ff5f71"
-                          width={16}
-                          height={16}
-                        >
-                          <path d="M313.4 479.1c26-5.2 42.9-30.5 37.7-56.5l-2.3-11.4c-5.3-26.7-15.1-52.1-28.8-75.2H464c26.5 0 48-21.5 48-48c0-18.5-10.5-34.6-25.9-42.6C497 236.6 504 223.1 504 208c0-23.4-16.8-42.9-38.9-47.1c4.4-7.3 6.9-15.8 6.9-24.9c0-21.3-13.9-39.4-33.1-45.6c.7-3.3 1.1-6.8 1.1-10.4c0-26.5-21.5-48-48-48H294.5c-19 0-37.5 5.6-53.3 16.1L202.7 73.8C176 91.6 160 121.6 160 153.7V192v48 24.9c0 29.2 13.3 56.7 36 75l7.4 5.9c26.5 21.2 44.6 51 51.2 84.2l2.3 11.4c5.2 26 30.5 42.9 56.5 37.7zM32 384H96c17.7 0 32-14.3 32-32V128c0-17.7-14.3-32-32-32H32C14.3 96 0 110.3 0 128V352c0 17.7 14.3 32 32 32z" />
-                        </svg>
-                        No
-                      </a>
-                    </div>
-                  </div>
+                
+                  <FeedbackComponent />
                 </div>
                 <div className="modal-footer"></div>
               </div>
@@ -380,7 +316,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
       </>
       {/**********************************Coupon Pop-Up GET-deal Modal*********************************************** */}
       <>
-        {(coupon.coupon_type == "Sale" && modalOpen) &&
+        {(coupon.coupon_type == "deal" && modalOpen) &&
           <div
             className="modal fade"
             id={`getDeal${coupon.id}`}
@@ -446,58 +382,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       </svg>
                     </a>
                   </div>
-                  {!showFeedback && (
-  <div className="isWorked">
-    <h4>Did this worked?</h4>
-    <div className="workedbtn">
-      <a
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          handleVote('Yes');
-        }}
-        className="btnVote"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-          fill="#0ee032"
-          width={16}
-          height={16}
-        >
-          <path d="M313.4 32.9c26 5.2...z" />
-        </svg>
-        Yes
-      </a>
-      <a
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          handleVote('No');
-        }}
-        className="btnVote"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-          fill="#ff5f71"
-          width={16}
-          height={16}
-        >
-          <path d="M313.4 479.1c26-5.2...z" />
-        </svg>
-        No
-      </a>
-    </div>
-  </div>
-)}
-
-{showFeedback && (
-  <div className="feedbackBox">
-    <span>Thanks for FeedBack</span>
-  </div>
-)}
-
+                 
+                  <FeedbackComponent />
                 </div>
                 <div className="modal-footer"></div>
               </div>
@@ -506,6 +392,6 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         }
       </>
     </div>
-
+    </>
   );
 }
