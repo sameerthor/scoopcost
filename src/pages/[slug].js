@@ -149,7 +149,72 @@ export default function StorePage({ store, relStores }) {
           <div className="affiDisc">
             <p>suproffer may earn a commission when you use coupons on this page. <MainDomainLink href="/affiliate-disclosure">Read our affiliate disclosure.</MainDomainLink></p>
           </div>
-          <div className="breadcrumb">
+          
+        </div>
+      </section>
+      <section className='storeContent'>
+        <div className='storeHeader topAside'>
+            <aside className="">
+              <div className="header-thumb">
+                <div className="header-store-thumb">
+                  <a rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
+                    <Image
+                      src={`${store.image}`}
+                      alt={`${store.title} Store Logo`}
+                      width={128}
+                      height={128}
+                      className="attachment-wpcoupon_small_thumb size-wpcoupon_small_thumb"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+                <div className="star-rating stars">
+                  <RatingBox key={'store_' + store.id} store={store}  />
+                </div>
+              </div>
+            </aside>
+            <div className='offersnipet'>
+              <div className="offerToday">
+                        <div className='sidebarHeading'>Today's Offer for {store.title}</div>
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td className="p-2">🛍️ Total Offers</td>
+                              <td className="p-2 text-right font-medium">{totalOffers}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2"><span>🏷️</span>Total Coupon</td>
+                              <td className="p-2 text-right font-medium">{totalOffers}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
+                              <td className="p-2 text-right font-medium">{activeCoupons}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2"><span>🛒</span> Free Shipping</td>
+                              <td className="p-2 text-right font-medium">{freeShipping}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2"><span>🔥</span> Best Offer</td>
+                              <td className="p-2 text-right font-medium">{bestOffer}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2">Success Record</td>
+                              <td className="p-2 text-right font-medium">{bestOffer}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+              </div>
+              <div className='about-store'>
+                <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
+              </div>
+            </div>
+        </div>
+       
+        <div className="container">
+          <div className="couponsection">
+            <div className="contentBox">
+            <div className="breadcrumb">
             <ul>
               <li><MainDomainLink href="/" title='suproffer.com'>suproffer.com</MainDomainLink> &gt;</li>
               <li>{store.title} coupon code</li>
@@ -158,20 +223,14 @@ export default function StorePage({ store, relStores }) {
               <MainDomainLink title='categoy page' href={`/category/${store.category.slug}`}>{store.category.title}</MainDomainLink>
             </div>
           </div>
-        </div>
-      </section>
-      <section className='storeContent'>
-        <div className="container">
-          <div className="couponsection">
-            <div className="contentBox">
               <div className="storeHeader row row-cols-2">
-                <div className="header-content col-8 p-0">
+                <div className="header-content col-lg-12 col-8 p-0">
                   <h1>                                        {store.store_h1.replace("%%Year%%", moment().format('YYYY'))}
                   </h1>
-                  <p className="dealAvl">{calculateCoupons(store)}</p>
+                  <p className="dealAvl">{totalOffers} Codes</p>
                   <p>Flat {getHeading(store.coupon_set[0].title)} at {store.title}</p>
                 </div>
-                <aside className="col-4 p-0">
+                <aside className="col-4 regularAside">
                   <div className="header-thumb">
                     <div className="header-store-thumb">
                       <a rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
@@ -190,16 +249,11 @@ export default function StorePage({ store, relStores }) {
                     </div>
                   </div>
                 </aside>
+                
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className="couponSection">
-        <div className="container">
-          <div className="row">
-            <div className="p-0">
-
+          <div className='couponSection couponTop'>
               <div className="store-listing listCoupns">
                 {store.coupon_set
                   .filter(coupon => {
@@ -226,325 +280,336 @@ export default function StorePage({ store, relStores }) {
                   ))
                 }
               </div>
-
-              {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot!="" && coupon.coupon_type === "code") && (
-                <div className="testHistory">
-                  <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
-                  <p>Check verified proof of manual testing for {store.title}</p>
+              <section className="couponSection">
+                <div className="container">
                   <div className="row">
-                    {store.coupon_set
-                      .filter(coupon => coupon.coupon_type === "code")
-                      .map((coupon) => (
-                        coupon?.screenshot && (
-                          <div key={coupon.id} className="col-md-6 mb-1 p-1">
-                            <div className="historyItem">
-                              <div className="historyHeader">
-                                <span>{getHeading(coupon.title)}</span>
-                                <span className="code">{coupon.coupon_code || "No Code"}</span>
-                                <span>
-                                  {coupon.last_used_at && !isNaN(coupon.last_used_at)
-                                    ? `Used ${formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })}`
-                                    : ""}
-                                </span>
-                              </div>
-                              <div className="historyImg">
-                                <button
-                                  onClick={() =>
-                                    setScreenshotURL(`${coupon.screenshot}`)
+                    <div className="p-0">
+
+                      {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot!="" && coupon.coupon_type === "code") && (
+                        <div className="testHistory">
+                          <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
+                          <p>Check verified proof of manual testing for {store.title}</p>
+                          <div className="row">
+                            {store.coupon_set
+                              .filter(coupon => coupon.coupon_type === "code")
+                              .map((coupon) => (
+                                coupon?.screenshot && (
+                                  <div key={coupon.id} className="col-md-6 mb-1 p-1">
+                                    <div className="historyItem">
+                                      <div className="historyHeader">
+                                        <span>{getHeading(coupon.title)}</span>
+                                        <span className="code">{coupon.coupon_code || "No Code"}</span>
+                                        <span>
+                                          {coupon.last_used_at && !isNaN(coupon.last_used_at)
+                                            ? `Used ${formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })}`
+                                            : ""}
+                                        </span>
+                                      </div>
+                                      <div className="historyImg">
+                                        <button
+                                          onClick={() =>
+                                            setScreenshotURL(`${coupon.screenshot}`)
+                                          }
+                                          data-bs-toggle="modal"
+                                          data-bs-target="#maximizeImage"
+                                        >
+                                          <Image
+                                            src={
+                                              coupon?.screenshot
+                                                ? `${coupon.screenshot}`
+                                                : "/images/history-img.webp"
+                                            }
+                                            alt={coupon.title || "Coupon Image"}
+                                            width={400}
+                                            height={250}
+                                            loading="lazy"
+                                          />
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )
+                              ))}
+
+                          </div>
+                        </div>
+
+                      )}
+
+                      <div className='about-store'>
+                        <div className="sidebarHeading">About {store.title}</div>
+                        <div dangerouslySetInnerHTML={{ __html: paragraphs[0] + "</p>" }} />
+                      </div>
+                      <div className="offerToday regularAside">
+                        <div className='sidebarHeading'>Today's Offer for {store.title}</div>
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td className="p-2">🛍️ Total Offers</td>
+                              <td className="p-2 text-right font-medium">{totalOffers}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2"><span>🏷️</span>Total Coupon</td>
+                              <td className="p-2 text-right font-medium">{totalOffers}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
+                              <td className="p-2 text-right font-medium">{activeCoupons}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2"><span>🛒</span> Free Shipping</td>
+                              <td className="p-2 text-right font-medium">{freeShipping}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2"><span>🔥</span> Best Offer</td>
+                              <td className="p-2 text-right font-medium">{bestOffer}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2">Success Record</td>
+                              <td className="p-2 text-right font-medium">{bestOffer}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div className='about-store regularAside'>
+                        <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
+                      </div>
+                      <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
+
+                      </div>
+                      <div className="couponOffer summary-container">
+                        <div class="sidebarHeading">Coupon Summary for {store.title}</div>
+                        <table border="1" cellspacing="0" cellpadding="0">
+                          <thead>
+                            <tr>
+                              <th width="20%">Deal</th>
+                              <th width="60%">Title</th>
+                              <th width="20%">Coupon</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {store.coupon_set.map((coupon) => {
+                              const dealMatch = coupon.title.match(/(\d+% Off)/);
+                              const dealText = dealMatch ? dealMatch[0] : "Special Offer";
+                              return (
+                                <tr key={coupon.id} className="border">
+                                  <td className="p-2 border text-center"><span className='deal-badge'>{dealText}</span></td>
+                                  <td className="p-2 border">{coupon.title}</td>
+                                  <td className="p-2 border">
+                                    {coupon.coupon_code ? (
+                                      <span className='coupon-code'>
+                                        {coupon.coupon_code}
+                                      </span>
+                                    ) : (
+                                      <span className='hot-deal'>Hot Deal 🔥</span>
+                                    )}
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                      {store.contact != "" &&
+                        <div className="contactBox">
+                          <div class="sidebarHeading">Contact {store.title}</div>
+                          <p>{store.contact}</p>
+                        </div>
+                      }
+
+                      {relStores.slice(2).length > 0 && (
+                        <div className="topStore mb-4">
+                          <div className="sidebarHeading">Related Stores for {store.title}</div>
+                          <ul>
+                            {relStores.slice(2).map((store, index) => (
+                              <li key={index}>
+                                <MainDomainLink
+                                  href={
+                                    store.uses_subdomain
+                                      ? `https://${store.slug}.suproffer.com`
+                                      : `/${store.slug}-coupons`
                                   }
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#maximizeImage"
                                 >
-                                  <Image
-                                    src={
-                                      coupon?.screenshot
-                                        ? `${coupon.screenshot}`
-                                        : "/images/history-img.webp"
-                                    }
-                                    alt={coupon.title || "Coupon Image"}
-                                    width={400}
-                                    height={250}
-                                    loading="lazy"
-                                  />
+                                  {store.title}
+                                </MainDomainLink>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+
+                      {/* comment */}
+                      <div className="comment-box">
+                        <div id="showComment">
+                          <button onClick={toggleCommentBox} className="btn btn-primary">
+                            {showCommentBox ? 'Hide Comment Box' : 'Leave a Comment'}
+                          </button>
+                        </div>
+                        {showCommentBox && (
+                          <div className="commentbox">
+                            <div className="row comment mx-auto">
+                              <h3>Let other know how much you saved</h3>
+                              <p>
+                                Your email address will not be published. Required fields are
+                                marked <span>*</span>
+                              </p>
+                            </div>
+                            <div className="row input mx-auto">
+                              <form className="d-block" role="post">
+                                <label htmlFor="thought" className="d-block">
+                                  <i className="fa-regular fa-user" /> What's in your mind <span>*</span>
+                                </label>
+                                <textarea
+                                  name="thought"
+                                  id='thought'
+                                  className="col-sm-12 col-md-10 col-lg-10 d-block"
+                                  rows={10}
+                                  placeholder="Input your thought ..."
+                                  required=""
+                                  defaultValue={""}
+                                />
+                                <label htmlFor="name" className="d-block">
+                                  <i className="fa-regular fa-user" /> Name <span>*</span>
+                                </label>
+                                <input
+                                  id="name"
+                                  name='name'
+                                  type="text"
+                                  placeholder="Name"
+                                  required=""
+                                  className="col-sm-12 col-md-10 col-lg-10 d-block"
+                                />
+                                <label htmlFor="email" className="d-block">
+                                  <i className="fa-regular fa-envelope" /> Email <span>*</span>
+                                </label>
+                                <input
+                                  id="email"
+                                  name='email'
+                                  type="email"
+                                  className="col-sm-12 col-md-10 col-lg-10 d-block"
+                                  placeholder="Enter your email address"
+                                  required=""
+                                />
+                                <label htmlFor="url" className="d-block">
+                                  <i className="fa-solid fa-globe" /> Website
+                                </label>
+                                <input
+                                  id="url"
+                                  name='url'
+                                  type="text"
+                                  className="col-sm-12 col-md-10 col-lg-10 d-block"
+                                  placeholder="website url"
+                                />
+                                <button type="submit" onclick="">
+                                  Post Comment
                                 </button>
-                              </div>
+                              </form>
                             </div>
                           </div>
-                        )
-                      ))}
+                        )}
+                      </div>
 
-                  </div>
-                </div>
+                      <section className="whyTrustus">
+                        <div className="container">
+                          <div className="sidebarHeading">Why Trust Us?</div>
+                            <div className="row g-4">
+                              {/* Left Column */}
+                              <div className="col-md-6 mb-3 zeroMobPadding">
+                                <div className="card-custom">
+                                  <div className="founder">
+                                    <div className="img">
+                                      <img src="/images/co-founder.webp" alt="Rudresh Dubey" />
+                                    </div>
+                                    <div className="name">
+                                      <p>
+                                        Rudresh{" "}
+                                        <a
+                                          href="https://www.linkedin.com/in/rudreh-dubey-86426b1a2/"
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          title="LinkedIn"
+                                        >
+                                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="#0077B5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+                                        </a>
+                                      </p>
+                                      <span>Founder & CEO @ suproffer.com</span>
+                                    </div>
+                                  </div>
+                                  <div className="founderNote">
+                                    <p>
+                                    Rudresh Dubey is an experienced affiliate marketer with over 10 years of experience in digital marketing. His journey in the coupon industry began a decade ago to help people save money while shopping online. As the founder of <a href="https://suproffer.com/">Suproffer.com</a>, Rudresh turned his vision into a reality by creating a trusted platform that offers only tested and verified coupon codes. What started as a small idea for online shoppers has now grown into a reliable name for deals and discounts. 
+                                    </p>
+                                  <p>
+                                  Rudresh's goal has always been simple - make online shopping affordable and stress-free. He leads a hardworking team of 6 members who carefully pick the best promo codes across many categories like fashion, electronics, travel, and software. Every coupon goes through a proper check to make sure it is genuine and active. <a href="https://suproffer.com/">Suproffer.com</a> has become a go-to destination for online buyers who want to save money without wasting time on fake deals or expired coupons. 
+                                  </p>
+                                  </div>
+                                </div>
+                              </div>
 
-              )}
-
-              <div className='about-store'>
-                <div className="sidebarHeading">About {store.title}</div>
-                <div dangerouslySetInnerHTML={{ __html: paragraphs[0] + "</p>" }} />
-              </div>
-              <div className="offerToday">
-                <div className='sidebarHeading'>Today's Offer for {store.title}</div>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td className="p-2">🛍️ Total Offers</td>
-                      <td className="p-2 text-right font-medium">{totalOffers}</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2">🏷️ Active Coupon Codes</td>
-                      <td className="p-2 text-right font-medium">{activeCoupons}</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2">🛒 Free Shipping</td>
-                      <td className="p-2 text-right font-medium">{freeShipping}</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2">🔥 Best Offer</td>
-                      <td className="p-2 text-right font-medium">{bestOffer}</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2">Success Record</td>
-                      <td className="p-2 text-right font-medium">{bestOffer}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className='about-store'>
-                <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
-              </div>
-              <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
-
-              </div>
-              <div className="couponOffer summary-container">
-                <div class="sidebarHeading">Coupon Summary for {store.title}</div>
-                <table border="1" cellspacing="0" cellpadding="0">
-                  <thead>
-                    <tr>
-                      <th width="20%">Deal</th>
-                      <th width="60%">Title</th>
-                      <th width="20%">Coupon</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {store.coupon_set.map((coupon) => {
-                      const dealMatch = coupon.title.match(/(\d+% Off)/);
-                      const dealText = dealMatch ? dealMatch[0] : "Special Offer";
-                      return (
-                        <tr key={coupon.id} className="border">
-                          <td className="p-2 border text-center"><span className='deal-badge'>{dealText}</span></td>
-                          <td className="p-2 border">{coupon.title}</td>
-                          <td className="p-2 border">
-                            {coupon.coupon_code ? (
-                              <span className='coupon-code'>
-                                {coupon.coupon_code}
-                              </span>
-                            ) : (
-                              <span className='hot-deal'>Hot Deal 🔥</span>
-                            )}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
-              {store.contact != "" &&
-                <div className="contactBox">
-                  <div class="sidebarHeading">Contact {store.title}</div>
-                  <p>{store.contact}</p>
-                </div>
-              }
-
-              {relStores.slice(2).length > 0 && (
-                <div className="topStore mb-4">
-                  <div className="sidebarHeading">Related Stores for {store.title}</div>
-                  <ul>
-                    {relStores.slice(2).map((store, index) => (
-                      <li key={index}>
-                        <MainDomainLink
-                          href={
-                            store.uses_subdomain
-                              ? `https://${store.slug}.suproffer.com`
-                              : `/${store.slug}-coupons`
-                          }
-                        >
-                          {store.title}
-                        </MainDomainLink>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-
-              {/* comment */}
-              <div className="comment-box">
-                <div id="showComment">
-                  <button onClick={toggleCommentBox} className="btn btn-primary">
-                    {showCommentBox ? 'Hide Comment Box' : 'Leave a Comment'}
-                  </button>
-                </div>
-                {showCommentBox && (
-                  <div className="commentbox">
-                    <div className="row comment mx-auto">
-                      <h3>Let other know how much you saved</h3>
-                      <p>
-                        Your email address will not be published. Required fields are
-                        marked <span>*</span>
-                      </p>
-                    </div>
-                    <div className="row input mx-auto">
-                      <form className="d-block" role="post">
-                        <label htmlFor="thought" className="d-block">
-                          <i className="fa-regular fa-user" /> What's in your mind <span>*</span>
-                        </label>
-                        <textarea
-                          name="thought"
-                          id='thought'
-                          className="col-sm-12 col-md-10 col-lg-10 d-block"
-                          rows={10}
-                          placeholder="Input your thought ..."
-                          required=""
-                          defaultValue={""}
-                        />
-                        <label htmlFor="name" className="d-block">
-                          <i className="fa-regular fa-user" /> Name <span>*</span>
-                        </label>
-                        <input
-                          id="name"
-                          name='name'
-                          type="text"
-                          placeholder="Name"
-                          required=""
-                          className="col-sm-12 col-md-10 col-lg-10 d-block"
-                        />
-                        <label htmlFor="email" className="d-block">
-                          <i className="fa-regular fa-envelope" /> Email <span>*</span>
-                        </label>
-                        <input
-                          id="email"
-                          name='email'
-                          type="email"
-                          className="col-sm-12 col-md-10 col-lg-10 d-block"
-                          placeholder="Enter your email address"
-                          required=""
-                        />
-                        <label htmlFor="url" className="d-block">
-                          <i className="fa-solid fa-globe" /> Website
-                        </label>
-                        <input
-                          id="url"
-                          name='url'
-                          type="text"
-                          className="col-sm-12 col-md-10 col-lg-10 d-block"
-                          placeholder="website url"
-                        />
-                        <button type="submit" onclick="">
-                          Post Comment
-                        </button>
-                      </form>
+                              {/* Right Column */}
+                              <div className="col-md-6 zeroMobPadding">
+                                <div className="card-custom ourExpert">
+                                  <div className="expHead">Meet Our Coupon Experts</div>
+                                  <div className="expertPara">
+                                  <p>
+                                  <a href="https://suproffer.com/">Suproffer.com</a> has an efficient team of 6 coupon experts. Their job is to make sure users always get the best and latest offers. Our team focuses on creating a smooth and friendly user experience, so visitors can quickly find the right deals without getting misled. They keep an eye on every code and update the site regularly. We have also put a comment section on each coupon page. If a coupon doesn’t work, the team makes sure to fix the issue and try to improve the services based on user feedback. 
+                                  </p>
+                                  <p>
+                                  If you notice anything that isn’t right on our website, you can report the issue to us and we’ll address it shortly.
+                                  </p>
+                                  </div>
+                                  <div className="listExpert">
+                                    <ul>
+                                      <li>
+                                        <small>
+                                          <img src="/images/dinesh-v.webp" alt="dinesh" /> Dinesh
+                                        </small>
+                                        <span className="exp">8 Years</span>
+                                      </li>
+                                      <li>
+                                        <small>
+                                          <img src="/images/mashma-m.webp" alt="mashma" /> Mashma
+                                        </small>
+                                        <span className="exp">6 Years</span>
+                                      </li>
+                                      <li>
+                                        <small>
+                                          <img src="/images/tanay-s.webp" alt="tanay" /> Tanay
+                                        </small>
+                                        <span className="exp">6 Years</span>
+                                      </li>
+                                      <li>
+                                        <small>
+                                          <img src="/images/sikha.webp" alt="sikha" /> Sikha
+                                        </small>
+                                        <span className="exp">5 Years</span>
+                                      </li>
+                                      <li>
+                                        <small>
+                                          <img src="/images/yash-c.webp" alt="yash" /> Yash
+                                        </small>
+                                        <span className="exp">4 Years</span>
+                                      </li>
+                                      <li>
+                                        <small><img src="/images/yunush.webp" alt="Yusuf" /> Yusuf</small>
+                                        <span class="exp">3 Years</span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                      </section>
                     </div>
                   </div>
-                )}
-              </div>
-
-              <section className="whyTrustus">
-      <div className="container">
-        <div className="sidebarHeading">Why Trust Us?</div>
-        <div className="row g-4">
-          {/* Left Column */}
-          <div className="col-md-6 mb-3 zeroMobPadding">
-            <div className="card-custom">
-              <div className="founder">
-                <div className="img">
-                  <img src="/images/co-founder.webp" alt="Rudresh Dubey" />
                 </div>
-                <div className="name">
-                  <p>
-                    Rudresh{" "}
-                    <a
-                      href="https://www.linkedin.com/in/rudreh-dubey-86426b1a2/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="LinkedIn"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="#0077B5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
-                    </a>
-                  </p>
-                  <span>Founder & CEO @ suproffer.com</span>
-                </div>
-              </div>
-              <div className="founderNote">
-                <p>
-                Rudresh Dubey is an experienced affiliate marketer with over 10 years of experience in digital marketing. His journey in the coupon industry began a decade ago to help people save money while shopping online. As the founder of <a href="https://suproffer.com/">Suproffer.com</a>, Rudresh turned his vision into a reality by creating a trusted platform that offers only tested and verified coupon codes. What started as a small idea for online shoppers has now grown into a reliable name for deals and discounts. 
-                </p>
-               <p>
-               Rudresh's goal has always been simple - make online shopping affordable and stress-free. He leads a hardworking team of 6 members who carefully pick the best promo codes across many categories like fashion, electronics, travel, and software. Every coupon goes through a proper check to make sure it is genuine and active. <a href="https://suproffer.com/">Suproffer.com</a> has become a go-to destination for online buyers who want to save money without wasting time on fake deals or expired coupons. 
-               </p>
-              </div>
+              </section>
             </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="col-md-6 zeroMobPadding">
-            <div className="card-custom ourExpert">
-              <div className="expHead">Meet Our Coupon Experts</div>
-              <div className="expertPara">
-               <p>
-               <a href="https://suproffer.com/">Suproffer.com</a> has an efficient team of 6 coupon experts. Their job is to make sure users always get the best and latest offers. Our team focuses on creating a smooth and friendly user experience, so visitors can quickly find the right deals without getting misled. They keep an eye on every code and update the site regularly. We have also put a comment section on each coupon page. If a coupon doesn’t work, the team makes sure to fix the issue and try to improve the services based on user feedback. 
-               </p>
-               <p>
-               If you notice anything that isn’t right on our website, you can report the issue to us and we’ll address it shortly.
-               </p>
-              </div>
-              <div className="listExpert">
-                <ul>
-                  <li>
-                    <small>
-                      <img src="/images/dinesh-v.webp" alt="dinesh" /> Dinesh
-                    </small>
-                    <span className="exp">8 Years</span>
-                  </li>
-                  <li>
-                    <small>
-                      <img src="/images/mashma-m.webp" alt="mashma" /> Mashma
-                    </small>
-                    <span className="exp">6 Years</span>
-                  </li>
-                  <li>
-                    <small>
-                      <img src="/images/tanay-s.webp" alt="tanay" /> Tanay
-                    </small>
-                    <span className="exp">6 Years</span>
-                  </li>
-                  <li>
-                    <small>
-                      <img src="/images/sikha.webp" alt="sikha" /> Sikha
-                    </small>
-                    <span className="exp">5 Years</span>
-                  </li>
-                  <li>
-                    <small>
-                      <img src="/images/yash-c.webp" alt="yash" /> Yash
-                    </small>
-                    <span className="exp">4 Years</span>
-                  </li>
-                  <li>
-                    <small><img src="/images/yunush.webp" alt="Yusuf" /> Yusuf</small>
-                    <span class="exp">3 Years</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-            </div>
-          </div>
-        </div>
-
+          </div> 
       </section>
+      
       {/* moximize Modal  */}
       <div
         className="modal fade maximizeImage"

@@ -140,6 +140,9 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
               <div className="badge">
                     {coupon.coupon_type === 'code' ? 'Code' : 'Deal'}
               </div>
+              <div className='badge'>
+                  300 Times Used
+              </div>
           </div>
           <h3 className="title">
                 <a title={coupon.title} rel="nofollow" className="coupon-link" href={affiliateUrl}>
@@ -162,11 +165,10 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
             )}
           </p>
 
-
+          {coupon.coupon_type === 'code' ? (
           <div className="code-box">
             <span>{coupon.coupon_code}</span>
            
-            {coupon.coupon_type === 'code' ? (
                   <button onClick={async (e) => {
                     await trackCouponUsage(coupon.id);
                     // Set the copied_code in localStorage (no need to await as it's synchronous)
@@ -195,8 +197,19 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                     >
                    Copy Code
                   </button>
-                ) : (
-                  <button rel="nofollow" className="copy-btn dealBtn" onClick={async (e) => {
+               
+                  
+                  
+          </div>
+           ) : (
+          <div className="code-box">
+            <span>********</span>
+           
+            
+                 
+               
+                  
+                  <button rel="nofollow" className="copy-btn" onClick={async (e) => {
                     await trackCouponUsage(coupon.id);
 
                     await localStorage.setItem('copied_code', coupon.id)
@@ -205,10 +218,11 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       window.open(affiliateUrl, "_self");
                     }, 100);
                   }}>
-                    Get Deal
+                    Show Code
                   </button>
-                )}
+               
           </div>
+           )}
 
           <div className="footer">
              {coupon.term_condition != "" &&
