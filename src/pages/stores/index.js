@@ -3,7 +3,7 @@ import Link from "next/link";
 import "@/styles/a-z.css";
 import { NextSeo } from "next-seo";
 import MainDomainLink from '@/components/MainDomainLink';
-
+const baseDomain = "suproffer.com"
 export default function Stores({ initialStoreData }) {
     console.log(initialStoreData)
     const [storeData, setStoreData] = useState(initialStoreData);
@@ -97,7 +97,11 @@ export default function Stores({ initialStoreData }) {
                                         <ul>
                                             {storeData[c].map((item, index) => (
                                                 <li key={index}>
-                                                    <MainDomainLink href={`/${item.slug}`}>
+                                                    <MainDomainLink href={
+                                                        item.subdomain
+                                                            ? `https://${item.slug}.${baseDomain}`
+                                                            : `/${item.slug}`
+                                                    }>
                                                         {item.title}
                                                         <span>{calculateCoupons(item.coupon_set)}</span>
                                                     </MainDomainLink>

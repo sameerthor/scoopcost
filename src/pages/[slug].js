@@ -33,7 +33,7 @@ const getHeading = (title) => {
   // Check for "Free Shipping"
   if (/free shipping/i.test(title)) {
     return "Free Shipping";
-  }else{
+  } else {
     return "Best Deal";
   }
 
@@ -43,7 +43,7 @@ const getHeading = (title) => {
 const calculateCoupons = (store) => {
   if (!store.coupon_set || !Array.isArray(store.coupon_set)) return "";
 
-  const deals = store.coupon_set.filter(coupon => coupon.coupon_type === "Sale").length;
+  const deals = store.coupon_set.filter(coupon => coupon.coupon_type === "deal").length;
   const codes = store.coupon_set.filter(coupon => coupon.coupon_code && coupon.coupon_code.trim() !== "").length;
 
   let result = [];
@@ -54,11 +54,26 @@ const calculateCoupons = (store) => {
 
   return result.join(" & ");
 };
+
+function getSuccessLevel(coupons) {
+  const total = coupons.length;
+  const worked = coupons.filter(c => c.is_worked === "True").length;
+  const failed = coupons.filter(c => c.is_worked === "False").length;
+  const notSpecified = coupons.filter(c => !c.is_worked).length;
+
+  if (worked > 0 && failed === 0 && notSpecified > 0) return "Very High";
+  if (failed > 0 && worked === 0 && notSpecified > 0) return "Very Low";
+  if (worked === 0 && failed === 0) return "Very High";
+  if (worked > 0 && (failed > 0 || notSpecified > 0)) return "Moderate";
+  return "Moderate";
+}
+
 export default function StorePage({ store, relStores }) {
   const storeDescription = store.store_description;
   const paragraphs = storeDescription.split("</p>");
   const [activeCouponsType, setActiveCouponsType] = useState("All");
   const [screenshotURL, setScreenshotURL] = useState("");
+  const typeCounters = {};
 
   const totalOffers = store.coupon_set.length;
   const activeCoupons = store.coupon_set.filter(
@@ -93,7 +108,7 @@ export default function StorePage({ store, relStores }) {
         "@type": "ListItem",
         "position": 2,
         "name": `${store.title} coupon code`,
-        "item": "https://suproffer.com/"+store.slug
+        "item": "https://suproffer.com/" + store.slug
       }
     ]
   }
@@ -105,18 +120,18 @@ export default function StorePage({ store, relStores }) {
     "@type": "SaleEvent",
     "name": coupon.title, // Dynamic name based on coupon title
     "description": coupon.Content, // Dynamic description
-    "image": `${store.image}` , // Default or dynamic image
+    "image": `${store.image}`, // Default or dynamic image
     "url": `https://suproffer.com/${store.slug}#c=${coupon.id}`, // Dynamic URL
     "startDate": "2025-03-10", // Use dynamic start date if available
     "endDate": "2025-06-09", // Use dynamic end date if available
-    "performer": { 
-      "@type": "Organization", 
+    "performer": {
+      "@type": "Organization",
       "name": store.title // Static or dynamic performer based on coupon details
     },
     "eventStatus": "http://schema.org/EventScheduled",
     "eventAttendanceMode": "http://schema.org/OnlineEventAttendanceMode",
-    "location": { 
-      "@type": "VirtualLocation", 
+    "location": {
+      "@type": "VirtualLocation",
       "url": store.home_url
     },
     "offers": {
@@ -128,7 +143,7 @@ export default function StorePage({ store, relStores }) {
       "url": `https://suproffer.com/${store.slug}`
     }
   }));
-  
+
   return (
     <>
       <Head>
@@ -166,7 +181,7 @@ export default function StorePage({ store, relStores }) {
             <div className="contentBox">
               <div className="storeHeader row row-cols-2">
                 <div className="header-content col-8 p-0">
-                  <h1>                                        {store.store_h1.replace("%%Year%%", moment().format('YYYY'))}
+                  <h1>{store.store_h1}
                   </h1>
                   <p className="dealAvl">{calculateCoupons(store)}</p>
                   <p>Flat {getHeading(store.coupon_set[0].title)} at {store.title}</p>
@@ -186,7 +201,7 @@ export default function StorePage({ store, relStores }) {
                       </a>
                     </div>
                     <div className="star-rating stars">
-                      <RatingBox key={'store_' + store.id} store={store}  />
+                      <RatingBox key={'store_' + store.id} store={store} />
                     </div>
                   </div>
                 </aside>
@@ -222,12 +237,13 @@ export default function StorePage({ store, relStores }) {
                       storeId={store.id}
                       storeCreateTime={store.createdAt}
                       usesSubdomain={store.subdomain}
+                      couponIndex={(typeCounters[coupon.coupon_type] = (typeCounters[coupon.coupon_type] || 0) + 1) - 1}
                     />
                   ))
                 }
               </div>
 
-              {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot!="" && coupon.coupon_type === "code") && (
+              {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot != "" && coupon.coupon_type === "code") && (
                 <div className="testHistory">
                   <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
                   <p>Check verified proof of manual testing for {store.title}</p>
@@ -291,6 +307,10 @@ export default function StorePage({ store, relStores }) {
                       <td className="p-2 text-right font-medium">{totalOffers}</td>
                     </tr>
                     <tr>
+                      <td className="p-2">✅ Coupon Success</td>
+                      <td className="p-2 text-right font-medium">{getSuccessLevel(store.coupon_set)}</td>
+                    </tr>
+                    <tr>
                       <td className="p-2">🏷️ Active Coupon Codes</td>
                       <td className="p-2 text-right font-medium">{activeCoupons}</td>
                     </tr>
@@ -303,8 +323,8 @@ export default function StorePage({ store, relStores }) {
                       <td className="p-2 text-right font-medium">{bestOffer}</td>
                     </tr>
                     <tr>
-                      <td className="p-2">Success Record</td>
-                      <td className="p-2 text-right font-medium">{bestOffer}</td>
+                      <td className="p-2">⏰ Last Updated</td>
+                      <td className="p-2 text-right font-medium">{moment().format("MMMM D, YYYY")}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -316,7 +336,7 @@ export default function StorePage({ store, relStores }) {
 
               </div>
               <div className="couponOffer summary-container">
-                <div class="sidebarHeading">Coupon Summary for {store.title}</div>
+                <div className="sidebarHeading">Coupon Summary for {store.title}</div>
                 <table border="1" cellspacing="0" cellpadding="0">
                   <thead>
                     <tr>
@@ -350,7 +370,7 @@ export default function StorePage({ store, relStores }) {
               </div>
               {store.contact != "" &&
                 <div className="contactBox">
-                  <div class="sidebarHeading">Contact {store.title}</div>
+                  <div className="sidebarHeading">Contact {store.title}</div>
                   <p>{store.contact}</p>
                 </div>
               }
@@ -363,9 +383,9 @@ export default function StorePage({ store, relStores }) {
                       <li key={index}>
                         <MainDomainLink
                           href={
-                            store.uses_subdomain
+                            store.subdomain
                               ? `https://${store.slug}.suproffer.com`
-                              : `/${store.slug}-coupons`
+                              : `/${store.slug}`
                           }
                         >
                           {store.title}
@@ -449,97 +469,97 @@ export default function StorePage({ store, relStores }) {
               </div>
 
               <section className="whyTrustus">
-      <div className="container">
-        <div className="sidebarHeading">Why Trust Us?</div>
-        <div className="row g-4">
-          {/* Left Column */}
-          <div className="col-md-6 mb-3 zeroMobPadding">
-            <div className="card-custom">
-              <div className="founder">
-                <div className="img">
-                  <img src="/images/co-founder.webp" alt="Rudresh Dubey" />
-                </div>
-                <div className="name">
-                  <p>
-                    Rudresh{" "}
-                    <a
-                      href="https://www.linkedin.com/in/rudreh-dubey-86426b1a2/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="LinkedIn"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="#0077B5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
-                    </a>
-                  </p>
-                  <span>Founder & CEO @ suproffer.com</span>
-                </div>
-              </div>
-              <div className="founderNote">
-                <p>
-                Rudresh Dubey is an experienced affiliate marketer with over 10 years of experience in digital marketing. His journey in the coupon industry began a decade ago to help people save money while shopping online. As the founder of <a href="https://suproffer.com/">Suproffer.com</a>, Rudresh turned his vision into a reality by creating a trusted platform that offers only tested and verified coupon codes. What started as a small idea for online shoppers has now grown into a reliable name for deals and discounts. 
-                </p>
-               <p>
-               Rudresh's goal has always been simple - make online shopping affordable and stress-free. He leads a hardworking team of 6 members who carefully pick the best promo codes across many categories like fashion, electronics, travel, and software. Every coupon goes through a proper check to make sure it is genuine and active. <a href="https://suproffer.com/">Suproffer.com</a> has become a go-to destination for online buyers who want to save money without wasting time on fake deals or expired coupons. 
-               </p>
-              </div>
-            </div>
-          </div>
+                <div className="container">
+                  <div className="sidebarHeading">Why Trust Us?</div>
+                  <div className="row g-4">
+                    {/* Left Column */}
+                    <div className="col-md-6 mb-3 zeroMobPadding">
+                      <div className="card-custom">
+                        <div className="founder">
+                          <div className="img">
+                            <img src="/images/co-founder.webp" alt="Rudresh Dubey" />
+                          </div>
+                          <div className="name">
+                            <p>
+                              Rudresh{" "}
+                              <a
+                                href="https://www.linkedin.com/in/rudreh-dubey-86426b1a2/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="LinkedIn"
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="#0077B5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+                              </a>
+                            </p>
+                            <span>Founder & CEO @ suproffer.com</span>
+                          </div>
+                        </div>
+                        <div className="founderNote">
+                          <p>
+                            Rudresh Dubey is an experienced affiliate marketer with over 10 years of experience in digital marketing. His journey in the coupon industry began a decade ago to help people save money while shopping online. As the founder of <a href="https://suproffer.com/">Suproffer.com</a>, Rudresh turned his vision into a reality by creating a trusted platform that offers only tested and verified coupon codes. What started as a small idea for online shoppers has now grown into a reliable name for deals and discounts.
+                          </p>
+                          <p>
+                            Rudresh's goal has always been simple - make online shopping affordable and stress-free. He leads a hardworking team of 6 members who carefully pick the best promo codes across many categories like fashion, electronics, travel, and software. Every coupon goes through a proper check to make sure it is genuine and active. <a href="https://suproffer.com/">Suproffer.com</a> has become a go-to destination for online buyers who want to save money without wasting time on fake deals or expired coupons.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
 
-          {/* Right Column */}
-          <div className="col-md-6 zeroMobPadding">
-            <div className="card-custom ourExpert">
-              <div className="expHead">Meet Our Coupon Experts</div>
-              <div className="expertPara">
-               <p>
-               <a href="https://suproffer.com/">Suproffer.com</a> has an efficient team of 6 coupon experts. Their job is to make sure users always get the best and latest offers. Our team focuses on creating a smooth and friendly user experience, so visitors can quickly find the right deals without getting misled. They keep an eye on every code and update the site regularly. We have also put a comment section on each coupon page. If a coupon doesn’t work, the team makes sure to fix the issue and try to improve the services based on user feedback. 
-               </p>
-               <p>
-               If you notice anything that isn’t right on our website, you can report the issue to us and we’ll address it shortly.
-               </p>
-              </div>
-              <div className="listExpert">
-                <ul>
-                  <li>
-                    <small>
-                      <img src="/images/dinesh-v.webp" alt="dinesh" /> Dinesh
-                    </small>
-                    <span className="exp">8 Years</span>
-                  </li>
-                  <li>
-                    <small>
-                      <img src="/images/mashma-m.webp" alt="mashma" /> Mashma
-                    </small>
-                    <span className="exp">6 Years</span>
-                  </li>
-                  <li>
-                    <small>
-                      <img src="/images/tanay-s.webp" alt="tanay" /> Tanay
-                    </small>
-                    <span className="exp">6 Years</span>
-                  </li>
-                  <li>
-                    <small>
-                      <img src="/images/sikha.webp" alt="sikha" /> Sikha
-                    </small>
-                    <span className="exp">5 Years</span>
-                  </li>
-                  <li>
-                    <small>
-                      <img src="/images/yash-c.webp" alt="yash" /> Yash
-                    </small>
-                    <span className="exp">4 Years</span>
-                  </li>
-                  <li>
-                    <small><img src="/images/yunush.webp" alt="Yusuf" /> Yusuf</small>
-                    <span class="exp">3 Years</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                    {/* Right Column */}
+                    <div className="col-md-6 zeroMobPadding">
+                      <div className="card-custom ourExpert">
+                        <div className="expHead">Meet Our Coupon Experts</div>
+                        <div className="expertPara">
+                          <p>
+                            <a href="https://suproffer.com/">Suproffer.com</a> has an efficient team of 6 coupon experts. Their job is to make sure users always get the best and latest offers. Our team focuses on creating a smooth and friendly user experience, so visitors can quickly find the right deals without getting misled. They keep an eye on every code and update the site regularly. We have also put a comment section on each coupon page. If a coupon doesn’t work, the team makes sure to fix the issue and try to improve the services based on user feedback.
+                          </p>
+                          <p>
+                            If you notice anything that isn’t right on our website, you can report the issue to us and we’ll address it shortly.
+                          </p>
+                        </div>
+                        <div className="listExpert">
+                          <ul>
+                            <li>
+                              <small>
+                                <img src="/images/dinesh-v.webp" alt="dinesh" /> Dinesh
+                              </small>
+                              <span className="exp">8 Years</span>
+                            </li>
+                            <li>
+                              <small>
+                                <img src="/images/mashma-m.webp" alt="mashma" /> Mashma
+                              </small>
+                              <span className="exp">6 Years</span>
+                            </li>
+                            <li>
+                              <small>
+                                <img src="/images/tanay-s.webp" alt="tanay" /> Tanay
+                              </small>
+                              <span className="exp">6 Years</span>
+                            </li>
+                            <li>
+                              <small>
+                                <img src="/images/sikha.webp" alt="sikha" /> Sikha
+                              </small>
+                              <span className="exp">5 Years</span>
+                            </li>
+                            <li>
+                              <small>
+                                <img src="/images/yash-c.webp" alt="yash" /> Yash
+                              </small>
+                              <span className="exp">4 Years</span>
+                            </li>
+                            <li>
+                              <small><img src="/images/yunush.webp" alt="Yusuf" /> Yusuf</small>
+                              <span className="exp">3 Years</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
         </div>
@@ -629,65 +649,120 @@ export async function getStaticProps({ params }) {
   const slug = params.slug || req.headers.get('host')?.split('.')[0];
 
   const res = await fetch('https://admin.suproffer.com/stores/' + slug + '/')
-    var store = await res.json()
-    if (store.detail) {
-        return {
-            notFound: true
-        };
-    }
-    store.coupon_set.map(coupon => {
-        if (coupon.title.includes("$")) {
-            return coupon.title = "Best Deal";
-        }
-    });
-
-    var simCat = [];
-    if (store.category[0]) {
-        const resRelStores = await fetch(`https://backend.supercosts.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
-        var relStores = await resRelStores.json()
-        relStores = relStores.filter((s) => s.id !== store.id);
-        relStores = _.shuffle(relStores).slice(0, 12)
-        if (relStores.length <= 3) {
-            const rescat = await fetch(`https://backend.supercosts.com/categories/?limit=4&offset=${Math.ceil(parseInt(store.category[0].id) / 4)}`)
-            simCat = await rescat.json()
-
-        }
-
-    } else {
-        var relStores = [];
-    }
-
-    const store_names = relStores.filter(f => f.id !== store.id).slice(0, 2).map(item => `<a href="/${item.slug}">${item.title}</a>`)
-    store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
-    store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
-    store.store_description = store.store_description.replaceAll("%percentage% off", store.coupon_set[0].title);
-    store.store_description = store.store_description.replaceAll("%pe­rcentage% Off", store.coupon_set[0].title);
-    store.store_description = store.store_description.replaceAll("%percentage% Off", store.coupon_set[0].title);
-    store.store_description = store.store_description.replaceAll("%pe­rcentage% OFF", store.coupon_set[0].title);
-    store.store_description = store.store_description.replaceAll("%percentage% OFF", store.coupon_set[0].title);
-    store.store_description = store.store_description.replaceAll("%pe­rcentage%", store.coupon_set[0].title);
-    store.store_description = store.store_description.replaceAll("%percentage%", store.coupon_set[0].title);
-    store.store_description = store.store_description.replace(/XXX/, store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
-    store.store_description = store.store_description.replace(/XX/, store.coupon_set.length);
-    store.store_description = store.store_description.replace('XXX', store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
-    store.store_description = store.store_description.replace('XX', store.coupon_set.length);
-    store.extra_info = store.extra_info.replace('XXX', store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
-    store.extra_info = store.extra_info.replace('XX', store.coupon_set.length);
-    store.store_description = store.store_description.replaceAll("%%currentmonth%%", moment().format('MMMM'));
-    store.store_description = store.store_description.replaceAll("%%curre­ntmonth%%", moment().format('MMMM'));
-    store.store_description = store.store_description.replaceAll("%%currentyear%%", moment().format('YYYY'));
-    store.store_description = store.store_description.replaceAll("currentyear%%", moment().format('YYYY'));
-    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%|%categorystore%, %categorystore%, %categorystore%|%categorystore% %categorystore%, %categorystore%|%categorystore% %categorystore% %categorystore%|%categorystore% %categorystore% and %categorystore%/gi, store_names.join(", "));
-
+  var store = await res.json()
+  if (store.detail) {
     return {
-        props: {
-            store,
-            relStores,
-            simCat
-        },
-        // Next.js will attempt to re-generate the page:
-        // - When a request comes in
-        // - At most once every 10 seconds
-        revalidate: 60, // In seconds
+      notFound: true
+    };
+  }
+  store.coupon_set.map(coupon => {
+    if (coupon.title.includes("$")) {
+      return coupon.title = "Best Deal";
     }
+  });
+
+  var simCat = [];
+  if (store.category[0]) {
+    const resRelStores = await fetch(`https://admin.suproffer.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
+    var relStores = await resRelStores.json()
+    relStores = relStores.filter((s) => s.id !== store.id);
+    relStores = _.shuffle(relStores).slice(0, 12)
+    if (relStores.length <= 3) {
+      const rescat = await fetch(`https://admin.suproffer.com/categories/?limit=4&offset=${Math.ceil(parseInt(store.category[0].id) / 4)}`)
+      simCat = await rescat.json()
+
+    }
+
+  } else {
+    var relStores = [];
+  }
+  const baseDomain="suproffer.com";
+  const store_names = relStores
+  .filter(f => f.id !== store.id)
+  .slice(0, 2)
+  .map(item => `<a href="${item.subdomain ? `https://${item.slug}.${baseDomain}` : `/${item.slug}`}">${item.title}</a>`)
+  .join(', ');
+  store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
+  store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
+  store.store_description = store.store_description.replaceAll("%percentage% off", store.coupon_set[0].title);
+  store.store_description = store.store_description.replaceAll("%pe­rcentage% Off", store.coupon_set[0].title);
+  store.store_description = store.store_description.replaceAll("%percentage% Off", store.coupon_set[0].title);
+  store.store_description = store.store_description.replaceAll("%pe­rcentage% OFF", store.coupon_set[0].title);
+  store.store_description = store.store_description.replaceAll("%percentage% OFF", store.coupon_set[0].title);
+  store.store_description = store.store_description.replaceAll("%pe­rcentage%", store.coupon_set[0].title);
+  store.store_description = store.store_description.replaceAll("%percentage%", store.coupon_set[0].title);
+  store.store_description = store.store_description.replace(/XXX/, store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
+  store.store_description = store.store_description.replace(/XX/, store.coupon_set.length);
+  store.store_description = store.store_description.replace('XXX', store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
+  store.store_description = store.store_description.replace('XX', store.coupon_set.length);
+  store.extra_info = store.extra_info.replace('XXX', store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
+  store.extra_info = store.extra_info.replace('XX', store.coupon_set.length);
+  store.store_description = store.store_description.replaceAll("%%currentmonth%%", moment().format('MMMM'));
+  store.store_description = store.store_description.replaceAll("%%curre­ntmonth%%", moment().format('MMMM'));
+  store.store_description = store.store_description.replaceAll("%%currentyear%%", moment().format('YYYY'));
+  store.store_description = store.store_description.replaceAll("currentyear%%", moment().format('YYYY'));
+  store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%|%categorystore%, %categorystore%, %categorystore%|%categorystore% %categorystore%, %categorystore%|%categorystore% %categorystore% %categorystore%|%categorystore% %categorystore% and %categorystore%/gi, store_names);
+
+
+
+  const title = store.title || store.Title;
+  const firstCouponCode = store.coupon_set?.find(c => c.coupon_type === 'code')?.coupon_code || '';
+  const couponCount = store.coupon_set?.length || 0;
+  const perc = store.coupon_set?.[0]?.title?.match(/\d+%/)?.[0] || '10%'; // fallback to 10%
+  const currentYear = moment().format('YYYY');
+  const hasCouponCode = !!firstCouponCode;
+
+  let metaTitle = store.seo_title
+    .replace(/Storename/g, store.title)
+    .replace(/XXX/g, hasCouponCode ? firstCouponCode : moment().format('YYYY'))
+    .replace(/CouponCount/g, store.Coupons?.length)
+    .replace(/%percentage%/g, perc)
+    .replace(/%%Year%%/g, moment().format('YYYY'))
+    .replace(/\d{4}/, moment().format('YYYY'));
+
+  // If no coupon code, replace leading "Code is" or similar phrase
+  if (!hasCouponCode) {
+    metaTitle = metaTitle.replace(/(\b(?:Coupon )?Code is\b)(?!.*Coupon Code)/i, 'Coupon Code');
+  }
+
+  // If title is below 50 characters and doesn't already contain "Discount"
+  if (metaTitle.length < 50 && !metaTitle.includes("Discount")) {
+    const lastCodeIndex = metaTitle.lastIndexOf("Code");
+    if (lastCodeIndex !== -1) {
+      metaTitle = metaTitle.substring(0, lastCodeIndex) + "Discount Code" + metaTitle.substring(lastCodeIndex + 4);
+    }
+  }
+
+  store.seo_title = metaTitle;
+
+
+  store.seo_description = store.seo_description
+    .replace(/Storename/g, title)
+    .replace(/XXX/g, firstCouponCode)
+    .replace(/CouponCount/g, couponCount)
+    .replace(/%/g, perc)
+    .replace(/%percentage%/g, perc)
+    .replace(/%%Year%%/g, currentYear)
+    .replace(/\d{4}/, currentYear);
+
+  store.store_h1 = store.store_h1
+    .replace(/Storename/g, title)
+    .replace(/XXX/g, firstCouponCode)
+    .replace(/CouponCount/g, couponCount)
+    .replace(/%/g, perc)
+    .replace(/%percentage%/g, perc)
+    .replace(/%%Year%%/g, currentYear)
+    .replace(/\d{4}/, currentYear);
+
+  return {
+    props: {
+      store,
+      relStores,
+      simCat
+    },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 60, // In seconds
+  }
 }

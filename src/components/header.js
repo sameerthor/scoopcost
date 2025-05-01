@@ -13,9 +13,9 @@ export default function Header() {
   const [filterdata, setFilterdata] = useState([]);
 
     function fetchData() {
-      axios.get('https://admin.SuprOffer.com/api/stores?fields[0]=Title&fields[1]=Slug&fields[2]=uses_subdomain&pagination[pageSize]=4000')
+      axios.get('https://admin.suproffer.com/api/stores?fields[0]=Title&fields[1]=Slug&fields[2]=uses_subdomain&pagination[pageSize]=4000')
         .then(function (response) {
-          var d = response.data.data.map(item => { return { key: item.Slug, value: item.Title,uses_subdomain:item.uses_subdomain } })
+          var d = response.data.data.map(item => { return { key: item.slug, value: item.Title,uses_subdomain:item.subdomain } })
           setFilterdata(d);
         })
         .catch(function (error) {
@@ -77,12 +77,12 @@ export default function Header() {
                             onFocus={()=>fetchData()}
                             clearOnSelect={true}
                             onSelect={(record) => {
-                              const { key, uses_subdomain } = record.item
+                              const { key, subdomain } = record.item
                             
-                              if (uses_subdomain) {
-                                window.location.href = `https://${key}.SuprOffer.com`
+                              if (subdomain) {
+                                window.location.href = `https://${key}.suproffer.com`
                               } else {
-                                 window.location.href = `https://SuprOffer.com/${key}`
+                                 window.location.href = `https://suproffer.com/${key}`
                               }
                             }}
                                leftIcon={<svg
