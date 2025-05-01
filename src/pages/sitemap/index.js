@@ -1,4 +1,4 @@
-const baseDomain = 'SuprOffer.com'
+const baseDomain = 'suproffer.com'
 
 const toUrl = (data) =>
   `<url><loc>${data.url}</loc></url>`
@@ -19,17 +19,17 @@ export async function getServerSideProps({ res }) {
   const urlList = []
 
   const result = await fetch(
-    'https://admin.SuprOffer.com/api/stores?fields[0]=Slug&fields[1]=uses_subdomain&pagination[pageSize]=4000'
+    'https://admin.suproffer.com/store-search'
   )
   const json = await result.json()
-  const stores = json.data || json
+  const stores =  json
 
   stores.forEach((store) => {
-    if (!store.Slug) return
+    if (!store.slug) return
 
-    const url = store.uses_subdomain
-      ? `https://${store.Slug}.${baseDomain}`
-      : `https://${baseDomain}/${store.Slug}`
+    const url = store.subdomain
+      ? `https://${store.slug}.${baseDomain}`
+      : `https://${baseDomain}/${store.slug}`
 
     urlList.push({ url })
   })

@@ -12,17 +12,17 @@ export default function Header() {
   const router = useRouter();
   const [filterdata, setFilterdata] = useState([]);
 
-    function fetchData() {
-      axios.get('https://admin.suproffer.com/api/stores?fields[0]=Title&fields[1]=Slug&fields[2]=uses_subdomain&pagination[pageSize]=4000')
-        .then(function (response) {
-          var d = response.data.data.map(item => { return { key: item.slug, value: item.Title,uses_subdomain:item.subdomain } })
-          setFilterdata(d);
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-        })
-    }
+  function fetchData() {
+    axios.get('https://admin.suproffer.com/store-search')
+      .then(function (response) {
+        var d = response.data.data.map(item => { return { key: item.slug, value: item.title,uses_subdomain:item.subdomain } })
+        setFilterdata(d);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+  }
     useEffect(() => {
       const toggler = document.querySelector('.navbar-toggler');
       const collapse = document.querySelector('.navbar-collapse');
