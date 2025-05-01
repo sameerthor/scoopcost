@@ -90,17 +90,23 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-4">
                             <div className="card text-center">
                                 <div className="card-body">
-                                <Image
-                                    src="/images/adalysis.svg"
+                                 <Image 
+                                    style={{
+                                        backgroundColor: '#3f51b7',
+                                        borderRadius: '4px',
+                                        padding: '5px',
+                                        marginBottom: '.5rem'
+                                      }}
+                                    src="/images/airdna.avif"
                                     alt="Adalysis"
                                     width={140}
                                     height={140}
                                     className="brand-logo"
                                     />
                                     
-                                <div className="text-primary mb-2">Exclusive Discount</div>
-                                <p className="brand-discount">Up to 40% OFF</p>
-                                <a href='/' className="btn btn-purple brand-button">Shop Now</a>
+                                <div className="text-primary mb-2">AirDNA</div>
+                                <p className="brand-discount">Up to 10% OFF</p>
+                                <a href='https://airdna-co.suproffer.com/' className="btn btn-purple brand-button">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -108,16 +114,16 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             <div className="card text-center">
                                 <div className="card-body">
                                 <Image
-                                    src="/images/adalysis.svg"
-                                    alt="Adalysis"
+                                    src="/images/Luma-Soothe-Logo.webp"
+                                    alt="Luma-Soothe-Logo"
                                     width={140}
                                     height={140}
                                     className="brand-logo"
                                     />
                                     
-                                <div className="text-primary mb-2">Exclusive Discount</div>
+                                <div className="text-primary mb-2">LumaSoothe Coupons</div>
                                 <p className="brand-discount">Up to 40% OFF</p>
-                                <a href='/' className="btn btn-purple brand-button">Shop Now</a>
+                                <a href='https://lumasoothe.suproffer.com/' className="btn btn-purple brand-button">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -125,16 +131,22 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             <div className="card text-center">
                                 <div className="card-body">
                                 <Image
-                                    src="/images/adalysis.svg"
+                                     style={{
+                                        backgroundColor: '#000',
+                                        borderRadius: '4px',
+                                        padding: '5px',
+                                        marginBottom: '.5rem'
+                                      }}
+                                    src="/images/toonly.png"
                                     alt="Adalysis"
                                     width={140}
                                     height={140}
                                     className="brand-logo"
                                     />
                                     
-                                <div className="text-primary mb-2">Exclusive Discount</div>
-                                <p className="brand-discount">Up to 40% OFF</p>
-                                <a href='/' className="btn btn-purple brand-button">Shop Now</a>
+                                <div className="text-primary mb-2">Toonly Coupons</div>
+                                <p className="brand-discount">Up to 25% OFF</p>
+                                <a href='https://toonly.suproffer.com/' className="btn btn-purple brand-button">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -142,16 +154,16 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             <div className="card text-center">
                                 <div className="card-body">
                                 <Image
-                                    src="/images/adalysis.svg"
+                                    src="/images/accerlist.svg"
                                     alt="Adalysis"
                                     width={140}
                                     height={140}
                                     className="brand-logo"
                                     />
                                     
-                                <div className="text-primary mb-2">Exclusive Discount</div>
-                                <p className="brand-discount">Up to 40% OFF</p>
-                                <a href='/' className="btn btn-purple brand-button">Shop Now</a>
+                                <div className="text-primary mb-2">AccelerList </div>
+                                <p className="brand-discount">UP TO 20% OFF </p>
+                                <a href='https://accelerlist.suproffer.com/' className="btn btn-purple brand-button">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -159,16 +171,16 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             <div className="card text-center">
                                 <div className="card-body">
                                 <Image
-                                    src="/images/adalysis.svg"
+                                    src="/images/black.avif"
                                     alt="Adalysis"
                                     width={140}
                                     height={140}
                                     className="brand-logo"
                                     />
                                     
-                                <div className="text-primary mb-2">Exclusive Discount</div>
+                                <div className="text-primary mb-2">Blak Headwear Co </div>
                                 <p className="brand-discount">Up to 40% OFF</p>
-                                <a href='/' className="btn btn-purple brand-button">Shop Now</a>
+                                <a href='https://blakheadwear.suproffer.com/' className="btn btn-purple brand-button">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -184,16 +196,16 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <div className='secHeading'>Today's Top Coupon Codes</div>
                     <div className="row row-cols-lg-6 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://SuprOffer.com/ezeasproducts-com-au-coupons'>
+                            <a className='codeItem' href='https://bottleofitaly.suproffer.com/'>
                                 <div className='codeHeader'>
-                                EzeAs Products
+                                Bottle of Italy
                                         
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
                                         <Image
                 width={400}
-                 height={400} src="/images/eseas.webp" alt="eseas" />
+                 height={400} src="/images/bottle-of-italy.webp" alt="bottle-of-italy" />
                                      </div>
                                      <div className="off">
                                            UP TO 10% OFF
@@ -202,34 +214,16 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://SuprOffer.com/gummee.life/'>
+                            <a className='codeItem' href='https://bettergrounds.suproffer.com/'>
                                 <div className='codeHeader'>
-                                Gummee Offer
+                                Better Grounds
                                         
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
                                         <Image
                 width={400}
-                 height={400} src="/images/gummee.webp" alt="gummee" />
-                                     </div>
-                                     <div className="off">
-                                            Up to 20% off
-                                      </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='codeItem' href='https://SuprOffer.com/getterms.io'>
-                                <div className='codeHeader'>
-                                   GetTerms Offer
-                                        
-                                </div>
-                                <div className='codeFooter'>
-                                     <div className="imgBox">
-                                        <Image
-                width={400}
-                 height={400} src="/images/getterms.png" alt="getterms" />
+                 height={400} src="/images/better-grounds.avif" alt="Better Grounds" />
                                      </div>
                                      <div className="off">
                                             Up to 10% off
@@ -238,16 +232,34 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://SuprOffer.com/geneticlabsaustralia-coupons/'>
+                            <a className='codeItem' href='https://blessedcbd-co-uk.suproffer.com/'>
                                 <div className='codeHeader'>
-                                Genetic Labs Australia 
+                                   GetTerms Offer
                                         
                                 </div>
                                 <div className='codeFooter'>
-                                     <div className="imgBox" style={{ background: "#000"}}>
+                                     <div className="imgBox">
                                         <Image
                 width={400}
-                 height={400} src="/images/genetic-lab.avif" alt="genetic-lab" />
+                 height={400} src="/images/blassed-cbd.svg" alt="Blessed CBD" />
+                                     </div>
+                                     <div className="off">
+                                            Up to 10% off
+                                      </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='codeItem' href='https://cycle-peak.suproffer.com/'>
+                                <div className='codeHeader'>
+                                Cycle Peak
+                                        
+                                </div>
+                                <div className='codeFooter'>
+                                     <div className="imgBox">
+                                        <Image
+                width={400}
+                 height={400} src="/images/cycle-peak.webp" alt="cycle-peak" />
                                      </div>
                                      <div className="off">
                                            Free Shiping
@@ -256,16 +268,16 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://SuprOffer.com/happydownloads.net/'>
+                            <a className='codeItem' href='https://colorcommall.suproffer.com/'>
                                 <div className='codeHeader'>
-                                HappyDownloads Offer
+                                Colorcommall Coupons
                                         
                                 </div>
                                 <div className='codeFooter'>
                                      <div className="imgBox">
                                         <Image
                 width={400}
-                 height={400} src="/images/happy-download.webp" alt="happy-download" />
+                 height={400} src="/images/colorcommall.avif" alt="Colorcommall Coupons" />
                                      </div>
                                      <div className="off">
                                             Up to 20% off
@@ -274,16 +286,16 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://SuprOffer.com/hoooyi-coupons/'>
+                            <a className='codeItem' href='https://cbdnorth-co.suproffer.com/'>
                                 <div className='codeHeader'>
-                                Hoooyi Offer
+                                CBDNorth
                                         
                                 </div>
                                 <div className='codeFooter'>
-                                     <div className="imgBox" style={{ background: "#000"}}>
+                                     <div className="imgBox">
                                         <Image
                 width={400}
-                 height={400} src="/images/hooyi.avif" alt="hoooyi" />
+                 height={400} src="/images/cbd-north.png" alt="CBDNorth" />
                                      </div>
                                      <div className="off">
                                             Up to 20% off
@@ -300,13 +312,13 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <div className='secHeading'>Top Rated Stores</div>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col">
-                            <a href='https://SuprOffer.com/nailsbestbuy-coupons/' className="toprated">
+                            <a href='https://miami-hair-shop.suproffer.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/inails.webp'
-                                        alt='inails'
+                                        src='/images/miami.webp'
+                                        alt='miami-hair'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -314,22 +326,45 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         <small>Get Deal</small>
                                     </div>
                                     <div className="discount">
-                                        10% OFF
+                                       Free Shiping
                                     </div>
                                     <div className="description">
-                                    iNail Supply Promo Code - Save 15% Off
+                                    Buy at Miami Hair Shop - Free Shipping Included
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/level8cases-coupons' className="toprated">
+                            <a href='https://majolietoile.suproffer.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                                      width={400}
                                      height={400}
-                                        src='/images/level8.avif'
-                                        alt='level8'
+                                        src='/images/majolietoile.avif'
+                                        alt='majolietoile'
+                                    />
+                                </div>
+                                <div className="topRatedBottom">
+                                    <div className="storeName">
+                                        <small>Get Deal</small>
+                                    </div>
+                                    <div className="discount">
+                                        20% OFF
+                                    </div>
+                                    <div className="description">
+                                    20% Off on Wall Art at Ma Jolie Toile - Save with Verified Coupon
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a href='https://nationalhighwaysafetyadministration.suproffer.com/' className="toprated">
+                                <div className="topratedTop">
+                                    <Image
+                width={400}
+                 height={400}
+                                        src='/images/national-highway.png'
+                                        alt='national-highway'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -340,42 +375,19 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         15% OFF
                                     </div>
                                     <div className="description">
-                                    Exclusive Discount - 15% Off on Lightweight Luggage
+                                    NHSA Coupon Code - Save 15% Off at Checkout
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/mrimin-coupons' className="toprated">
-                                <div className="topratedTop">
+                            <a href='https://orangecounty-cbd.suproffer.com/' className="toprated">
+                                <div className="topratedTop" style={{ background: "#ff6c0d"}}>
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/mrimin.webp'
-                                        alt='disney-store'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Deal</small>
-                                    </div>
-                                    <div className="discount">
-                                        20% OFF
-                                    </div>
-                                    <div className="description">
-                                    Up to 20% Off - Save More on Pleasure Toys
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://SuprOffer.com/moomenn-coupons/' className="toprated">
-                                <div className="topratedTop" style={{ background: "#000"}}>
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/moomen.avif'
-                                        alt='moomen'
+                                        src='/images/orange-country.png'
+                                        alt='orangecounty'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -386,18 +398,18 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         10% OFF
                                     </div>
                                     <div className="description">
-                                        Up to 20% Off Coupon Code - Save Big on Modest Clothing
+                                    Orange County CBD Deal - 10% Off + Free Shipping over £25
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/naturesoil-coupons/' className="toprated">
+                            <a href='https://onetify.suproffer.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/natures.jpg'
+                                        src='/images/onefity.avif'
                                         alt='natures'
                                     />
                                 </div>
@@ -406,22 +418,22 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         <small>Get Code</small>
                                     </div>
                                     <div className="discount">
-                                        20% OFF
+                                        15% OFF
                                     </div>
                                     <div className="description">
-                                    Up to 20% Off Coupon Code - Exclusive Offer on Fragrance Oils
+                                    15% Off on Apparel at Onetify - Save with Verified Coupon
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/oakcitybeardcompany-coupons' className="toprated">
-                                <div className="topratedTop">
+                            <a href='https://ofcasafurniture.suproffer.com/' className="toprated">
+                                <div className="topratedTop" style={{ background: "#272727"}}>
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/oakcity.webp'
-                                        alt='oakcity'
+                                        src='/images/ofcasafurniture.avif'
+                                        alt='ofcasafurniture'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -432,7 +444,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         20% OFF
                                     </div>
                                     <div className="description">
-                                    Up to 20% Off - Save Big on Beard Care Products
+                                    Enjoy 20% Off - Save Big at Ofcasa Furniture
                                     </div>
                                 </div>
                             </a>
@@ -461,13 +473,13 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/ca-outsmarted-coupons' className="toprated">
+                            <a href='https://onlyformula.suproffer.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/outsmarted.avif'
-                                        alt='outsmarted'
+                                        src='/images/onlyformula.avif'
+                                        alt='onlyformula'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -475,22 +487,22 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         <small>Get Code</small>
                                     </div>
                                     <div className="discount">
-                                        30% OFF
+                                        25% OFF
                                     </div>
                                     <div className="description">
-                                    Up to 30% Off - Save Big on Outsmarted The Family Bundle
+                                    25% Off on Baby Formulas at OnlyFormula - Use this Promo Code
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/santasofficialnorthpolemail-coupons' className="toprated">
+                            <a href='https://purerawz-co.suproffer.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/santa.webp'
-                                        alt='santa'
+                                        src='/images/pureraz.png'
+                                        alt='purerawz-co'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -498,22 +510,22 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         <small>Get Deal</small>
                                     </div>
                                     <div className="discount">
-                                        20% OFF
+                                        10% OFF
                                     </div>
                                     <div className="description">
-                                    Up to 20% Off - Save More on Personalized Letters
+                                    Don’t Miss Out - 10% Off at PureRawz
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/omoshiroiblock-coupons' className="toprated">
-                                <div className="topratedTop" style={{ background: "#000"}}>
+                            <a href='https://peak365nutrition.suproffer.com/' className="toprated">
+                                <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/omoshiroi.png'
-                                        alt='omoshiroi'
+                                        src='/images/peak365.webp'
+                                        alt='peak365nutrition'
                                     />
                                 </div>
                                 <div className="topRatedBottom">
@@ -524,7 +536,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         15% OFF
                                     </div>
                                     <div className="description">
-                                    Omoshiroi Block Promo Code - Unlock 15% Off
+                                    15% Off on Health Supplements - Save More at Peak 365 Nutrition
                                     </div>
                                 </div>
                             </a>
@@ -539,12 +551,12 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <div className='secHeading'>Top Online Stores</div>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col">
-                            <a href='https://SuprOffer.com/saucewarehouse-coupons' className="pickedStore">
+                            <a href='https://chayagallery.suproffer.com/' className="pickedStore" aria-label='chayagallery'>
                                 <div className="imgBox">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/sauce.avif'
+                                        src='/images/chaya.avif'
                                         alt='Sauce Warehouse Coupon'
                                     />
                                 </div>
@@ -553,29 +565,17 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </div>
                             </a>
                         </div>
+                      
                         <div className="col">
-                            <a href='https://SuprOffer.com/solti-coupons' className="pickedStore">
+                            <a href='https://dryfarmwines.suproffer.com/' className="pickedStore">
                                 <div className="imgBox">
-                                    <Image
+                                    <Image style={{
+                                        backgroundColor: '#000'
+                                      }}
                 width={400}
                  height={400}
-                                        src='/images/solti.avif'
-                                        alt='salti'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    10 Deals
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://SuprOffer.com/sunnysunday.ca/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/sunny-sunday.webp'
-                                        alt='sunny-sunday'
+                                        src='/images/dryfarmswines-text-logo-new.avif'
+                                        alt='dryfarmswines'
                                     />
                                 </div>
                                 <div className="dealCout">
@@ -584,13 +584,13 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='http://SuprOffer.com/tampaschoolofrealestate-coupons/' className="pickedStore">
+                            <a href='https://drshadez.suproffer.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/tampa-school.avif'
-                                        alt='tampa-school'
+                                        src='/images/dr-shadez.png'
+                                        alt='drshadez'
                                     />
                                 </div>
                                 <div className="dealCout">
@@ -599,13 +599,13 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/thewatermachine-coupons' className="pickedStore">
+                            <a href='https://designyourown-wine.suproffer.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/water-machine.avif'
-                                        alt='water-machine'
+                                        src='/images/designyourwine.avif'
+                                        alt='designyourown-wine'
                                     />
                                 </div>
                                 <div className="dealCout">
@@ -614,12 +614,13 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/turnedninja-coupons' className="pickedStore">
+                            <a href='https://doodly.suproffer.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
+                                    style={{ backgroundColor: '#1f729e' }}
                 width={400}
                  height={400}
-                                        src='/images/turned-ninja.png'
+                                        src='/images/doodly.png'
                                         alt='turned-ninja'
                                     />
                                 </div>
@@ -629,7 +630,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/viralecomadz-coupons' className="pickedStore">
+                            <a href='https://expertpeptides.suproffer.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -644,12 +645,12 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/wave-hawaii-coupons' className="pickedStore">
+                            <a href='https://expertpeptides.suproffer.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/wave-hawai.avif'
+                                        src='/images/expert_peptides.webp'
                                         alt='wave-hawaii'
                                     />
                                 </div>
@@ -659,13 +660,13 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/yerbae-coupons' className="pickedStore">
+                            <a href='https://echowater.suproffer.com/' className="pickedStore">
                                 <div className="imgBox">
-                                    <Image
+                                    <Image style={{ backgroundColor: '#000' }}
                 width={400}
                  height={400}
-                                        src='/images/yerbae.avif'
-                                        alt='yerbae'
+                                        src='/images/echo.webp'
+                                        alt='echowater'
                                     />
                                 </div>
                                 <div className="dealCout">
@@ -674,12 +675,27 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/zojila-coupons' className="pickedStore">
+                            <a href='https://fadirtools.suproffer.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/zozila.webp'
+                                        src='/images/fadirtool.avif'
+                                        alt='zozila'
+                                    />
+                                </div>
+                                <div className="dealCout">
+                                    9 Deals
+                                </div>
+                            </a>
+                        </div>
+                        <div className="col">
+                            <a href='https://gohighlevel.suproffer.com/' className="pickedStore">
+                                <div className="imgBox">
+                                    <Image
+                width={400}
+                 height={400}
+                                        src='/images/hohighlevel.webp'
                                         alt='zozila'
                                     />
                                 </div>
@@ -770,182 +786,125 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                 <div className='secHeading'>Featured Stored</div>
                     <div className="row row-cols-lg-6 row-cols-md-4 row-cols-sm-3 row-cols-3">
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
+                            <a href="https://hemplucid.suproffer.com/" aria-label='hemplucid'>
                                 <Image
                                     width={100}
                                     height={100}
-                                    src='/images/sauce.avif'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/helplucid.svg'
+                                    alt='hemplucid'
                                             />
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
+                            <a href="https://herbalmana.suproffer.com/" aria-label='herbalmana'>
                                 <Image
                                     width={100}
                                     height={100}
-                                    src='/images/eseas.webp'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/herbal-mana.avif'
+                                    alt='herbalmana'
                                             />
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
+                            <a href="https://heritagetype.suproffer.com/" aria-label='heritagetype'>
                                 <Image
                                     width={100}
                                     height={100}
-                                    src='/images/gummee.webp'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/heritage.avif'
+                                    alt='heritagetype'
                                             />
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
-                                <Image
+                            <a href="https://icedrop-de.suproffer.com/" aria-label='iiidmax'>
+                                <Image 
+                                    style={{background: '#000'}}
                                     width={100}
                                     height={100}
-                                    src='/images/getterms.png'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/icedrop.avif'
+                                    alt='iiidmax'
                                             />
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
+                            <a href="https://iubenda.suproffer.com/" aria-label='iubenda'>
                                 <Image
                                     width={100}
                                     height={100}
-                                    src='/images/happy-download.webp'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/iubenda.svg'
+                                    alt='iubenda'
                                             />
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
+                            <a href="https://koinly-io.suproffer.com/" aria-label='koinly-io'>
                                 <Image
                                     width={100}
                                     height={100}
-                                    src='/images/level8.avif'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/koinly-review-square-logo.avif'
+                                    alt='koinly-review-square-logo'
                                             />
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
-                                <Image
+                            <a href="https://justonedime.suproffer.com/" aria-label='store'>
+                                <Image 
+                                   style={{background: '#012f51'}}
                                     width={100}
                                     height={100}
-                                    src='/images/mrimin.webp'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/just-one-dime.svg'
+                                    alt='justonedime'
                                             />
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
+                            <a href="https://platinumtherapylights.suproffer.com/" aria-label='platinumtherapylights' style={{background: '#750d02'}}>
                                 <Image
                                     width={100}
                                     height={100}
-                                    src='/images/natures.jpg'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/platinumtherapy.webp'
+                                    alt='platinumtherapy'
                                             />
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
+                            <a href="https://seamosskulture.suproffer.com/" aria-label='seamosskulture'>
                                 <Image
                                     width={100}
                                     height={100}
-                                    src='/images/oakcity.webp'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/seamosskulture.avif'
+                                    alt='seamosskulture'
                                             />
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
+                            <a href="https://streamyard.suproffer.com/" aria-label='streamyard'>
                                 <Image
                                     width={100}
                                     height={100}
-                                    src='/images/organic.avif'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/streamyard.svg'
+                                    alt='streamyard'
+                                            />
+                            </a>
+                        </div>
+                        
+                        <div className='col p-0'>
+                            <a href="https://smbsm.suproffer.com/" aria-label='smbsm'>
+                                <Image
+                                    width={100}
+                                    height={100}
+                                    src='/images/smbsm.webp'
+                                    alt='samtalbot'
                                             />
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="/" aria-label='store'>
+                            <a href="https://sellerlabs.suproffer.com/" aria-label='sellerlabs'>
                                 <Image
                                     width={100}
                                     height={100}
-                                    src='/images/outsmarted.avif'
-                                    alt='Sauce Warehouse Coupon'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="/" aria-label='store'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/sunny-sunday.webp'
-                                    alt='Sauce Warehouse Coupon'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="/" aria-label='store'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/tampa-school.avif'
-                                    alt='Sauce Warehouse Coupon'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="/" aria-label='store'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/water-machine.avif'
-                                    alt='Sauce Warehouse Coupon'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="/" aria-label='store'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/viral-ecom.avif'
-                                    alt='Sauce Warehouse Coupon'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="/" aria-label='store'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/wave-hawai.avif'
-                                    alt='Sauce Warehouse Coupon'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="/" aria-label='store'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/yerbae.avif'
-                                    alt='Sauce Warehouse Coupon'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="/" aria-label='store'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/sauce.avif'
-                                    alt='Sauce Warehouse Coupon'
+                                    src='/images/sellerlabs.webp'
+                                    alt='sellerlabs'
                                             />
                             </a>
                         </div>

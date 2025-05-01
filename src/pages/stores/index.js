@@ -65,7 +65,45 @@ export default function Stores({ initialStoreData }) {
                 <div className="container">
                     <div className="storeBox">
                         <div className="alpha-store">
-                            <h1 className="text-center">All Stores</h1>
+                            <h1 className="text-center">Explore Our All Stores Page - Best Coupons and Deals</h1>
+                            <div className="catInfo">
+                                <p>
+                                Welcome to the All Stores Page on Suproffer.com - your one-stop destination for the latest discount deals, promo codes, and verified coupons for all your favorite online stores. From fashion and beauty to electronics and travel, we bring together the best deals to help you save more every time you shop online. 
+                                </p>
+                                <h2>Why Shop With Suproffer?
+                                </h2>
+                                <p>
+                                    <strong>Huge Collection of Coupon Codes and Deals </strong>
+                                </p>
+                                <p>
+                                Browse an ever-growing list of top online stores offering exclusive discounts, limited-time offers, flash sales, and clearance events. We cover all product categories - clothing, gadgets, home decor, fitness gear, and more. Our team regularly updates the list so you will always find the latest offers and discounts. Shop and save online! 
+                                </p>
+                                <p>
+                                    <strong>Verified & Working Promo Codes
+                                    </strong>
+                                </p>
+                                <p>
+                                Say goodbye to expired or fake codes. At Suproffer, we check and verify every single coupon code before listing it on our site. You get access to real-time offers that actually save you money. Shop confidently and explore daily deals and weekly sales without worrying about invalid coupons.
+
+                                </p>
+                                <p>
+                                        <strong>Easy Search & Filter Options </strong>
+                                </p>
+                                <p>
+                                Looking for a deal or coupon? Use our filters to find stores by name, category, or even keywords like “free shipping”, “coupon codes”, or “student discounts”. Whether you are shopping for home essentials, fashion, tech gadgets, pet supplies, or wellness products, finding the right deal is quick and simple. 
+
+                                </p>
+                                <p>
+                                    <strong>Personalized Alerts for Your Favorite Stores
+                                    </strong>
+                                </p>
+                                <p>
+                                Create a free account on Suproffer to receive alerts, discount notifications, holiday sales, and seasonal deal reminders. Get notified about the latest offers for events like Cyber Monday, Black Friday, New Year, Christmas, Halloween, and Valentine’s Day. 
+
+                                </p>
+                                <p>Start saving at Suproffer.com! 
+                                </p>
+                            </div>
                             <div>
                                 <p className="all_list">
                                     {alphabets.map((c) => (
