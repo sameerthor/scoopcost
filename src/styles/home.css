@@ -600,6 +600,7 @@
     border: 1px solid  #8e24aa;
     min-height: 5rem;
     border-top: none;
+    padding: .5rem;
    }
   img{
     object-fit: contain;
@@ -623,6 +624,7 @@
    font-weight: 500;
    color: #000;
    font-weight: 500;
+   padding-bottom: 0;
 }
 .homeBanner{
     display: none;
@@ -749,3 +751,66 @@
    max-width: 100%;
    object-fit: contain;
   }
+
+  .angled-button {
+    border: 1px dotted var(--primary-color);
+    padding: .5rem 1rem;
+    background-color: transparent;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 150px;
+    font-weight: 500;
+    font-size: .75rem;
+    font-weight: 600;
+    color: #000;
+    max-width: 100%;
+    overflow: hidden;
+    }
+    .angled-button:hover .btn-angle{
+      width: 75%;
+      }
+    
+    
+    
+    .btn-angle {
+     font-weight: 600;
+     position: absolute;
+     background-color: var(--primary-color);
+     height: 100%;
+     display: inline-flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     width: 80%;
+     left: 0;
+     border-radius: 4px;
+     border-top-right-radius: 0;
+     border-bottom-right-radius: 0;
+     clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+     transition: .3s ease-in-out;
+     color: #fff;
+     font-size: .75rem;
+    }
+
+    .expTc{
+        color: var(--primary-color);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: .7rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    }
+    .expTc a{
+        color: var(--primary-color);
+    }
+    .topRatedBottom .angled-button{
+        margin-bottom: .5rem;
+        width: 100%;
+      }

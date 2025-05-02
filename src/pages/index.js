@@ -44,10 +44,10 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             {/* Home Banner Section */}
             {/* Home Banner Section with react-responsive-carousel */}
             <section className='homeImageBanner'>
-                <h1>Shop now to get discount</h1>
-               <a href="/stores" aria-label="Shop Now and get discount" title='Shop Now and get discount'> <img
+                <h1>Click to Click to Click to Reedem to get discount</h1>
+               <a href="/stores" aria-label="Click to Click to Click to Reedem and get discount" title='Click to Click to Click to Reedem and get discount'> <img
                   loading='lazy'
-                  src="/images/suproffer-banner.webp" alt="shop now" /></a>
+                  src="/images/suproffer-banner.webp" alt="Click to Click to Click to Reedem" /></a>
             </section>
             <section className="homeBanner">
                 <div className="container">
@@ -104,9 +104,20 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     className="brand-logo"
                                     />
                                     
-                                <div className="text-primary mb-2">AirDNA</div>
-                                <p className="brand-discount">Up to 10% OFF</p>
-                                <a href='https://airdna-co.suproffer.com/' className="btn btn-purple brand-button">Shop Now</a>
+                                    <div className="text-primary mb-2">AirDNA</div>
+                                    <p className="brand-discount">Up to 10% OFF</p>
+                                    <MainDomainLink href='https://airdna-co.suproffer.com/'class="angled-button">
+                                        ************************
+                                        <span class="btn-angle">Click to Reedem</span>
+                                    </MainDomainLink>
+                                    <div className='expTc'>
+                                        <MainDomainLink href='https://airdna-co.suproffer.com/'class="">
+                                        T &amp; C
+                                        </MainDomainLink>
+                                        <span >
+                                                Expires: 2025-05-30
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +134,19 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     
                                 <div className="text-primary mb-2">LumaSoothe Coupons</div>
                                 <p className="brand-discount">Up to 40% OFF</p>
-                                <a href='https://lumasoothe.suproffer.com/' className="btn btn-purple brand-button">Shop Now</a>
+                               
+                                <MainDomainLink href='https://lumasoothe.suproffer.com/'class="angled-button">
+                                    ************************
+                                    <span class="btn-angle">Click to Reedem</span>
+                                </MainDomainLink>
+                                <div className='expTc'>
+                                        <MainDomainLink href='https://lumasoothe.suproffer.com/'class="">
+                                        T &amp; C
+                                        </MainDomainLink>
+                                        <span >
+                                                Expires: 2025-05-30
+                                        </span>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +169,19 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     
                                 <div className="text-primary mb-2">Toonly Coupons</div>
                                 <p className="brand-discount">Up to 25% OFF</p>
-                                <a href='https://toonly.suproffer.com/' className="btn btn-purple brand-button">Shop Now</a>
+                               
+                                <MainDomainLink href='https://toonly.suproffer.com/'class="angled-button">
+                                    ************************
+                                    <span class="btn-angle">Click to Reedem</span>
+                                </MainDomainLink>
+                                <div className='expTc'>
+                                        <MainDomainLink href='https://toonly.suproffer.com/'class="">
+                                        T &amp; C
+                                        </MainDomainLink>
+                                        <span >
+                                                Expires: 2025-05-30
+                                        </span>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +198,19 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     
                                 <div className="text-primary mb-2">AccelerList </div>
                                 <p className="brand-discount">UP TO 20% OFF </p>
-                                <a href='https://accelerlist.suproffer.com/' className="btn btn-purple brand-button">Shop Now</a>
+
+                                <MainDomainLink href='https://accelerlist.suproffer.com/'class="angled-button">
+                                    ************************
+                                    <span class="btn-angle">Click to Reedem</span>
+                                </MainDomainLink>
+                                <div className='expTc'>
+                                        <MainDomainLink href='https://accelerlist.suproffer.com/'class="">
+                                        T &amp; C
+                                        </MainDomainLink>
+                                        <span >
+                                                Expires: 2025-05-30
+                                        </span>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +227,19 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     
                                 <div className="text-primary mb-2">Blak Headwear Co </div>
                                 <p className="brand-discount">Up to 40% OFF</p>
-                                <a href='https://blakheadwear.suproffer.com/' className="btn btn-purple brand-button">Shop Now</a>
+                               
+                                <MainDomainLink href='https://blakheadwear.suproffer.com/'class="angled-button">
+                                    ************************
+                                    <span class="btn-angle">Click to Reedem</span>
+                                </MainDomainLink>
+                                <div className='expTc'>
+                                        <MainDomainLink href='https://blakheadwear.suproffer.com/'class="">
+                                        T &amp; C
+                                        </MainDomainLink>
+                                        <span >
+                                                Expires: 2025-05-30
+                                        </span>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -210,7 +269,16 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                      <div className="off">
                                            UP TO 10% OFF
                                       </div>
+                                      <div className='expTc'>
+                                            <span>
+                                            T &amp; C
+                                            </span>
+                                            <span >
+                                                    Expires: 2025-05-30
+                                            </span>
+                                      </div>
                                 </div>
+                                
                             </a>
                         </div>
                         <div className="col mb-3">
@@ -228,6 +296,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                      <div className="off">
                                             Up to 10% off
                                       </div>
+                                      <div className='expTc'>
+                                            <span>
+                                            T &amp; C
+                                            </span>
+                                            <span >
+                                                    Expires: 2025-05-30
+                                            </span>
+                                      </div>
+                                      
                                 </div>
                             </a>
                         </div>
@@ -245,6 +322,14 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                      </div>
                                      <div className="off">
                                             Up to 10% off
+                                      </div>
+                                      <div className='expTc'>
+                                            <span>
+                                            T &amp; C
+                                            </span>
+                                            <span >
+                                                    Expires: 2025-05-30
+                                            </span>
                                       </div>
                                 </div>
                             </a>
@@ -264,6 +349,14 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                      <div className="off">
                                            Free Shiping
                                       </div>
+                                      <div className='expTc'>
+                                            <span>
+                                            T &amp; C
+                                            </span>
+                                            <span >
+                                                    Expires: 2025-05-30
+                                            </span>
+                                      </div>
                                 </div>
                             </a>
                         </div>
@@ -282,6 +375,14 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                      <div className="off">
                                             Up to 20% off
                                       </div>
+                                      <div className='expTc'>
+                                            <span>
+                                            T &amp; C
+                                            </span>
+                                            <span >
+                                                    Expires: 2025-05-30
+                                            </span>
+                                      </div>
                                 </div>
                             </a>
                         </div>
@@ -299,6 +400,14 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                      </div>
                                      <div className="off">
                                             Up to 20% off
+                                      </div>
+                                      <div className='expTc'>
+                                            <span>
+                                            T &amp; C
+                                            </span>
+                                            <span >
+                                                    Expires: 2025-05-30
+                                            </span>
                                       </div>
                                 </div>
                             </a>
@@ -322,15 +431,14 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Deal</small>
-                                    </div>
+                                   <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
                                     <div className="discount">
                                        Free Shiping
                                     </div>
                                     <div className="description">
                                     Buy at Miami Hair Shop - Free Shipping Included
                                     </div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
                                 </div>
                             </a>
                         </div>
@@ -345,15 +453,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Deal</small>
-                                    </div>
+                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
+                                    
                                     <div className="discount">
                                         20% OFF
                                     </div>
                                     <div className="description">
                                     20% Off on Wall Art at Ma Jolie Toile - Save with Verified Coupon
                                     </div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
                                 </div>
                             </a>
                         </div>
@@ -368,15 +476,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Deal</small>
-                                    </div>
+                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
+                                    
                                     <div className="discount">
                                         15% OFF
                                     </div>
                                     <div className="description">
                                     NHSA Coupon Code - Save 15% Off at Checkout
                                     </div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
                                 </div>
                             </a>
                         </div>
@@ -391,15 +499,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Code</small>
-                                    </div>
+                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
+                                   
                                     <div className="discount">
                                         10% OFF
                                     </div>
                                     <div className="description">
                                     Orange County CBD Deal - 10% Off + Free Shipping over £25
                                     </div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
                                 </div>
                             </a>
                         </div>
@@ -414,15 +522,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Code</small>
-                                    </div>
+                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
+                                    
                                     <div className="discount">
                                         15% OFF
                                     </div>
                                     <div className="description">
                                     15% Off on Apparel at Onetify - Save with Verified Coupon
                                     </div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
                                 </div>
                             </a>
                         </div>
@@ -437,15 +545,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Deal</small>
-                                    </div>
+                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
+                                    
                                     <div className="discount">
                                         20% OFF
                                     </div>
                                     <div className="description">
                                     Enjoy 20% Off - Save Big at Ofcasa Furniture
                                     </div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
                                 </div>
                             </a>
                         </div>
@@ -460,15 +568,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Deal</small>
-                                    </div>
+                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
+                                    
                                     <div className="discount">
                                         15% OFF
                                     </div>
                                     <div className="description">
                                     15% Off on Hipp Dutch Organic Formula - Save Big Today
                                     </div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
                                 </div>
                             </a>
                         </div>
@@ -483,15 +591,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Code</small>
-                                    </div>
+                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
+                                   
                                     <div className="discount">
                                         25% OFF
                                     </div>
                                     <div className="description">
                                     25% Off on Baby Formulas at OnlyFormula - Use this Promo Code
                                     </div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
                                 </div>
                             </a>
                         </div>
@@ -506,15 +614,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get Deal</small>
-                                    </div>
+                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
+                                    
                                     <div className="discount">
                                         10% OFF
                                     </div>
                                     <div className="description">
                                     Don’t Miss Out - 10% Off at PureRawz
                                     </div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
                                 </div>
                             </a>
                         </div>
@@ -529,15 +637,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="topRatedBottom">
-                                    <div className="storeName">
-                                        <small>Get code</small>
-                                    </div>
+                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
+                                    
                                     <div className="discount">
                                         15% OFF
                                     </div>
                                     <div className="description">
                                     15% Off on Health Supplements - Save More at Peak 365 Nutrition
                                     </div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
                                 </div>
                             </a>
                         </div>
@@ -561,7 +669,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    9 Deals
+                                    9 Codes
                                 </div>
                             </a>
                         </div>
@@ -579,7 +687,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    8 Deals
+                                    8 Codes
                                 </div>
                             </a>
                         </div>
@@ -594,7 +702,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    7 Deals
+                                    7 Codes
                                 </div>
                             </a>
                         </div>
@@ -609,7 +717,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    7 Deals
+                                    7 Codes
                                 </div>
                             </a>
                         </div>
@@ -625,7 +733,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    9 Deals
+                                    9 Codes
                                 </div>
                             </a>
                         </div>
@@ -640,7 +748,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    7 Deals
+                                    7 Codes
                                 </div>
                             </a>
                         </div>
@@ -655,7 +763,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    9 Deals
+                                    9 Codes
                                 </div>
                             </a>
                         </div>
@@ -670,7 +778,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    8 Deals
+                                    8 Codes
                                 </div>
                             </a>
                         </div>
@@ -685,7 +793,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    9 Deals
+                                    9 Codes
                                 </div>
                             </a>
                         </div>
@@ -700,7 +808,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     />
                                 </div>
                                 <div className="dealCout">
-                                    9 Deals
+                                    9 Codes
                                 </div>
                             </a>
                         </div>

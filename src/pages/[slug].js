@@ -57,6 +57,15 @@ function getSuccessLevel(coupons) {
   if (worked > 0 && (failed > 0 || notSpecified > 0)) return "Moderate";
   return "Moderate";
 }
+const getSuccessButtonClass = (level) => {
+  const cls = level.toLowerCase().replace(" ", "");
+  if (cls === "veryhigh") return "bg-green";
+  if (cls === "verylow") return "bg-red";
+  return "bg-orange"; 
+};
+
+
+
 export default function StorePage({ store, relStores }) {
   const storeDescription = store.store_description;
   const paragraphs = storeDescription.split("</p>");
@@ -136,6 +145,9 @@ export default function StorePage({ store, relStores }) {
   const handleScroll = () => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+  
+
+
 
   return (
     <>
@@ -192,20 +204,31 @@ export default function StorePage({ store, relStores }) {
                   </tr>
                   <tr>
                       <td className="p-2">✅ Coupon Success</td>
-                      <td className="p-2 text-right font-medium">{getSuccessLevel(store.coupon_set)}</td>
+                      <td className="p-2 text-right font-medium">
+                        {(() => {
+                          const level = getSuccessLevel(store.coupon_set);
+                          const btnClass = getSuccessButtonClass(level);
+
+                          return (
+                            <span className={`px-3  rounded ${btnClass}`}>
+                              {level}
+                            </span>
+                          );
+                        })()}
+                      </td>
                     </tr>
                   <tr>
-                    <td className="p-2"><span>🏷️</span>Total Coupon</td>
+                    <td className="p-2"><span>🏷️</span>Verified Coupon Code</td>
                     <td className="p-2 text-right font-medium">{totalOffers}</td>
                   </tr>
-                  <tr>
+                  {/* <tr>
                     <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
                     <td className="p-2 text-right font-medium">{activeCoupons}</td>
-                  </tr>
-                  <tr>
+                  </tr> */}
+                  {/* <tr>
                     <td className="p-2"><span>🛒</span> Free Shipping</td>
                     <td className="p-2 text-right font-medium">{freeShipping}</td>
-                  </tr>
+                  </tr> */}
                   <tr>
                     <td className="p-2"><span>🔥</span> Best Offer</td>
                     <td className="p-2 text-right font-medium">{bestOffer}</td>
@@ -222,7 +245,7 @@ export default function StorePage({ store, relStores }) {
             </div>
             <div className='strBtns'>
               <a href={store.affiliate_url} target='_blank'> Visit this Store</a>
-              <button onClick={handleScroll} title='read review'>Read Review</button>
+              <button onClick={handleScroll} title='read review'>Read Review &amp; Faqs</button>
             </div>
           
             
@@ -311,7 +334,7 @@ export default function StorePage({ store, relStores }) {
                   <div className="p-0">
 
                     {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot != "" && coupon.coupon_type === "code") && (
-                      <div className="testHistory">
+                      <div className="testHistory"  id="scrollToScreenShot">
                         <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
                         <p>Check verified proof of manual testing for {store.title}</p>
                         <div className="row">
@@ -323,7 +346,23 @@ export default function StorePage({ store, relStores }) {
                                   <div className="historyItem">
                                     <div className="historyHeader">
                                       <span>{getHeading(coupon.title)}</span>
-                                      <span className="code">{coupon.coupon_code || "No Code"}</span>
+                                      <span className="code">{coupon.coupon_code || "No Code"} 
+                                        <small onClick={() => navigator.clipboard.writeText(coupon.coupon_code)}
+                                          style={{ cursor: "pointer", color: "blue", marginLeft: "8px" }}>
+                                                  <svg
+                                                      xmlns="http://www.w3.org/2000/svg"
+                                                      viewBox="0 0 448 512"
+                                                      aria-hidden="true"
+                                                      focusable="false"
+                                                      fill='#8e24aa'
+                                                      width={16}
+                                                      height={16}
+                                                    >
+                                                      <path d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z" />
+                                                    </svg>  
+
+                                        </small>
+                                      </span>
                                       <span>
                                         {coupon.last_used_at && !isNaN(coupon.last_used_at)
                                           ? `Used ${formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })}`
@@ -363,7 +402,9 @@ export default function StorePage({ store, relStores }) {
 
                     <div className='about-store' ref={sectionRef}>
                       <div className="sidebarHeading ratingHeading">
-                        About {store.title}
+                         <div>
+                         About {store.title}
+                         </div>
                         <div className="star-rating stars reviewRatings">
                           <RatingBox key={'store_' + store.id} store={store} />
                         </div>
@@ -407,73 +448,11 @@ export default function StorePage({ store, relStores }) {
                     <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
 
                     </div>
-                    <div className="couponOffer summary-container">
-                      <div class="sidebarHeading">Coupon Summary for {store.title}</div>
-                      <table border="1" cellspacing="0" cellpadding="0">
-                        <thead>
-                          <tr>
-                            <th width="20%">Deal</th>
-                            <th width="60%">Title</th>
-                            <th width="20%">Coupon</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {store.coupon_set.map((coupon) => {
-                            const dealMatch = coupon.title.match(/(\d+% Off)/);
-                            const dealText = dealMatch ? dealMatch[0] : "Special Offer";
-                            return (
-                              <tr key={coupon.id} className="border">
-                                <td className="p-2 border text-center"><span className='deal-badge'>{dealText}</span></td>
-                                <td className="p-2 border">{coupon.title}</td>
-                                <td className="p-2 border">
-                                  {coupon.coupon_code ? (
-                                    <span className='coupon-code'>
-                                      {coupon.coupon_code}
-                                    </span>
-                                  ) : (
-                                    <span className='hot-deal'>Hot Deal 🔥</span>
-                                  )}
-                                </td>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
-                    {store.contact != "" &&
-                      <div className="contactBox">
-                        <div class="sidebarHeading">Contact {store.title}</div>
-                        <p>{store.contact}</p>
-                      </div>
-                    }
-
-                    {relStores.slice(2).length > 0 && (
-                      <div className="topStore mb-4">
-                        <div className="sidebarHeading">Related Stores for {store.title}</div>
-                        <ul>
-                          {relStores.slice(2).map((store, index) => (
-                            <li key={index}>
-                              <MainDomainLink
-                                href={
-                                  store.uses_subdomain
-                                    ? `https://${store.slug}.suproffer.com`
-                                    : `/${store.slug}-coupons`
-                                }
-                              >
-                                {store.title}
-                              </MainDomainLink>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-
-                    {/* comment */}
-                    <div className="comment-box">
+                     {/* comment */}
+                     <div className="comment-box">
                       <div id="showComment">
                         <button onClick={toggleCommentBox} className="btn btn-primary">
-                          {showCommentBox ? 'Hide Comment Box' : 'Leave a Comment'}
+                          {showCommentBox ? 'Hide Review' : 'Leave a review'}
                         </button>
                       </div>
                       {showCommentBox && (
@@ -539,46 +518,75 @@ export default function StorePage({ store, relStores }) {
                         </div>
                       )}
                     </div>
+                    <div className="couponOffer summary-container">
+                      <div class="sidebarHeading">Coupon Summary for {store.title}</div>
+                     
+
+                      <table border="1" cellspacing="0" cellpadding="0">
+                        <thead>
+                          <tr>
+                            <th width="20%">Code</th>
+                            <th width="60%">Title</th>
+                            {/* <th width="20%">Coupon</th> */}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {store.coupon_set.map((coupon) => {
+                            const dealMatch = coupon.title.match(/(\d+% Off)/);
+                            const dealText = dealMatch ? dealMatch[0] : "Special Offer";
+                            return (
+                              <tr key={coupon.id} className="border">
+                                <td className="p-2 border text-center"><span className='deal-badge'>{dealText}</span></td>
+                                <td className="p-2 border">{coupon.title}</td>
+                                {/* <td className="p-2 border">
+                                  {coupon.coupon_code ? (
+                                    <span style={{cursor: 'pointer'}} className='coupon-code'onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
+                                      {coupon.coupon_code}
+                                    </span>
+                                  ) : (
+                                    
+                                    <button class="angled-button" onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
+                                    *****************
+                                    <span class="btn-angle">Get Code</span>
+                                  </button>
+                                  )}
+                                </td> */}
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                  
+                    {relStores.slice(2).length > 0 && (
+                      <div className="topStore mb-4">
+                        <div className="sidebarHeading">Related Stores for {store.title}</div>
+                        <ul>
+                          {relStores.slice(2).map((store, index) => (
+                            <li key={index}>
+                              <MainDomainLink
+                                href={
+                                  store.uses_subdomain
+                                    ? `https://${store.slug}.suproffer.com`
+                                    : `/${store.slug}-coupons`
+                                }
+                              >
+                                {store.title}
+                              </MainDomainLink>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+
+                   
 
                     <section className="whyTrustus">
                       <div className="container">
                         <div className="sidebarHeading">Why Trust Us?</div>
                         <div className="row g-4">
-                          {/* Left Column */}
-                          <div className="col-md-6 mb-3 zeroMobPadding">
-                            <div className="card-custom">
-                              <div className="founder">
-                                <div className="img">
-                                  <img src="/images/co-founder.webp" alt="Rudresh Dubey" />
-                                </div>
-                                <div className="name">
-                                  <p>
-                                    Rudresh{" "}
-                                    <a
-                                      href="https://www.linkedin.com/in/rudreh-dubey-86426b1a2/"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      title="LinkedIn"
-                                    >
-                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="#0077B5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
-                                    </a>
-                                  </p>
-                                  <span>Founder & CEO @ suproffer.com</span>
-                                </div>
-                              </div>
-                              <div className="founderNote">
-                                <p>
-                                  Rudresh Dubey is an experienced affiliate marketer with over 10 years of experience in digital marketing. His journey in the coupon industry began a decade ago to help people save money while shopping online. As the founder of <a href="https://suproffer.com/">Suproffer.com</a>, Rudresh turned his vision into a reality by creating a trusted platform that offers only tested and verified coupon codes. What started as a small idea for online shoppers has now grown into a reliable name for deals and discounts.
-                                </p>
-                                <p>
-                                  Rudresh's goal has always been simple - make online shopping affordable and stress-free. He leads a hardworking team of 6 members who carefully pick the best promo codes across many categories like fashion, electronics, travel, and software. Every coupon goes through a proper check to make sure it is genuine and active. <a href="https://suproffer.com/">Suproffer.com</a> has become a go-to destination for online buyers who want to save money without wasting time on fake deals or expired coupons.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Right Column */}
-                          <div className="col-md-6 zeroMobPadding">
+                          <div className="col-md-12 zeroMobPadding">
                             <div className="card-custom ourExpert">
                               <div className="expHead">Meet Our Coupon Experts</div>
                               <div className="expertPara">
@@ -590,41 +598,79 @@ export default function StorePage({ store, relStores }) {
                                 </p>
                               </div>
                               <div className="listExpert">
-                                <ul>
-                                  <li>
-                                    <small>
-                                      <img src="/images/dinesh-v.webp" alt="dinesh" /> Dinesh
-                                    </small>
-                                    <span className="exp">8 Years</span>
-                                  </li>
-                                  <li>
-                                    <small>
-                                      <img src="/images/mashma-m.webp" alt="mashma" /> Mashma
-                                    </small>
-                                    <span className="exp">6 Years</span>
-                                  </li>
-                                  <li>
-                                    <small>
-                                      <img src="/images/tanay-s.webp" alt="tanay" /> Tanay
-                                    </small>
-                                    <span className="exp">6 Years</span>
-                                  </li>
-                                  <li>
-                                    <small>
-                                      <img src="/images/sikha.webp" alt="sikha" /> Sikha
-                                    </small>
-                                    <span className="exp">5 Years</span>
-                                  </li>
-                                  <li>
-                                    <small>
-                                      <img src="/images/yash-c.webp" alt="yash" /> Yash
-                                    </small>
-                                    <span className="exp">4 Years</span>
-                                  </li>
-                                  <li>
-                                    <small><img src="/images/yunush.webp" alt="Yusuf" /> Yusuf</small>
-                                    <span class="exp">3 Years</span>
-                                  </li>
+                                <ul className='row'>
+                                  <div className='col-md-6 zeroMobPadding'>
+                                    <li>
+                                      <small>
+                                        <img src="/images/dinesh-v.webp" alt="dinesh" />
+                                         <p>
+                                            Dinesh
+                                           <span>33,636 coupons published</span>
+                                         </p>
+                                      </small>
+                                      <span className="exp">8 Years</span>
+                                    </li>
+                                  </div>
+                                  <div className='col-md-6 zeroMobPadding'>
+                                    <li>
+                                      <small>
+                                        <img src="/images/mashma-m.webp" alt="mashma" /> 
+                                        <p>
+                                        Mashma
+                                           <span>33,636 coupons published</span>
+                                         </p>
+                                      </small>
+                                      <span className="exp">6 Years</span>
+                                    </li>
+                                  </div>
+                                  <div className='col-md-6 zeroMobPadding'>
+                                    <li>
+                                      <small>
+                                        <img src="/images/tanay-s.webp" alt="tanay" /> 
+                                        <p>
+                                        Tanay
+                                           <span>33,636 coupons published</span>
+                                         </p>
+                                      </small>
+                                      <span className="exp">6 Years</span>
+                                    </li>
+                                  </div>
+                                  <div className='col-md-6 zeroMobPadding'>
+                                    <li>
+                                      <small>
+                                        <img src="/images/sikha.webp" alt="sikha" /> 
+                                        <p>
+                                        Sikha
+                                           <span>33,636 coupons published</span>
+                                         </p>
+                                      </small>
+                                      <span className="exp">5 Years</span>
+                                    </li>
+                                  </div>
+                                  <div className='col-md-6 zeroMobPadding'>
+                                    <li>
+                                      <small>
+                                        <img src="/images/yash-c.webp" alt="yash" /> 
+                                        <p>
+                                        Yash
+                                           <span>33,636 coupons published</span>
+                                         </p>
+                                      </small>
+                                      <span className="exp">4 Years</span>
+                                    </li>
+                                  </div>
+                                  <div className='col-md-6 zeroMobPadding'>
+                                      <li>
+                                        <small>
+                                          <img src="/images/yunush.webp" alt="Yusuf" /> 
+                                          <p>
+                                          Yusuf
+                                           <span>33,636 coupons published</span>
+                                         </p>
+                                        </small>
+                                        <span class="exp">3 Years</span>
+                                      </li>
+                                  </div>
                                 </ul>
                               </div>
                             </div>

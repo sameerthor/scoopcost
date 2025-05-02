@@ -1997,6 +1997,32 @@ margin-bottom: 1.5rem;
 .offerToday{
  margin-bottom: 1rem;
 }
+.offerToday tr td .rounded{
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: .7rem;
+  letter-spacing: .5px;
+  padding: .3rem;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  color: #000;
+}
+.offerToday tr td .rounded.bg-green{
+ background-color: #006B00;
+ border: 1px solid #006B00;
+  color: #fff;
+}
+.offerToday tr td .rounded.bg-orange{
+  background-color: #f5b402;
+  border: 1px solid #f5b402;
+   color: #000;
+ }
+ .offerToday tr td .rounded.bg-red{
+  background-color: #750000;
+  border: 1px solid #750000;
+   color: #fff;
+ }
 .ratings{
   font-weight: 500;
   font-size: .8rem;
@@ -2033,7 +2059,7 @@ margin-bottom: 1.5rem;
   .historyBox ul li{
     font-weight: 600;
     color: #222;
-    font-size: 1rem;
+    font-size: .8rem;
     line-height: 2;
   }
   .historyBox ul li::before{
@@ -2628,13 +2654,18 @@ a{
   background: linear-gradient(135deg, #ffffff, #f4f6fa);
   padding: 30px 20px;
 }
+.whyTrustus .listExpert small p span{
+ display: block;
+ font-weight: 500;
+ font-size: .7rem;
+ line-height: 1.4;
+}
 
 .whyTrustus .sidebarHeading {
   font-size: 1.6rem;
   font-weight: 600;
   color: #222;
   text-align: center;
-  margin-bottom: 50px;
   position: relative;
 }
 
@@ -2914,3 +2945,60 @@ font-size: .8rem;
  .contactStr .head{
   font-weight: 600;
  }
+ .tNcBox ol li{
+  font-size: .8rem !important;
+ }
+ .historyBox ul li button{
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #1a0dab;
+  text-decoration: underline;
+ }
+ .angled-button {
+border: 1px dotted var(--primary-color);
+padding: .5rem 1rem;
+background-color: transparent;
+border-radius: 4px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+position: relative;
+width: 100px;
+font-weight: 500;
+font-size: .7rem;
+font-weight: 600;
+}
+.angled-button:hover .btn-angle{
+  width: 75%;
+  }
+
+
+
+.btn-angle {
+ font-weight: 600;
+ position: absolute;
+ background-color: var(--primary-color);
+ height: 100%;
+ display: inline-flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ width: 80%;
+ left: 0;
+ border-radius: 4px;
+ border-top-right-radius: 0;
+ border-bottom-right-radius: 0;
+ clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+ transition: .3s ease-in-out;
+ color: #fff;
+}
+.listExpert ul li{
+  margin: 0 .5rem;
+}
+@media(max-width: 600px){
+  .ratingHeading{
+    flex-direction: column;
+  }
+}

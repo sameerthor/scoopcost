@@ -24,6 +24,106 @@ export default function aboutSaveright({ aboutSaveright }) {
                         <p>
                         We believe that saving money should be simple, stress-free and part of every online shopping experience. That’s why we have created a platform where deals are real, easy to use, and help you save money. From big brand names to niche online stores, our team constantly updates coupons and deals that actually work. Our users save an average of 15-40% on their purchases. 
                         </p>
+                        <div className="whyTrustus">
+                                <div className="container">
+                                    <div className="row g-4">
+                                    {/* Left Column */}
+                                    <div className="col-md-6 mb-3 zeroMobPadding">
+                                        <div className="card-custom">
+                                        <div className="founder">
+                                            <div className="img">
+                                            <img src="/images/co-founder.webp" alt="Rudresh Dubey" />
+                                            </div>
+                                            <div className="name">
+                                            <p>
+                                                Rudresh{" "}
+                                                <a
+                                                href="https://www.linkedin.com/in/rudreh-dubey-86426b1a2/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                title="LinkedIn"
+                                                >
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="#0077B5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+                                                </a>
+                                            </p>
+                                            <span>Founder & CEO @ suproffer.com</span>
+                                            </div>
+                                        </div>
+                                        <div className="founderNote">
+                                            <p>
+                                            Rudresh Dubey is an experienced affiliate marketer with over 10 years of experience in digital marketing. His journey in the coupon industry began a decade ago to help people save money while shopping online. As the founder of <a href="https://suproffer.com/">Suproffer.com</a>, Rudresh turned his vision into a reality by creating a trusted platform that offers only tested and verified coupon codes. What started as a small idea for online shoppers has now grown into a reliable name for deals and discounts.
+                                            </p>
+                                            <p>
+                                            Rudresh's goal has always been simple - make online shopping affordable and stress-free. He leads a hardworking team of 6 members who carefully pick the best promo codes across many categories like fashion, electronics, travel, and software. Every coupon goes through a proper check to make sure it is genuine and active. <a href="https://suproffer.com/">Suproffer.com</a> has become a go-to destination for online buyers who want to save money without wasting time on fake deals or expired coupons.
+                                            </p>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Right Column */}
+                                    <div className="col-md-6 zeroMobPadding">
+                                        <div className="card-custom ourExpert">
+                                        <div className="expHead">Meet Our Coupon Experts</div>
+                                        <div className="expertPara">
+                                            <p>
+                                            <a href="https://suproffer.com/">Suproffer.com</a> has an efficient team of 6 coupon experts. Their job is to make sure users always get the best and latest offers. Our team focuses on creating a smooth and friendly user experience, so visitors can quickly find the right deals without getting misled. They keep an eye on every code and update the site regularly. We have also put a comment section on each coupon page. If a coupon doesn’t work, the team makes sure to fix the issue and try to improve the services based on user feedback.
+                                            </p>
+                                            <p>
+                                            If you notice anything that isn’t right on our website, you can report the issue to us and we’ll address it shortly.
+                                            </p>
+                                        </div>
+                                        <div className="listExpert">
+                                            <ul>
+                                            <li>
+                                                <small>
+                                                    <img src="/images/dinesh-v.webp" alt="dinesh" />
+                                                    <p>Dinesh<span>33,636 coupons published</span></p>
+                                                </small>
+                                                <span className="exp">8 Years</span>
+                                            </li>
+                                            <li>
+                                                <small>
+                                                <img src="/images/mashma-m.webp" alt="mashma" />
+                                                <p>Mashma<span>33,636 coupons published</span></p>
+                                                </small>
+                                                <span className="exp">6 Years</span>
+                                            </li>
+                                            <li>
+                                                <small>
+                                                <img src="/images/tanay-s.webp" alt="tanay" />
+                                                <p>Tanay<span>33,636 coupons published</span></p>
+                                                </small>
+                                                <span className="exp">6 Years</span>
+                                            </li>
+                                            <li>
+                                                <small>
+                                                <img src="/images/sikha.webp" alt="sikha" /> 
+                                                <p>Sikha<span>33,636 coupons published</span></p>
+                                                </small>
+                                                <span className="exp">5 Years</span>
+                                            </li>
+                                            <li>
+                                                <small>
+                                                <img src="/images/yash-c.webp" alt="yash" /> 
+                                                <p>Yash<span>33,636 coupons published</span></p>
+                                                </small>
+                                                <span className="exp">4 Years</span>
+                                            </li>
+                                            <li>
+                                                <small><img src="/images/yunush.webp" alt="Yusuf" /> 
+                                                <p>Yusuf<span>33,636 coupons published</span></p>
+                                                
+                                                </small>
+                                                
+                                                <span class="exp">3 Years</span>
+                                            </li>
+                                            </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                        </div>
                         <div className='h2'>
                         What We Offer?
                         </div>
@@ -110,7 +210,7 @@ export default function aboutSaveright({ aboutSaveright }) {
                        Get In Touch
                        </div>
                        <p>
-                       If you have any questions, suggestions or encounter any issues, please contact us at <a href="https://suproffer.com/contact-us">https://suproffer.com/contact-us</a>.
+                       If you have any questions, suggestions or encounter any issues, please contact us at <a href="https://suproffer.com/contact">https://suproffer.com/contact</a>.
                        </p>
                     </div> 
                 </div>   

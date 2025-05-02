@@ -1,8 +1,9 @@
 import MainDomainLink from '@/components/MainDomainLink';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { formatDistanceToNow } from "date-fns";
 import FeedbackComponent from '../components/FeedbackComponent';
+import { useRef } from 'react';
 
 import {
   faCartShopping,
@@ -116,7 +117,15 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
       console.error('Tracking failed:', error);
     }
   }
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  const [copied, setCopied] = useState(false);
 
+ 
 
   return (
     <>
@@ -177,46 +186,48 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
             {coupon.coupon_type === 'code' ? (
               <div className="code-box">
+
+<button
+  onClick={async (e) => {
+    await trackCouponUsage(coupon.id);
+    localStorage.setItem('copied_code', coupon.id);
+
+    try {
+      await navigator.clipboard.writeText(coupon.coupon_code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 10000); 
+    } catch (err) {
+      console.error("Clipboard write failed:", err);
+    }
+
+    const url = usesSubdomain
+      ? `https://${storeSlug}.${baseDomain}#code=${index + 1}`
+      : `/${storeSlug}#code=${index + 1}`;
+
+    window.open(url, "_blank");
+
+    setTimeout(() => {
+      window.open(affiliateUrl, "_self");
+    }, 100);
+  }}
+  data-type="code"
+  className="copy-btn"
+>
+  {copied ? "Code Copied!" : "Copy Code"}
+</button>
+
+                
+                
+
+
                 <span>{coupon.coupon_code}</span>
-
-                <button onClick={async (e) => {
-                  await trackCouponUsage(coupon.id);
-                  // Set the copied_code in localStorage (no need to await as it's synchronous)
-                  localStorage.setItem('copied_code', coupon.id);
-
-                  // Copy the coupon code to the clipboard
-                  navigator.clipboard.writeText(coupon.coupon_code).then(() => {
-                    //                                        console.log("Coupon code copied to clipboard");
-                  }).catch((error) => {
-                    console.error("Error copying to clipboard: ", error);
-                  });
-
-                  const url = usesSubdomain
-                    ? `https://${storeSlug}.${baseDomain}#code=${index + 1}`
-                    : `/${storeSlug}#code=${index + 1}`
-
-                  window.open(url, "_blank");
-
-                  // Log the affiliate URL
-
-                  // Open the affiliate URL in the same window after a short delay (to ensure proper sequence)
-                  setTimeout(() => {
-                    window.open(affiliateUrl, "_self");
-                  }, 100);  // Delay added to ensure actions don't overlap
-
-                }}
-                  data-type="code"
-                  className="copy-btn"
-                >
-                  Copy Code
-                </button>
 
 
 
               </div>
             ) : (
               <div className="code-box">
-                <span>********</span>
+
 
                 <button rel="nofollow" className="copy-btn" onClick={async (e) => {
                   await trackCouponUsage(coupon.id);
@@ -234,6 +245,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                 }}>
                   Show Code
                 </button>
+                <span>********</span>
 
               </div>
             )}
@@ -243,7 +255,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                 <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} title="Show T &amp; C">Terms &amp; Conditions</button>
               }
               {coupon.expires  &&
-                <span>Expires On:{coupon.expires}</span>
+                <button style={{textDecoration: 'none', cursor: 'auto'}} className='showTncBox tnc tncBtns'>Expires: {coupon.expires}</button>
               }
               <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show History">Coupon History</button>
             </div>
@@ -276,7 +288,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       This deal was used by shoppers {formatDistanceToNow(new Date(coupon.last_used_at), { addSuffix: true })} {coupon.is_worked && (coupon.is_worked === "True" ? "and it worked." : "and it didn't work.")}
                     </li>
                   }
-                  <li>{`Added ${formatDistanceToNow(storeCreateTime, { addSuffix: true })}`} by {coupon.added_by}</li>
+                  <li>{`Added ${formatDistanceToNow(storeCreateTime, { addSuffix: true })}`} by {coupon.added_by}  - <button onClick={() => scrollToSection('scrollToScreenShot')}> Check Coupon Sreenshot History</button></li>
                 </ul>
               </div>
             </div>

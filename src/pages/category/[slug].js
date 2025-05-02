@@ -70,7 +70,7 @@ function Category({ category, stores, categories }) {
                                     </div>
                                 </div>
                                 <div className="col-lg-5 col-md-12">
-                                    <h1 className='pageH1'>Todays {category.title} Coupons &amp; Offers</h1>
+                                    <h1 className='pageH1'> {category.title} Coupons &amp; Promo Codes 2025</h1>
                                     <div className="divider-line mt-2 mb-2" />
                                     <div className="">
                                         <table>
@@ -81,7 +81,8 @@ function Category({ category, stores, categories }) {
                                                 </tr>
                                                 <tr>
                                                     <th>🏷️ Coupon Codes</th>
-                                                    <td>{stores.reduce((count, store) => count + (store.coupon_set?.filter(x => x.coupon_type === 'code').length || 0), 0)}</td>
+                                                    {/* <td>{stores.reduce((count, store) => count + (store.coupon_set?.filter(x => x.coupon_type === 'code').length || 0), 0)}</td> */}
+                                                    <td>{stores.reduce((count, store) => count + (store.coupon_set?.length || 0), 0)}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>🛒 Free Shipping</th>
@@ -156,35 +157,31 @@ function Category({ category, stores, categories }) {
                                                 </MainDomainLink>
                                             </div>
                                             <div className="dealBtnBox">
-                                                <div className="flexverify">
-                                                    <p title="This coupon is verified" className="verifiedCoupon">
-                                                        <Image
-                                                            src="/images/verified-green-icon.png"
-                                                            width={14}
-                                                            height={14}
-                                                            alt="verified coupon"
-                                                        />
-                                                        <span>Verified Deal</span>
-                                                    </p>
-                                                </div>
+                                                <MainDomainLink className='tNc' href={
+                                                        store.subdomain
+                                                            ? `https://${store.slug}.${baseDomain}`
+                                                            : `/${store.slug}`
+                                                    }  onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
+                                                       
+                                                        T & C
+                                                    </MainDomainLink>
+                                                <span className='tNc'>Expires: 2025-12-29</span>
                                                 <p className="grabDeal">
-                                                    <MainDomainLink href={
+                                                    {/* <MainDomainLink href={
                                                         store.subdomain
                                                             ? `https://${store.slug}.${baseDomain}`
                                                             : `/${store.slug}`
                                                     }>
-                                                        Get Deal
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width={18}
-                                                            height={18}
-                                                            fill="currentColor"
-                                                            className="bi bi-tag"
-                                                            viewBox="0 0 16 16"
-                                                        >
-                                                            <path d="M6 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0" />
-                                                            <path d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1m0 5.586 7 7L13.586 9l-7-7H2z" />
-                                                        </svg>
+                                                        Get Code
+                                                       
+                                                    </MainDomainLink> */}
+                                                    <MainDomainLink href={
+                                                        store.subdomain
+                                                            ? `https://${store.slug}.${baseDomain}`
+                                                            : `/${store.slug}`
+                                                    } class="angled-button">
+                                                        *****************
+                                                        <span class="btn-angle">Get Code</span>
                                                     </MainDomainLink>
                                                 </p>
                                             </div>
