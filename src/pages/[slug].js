@@ -864,10 +864,10 @@ export async function getStaticProps({ params }) {
   store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
   store.store_description = store.store_description.replaceAll("%pe­rcentage% off", perc + " off");
   store.store_description = store.store_description.replaceAll("%percentage% off", perc + " off");
-  store.store_description = store.store_description.replaceAll("%pe­rcentage% Off", perc + "Off");
-  store.store_description = store.store_description.replaceAll("%percentage% Off", perc + "Off");
-  store.store_description = store.store_description.replaceAll("%pe­rcentage% OFF", perc + "OFF");
-  store.store_description = store.store_description.replaceAll("%percentage% OFF", perc + "OFF");
+  store.store_description = store.store_description.replaceAll("%pe­rcentage% Off", perc + " Off");
+  store.store_description = store.store_description.replaceAll("%percentage% Off", perc + " Off");
+  store.store_description = store.store_description.replaceAll("%pe­rcentage% OFF", perc + " OFF");
+  store.store_description = store.store_description.replaceAll("%percentage% OFF", perc + " OFF");
   store.store_description = store.store_description.replaceAll("%pe­rcentage%", perc);
   store.store_description = store.store_description.replaceAll("%percentage%", perc);
   store.store_description = store.store_description.replace(/XXX/, store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
