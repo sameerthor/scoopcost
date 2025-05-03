@@ -276,7 +276,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
           </div>
         }
         <div id={historyAccordionId} className="accordion">
-          <div id={historyCollapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
+          <div id={historyCollapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${historyAccordionId}`}>
             <div className="card-body">
               <div className="historyBox tNcBox">
                 <ul>

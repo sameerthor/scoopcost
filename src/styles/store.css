@@ -2914,7 +2914,6 @@ font-size: .8rem;
   padding: .5rem 1rem;
   font-size: .8rem;
   border: none;
-  padding: none;
   background-color: #000;
   color: #fff;
   }
@@ -3001,4 +3000,12 @@ font-weight: 600;
   .ratingHeading{
     flex-direction: column;
   }
+}
+.readRF{
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  font-size: .8rem;
+  border: none;
+  background-color: #000;
+  color: #fff;
 }

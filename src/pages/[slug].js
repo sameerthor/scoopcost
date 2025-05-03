@@ -2,6 +2,7 @@ import MainDomainLink from '@/components/MainDomainLink';
 import MetaTags from '@/components/MetaTags';
 import Head from 'next/head';
 import Coupon from '../components/coupon';
+import ResponsiveRender from '@/components/ResponsiveRender';
 import _ from 'lodash'
 import "@/styles/store.css";
 import moment from 'moment';
@@ -173,91 +174,103 @@ export default function StorePage({ store, relStores, addedByData }) {
         </div>
       </section>
       <section className='storeContent'>
-        <div className='storeHeader topAside'>
-          <aside className="">
-            <div className="header-thumb">
-              <div className="header-store-thumb">
-                <a rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
-                  <Image
-                    src={`${store.image}`}
-                    alt={`${store.title} Store Logo`}
-                    width={128}
-                    height={128}
-                    className="attachment-wpcoupon_small_thumb size-wpcoupon_small_thumb"
-                    loading="lazy"
-                  />
-                </a>
+        <ResponsiveRender
+        mobile={
+          <>
+           
+          </>
+        }
+        desktop={
+          <>
+            <div className='storeHeader topAside'>
+              <aside className="">
+                <div className="header-thumb">
+                  <div className="header-store-thumb">
+                    <a rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
+                      <Image
+                        src={`${store.image}`}
+                        alt={`${store.title} Store Logo`}
+                        width={128}
+                        height={128}
+                        className="attachment-wpcoupon_small_thumb size-wpcoupon_small_thumb"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+                  <div className="star-rating stars">
+                    <RatingBox key={'store_' + store.id} store={store} />
+                  </div>
+                </div>
+              </aside>
+              <div className='offersnipet'>
+                <div className="offerToday">
+                  <div className='sidebarHeading'>Today's Offer for {store.title}</div>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td className="p-2">🛍️ Total Offers</td>
+                        <td className="p-2 text-right font-medium">{totalOffers}</td>
+                      </tr>
+                      <tr>
+                        <td className="p-2">✅ Coupon Success</td>
+                        <td className="p-2 text-right font-medium">
+                          {(() => {
+                            const level = getSuccessLevel(store.coupon_set);
+                            const btnClass = getSuccessButtonClass(level);
+
+                            return (
+                              <span className={`px-3  rounded ${btnClass}`}>
+                                {level}
+                              </span>
+                            );
+                          })()}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="p-2"><span>🏷️</span>Verified Coupon Code</td>
+                        <td className="p-2 text-right font-medium">{totalOffers}</td>
+                      </tr>
+                      {/* <tr>
+                        <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
+                        <td className="p-2 text-right font-medium">{activeCoupons}</td>
+                      </tr> */}
+                      {/* <tr>
+                        <td className="p-2"><span>🛒</span> Free Shipping</td>
+                        <td className="p-2 text-right font-medium">{freeShipping}</td>
+                      </tr> */}
+                      <tr>
+                        <td className="p-2"><span>🔥</span> Best Offer</td>
+                        <td className="p-2 text-right font-medium">{bestOffer}</td>
+                      </tr>
+                      <tr>
+                        <td className="p-2">⏰ Last Updated</td>
+                        <td className="p-2 text-right font-medium">{moment().format("MMMM D, YYYY")}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className='about-store'>
+                  <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
+                </div>
+                <div className='strBtns'>
+                  <a href={store.affiliate_url} target='_blank'> Visit this Store</a>
+                  <button className='readRF' onClick={handleScroll} title='read review'>Read Review &amp; Faqs</button>
+                </div>
+
+
+                {store.contact != "" &&
+                  <div className="contactBox">
+                    <div class="sidebarHeading">Contact {store.title}</div>
+                    <p>{store.contact}</p>
+                  </div>
+                }
+
               </div>
-              <div className="star-rating stars">
-                <RatingBox key={'store_' + store.id} store={store} />
-              </div>
             </div>
-          </aside>
-          <div className='offersnipet'>
-            <div className="offerToday">
-              <div className='sidebarHeading'>Today's Offer for {store.title}</div>
-              <table>
-                <tbody>
-                  <tr>
-                    <td className="p-2">🛍️ Total Offers</td>
-                    <td className="p-2 text-right font-medium">{totalOffers}</td>
-                  </tr>
-                  <tr>
-                    <td className="p-2">✅ Coupon Success</td>
-                    <td className="p-2 text-right font-medium">
-                      {(() => {
-                        const level = getSuccessLevel(store.coupon_set);
-                        const btnClass = getSuccessButtonClass(level);
+          </>
+        }
+      />
 
-                        return (
-                          <span className={`px-3  rounded ${btnClass}`}>
-                            {level}
-                          </span>
-                        );
-                      })()}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="p-2"><span>🏷️</span>Verified Coupon Code</td>
-                    <td className="p-2 text-right font-medium">{totalOffers}</td>
-                  </tr>
-                  {/* <tr>
-                    <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
-                    <td className="p-2 text-right font-medium">{activeCoupons}</td>
-                  </tr> */}
-                  {/* <tr>
-                    <td className="p-2"><span>🛒</span> Free Shipping</td>
-                    <td className="p-2 text-right font-medium">{freeShipping}</td>
-                  </tr> */}
-                  <tr>
-                    <td className="p-2"><span>🔥</span> Best Offer</td>
-                    <td className="p-2 text-right font-medium">{bestOffer}</td>
-                  </tr>
-                  <tr>
-                    <td className="p-2">⏰ Last Updated</td>
-                    <td className="p-2 text-right font-medium">{moment().format("MMMM D, YYYY")}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className='about-store'>
-              <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
-            </div>
-            <div className='strBtns'>
-              <a href={store.affiliate_url} target='_blank'> Visit this Store</a>
-              <button onClick={handleScroll} title='read review'>Read Review &amp; Faqs</button>
-            </div>
-
-
-            {store.contact != "" &&
-              <div className="contactBox">
-                <div class="sidebarHeading">Contact {store.title}</div>
-                <p>{store.contact}</p>
-              </div>
-            }
-
-          </div>
-        </div>
 
         <div className="container">
           <div className="couponsection">
@@ -278,7 +291,10 @@ export default function StorePage({ store, relStores, addedByData }) {
                   <p className="dealAvl">{totalOffers} Codes</p>
                   <p>Flat {getHeading(store.coupon_set[0].title)} at {store.title}</p>
                 </div>
-                <aside className="col-4 regularAside">
+                <ResponsiveRender
+                  mobile={
+                    <>
+                         <aside className="col-4 regularAside">
                   <div className="header-thumb">
                     <div className="header-store-thumb">
                       <a rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
@@ -296,7 +312,16 @@ export default function StorePage({ store, relStores, addedByData }) {
                       <RatingBox key={'store_' + store.id} store={store} />
                     </div>
                   </div>
-                </aside>
+                         </aside>
+                    </>
+                  }
+                  desktop={
+                    <>
+                      
+                    </>
+                  }
+                />
+
 
               </div>
             </div>
@@ -411,7 +436,10 @@ export default function StorePage({ store, relStores, addedByData }) {
                       </div>
                       <div dangerouslySetInnerHTML={{ __html: paragraphs[0] + "</p>" }} />
                     </div>
-                    <div className="offerToday regularAside">
+                    <ResponsiveRender
+                      mobile={
+                        <>
+                          <div className="offerToday regularAside">
                       <div className='sidebarHeading'>Today's Offer for {store.title}</div>
                       <table>
                         <tbody>
@@ -439,13 +467,13 @@ export default function StorePage({ store, relStores, addedByData }) {
                             <td className="p-2 text-right font-medium">{totalOffers}</td>
                           </tr>
                           {/* <tr>
-                    <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
-                    <td className="p-2 text-right font-medium">{activeCoupons}</td>
-                  </tr> */}
+                            <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
+                            <td className="p-2 text-right font-medium">{activeCoupons}</td>
+                          </tr> */}
                           {/* <tr>
-                    <td className="p-2"><span>🛒</span> Free Shipping</td>
-                    <td className="p-2 text-right font-medium">{freeShipping}</td>
-                  </tr> */}
+                            <td className="p-2"><span>🛒</span> Free Shipping</td>
+                            <td className="p-2 text-right font-medium">{freeShipping}</td>
+                          </tr> */}
                           <tr>
                             <td className="p-2"><span>🔥</span> Best Offer</td>
                             <td className="p-2 text-right font-medium">{bestOffer}</td>
@@ -456,10 +484,18 @@ export default function StorePage({ store, relStores, addedByData }) {
                           </tr>
                         </tbody>
                       </table>
-                    </div>
-                    <div className='about-store regularAside'>
-                      <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
-                    </div>
+                          </div>
+                          <div className='about-store regularAside'>
+                            <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
+                          </div>
+                        </>
+                      }
+                      desktop={
+                        <>
+                          
+                        </>
+                      }
+                    />
                     <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
 
                     </div>

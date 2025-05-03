@@ -1,11 +1,13 @@
 import { NextSeo } from 'next-seo';
 import MetaTags from '@/components/MetaTags';
+import RandomDatesList from '@/components/RandomDatesList';
 import Image from 'next/image';
 import Link from 'next/link';
 import "@/styles/home.css";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import MainDomainLink from '@/components/MainDomainLink';
+import { useMemo } from 'react';
 
 
 export default function HomePage({ categories,topRatedStores,featuredStores,topOnlineStores }) {
@@ -32,6 +34,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
     
         return "";
     };
+
 
     return (
         <>
@@ -115,7 +118,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         T &amp; C
                                         </MainDomainLink>
                                         <span >
-                                                Expires: 2025-05-30
+                                                Expires
                                         </span>
                                     </div>
                                 </div>
@@ -143,9 +146,11 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         <MainDomainLink href='https://lumasoothe.suproffer.com/'class="">
                                         T &amp; C
                                         </MainDomainLink>
-                                        <span >
-                                                Expires: 2025-05-30
-                                        </span>
+                                        {/* <span >
+                                                Expires:  <RandomDatesList count={1} uniqueId="offer_1" />
+                                                
+                                        </span> */}
+                                        <span>Expires</span>
                                 </div>
                                 </div>
                             </div>
@@ -179,7 +184,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         T &amp; C
                                         </MainDomainLink>
                                         <span >
-                                                Expires: 2025-05-30
+                                                Expires
                                         </span>
                                 </div>
                                 </div>
@@ -208,7 +213,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         T &amp; C
                                         </MainDomainLink>
                                         <span >
-                                                Expires: 2025-05-30
+                                                Expires
                                         </span>
                                 </div>
                                 </div>
@@ -237,7 +242,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         T &amp; C
                                         </MainDomainLink>
                                         <span >
-                                                Expires: 2025-05-30
+                                                Expires
                                         </span>
                                 </div>
                                 </div>
@@ -274,7 +279,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                             T &amp; C
                                             </span>
                                             <span >
-                                                    Expires: 2025-05-30
+                                                    Expires
                                             </span>
                                       </div>
                                 </div>
@@ -301,7 +306,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                             T &amp; C
                                             </span>
                                             <span >
-                                                    Expires: 2025-05-30
+                                                    Expires
                                             </span>
                                       </div>
                                       
@@ -328,7 +333,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                             T &amp; C
                                             </span>
                                             <span >
-                                                    Expires: 2025-05-30
+                                                    Expires
                                             </span>
                                       </div>
                                 </div>
@@ -354,7 +359,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                             T &amp; C
                                             </span>
                                             <span >
-                                                    Expires: 2025-05-30
+                                                    Expires
                                             </span>
                                       </div>
                                 </div>
@@ -380,7 +385,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                             T &amp; C
                                             </span>
                                             <span >
-                                                    Expires: 2025-05-30
+                                                    Expires
                                             </span>
                                       </div>
                                 </div>
@@ -406,7 +411,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                             T &amp; C
                                             </span>
                                             <span >
-                                                    Expires: 2025-05-30
+                                                    Expires
                                             </span>
                                       </div>
                                 </div>
@@ -438,7 +443,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div className="description">
                                     Buy at Miami Hair Shop - Free Shipping Included
                                     </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
                             </a>
                         </div>
@@ -461,7 +466,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div className="description">
                                     20% Off on Wall Art at Ma Jolie Toile - Save with Verified Coupon
                                     </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
                             </a>
                         </div>
@@ -484,7 +489,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div className="description">
                                     NHSA Coupon Code - Save 15% Off at Checkout
                                     </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
                             </a>
                         </div>
@@ -507,7 +512,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div className="description">
                                     Orange County CBD Deal - 10% Off + Free Shipping over £25
                                     </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
                             </a>
                         </div>
@@ -530,7 +535,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div className="description">
                                     15% Off on Apparel at Onetify - Save with Verified Coupon
                                     </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
                             </a>
                         </div>
@@ -553,7 +558,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div className="description">
                                     Enjoy 20% Off - Save Big at Ofcasa Furniture
                                     </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
                             </a>
                         </div>
@@ -576,7 +581,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div className="description">
                                     15% Off on Hipp Dutch Organic Formula - Save Big Today
                                     </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
                             </a>
                         </div>
@@ -599,7 +604,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div className="description">
                                     25% Off on Baby Formulas at OnlyFormula - Use this Promo Code
                                     </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
                             </a>
                         </div>
@@ -622,7 +627,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div className="description">
                                     Don’t Miss Out - 10% Off at PureRawz
                                     </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
                             </a>
                         </div>
@@ -645,7 +650,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div className="description">
                                     15% Off on Health Supplements - Save More at Peak 365 Nutrition
                                     </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires: 2025-05-30</span></div>
+                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
                             </a>
                         </div>
