@@ -500,7 +500,7 @@ export default function StorePage({ store, relStores, addedByData }) {
 
                     </div>
                     {/* comment */}
-                    <div className="comment-box">
+                    {/* <div className="comment-box">
                       <div id="showComment">
                         <button onClick={toggleCommentBox} className="btn btn-primary">
                           {showCommentBox ? 'Hide Review' : 'Leave a review'}
@@ -568,7 +568,7 @@ export default function StorePage({ store, relStores, addedByData }) {
                           </div>
                         </div>
                       )}
-                    </div>
+                    </div> */}
                     <div className="couponOffer summary-container">
                       <div class="sidebarHeading">Coupon Summary for {store.title}</div>
 
