@@ -258,7 +258,7 @@ export default function StorePage({ store, relStores, addedByData }) {
                 </div>
 
 
-                {store.contact != "" &&
+                {store.contact  &&
                   <div className="contactBox">
                     <div class="sidebarHeading">Contact {store.title}</div>
                     <p>{store.contact}</p>
@@ -617,9 +617,9 @@ export default function StorePage({ store, relStores, addedByData }) {
                             <li key={index}>
                               <MainDomainLink
                                 href={
-                                  store.uses_subdomain
+                                  store.subdomain
                                     ? `https://${store.slug}.suproffer.com`
-                                    : `/${store.slug}-coupons`
+                                    : `/${store.slug}`
                                 }
                               >
                                 {store.title}
@@ -853,15 +853,23 @@ export async function getStaticProps({ params }) {
     .slice(0, 2)
     .map(item => `<a href="${item.subdomain ? `https://${item.slug}.${baseDomain}` : `/${item.slug}`}">${item.title}</a>`)
     .join(', ');
+
+  const title = store.title || store.Title;
+  const firstCouponCode = store.coupon_set?.find(c => c.coupon_type === 'code')?.coupon_code || '';
+  const couponCount = store.coupon_set?.length || 0;
+  const perc = store.coupon_set?.[0]?.title?.match(/\d+%/)?.[0] || '10%'; // fallback to 10%
+  const currentYear = moment().format('YYYY');
+  const hasCouponCode = !!firstCouponCode;
+
   store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
-  store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
-  store.store_description = store.store_description.replaceAll("%percentage% off", store.coupon_set[0].title);
-  store.store_description = store.store_description.replaceAll("%pe­rcentage% Off", store.coupon_set[0].title);
-  store.store_description = store.store_description.replaceAll("%percentage% Off", store.coupon_set[0].title);
-  store.store_description = store.store_description.replaceAll("%pe­rcentage% OFF", store.coupon_set[0].title);
-  store.store_description = store.store_description.replaceAll("%percentage% OFF", store.coupon_set[0].title);
-  store.store_description = store.store_description.replaceAll("%pe­rcentage%", store.coupon_set[0].title);
-  store.store_description = store.store_description.replaceAll("%percentage%", store.coupon_set[0].title);
+  store.store_description = store.store_description.replaceAll("%pe­rcentage% off", perc + " off");
+  store.store_description = store.store_description.replaceAll("%percentage% off", perc + " off");
+  store.store_description = store.store_description.replaceAll("%pe­rcentage% Off", perc + "Off");
+  store.store_description = store.store_description.replaceAll("%percentage% Off", perc + "Off");
+  store.store_description = store.store_description.replaceAll("%pe­rcentage% OFF", perc + "OFF");
+  store.store_description = store.store_description.replaceAll("%percentage% OFF", perc + "OFF");
+  store.store_description = store.store_description.replaceAll("%pe­rcentage%", perc);
+  store.store_description = store.store_description.replaceAll("%percentage%", perc);
   store.store_description = store.store_description.replace(/XXX/, store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
   store.store_description = store.store_description.replace(/XX/, store.coupon_set.length);
   store.store_description = store.store_description.replace('XXX', store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
@@ -874,14 +882,6 @@ export async function getStaticProps({ params }) {
   store.store_description = store.store_description.replaceAll("currentyear%%", moment().format('YYYY'));
   store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%|%categorystore%, %categorystore%, %categorystore%|%categorystore% %categorystore%, %categorystore%|%categorystore% %categorystore% %categorystore%|%categorystore% %categorystore% and %categorystore%/gi, store_names);
 
-
-
-  const title = store.title || store.Title;
-  const firstCouponCode = store.coupon_set?.find(c => c.coupon_type === 'code')?.coupon_code || '';
-  const couponCount = store.coupon_set?.length || 0;
-  const perc = store.coupon_set?.[0]?.title?.match(/\d+%/)?.[0] || '10%'; // fallback to 10%
-  const currentYear = moment().format('YYYY');
-  const hasCouponCode = !!firstCouponCode;
 
   let metaTitle = store.seo_title
     .replace(/Storename/g, store.title)
