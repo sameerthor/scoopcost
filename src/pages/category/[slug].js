@@ -61,12 +61,6 @@ function Category({ category, stores, categories }) {
                                                 height={81}
                                             />
                                         </div>
-                                        <div className="stars text-center">
-                                            {[...Array(5)].map((_, i) => (
-                                                <FontAwesomeIcon key={i} icon={faStar} />
-                                            ))}
-                                            <span> 4.8 (12) Rating</span>
-                                        </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-5 col-md-12">
