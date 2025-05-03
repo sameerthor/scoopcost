@@ -54,10 +54,13 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   const showMore = coupon.content.length > maxChars;
 
   setTimeout(async () => {
+    console.log("in")
     if (process.browser) {
+      console.log("inn")
       let c_id = localStorage.getItem("copied_code");
+      console.log(c_id,coupon.id)
       if (c_id == coupon.id) {
-
+        console.log("innn")
         await setModalOpen(true);
         setTimeout(() => {
           // Determine the modal to open based on coupon type
@@ -66,7 +69,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
             : document.getElementById('getDeal' + c_id);
 
           if (modalElement) {
-            console.log("in")
+            console.log("innnn")
             const modal = new bootstrap.Modal(modalElement);
             modal.show(); // Show the modal
           }
@@ -189,8 +192,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
 <button
   onClick={async (e) => {
-    await trackCouponUsage(coupon.id);
-    localStorage.setItem('copied_code', coupon.id);
+   await  localStorage.setItem('copied_code', coupon.id);
+   await trackCouponUsage(coupon.id);
 
     try {
       await navigator.clipboard.writeText(coupon.coupon_code);
@@ -230,9 +233,9 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
 
                 <button rel="nofollow" className="copy-btn" onClick={async (e) => {
-                  await trackCouponUsage(coupon.id);
 
                   await localStorage.setItem('copied_code', coupon.id)
+                  await trackCouponUsage(coupon.id);
 
                   const url = usesSubdomain
                     ? `https://${storeSlug}.${baseDomain}#code=${index + 1}`
