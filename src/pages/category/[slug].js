@@ -165,7 +165,8 @@ function Category({ category, stores, categories }) {
                                                        
                                                         T & C
                                                     </MainDomainLink>
-                                                <span className='tNc'>Expires: 2025-12-29</span>
+
+                                                <span className='tNc'>Expires{coupon.expires ? ` On:${coupon.expires}` : ''}</span>
                                                 <p className="grabDeal">
                                                     {/* <MainDomainLink href={
                                                         store.subdomain

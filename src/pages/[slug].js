@@ -37,7 +37,7 @@ const getHeading = (title) => {
   if (/free shipping/i.test(title)) {
     return "Free Shipping";
   } else {
-    return "Best Deal";
+    return "Offer";
   }
 
   return "";
@@ -61,12 +61,12 @@ const getSuccessButtonClass = (level) => {
   const cls = level.toLowerCase().replace(" ", "");
   if (cls === "veryhigh") return "bg-green";
   if (cls === "verylow") return "bg-red";
-  return "bg-orange"; 
+  return "bg-orange";
 };
 
 
 
-export default function StorePage({ store, relStores }) {
+export default function StorePage({ store, relStores, addedByData }) {
   const storeDescription = store.store_description;
   const paragraphs = storeDescription.split("</p>");
   const [activeCouponsType, setActiveCouponsType] = useState("All");
@@ -145,7 +145,7 @@ export default function StorePage({ store, relStores }) {
   const handleScroll = () => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-  
+
 
 
 
@@ -203,20 +203,20 @@ export default function StorePage({ store, relStores }) {
                     <td className="p-2 text-right font-medium">{totalOffers}</td>
                   </tr>
                   <tr>
-                      <td className="p-2">✅ Coupon Success</td>
-                      <td className="p-2 text-right font-medium">
-                        {(() => {
-                          const level = getSuccessLevel(store.coupon_set);
-                          const btnClass = getSuccessButtonClass(level);
+                    <td className="p-2">✅ Coupon Success</td>
+                    <td className="p-2 text-right font-medium">
+                      {(() => {
+                        const level = getSuccessLevel(store.coupon_set);
+                        const btnClass = getSuccessButtonClass(level);
 
-                          return (
-                            <span className={`px-3  rounded ${btnClass}`}>
-                              {level}
-                            </span>
-                          );
-                        })()}
-                      </td>
-                    </tr>
+                        return (
+                          <span className={`px-3  rounded ${btnClass}`}>
+                            {level}
+                          </span>
+                        );
+                      })()}
+                    </td>
+                  </tr>
                   <tr>
                     <td className="p-2"><span>🏷️</span>Verified Coupon Code</td>
                     <td className="p-2 text-right font-medium">{totalOffers}</td>
@@ -247,15 +247,15 @@ export default function StorePage({ store, relStores }) {
               <a href={store.affiliate_url} target='_blank'> Visit this Store</a>
               <button onClick={handleScroll} title='read review'>Read Review &amp; Faqs</button>
             </div>
-          
-            
+
+
             {store.contact != "" &&
               <div className="contactBox">
                 <div class="sidebarHeading">Contact {store.title}</div>
                 <p>{store.contact}</p>
               </div>
             }
-                  
+
           </div>
         </div>
 
@@ -334,7 +334,7 @@ export default function StorePage({ store, relStores }) {
                   <div className="p-0">
 
                     {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot != "" && coupon.coupon_type === "code") && (
-                      <div className="testHistory"  id="scrollToScreenShot">
+                      <div className="testHistory" id="scrollToScreenShot">
                         <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
                         <p>Check verified proof of manual testing for {store.title}</p>
                         <div className="row">
@@ -346,20 +346,20 @@ export default function StorePage({ store, relStores }) {
                                   <div className="historyItem">
                                     <div className="historyHeader">
                                       <span>{getHeading(coupon.title)}</span>
-                                      <span className="code">{coupon.coupon_code || "No Code"} 
+                                      <span className="code">{coupon.coupon_code || "No Code"}
                                         <small onClick={() => navigator.clipboard.writeText(coupon.coupon_code)}
                                           style={{ cursor: "pointer", color: "blue", marginLeft: "8px" }}>
-                                                  <svg
-                                                      xmlns="http://www.w3.org/2000/svg"
-                                                      viewBox="0 0 448 512"
-                                                      aria-hidden="true"
-                                                      focusable="false"
-                                                      fill='#8e24aa'
-                                                      width={16}
-                                                      height={16}
-                                                    >
-                                                      <path d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z" />
-                                                    </svg>  
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 448 512"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            fill='#8e24aa'
+                                            width={16}
+                                            height={16}
+                                          >
+                                            <path d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z" />
+                                          </svg>
 
                                         </small>
                                       </span>
@@ -402,9 +402,9 @@ export default function StorePage({ store, relStores }) {
 
                     <div className='about-store' ref={sectionRef}>
                       <div className="sidebarHeading ratingHeading">
-                         <div>
-                         About {store.title}
-                         </div>
+                        <div>
+                          About {store.title}
+                        </div>
                         <div className="star-rating stars reviewRatings">
                           <RatingBox key={'store_' + store.id} store={store} />
                         </div>
@@ -420,24 +420,39 @@ export default function StorePage({ store, relStores }) {
                             <td className="p-2 text-right font-medium">{totalOffers}</td>
                           </tr>
                           <tr>
-                            <td className="p-2"><span>🏷️</span>Total Coupon</td>
+                            <td className="p-2">✅ Coupon Success</td>
+                            <td className="p-2 text-right font-medium">
+                              {(() => {
+                                const level = getSuccessLevel(store.coupon_set);
+                                const btnClass = getSuccessButtonClass(level);
+
+                                return (
+                                  <span className={`px-3  rounded ${btnClass}`}>
+                                    {level}
+                                  </span>
+                                );
+                              })()}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="p-2"><span>🏷️</span>Verified Coupon Code</td>
                             <td className="p-2 text-right font-medium">{totalOffers}</td>
                           </tr>
-                          <tr>
-                            <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
-                            <td className="p-2 text-right font-medium">{activeCoupons}</td>
-                          </tr>
-                          <tr>
-                            <td className="p-2"><span>🛒</span> Free Shipping</td>
-                            <td className="p-2 text-right font-medium">{freeShipping}</td>
-                          </tr>
+                          {/* <tr>
+                    <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
+                    <td className="p-2 text-right font-medium">{activeCoupons}</td>
+                  </tr> */}
+                          {/* <tr>
+                    <td className="p-2"><span>🛒</span> Free Shipping</td>
+                    <td className="p-2 text-right font-medium">{freeShipping}</td>
+                  </tr> */}
                           <tr>
                             <td className="p-2"><span>🔥</span> Best Offer</td>
                             <td className="p-2 text-right font-medium">{bestOffer}</td>
                           </tr>
                           <tr>
-                            <td className="p-2">Success Record</td>
-                            <td className="p-2 text-right font-medium">{bestOffer}</td>
+                            <td className="p-2">⏰ Last Updated</td>
+                            <td className="p-2 text-right font-medium">{moment().format("MMMM D, YYYY")}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -448,8 +463,8 @@ export default function StorePage({ store, relStores }) {
                     <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
 
                     </div>
-                     {/* comment */}
-                     <div className="comment-box">
+                    {/* comment */}
+                    <div className="comment-box">
                       <div id="showComment">
                         <button onClick={toggleCommentBox} className="btn btn-primary">
                           {showCommentBox ? 'Hide Review' : 'Leave a review'}
@@ -520,7 +535,7 @@ export default function StorePage({ store, relStores }) {
                     </div>
                     <div className="couponOffer summary-container">
                       <div class="sidebarHeading">Coupon Summary for {store.title}</div>
-                     
+
 
                       <table border="1" cellspacing="0" cellpadding="0">
                         <thead>
@@ -557,7 +572,7 @@ export default function StorePage({ store, relStores }) {
                         </tbody>
                       </table>
                     </div>
-                  
+
                     {relStores.slice(2).length > 0 && (
                       <div className="topStore mb-4">
                         <div className="sidebarHeading">Related Stores for {store.title}</div>
@@ -580,7 +595,7 @@ export default function StorePage({ store, relStores }) {
                     )}
 
 
-                   
+
 
                     <section className="whyTrustus">
                       <div className="container">
@@ -603,10 +618,10 @@ export default function StorePage({ store, relStores }) {
                                     <li>
                                       <small>
                                         <img src="/images/dinesh-v.webp" alt="dinesh" />
-                                         <p>
-                                            Dinesh
-                                           <span>33,636 coupons published</span>
-                                         </p>
+                                        <p>
+                                          Dinesh
+                                          <span>{addedByData.Dinesh} coupons published</span>
+                                        </p>
                                       </small>
                                       <span className="exp">8 Years</span>
                                     </li>
@@ -614,11 +629,11 @@ export default function StorePage({ store, relStores }) {
                                   <div className='col-md-6 zeroMobPadding'>
                                     <li>
                                       <small>
-                                        <img src="/images/mashma-m.webp" alt="mashma" /> 
+                                        <img src="/images/mashma-m.webp" alt="mashma" />
                                         <p>
-                                        Mashma
-                                           <span>33,636 coupons published</span>
-                                         </p>
+                                          Mashma
+                                          <span>{addedByData.Mashma} coupons published</span>
+                                        </p>
                                       </small>
                                       <span className="exp">6 Years</span>
                                     </li>
@@ -626,11 +641,11 @@ export default function StorePage({ store, relStores }) {
                                   <div className='col-md-6 zeroMobPadding'>
                                     <li>
                                       <small>
-                                        <img src="/images/tanay-s.webp" alt="tanay" /> 
+                                        <img src="/images/tanay-s.webp" alt="tanay" />
                                         <p>
-                                        Tanay
-                                           <span>33,636 coupons published</span>
-                                         </p>
+                                          Tanay
+                                          <span>{addedByData.Tanay} coupons published</span>
+                                        </p>
                                       </small>
                                       <span className="exp">6 Years</span>
                                     </li>
@@ -638,11 +653,11 @@ export default function StorePage({ store, relStores }) {
                                   <div className='col-md-6 zeroMobPadding'>
                                     <li>
                                       <small>
-                                        <img src="/images/sikha.webp" alt="sikha" /> 
+                                        <img src="/images/sikha.webp" alt="sikha" />
                                         <p>
-                                        Sikha
-                                           <span>33,636 coupons published</span>
-                                         </p>
+                                          Sikha
+                                          <span>{addedByData.Shikha} coupons published</span>
+                                        </p>
                                       </small>
                                       <span className="exp">5 Years</span>
                                     </li>
@@ -650,26 +665,26 @@ export default function StorePage({ store, relStores }) {
                                   <div className='col-md-6 zeroMobPadding'>
                                     <li>
                                       <small>
-                                        <img src="/images/yash-c.webp" alt="yash" /> 
+                                        <img src="/images/yash-c.webp" alt="yash" />
                                         <p>
-                                        Yash
-                                           <span>33,636 coupons published</span>
-                                         </p>
+                                          Yash
+                                          <span>{addedByData.Yash} coupons published</span>
+                                        </p>
                                       </small>
                                       <span className="exp">4 Years</span>
                                     </li>
                                   </div>
                                   <div className='col-md-6 zeroMobPadding'>
-                                      <li>
-                                        <small>
-                                          <img src="/images/yunush.webp" alt="Yusuf" /> 
-                                          <p>
+                                    <li>
+                                      <small>
+                                        <img src="/images/yunush.webp" alt="Yusuf" />
+                                        <p>
                                           Yusuf
-                                           <span>33,636 coupons published</span>
-                                         </p>
-                                        </small>
-                                        <span class="exp">3 Years</span>
-                                      </li>
+                                          <span>{addedByData.Yusuf} coupons published</span>
+                                        </p>
+                                      </small>
+                                      <span class="exp">3 Years</span>
+                                    </li>
                                   </div>
                                 </ul>
                               </div>
@@ -776,6 +791,10 @@ export async function getStaticProps({ params }) {
       notFound: true
     };
   }
+
+  const addedByJson = await fetch(`https://admin.suproffer.com/addedby-stores/`)
+  const addedByData = await addedByJson.json()
+
   store.coupon_set.map(coupon => {
     if (coupon.title.includes("$")) {
       return coupon.title = "Best Deal";
@@ -788,11 +807,6 @@ export async function getStaticProps({ params }) {
     var relStores = await resRelStores.json()
     relStores = relStores.filter((s) => s.id !== store.id);
     relStores = _.shuffle(relStores).slice(0, 12)
-    if (relStores.length <= 3) {
-      const rescat = await fetch(`https://admin.suproffer.com/categories/?limit=4&offset=${Math.ceil(parseInt(store.category[0].id) / 4)}`)
-      simCat = await rescat.json()
-
-    }
 
   } else {
     var relStores = [];
@@ -879,7 +893,7 @@ export async function getStaticProps({ params }) {
     props: {
       store,
       relStores,
-      simCat
+      addedByData
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

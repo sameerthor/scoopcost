@@ -30,6 +30,8 @@ const getHeading = (title) => {
   // Check for "Free Shipping"
   if (/free shipping/i.test(title)) {
     return "Free </br> Shipping";
+  }else{
+    return "Offer";
   }
 
   return "";
@@ -54,13 +56,10 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   const showMore = coupon.content.length > maxChars;
 
   setTimeout(async () => {
-    console.log("in")
     if (process.browser) {
-      console.log("inn")
+      const urlHash = window.location.hash?.replace('#', '');
       let c_id = localStorage.getItem("copied_code");
-      console.log(c_id,coupon.id)
-      if (c_id == coupon.id) {
-        console.log("innn")
+      if (c_id == coupon.id &&  urlHash == "code="+(index+1)) {
         await setModalOpen(true);
         setTimeout(() => {
           // Determine the modal to open based on coupon type
@@ -72,12 +71,14 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
             console.log("innnn")
             const modal = new bootstrap.Modal(modalElement);
             modal.show(); // Show the modal
+
           }
 
         }, 800)
-
-
         localStorage.removeItem("copied_code");
+      
+
+
       }
     }
   }, 800);
@@ -128,7 +129,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   };
   const [copied, setCopied] = useState(false);
 
- 
+
 
   return (
     <>
@@ -190,37 +191,36 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
             {coupon.coupon_type === 'code' ? (
               <div className="code-box">
 
-<button
-  onClick={async (e) => {
-   await  localStorage.setItem('copied_code', coupon.id);
-   await trackCouponUsage(coupon.id);
+                <button
+                  onClick={async (e) => {
+                    await trackCouponUsage(coupon.id);
+                    localStorage.setItem('copied_code', coupon.id);
+                    try {
+                      await navigator.clipboard.writeText(coupon.coupon_code);
+                      setCopied(true);
+                      setTimeout(() => setCopied(false), 10000);
+                    } catch (err) {
+                      console.error("Clipboard write failed:", err);
+                    }
 
-    try {
-      await navigator.clipboard.writeText(coupon.coupon_code);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 10000); 
-    } catch (err) {
-      console.error("Clipboard write failed:", err);
-    }
+                    const url = usesSubdomain
+                      ? `https://${storeSlug}.${baseDomain}#code=${index + 1}`
+                      : `/${storeSlug}#code=${index + 1}`;
 
-    const url = usesSubdomain
-      ? `https://${storeSlug}.${baseDomain}#code=${index + 1}`
-      : `/${storeSlug}#code=${index + 1}`;
+                    window.open(url, "_blank");
 
-    window.open(url, "_blank");
+                    setTimeout(() => {
+                      window.open(affiliateUrl, "_self");
+                    }, 100);
+                  }}
+                  data-type="code"
+                  className="copy-btn"
+                >
+                  {copied ? "Code Copied!" : "Copy Code"}
+                </button>
 
-    setTimeout(() => {
-      window.open(affiliateUrl, "_self");
-    }, 100);
-  }}
-  data-type="code"
-  className="copy-btn"
->
-  {copied ? "Code Copied!" : "Copy Code"}
-</button>
 
-                
-                
+
 
 
                 <span>{coupon.coupon_code}</span>
@@ -233,9 +233,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
 
                 <button rel="nofollow" className="copy-btn" onClick={async (e) => {
-
-                  await localStorage.setItem('copied_code', coupon.id)
-                  await trackCouponUsage(coupon.id);
+                  await trackCouponUsage(coupon.id)
+                  localStorage.setItem('copied_code', coupon.id)
 
                   const url = usesSubdomain
                     ? `https://${storeSlug}.${baseDomain}#code=${index + 1}`
@@ -245,7 +244,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                   setTimeout(() => {
                     window.open(affiliateUrl, "_self");
                   }, 100);
-                }}>
+                }}
+                >
                   Show Code
                 </button>
                 <span>********</span>
@@ -257,8 +257,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
               {coupon.term_condition != "" &&
                 <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} title="Show T &amp; C">Terms &amp; Conditions</button>
               }
-              {coupon.expires  &&
-                <button style={{textDecoration: 'none', cursor: 'auto'}} className='showTncBox tnc tncBtns'>Expires: {coupon.expires}</button>
+              {coupon.expires &&
+                <button style={{ textDecoration: 'none', cursor: 'auto' }} className='showTncBox tnc tncBtns'>Expires: {coupon.expires}</button>
               }
               <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show History">Coupon History</button>
             </div>
