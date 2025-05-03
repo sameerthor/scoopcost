@@ -15,7 +15,7 @@ export default function Header() {
   function fetchData() {
     axios.get('https://admin.suproffer.com/store-search')
       .then(function (response) {
-        var d = response.data.map(item => { return { key: item.slug, value: item.title,uses_subdomain:item.subdomain } })
+        var d = response.data.map(item => { return { key: item.slug, value: item.title,subdomain:item.subdomain } })
         setFilterdata(d);
       })
       .catch(function (error) {
