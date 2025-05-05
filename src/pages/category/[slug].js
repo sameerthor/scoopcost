@@ -112,7 +112,7 @@ function Category({ category, stores, categories }) {
                         <div className="row">
                             {stores.map((store) => (
                                 store.coupon_set?.map((coupon, index) => (
-                                    <div key={`${store.id}-${index}`} onClick={()=>localStorage.setItem('copied_code', coupon.id)} className="col-lg-4 col-md-6 col-sm-12 p-1 mb-2">
+                                    <div key={`${store.id}-${index}`}  className="col-lg-4 col-md-6 col-sm-12 p-1 mb-2">
                                         <div className="storeItem">
                                             <div className="storeInfo">
                                                 <div className="storeData">

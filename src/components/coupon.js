@@ -30,7 +30,7 @@ const getHeading = (title) => {
   // Check for "Free Shipping"
   if (/free shipping/i.test(title)) {
     return "Free </br> Shipping";
-  }else{
+  } else {
     return "Offer";
   }
 
@@ -55,33 +55,35 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
   const showMore = coupon.content.length > maxChars;
 
-  setTimeout(async () => {
-    if (process.browser) {
-      const urlHash = window.location.hash?.replace('#', '');
-      let c_id = localStorage.getItem("copied_code");
-      if (c_id == coupon.id &&  urlHash == "code="+(index+1)) {
-        await setModalOpen(true);
-        setTimeout(() => {
-          // Determine the modal to open based on coupon type
-          let modalElement = coupon.coupon_type == "code"
-            ? document.getElementById('getCode' + c_id)
-            : document.getElementById('getDeal' + c_id);
-
-          if (modalElement) {
-            console.log("innnn")
-            const modal = new bootstrap.Modal(modalElement);
-            modal.show(); // Show the modal
-
-          }
-
-        }, 800)
-        localStorage.removeItem("copied_code");
-      
-
-
+  useEffect(() => {
+    const runOnce = async () => {
+      if (typeof window !== "undefined") {
+        const urlHash = window.location.hash?.replace('#', '');
+        if (urlHash === `code=${index + 1}`) {
+          await setModalOpen(true);
+  
+          // Slight delay to ensure modal DOM is ready
+          setTimeout(() => {
+            const modalElement = coupon.coupon_type === "code"
+              ? document.getElementById('getCode' + coupon.id)
+              : document.getElementById('getDeal' + coupon.id);
+  
+            if (modalElement) {
+              console.log("innnn");
+              const modal = new bootstrap.Modal(modalElement);
+              modal.show();
+            }
+          }, 500); // Optional delay to allow re-render
+  
+          localStorage.removeItem("copied_code");
+        }
       }
-    }
-  }, 800);
+    };
+  
+    runOnce();
+  }, []); // runs once on mount
+  
+
 
   async function trackCouponUsage(couponComponentId) {
     setTotalUsed(totalUsed + 1);
