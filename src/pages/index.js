@@ -316,7 +316,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className='codeItem' href='https://blessedcbd-co-uk.suproffer.com/'>
                                 <div className='codeHeader'>
-                                   GetTerms Offer
+                                Blessed CBD Offer
                                         
                                 </div>
                                 <div className='codeFooter'>
@@ -563,12 +563,12 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://SuprOffer.com/organicformulashop-coupons' className="toprated">
+                            <a href='https://wonderfulsubs.suproffer.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/organic.avif'
+                                        src='/images/wonderfulsubs.avif'
                                         alt='organic'
                                     />
                                 </div>
@@ -579,7 +579,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         15% OFF
                                     </div>
                                     <div className="description">
-                                    15% Off on Hipp Dutch Organic Formula - Save Big Today
+                                    Optimize Life Coupon Code - Enjoy 15% Off at Checkout
                                     </div>
                                     <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
                                 </div>
@@ -743,13 +743,13 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://expertpeptides.suproffer.com/' className="pickedStore">
-                                <div className="imgBox">
+                            <a href='https://voromotors.suproffer.com/' className="pickedStore">
+                                <div className="imgBox" style={{background: '#000'}}>
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/viral-ecom.avif'
-                                        alt='north-face'
+                                        src='/images/voro-motors.avif'
+                                        alt='voro-motors'
                                     />
                                 </div>
                                 <div className="dealCout">
