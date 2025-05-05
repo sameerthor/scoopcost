@@ -885,7 +885,7 @@ export async function getStaticProps({ params }) {
 
   let metaTitle = store.seo_title
     .replace(/Storename/g, store.title)
-    .replace(/XXX/g, hasCouponCode ? firstCouponCode : moment().format('YYYY'))
+    .replace(/XXX/g, hasCouponCode ? firstCouponCode : '')
     .replace(/CouponCount/g, store.Coupons?.length)
     .replace(/%percentage%/g, perc)
     .replace(/%%Year%%/g, moment().format('YYYY'))
@@ -893,7 +893,8 @@ export async function getStaticProps({ params }) {
 
   // If no coupon code, replace leading "Code is" or similar phrase
   if (!hasCouponCode) {
-    metaTitle = metaTitle.replace(/(\b(?:Coupon )?Code is\b)(?!.*Coupon Code)/i, 'Coupon Code');
+    metaTitle = metaTitle.replace('Apply coupon  to', '');
+    metaTitle = metaTitle.replace("save","Save");
   }
 
   // If title is below 50 characters and doesn't already contain "Discount"
@@ -913,7 +914,10 @@ export async function getStaticProps({ params }) {
     .replace(/CouponCount/g, couponCount)
     .replace(/%percentage%/g, perc)
     .replace(/%%Year%%/g, currentYear)
-    .replace(/%/g, perc)
+    if (!hasCouponCode) {
+      store.seo_description = store.seo_description.replace(' Apply coupon  to', '');
+      store.seo_description = store.seo_description.replace("save","Save");
+    }
 
 
   store.store_h1 = store.store_h1

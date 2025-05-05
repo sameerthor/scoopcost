@@ -42,7 +42,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   const [worked, setWorked] = useState(coupon.is_worked);
   const [totalUsed, setTotalUsed] = useState(coupon.total_used);
 
-  const h2_heading = ["Working Storename Coupon Code", "Storename Best Discount Code", "Storename Promo Codes 2025", "Storname Coupons 2025"];
+  const h2_heading = ["Working Storename Coupon Code", "Storename Best Discount Code", "Storename Promo Codes 2025", "Storename Coupons 2025"];
 
   const accordionId = `accordion-${index}`;
   const collapseId = `collapse-${index}`;
@@ -59,7 +59,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
     if (process.browser) {
       const urlHash = window.location.hash?.replace('#', '');
       let c_id = localStorage.getItem("copied_code");
-      if (c_id == coupon.id &&  urlHash == "code="+(index+1)) {
+      if ( urlHash == "code="+(index+1)) {
         await setModalOpen(true);
         setTimeout(() => {
           // Determine the modal to open based on coupon type
