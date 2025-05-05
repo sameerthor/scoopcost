@@ -48,42 +48,15 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             {/* Home Banner Section with react-responsive-carousel */}
             <section className='homeImageBanner'>
                 <h1>Click to Click to Click to Reedem to get discount</h1>
-               <a href="/stores" aria-label="Click to Click to Click to Reedem and get discount" title='Click to Click to Click to Reedem and get discount'> <img
-                  loading='lazy'
-                  src="/images/suproffer-banner.webp" alt="Click to Click to Click to Reedem" /></a>
+               <a  href="/stores" aria-label="Click to Click to Click to Reedem and get discount" title='Click to Click to Click to Reedem and get discount'> 
+                    <Image
+                        width={1000}
+                        height={500}
+                        loading='lazy'
+                        src="/images/suproffer-banner.webp" alt="Click  to Shop Now" />
+                </a>
             </section>
-            <section className="homeBanner">
-                <div className="container">
-                    <Carousel
-                        showArrows={true}
-                        showStatus={false}
-                        showThumbs={false}
-                        infiniteLoop={true}
-                        autoPlay={true}
-                        interval={5000}
-                        stopOnHover={true}
-                        swipeable={true}
-                        dynamicHeight={false}
-                        emulateTouch={true}
-                        className="banner-carousel"
-                    >
-                        {[1, 2, 3, 4, 5, 6, 7].map((num) => (
-                            <div key={num} className="banner-slide">
-                                <a href="#">
-                                    <Image
-                                        src={`/images/banner-${num}.jpg`}
-                                        alt={`Banner ${num}`}
-                                        width={1200}
-                                        height={400}
-                                        className="img-fluid"
-                                        priority={num === 1} // Only prioritize first image
-                                    />
-                                </a>
-                            </div>
-                        ))}
-                    </Carousel>
-                </div>
-            </section>
+           
 
            
             <section className="newPopular">
@@ -165,7 +138,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                         padding: '5px',
                                         marginBottom: '.5rem'
                                       }}
-                                    src="/images/toonly.png"
+                                    src="/images/toonly.webp"
                                     alt="Adalysis"
                                     width={140}
                                     height={140}
@@ -401,7 +374,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                      <div className="imgBox">
                                         <Image
                 width={400}
-                 height={400} src="/images/cbd-north.png" alt="CBDNorth" />
+                 height={400} src="/images/cbd-north.webp" alt="CBDNorth" />
                                      </div>
                                      <div className="off">
                                             Up to 20% off
@@ -476,7 +449,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/national-highway.png'
+                                        src='/images/national-highway.webp'
                                         alt='national-highway'
                                     />
                                 </div>
@@ -499,7 +472,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/orange-country.png'
+                                        src='/images/orange-country.webp'
                                         alt='orangecounty'
                                     />
                                 </div>
@@ -614,7 +587,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/pureraz.png'
+                                        src='/images/pureraz.webp'
                                         alt='purerawz-co'
                                     />
                                 </div>
@@ -702,7 +675,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <Image
                 width={400}
                  height={400}
-                                        src='/images/dr-shadez.png'
+                                        src='/images/dr-shadez.webp'
                                         alt='drshadez'
                                     />
                                 </div>
@@ -733,7 +706,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     style={{ backgroundColor: '#1f729e' }}
                 width={400}
                  height={400}
-                                        src='/images/doodly.png'
+                                        src='/images/doodly.webp'
                                         alt='turned-ninja'
                                     />
                                 </div>

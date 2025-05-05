@@ -650,8 +650,8 @@ export default function StorePage({ store, relStores, addedByData }) {
                               </div>
                               <div className="listExpert">
                                 <ul className='row'>
-                                  <div className='col-md-6 zeroMobPadding'>
-                                    <li>
+                                  <li className='col-md-6 zeroMobPadding'>
+                                    <div className='li'>
                                       <small>
                                         <img src="/images/dinesh-v.webp" alt="dinesh" />
                                         <p>
@@ -660,10 +660,10 @@ export default function StorePage({ store, relStores, addedByData }) {
                                         </p>
                                       </small>
                                       <span className="exp">8 Years</span>
-                                    </li>
-                                  </div>
-                                  <div className='col-md-6 zeroMobPadding'>
-                                    <li>
+                                    </div>
+                                  </li>
+                                  <li className='col-md-6 zeroMobPadding'>
+                                    <div className='li'>
                                       <small>
                                         <img src="/images/mashma-m.webp" alt="mashma" />
                                         <p>
@@ -672,10 +672,10 @@ export default function StorePage({ store, relStores, addedByData }) {
                                         </p>
                                       </small>
                                       <span className="exp">6 Years</span>
-                                    </li>
-                                  </div>
-                                  <div className='col-md-6 zeroMobPadding'>
-                                    <li>
+                                    </div>
+                                  </li>
+                                  <li className='col-md-6 zeroMobPadding'>
+                                    <div className='li'>
                                       <small>
                                         <img src="/images/tanay-s.webp" alt="tanay" />
                                         <p>
@@ -684,10 +684,10 @@ export default function StorePage({ store, relStores, addedByData }) {
                                         </p>
                                       </small>
                                       <span className="exp">6 Years</span>
-                                    </li>
-                                  </div>
-                                  <div className='col-md-6 zeroMobPadding'>
-                                    <li>
+                                    </div>
+                                  </li>
+                                  <li className='col-md-6 zeroMobPadding'>
+                                    <div className='li'>
                                       <small>
                                         <img src="/images/sikha.webp" alt="sikha" />
                                         <p>
@@ -696,10 +696,10 @@ export default function StorePage({ store, relStores, addedByData }) {
                                         </p>
                                       </small>
                                       <span className="exp">5 Years</span>
-                                    </li>
-                                  </div>
-                                  <div className='col-md-6 zeroMobPadding'>
-                                    <li>
+                                    </div>
+                                  </li>
+                                  <li className='col-md-6 zeroMobPadding'>
+                                    <div className='li'>
                                       <small>
                                         <img src="/images/yash-c.webp" alt="yash" />
                                         <p>
@@ -708,10 +708,10 @@ export default function StorePage({ store, relStores, addedByData }) {
                                         </p>
                                       </small>
                                       <span className="exp">4 Years</span>
-                                    </li>
-                                  </div>
-                                  <div className='col-md-6 zeroMobPadding'>
-                                    <li>
+                                    </div>
+                                  </li>
+                                  <li className='col-md-6 zeroMobPadding'>
+                                    <div className='li'>
                                       <small>
                                         <img src="/images/yunush.webp" alt="Yusuf" />
                                         <p>
@@ -720,8 +720,8 @@ export default function StorePage({ store, relStores, addedByData }) {
                                         </p>
                                       </small>
                                       <span class="exp">3 Years</span>
-                                    </li>
-                                  </div>
+                                    </div>
+                                  </li>
                                 </ul>
                               </div>
                             </div>

@@ -3,4 +3,12 @@
     font-size: 2rem;
     text-align: center;
   }
+  .logoContainer {
+    position: relative;
+    width: 200px;
+    height: 100px;
+  }
   
+  .logoImage {
+    object-fit: contain; /* or cover */
+  }

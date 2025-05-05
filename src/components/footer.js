@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useEffect } from 'react';
+import Image from 'next/image';
 import MainDomainLink from '@/components/MainDomainLink';
 
 export default function Footer() {
@@ -9,7 +10,10 @@ export default function Footer() {
  <footer className="footer-box px-lg-5 px-md-3 px-2">
             <div className="row mx-auto">
                 <div className="col-lg-6 col-md-12 col-sm-12 mb-3 about-scoop footer-items">
-                    <div className="footer-logo">  <img src="/images/suproffer-logo.webp" loading="lazy" alt="logo" /></div>
+                    <div className="footer-logo">  <Image 
+                                                        width={220}
+                                                        height={20} 
+                                                        src="/images/suproffer-logo.webp" loading="lazy" alt="logo" /></div>
                     <p>Greetings! Welcome to suproffer.com, your ultimate destination for an extensive collection of coupons and deals. Discover unbeatable prices on top brands across various products and services. Keep an eye out for more updates!</p>
                    
                 </div>
@@ -52,7 +56,10 @@ export default function Footer() {
                     <div className="isoBox">
                         <div className="isoItem">
                             <div>
-                                <img src="/images/iso-white.png" loading="lazy" alt="iso" />
+                                <Image 
+                                width={45}
+                                height={45}
+                                 src="/images/iso-white.webp" loading="lazy" alt="iso"  />
                             </div>
                             <p>
                                 ISO 27001 <br />
@@ -61,7 +68,7 @@ export default function Footer() {
                         </div>
                         <div className="isoItem">
                             <div>
-                                <img src="/images/ssl-white.png" loading="lazy" alt="ssl" />
+                                <Image src="/images/ssl-white.webp" loading="lazy" alt="ssl" width={45} height={45} />
                             </div>
                             <p>
                                 SSL Certified Site <br />

@@ -90,6 +90,10 @@
 .similarCat ul li a{
     color: #fff;
    font-size: .9rem;
+   display: inline-block;
+   margin-bottom: .2rem;
+   min-width: 55px;
+   min-height: 1rem;
 }
 .similarCat ul li a:hover{
     text-decoration: underline;

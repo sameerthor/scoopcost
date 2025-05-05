@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Image from 'next/image';
 import MainDomainLink from '@/components/MainDomainLink';
 
 import ReactSearchBox from "react-search-box";
@@ -62,7 +63,13 @@ export default function Header() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <MainDomainLink className="navbar-brand brandLogo" href="/">
-             <img src="/images/suproffer-logo.webp" alt="logo"  loading="lazy"/>
+            <Image
+                src="/images/suproffer-logo.webp"
+                alt="logo"
+                width={200} // Replace with your actual width
+                height={32} // Replace with your actual height
+                loading="lazy"
+              />
             </MainDomainLink>
             <div className="dummyBox"></div>
           </div>

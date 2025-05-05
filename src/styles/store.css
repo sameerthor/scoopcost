@@ -1240,7 +1240,8 @@ table {
   background-color: #00A897;
 }
 .summary-container tbody tr:nth-of-type(4) .deal-badge{
-  background-color: #BB79E7;
+  background-color: var(--primary-color);
+  color: #fff;
 }
 .summary-container tbody tr:nth-of-type(5) .deal-badge{
   background-color: #ff6f00;
@@ -1252,7 +1253,8 @@ table {
   background-color: #00A897;
 }
 .summary-container tbody tr:nth-of-type(8) .deal-badge{
-  background-color: #BB79E7;
+  background-color: var(--primary-color);
+  color: #fff;
 }
 .summary-container tbody tr:nth-of-type(9) .deal-badge{
   background-color: #ff6f00;
@@ -1264,7 +1266,8 @@ table {
   background-color: #00A897;
 }
 .summary-container tbody tr:nth-of-type(12) .deal-badge{
-  background-color: #6a1b9a;
+  background-color: var(--primary-color);
+  color: #fff;
 }
 .summary-container .deal-badge {
   display: inline-block;
@@ -2746,7 +2749,7 @@ a{
   padding-left: 0;
 }
 
-.whyTrustus .listExpert li {
+.whyTrustus .listExpert .li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2993,9 +2996,7 @@ font-weight: 600;
  transition: .3s ease-in-out;
  color: #fff;
 }
-.listExpert ul li{
-  margin: 0 .5rem;
-}
+
 @media(max-width: 600px){
   .ratingHeading{
     flex-direction: column;
