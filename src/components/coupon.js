@@ -59,7 +59,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
     if (process.browser) {
       const urlHash = window.location.hash?.replace('#', '');
       let c_id = localStorage.getItem("copied_code");
-      if ( urlHash == "code="+(index+1)) {
+      if (c_id == coupon.id &&  urlHash == "code="+(index+1)) {
         await setModalOpen(true);
         setTimeout(() => {
           // Determine the modal to open based on coupon type
