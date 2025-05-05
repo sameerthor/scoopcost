@@ -290,7 +290,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
 
                   {coupon.last_used_at && coupon.coupon_type === "deal" &&
                     <li>
-                      This deal was used by shoppers {formatDistanceToNow(new Date(coupon.last_used_at), { addSuffix: true })} {coupon.is_worked && (coupon.is_worked === "True" ? "and it worked." : "and it didn't work.")}
+                      This coupon was used by shoppers {formatDistanceToNow(new Date(coupon.last_used_at), { addSuffix: true })} {coupon.is_worked && (coupon.is_worked === "True" ? "and it worked." : "and it didn't work.")}
                     </li>
                   }
                   <li>{`Added ${formatDistanceToNow(storeCreateTime, { addSuffix: true })}`} by {coupon.added_by}  - <button onClick={() => scrollToSection('scrollToScreenShot')}> Check Coupon Sreenshot History</button></li>

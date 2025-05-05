@@ -2,7 +2,7 @@ const excludedSlugs = require('./excluded-slugs.json')
 
 module.exports = {
   siteUrl: 'https://suproffer.com',
-  generateRobotsTxt: false,
+  generateRobotsTxt: true,
   exclude: excludedSlugs.map(slug => `/${slug}`),
     generateIndexSitemap: false, // ❌ disables sitemap-index.xml
   additionalSitemaps: ['https://suproffer.com/store-sitemap.xml'],

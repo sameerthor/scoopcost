@@ -893,8 +893,8 @@ export async function getStaticProps({ params }) {
 
   // If no coupon code, replace leading "Code is" or similar phrase
   if (!hasCouponCode) {
-    metaTitle = metaTitle.replace('Apply coupon  to', '');
-    metaTitle = metaTitle.replace("save","Save");
+    metaTitle = metaTitle.replace(/(\b(?:Coupon )?Code is\b)(?!.*Coupon Code)/i, 'Coupon Code');
+
   }
 
   // If title is below 50 characters and doesn't already contain "Discount"
@@ -917,6 +917,8 @@ export async function getStaticProps({ params }) {
     if (!hasCouponCode) {
       store.seo_description = store.seo_description.replace(' Apply coupon  to', '');
       store.seo_description = store.seo_description.replace("save","Save");
+      store.seo_description = store.seo_description.replace('Code is ', 'Code available');
+
     }
 
 
