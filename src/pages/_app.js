@@ -9,8 +9,6 @@ config.autoAddCss = false;
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Script from 'next/script';
-import MyComponent from "@/components/MyComponent";
-import CookieConsent from "@/components/CookieConsent";
 
 export default function App({ Component, pageProps }) {
   const [hasConsent, setHasConsent] = useState(null); // null for undecided
@@ -76,8 +74,5 @@ export default function App({ Component, pageProps }) {
       )}
       <Component {...pageProps} />
       <Footer />
-      <CookieConsent />
-      <MyComponent /> 
-
     </main>)
 }
