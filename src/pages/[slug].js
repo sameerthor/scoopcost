@@ -100,13 +100,13 @@ export default function StorePage({ store, relStores, addedByData }) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://suproffer.com"
+        "item": "https://scoopcost.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": `${store.title} coupon code`,
-        "item": "https://suproffer.com/" + store.slug
+        "item": "https://scoopcost.com/" + store.slug
       }
     ]
   }
@@ -138,7 +138,7 @@ export default function StorePage({ store, relStores, addedByData }) {
       "price": "0", // Adjust dynamically if needed
       "priceCurrency": "USD",
       "validFrom": "2025-03-10",
-      "url": `https://suproffer.com/${store.slug}`
+      "url": `https://scoopcost.com/${store.slug}`
     }
   }));
   const sectionRef = useRef(null);
@@ -165,28 +165,22 @@ export default function StorePage({ store, relStores, addedByData }) {
         ))}
       </Head>
       <MetaTags />
-      <section>
+      
+      <section className='singleStrPg'>
         <div className="container">
-          <div className="affiDisc">
-            <p>suproffer may earn a commission when you use coupons on this page. <MainDomainLink href="/affiliate-disclosure">Read our affiliate disclosure.</MainDomainLink></p>
-          </div>
-
-        </div>
-      </section>
-      <section className='storeContent'>
-        <ResponsiveRender
-        mobile={
-          <>
-           
-          </>
-        }
-        desktop={
-          <>
-            <div className='storeHeader topAside'>
-              <aside className="">
-                <div className="header-thumb">
-                  <div className="header-store-thumb">
-                    <a rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
+          <div className='row justify-content-center'>
+              <ResponsiveRender
+                mobile={
+                  <>
+                  
+                  </>
+                }
+                desktop={
+                  <>
+                      <aside className="col-lg-4 zeroMobPadding" style={{ maxWidth: '320px' }}>
+                <div className='strLogoBx sidebarSniepet'>
+                  <a className="strLogo" rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
+                    <div className="logo">
                       <Image
                         src={`${store.image}`}
                         alt={`${store.title} Store Logo`}
@@ -194,424 +188,82 @@ export default function StorePage({ store, relStores, addedByData }) {
                         height={128}
                         className="attachment-wpcoupon_small_thumb size-wpcoupon_small_thumb"
                         loading="lazy"
-                      />
-                    </a>
-                  </div>
-                  <div className="star-rating stars">
-                    <RatingBox key={'store_' + store.id} store={store} />
-                  </div>
-                </div>
-              </aside>
-              <div className='offersnipet'>
-                <div className="offerToday">
-                  <div className='sidebarHeading'>Today's Offer for {store.title}</div>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td className="p-2">🛍️ Total Offers</td>
-                        <td className="p-2 text-right font-medium">{totalOffers}</td>
-                      </tr>
-                      <tr>
-                        <td className="p-2">✅ Coupon Success</td>
-                        <td className="p-2 text-right font-medium">
-                          {(() => {
-                            const level = getSuccessLevel(store.coupon_set);
-                            const btnClass = getSuccessButtonClass(level);
-
-                            return (
-                              <span className={`px-3  rounded ${btnClass}`}>
-                                {level}
-                              </span>
-                            );
-                          })()}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="p-2"><span>🏷️</span>Verified Coupon Code</td>
-                        <td className="p-2 text-right font-medium">{totalOffers}</td>
-                      </tr>
-                      {/* <tr>
-                        <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
-                        <td className="p-2 text-right font-medium">{activeCoupons}</td>
-                      </tr> */}
-                      {/* <tr>
-                        <td className="p-2"><span>🛒</span> Free Shipping</td>
-                        <td className="p-2 text-right font-medium">{freeShipping}</td>
-                      </tr> */}
-                      <tr>
-                        <td className="p-2"><span>🔥</span> Best Offer</td>
-                        <td className="p-2 text-right font-medium">{bestOffer}</td>
-                      </tr>
-                      <tr>
-                        <td className="p-2">⏰ Last Updated</td>
-                        <td className="p-2 text-right font-medium">{moment().format("MMMM D, YYYY")}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div className='about-store'>
-                  <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
-                </div>
-                <div className='strBtns'>
-                  <a href={store.affiliate_url} target='_blank'> Visit this Store</a>
-                  <button className='readRF' onClick={handleScroll} title='read review'>Read Review &amp; Faqs</button>
-                </div>
-
-
-                {store.contact  &&
-                  <div className="contactBox">
-                    <div class="sidebarHeading">Contact {store.title}</div>
-                    <p>{store.contact}</p>
-                  </div>
-                }
-
-              </div>
-            </div>
-          </>
-        }
-      />
-
-
-        <div className="container">
-          <div className="couponsection">
-            <div className="contentBox">
-              <div className="breadcrumb">
-                <ul>
-                  <li><MainDomainLink href="/" title='suproffer.com'>suproffer.com</MainDomainLink> &gt;</li>
-                  <li>{store.title}</li>
-                </ul>
-                <div className="storeCat">
-                  <MainDomainLink title='categoy page' href={`/category/${store.category[0].slug}`}>{store.category[0].title}</MainDomainLink>
-                </div>
-              </div>
-              <div className="storeHeader row row-cols-2">
-                <div className="header-content col-lg-12 col-8 p-0">
-                  <h1>                                        {store.store_h1.replace("%%Year%%", moment().format('YYYY'))}
-                  </h1>
-                  <p className="dealAvl">{totalOffers} Codes</p>
-                  <p>Flat {getHeading(store.coupon_set[0].title)} at {store.title}</p>
-                </div>
-                <ResponsiveRender
-                  mobile={
-                    <>
-                         <aside className="col-4 regularAside">
-                  <div className="header-thumb">
-                    <div className="header-store-thumb">
-                      <a rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
-                        <Image
-                          src={`${store.image}`}
-                          alt={`${store.title} Store Logo`}
-                          width={128}
-                          height={128}
-                          className="attachment-wpcoupon_small_thumb size-wpcoupon_small_thumb"
-                          loading="lazy"
-                        />
-                      </a>
+                     />
                     </div>
-                    <div className="star-rating stars">
-                      <RatingBox key={'store_' + store.id} store={store} />
+                    <div className='affiname'>
+                       <span> {store.title}</span>
+                       <span>
+                          <svg
+                             
+                              viewBox="0 0 15 15"
+                              xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true"
+                             >
+                              <g  fillRule="nonzero">
+                                <path d="M6.249.25a.75.75 0 0 1 0 1.5H4A2.25 2.25 0 0 0 1.75 4v7A2.25 2.25 0 0 0 4 13.25h7A2.25 2.25 0 0 0 13.25 11V8.856a.75.75 0 1 1 1.5 0V11A3.75 3.75 0 0 1 11 14.75H4A3.75 3.75 0 0 1 .25 11V4A3.75 3.75 0 0 1 4 .25h2.249zM14 .25a.75.75 0 0 1 .75.75v4.62a.75.75 0 1 1-1.5 0V1.75H9.494a.75.75 0 0 1-.743-.648L8.745 1a.75.75 0 0 1 .75-.75H14z" />
+                                <path d="M13.47.47a.75.75 0 0 1 1.06 1.06l-6.5 6.5a.75.75 0 0 1-1.06-1.06l6.5-6.5z" />
+                              </g>
+                          </svg>
+                       </span>
                     </div>
-                  </div>
-                         </aside>
-                    </>
-                  }
-                  desktop={
-                    <>
-                      
-                    </>
-                  }
-                />
+                  </a>
+                </div>
+                <div className='sidebarSniepet'>
+                      <div className="offerToday">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td className="p-2">🛍️ Total Offers</td>
+                              <td className="p-2 text-right font-medium">{totalOffers}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2">✅ Coupon Success</td>
+                              <td className="p-2 text-right font-medium">
+                                {(() => {
+                                  const level = getSuccessLevel(store.coupon_set);
+                                  const btnClass = getSuccessButtonClass(level);
 
-
-              </div>
-            </div>
-          </div>
-          <div className='couponSection couponTop'>
-            <div className="store-listing listCoupns">
-              {store.coupon_set
-                .filter(coupon => {
-                  if (activeCouponsType === 'All') return true;
-                  if (activeCouponsType === 'Code') return coupon.coupon_type === 'Code';
-                  if (activeCouponsType === 'Sale') return coupon.coupon_type === 'Sale';
-                  return true;
-                })
-                .map((coupon, index) => (
-                  <Coupon
-                    key={coupon.id}
-                    expiryDate={coupon.expiry_date}
-                    index={index}
-                    coupon={coupon}
-                    storeImage={`${store.image}`}
-                    storeName={store.title}
-                    affiliateUrl={store.affiliate_url}
-                    homeUrl={store.home_url}
-                    storeSlug={store.slug}
-                    storeId={store.id}
-                    storeCreateTime={store.createdAt}
-                    usesSubdomain={store.subdomain}
-                  />
-                ))
-              }
-            </div>
-            <section className="couponSection">
-              <div className="container">
-                <div className="row">
-                  <div className="p-0">
-
-                    {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot != "" && coupon.coupon_type === "code") && (
-                      <div className="testHistory" id="scrollToScreenShot">
-                        <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
-                        <p>Check verified proof of manual testing for {store.title}</p>
-                        <div className="row">
-                          {store.coupon_set
-                            .filter(coupon => coupon.coupon_type === "code")
-                            .map((coupon) => (
-                              coupon?.screenshot && (
-                                <div key={coupon.id} className="col-md-6 mb-1 p-1">
-                                  <div className="historyItem">
-                                    <div className="historyHeader">
-                                      <span>{getHeading(coupon.title)}</span>
-                                      <span className="code">{coupon.coupon_code || "No Code"}
-                                        <small onClick={() => navigator.clipboard.writeText(coupon.coupon_code)}
-                                          style={{ cursor: "pointer", color: "blue", marginLeft: "8px" }}>
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 448 512"
-                                            aria-hidden="true"
-                                            focusable="false"
-                                            fill='#8e24aa'
-                                            width={16}
-                                            height={16}
-                                          >
-                                            <path d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z" />
-                                          </svg>
-
-                                        </small>
-                                      </span>
-                                      <span>
-                                        {coupon.last_used_at && !isNaN(coupon.last_used_at)
-                                          ? `Used ${formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })}`
-                                          : ""}
-                                      </span>
-                                    </div>
-                                    <div className="historyImg">
-                                      <button
-                                        onClick={() =>
-                                          setScreenshotURL(`${coupon.screenshot}`)
-                                        }
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#maximizeImage"
-                                      >
-                                        <Image
-                                          src={
-                                            coupon?.screenshot
-                                              ? `${coupon.screenshot}`
-                                              : "/images/history-img.webp"
-                                          }
-                                          alt={coupon.title || "Coupon Image"}
-                                          width={400}
-                                          height={250}
-                                          loading="lazy"
-                                        />
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              )
-                            ))}
-
-                        </div>
-                      </div>
-
-                    )}
-
-                    <div className='about-store' ref={sectionRef}>
-                      <div className="sidebarHeading ratingHeading">
-                        <div>
-                          About {store.title}
-                        </div>
-                        <div className="star-rating stars reviewRatings">
-                          <RatingBox key={'store_' + store.id} store={store} />
-                        </div>
-                      </div>
-                      <div dangerouslySetInnerHTML={{ __html: paragraphs[0] + "</p>" }} />
-                    </div>
-                    <ResponsiveRender
-                      mobile={
-                        <>
-                          <div className="offerToday regularAside">
-                      <div className='sidebarHeading'>Today's Offer for {store.title}</div>
-                      <table>
-                        <tbody>
-                          <tr>
-                            <td className="p-2">🛍️ Total Offers</td>
-                            <td className="p-2 text-right font-medium">{totalOffers}</td>
-                          </tr>
-                          <tr>
-                            <td className="p-2">✅ Coupon Success</td>
-                            <td className="p-2 text-right font-medium">
-                              {(() => {
-                                const level = getSuccessLevel(store.coupon_set);
-                                const btnClass = getSuccessButtonClass(level);
-
-                                return (
-                                  <span className={`px-3  rounded ${btnClass}`}>
-                                    {level}
-                                  </span>
-                                );
-                              })()}
-                            </td>
-                          </tr>
-                          <tr>
-                            <td className="p-2"><span>🏷️</span>Verified Coupon Code</td>
-                            <td className="p-2 text-right font-medium">{totalOffers}</td>
-                          </tr>
-                          {/* <tr>
-                            <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
-                            <td className="p-2 text-right font-medium">{activeCoupons}</td>
-                          </tr> */}
-                          {/* <tr>
-                            <td className="p-2"><span>🛒</span> Free Shipping</td>
-                            <td className="p-2 text-right font-medium">{freeShipping}</td>
-                          </tr> */}
-                          <tr>
-                            <td className="p-2"><span>🔥</span> Best Offer</td>
-                            <td className="p-2 text-right font-medium">{bestOffer}</td>
-                          </tr>
-                          <tr>
-                            <td className="p-2">⏰ Last Updated</td>
-                            <td className="p-2 text-right font-medium">{moment().format("MMMM D, YYYY")}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                          </div>
-                          <div className='about-store regularAside'>
-                            <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
-                          </div>
-                        </>
-                      }
-                      desktop={
-                        <>
-                          
-                        </>
-                      }
-                    />
-                    <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
-
-                    </div>
-                    {/* comment */}
-                    {/* <div className="comment-box">
-                      <div id="showComment">
-                        <button onClick={toggleCommentBox} className="btn btn-primary">
-                          {showCommentBox ? 'Hide Review' : 'Leave a review'}
-                        </button>
-                      </div>
-                      {showCommentBox && (
-                        <div className="commentbox">
-                          <div className="row comment mx-auto">
-                            <h3>Let other know how much you saved</h3>
-                            <p>
-                              Your email address will not be published. Required fields are
-                              marked <span>*</span>
-                            </p>
-                          </div>
-                          <div className="row input mx-auto">
-                            <form className="d-block" role="post">
-                              <label htmlFor="thought" className="d-block">
-                                <i className="fa-regular fa-user" /> What's in your mind <span>*</span>
-                              </label>
-                              <textarea
-                                name="thought"
-                                id='thought'
-                                className="col-sm-12 col-md-10 col-lg-10 d-block"
-                                rows={10}
-                                placeholder="Input your thought ..."
-                                required=""
-                                defaultValue={""}
-                              />
-                              <label htmlFor="name" className="d-block">
-                                <i className="fa-regular fa-user" /> Name <span>*</span>
-                              </label>
-                              <input
-                                id="name"
-                                name='name'
-                                type="text"
-                                placeholder="Name"
-                                required=""
-                                className="col-sm-12 col-md-10 col-lg-10 d-block"
-                              />
-                              <label htmlFor="email" className="d-block">
-                                <i className="fa-regular fa-envelope" /> Email <span>*</span>
-                              </label>
-                              <input
-                                id="email"
-                                name='email'
-                                type="email"
-                                className="col-sm-12 col-md-10 col-lg-10 d-block"
-                                placeholder="Enter your email address"
-                                required=""
-                              />
-                              <label htmlFor="url" className="d-block">
-                                <i className="fa-solid fa-globe" /> Website
-                              </label>
-                              <input
-                                id="url"
-                                name='url'
-                                type="text"
-                                className="col-sm-12 col-md-10 col-lg-10 d-block"
-                                placeholder="website url"
-                              />
-                              <button type="submit" onclick="">
-                                Post Comment
-                              </button>
-                            </form>
-                          </div>
-                        </div>
-                      )}
-                    </div> */}
-                    <div className="couponOffer summary-container">
-                      <div class="sidebarHeading">Coupon Summary for {store.title}</div>
-
-
-                      <table border="1" cellspacing="0" cellpadding="0">
-                        <thead>
-                          <tr>
-                            <th width="20%">Code</th>
-                            <th width="60%">Title</th>
-                            {/* <th width="20%">Coupon</th> */}
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {store.coupon_set.map((coupon) => {
-                            const dealMatch = coupon.title.match(/(\d+% Off)/);
-                            const dealText = dealMatch ? dealMatch[0] : "Special Offer";
-                            return (
-                              <tr key={coupon.id} className="border">
-                                <td className="p-2 border text-center"><span className='deal-badge'>{dealText}</span></td>
-                                <td className="p-2 border">{coupon.title}</td>
-                                {/* <td className="p-2 border">
-                                  {coupon.coupon_code ? (
-                                    <span style={{cursor: 'pointer'}} className='coupon-code'onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
-                                      {coupon.coupon_code}
+                                  return (
+                                    <span className={`px-3  rounded ${btnClass}`}>
+                                      {level}
                                     </span>
-                                  ) : (
-                                    
-                                    <button class="angled-button" onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
-                                    *****************
-                                    <span class="btn-angle">Get Code</span>
-                                  </button>
-                                  )}
-                                </td> */}
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
+                                  );
+                                })()}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="p-2"><span>🏷️</span>Verified Coupon Code</td>
+                              <td className="p-2 text-right font-medium">{totalOffers}</td>
+                            </tr>
+                            
+                            <tr>
+                              <td className="p-2"><span>🔥</span> Best Offer</td>
+                              <td className="p-2 text-right font-medium">{bestOffer}</td>
+                            </tr>
+                            <tr>
+                              <td className="p-2">⏰ Last Updated</td>
+                              <td className="p-2 text-right font-medium">{moment().format("MMMM D, YYYY")}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div className='about-store'>
+                        <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
+                      </div>
+                </div>
+                
+                {store.contact  &&
+                <div className='sidebarSniepet'> 
+                    <div className="contactBox">
+                      <div class="sidebarHeading">Contact {store.title}</div>
+                      <p>{store.contact}</p>
                     </div>
-
-                    {relStores.slice(2).length > 0 && (
+                </div>
+                }
+                {relStores.slice(2).length > 0 && (
+                <div className='sidebarSniepet'>
                       <div className="topStore mb-4">
-                        <div className="sidebarHeading">Related Stores for {store.title}</div>
+                        <div className="sidebarHeading">Related Stores</div>
                         <ul>
                           {relStores.slice(2).map((store, index) => (
                             <li key={index}>
@@ -628,114 +280,476 @@ export default function StorePage({ store, relStores, addedByData }) {
                           ))}
                         </ul>
                       </div>
-                    )}
+                </div>
+                  )}
+                     </aside>
+                  </>
+                }
+              />
+              <div className='col-lg-8 zeroMobPadding'>
+                <div className="couponArea">
+                  <div className="breadcrumb">
+                
+                    <div className="storeCat">
+                      <MainDomainLink title='categoy page' href={`/category/${store.category[0].slug}`}>{store.category[0].title}</MainDomainLink>
+                    </div>
+              </div>
+                    <ResponsiveRender
+                      mobile={
+                        <>
+                            <div className='strLogoBx sidebarSniepet'>
+                              <div className="regularStrLogo">
+                                  <a className="strLogo" rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
+                                    <div className="logo">
+                                      <Image
+                                        src={`${store.image}`}
+                                        alt={`${store.title} Store Logo`}
+                                        width={128}
+                                        height={128}
+                                        className="attachment-wpcoupon_small_thumb size-wpcoupon_small_thumb"
+                                        loading="lazy"
+                                    />
+                                    </div>
+                                  </a>
+                                  <div>
+                                        <h1> {store.store_h1.replace("%%Year%%", moment().format('YYYY'))}</h1>
+                                        <p className='promopara'>Apply {store.title} promo code to save.</p>
+                                  </div>
+                              </div>
+                            </div>
+                        </>
+                      }
+                      desktop={
+                        <>
+                          
+                        </>
+                      }
+                  />
+                  <h1> {store.store_h1.replace("%%Year%%", moment().format('YYYY'))}</h1>
+                  <div className="couponFilter">
+                      <div className='fiilterPanel'>
+                        <button className='active'>All <span className='badge'>10</span></button>
+                        <button>Verified <span className='badge'>10</span></button>
+                        <button>Codes <span className='badge'>10</span></button>
+                      </div>
+                  </div>
+                  <div className="costCoupons">
+                      <div className="store-listing">
+                          {store.coupon_set
+                            .filter(coupon => {
+                              if (activeCouponsType === 'All') return true;
+                              if (activeCouponsType === 'Code') return coupon.coupon_type === 'Code';
+                              if (activeCouponsType === 'Sale') return coupon.coupon_type === 'Sale';
+                              return true;
+                            })
+                            .map((coupon, index) => (
+                              <Coupon
+                                key={coupon.id}
+                                expiryDate={coupon.expiry_date}
+                                index={index}
+                                coupon={coupon}
+                                storeImage={`${store.image}`}
+                                storeName={store.title}
+                                affiliateUrl={store.affiliate_url}
+                                homeUrl={store.home_url}
+                                storeSlug={store.slug}
+                                storeId={store.id}
+                                storeCreateTime={store.createdAt}
+                                usesSubdomain={store.subdomain}
+                              />
+                            ))
+                          }
+                        </div>
+                  </div>
+                </div>
+                                    {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot != "" && coupon.coupon_type === "code") && (
+                          <div className="testHistory" id="scrollToScreenShot">
+                            <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
+                            <p>Check verified proof of manual testing for {store.title}</p>
+                            <div className="row">
+                              {store.coupon_set
+                                .filter(coupon => coupon.coupon_type === "code")
+                                .map((coupon) => (
+                                  coupon?.screenshot && (
+                                    <div key={coupon.id} className="col-md-6 mb-1 p-1">
+                                      <div className="historyItem">
+                                        <div className="historyHeader">
+                                          <span>{getHeading(coupon.title)}</span>
+                                          <span className="code">{coupon.coupon_code || "No Code"}
+                                            <small onClick={() => navigator.clipboard.writeText(coupon.coupon_code)}
+                                              style={{ cursor: "pointer", color: "blue", marginLeft: "8px" }}>
+                                              <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 448 512"
+                                                aria-hidden="true"
+                                                focusable="false"
+                                                fill='#8e24aa'
+                                                width={16}
+                                                height={16}
+                                              >
+                                                <path d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z" />
+                                              </svg>
 
+                                            </small>
+                                          </span>
+                                          <span>
+                                            {coupon.last_used_at && !isNaN(coupon.last_used_at)
+                                              ? `Used ${formatDistanceToNow(new Date(Number(coupon.last_used_at)), { addSuffix: true })}`
+                                              : ""}
+                                          </span>
+                                        </div>
+                                        <div className="historyImg">
+                                          <button
+                                            onClick={() =>
+                                              setScreenshotURL(`${coupon.screenshot}`)
+                                            }
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#maximizeImage"
+                                          >
+                                            <Image
+                                              src={
+                                                coupon?.screenshot
+                                                  ? `${coupon.screenshot}`
+                                                  : "/images/history-img.webp"
+                                              }
+                                              alt={coupon.title || "Coupon Image"}
+                                              width={400}
+                                              height={250}
+                                              loading="lazy"
+                                            />
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  )
+                                ))}
 
+                            </div>
+                          </div>
 
+                        )}
 
-                    <section className="whyTrustus">
-                      <div className="container">
-                        <div className="sidebarHeading">Why Trust Us?</div>
-                        <div className="row g-4">
-                          <div className="col-md-12 zeroMobPadding">
-                            <div className="card-custom ourExpert">
-                              <div className="expHead">Meet Our Coupon Experts</div>
-                              <div className="expertPara">
+                        <div className='about-store' ref={sectionRef}>
+                          <div className="sidebarHeading ratingHeading">
+                            <div>
+                              About {store.title}
+                            </div>
+                            <div className="star-rating stars reviewRatings">
+                              <RatingBox key={'store_' + store.id} store={store} />
+                            </div>
+                          </div>
+                          <div dangerouslySetInnerHTML={{ __html: paragraphs[0] + "</p>" }} />
+                        </div>
+                        <ResponsiveRender
+                          mobile={
+                            <>
+                              <div className="offerToday regularAside">
+                          <div className='sidebarHeading'>Today's Offer for {store.title}</div>
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td className="p-2">🛍️ Total Offers</td>
+                                <td className="p-2 text-right font-medium">{totalOffers}</td>
+                              </tr>
+                              <tr>
+                                <td className="p-2">✅ Coupon Success</td>
+                                <td className="p-2 text-right font-medium">
+                                  {(() => {
+                                    const level = getSuccessLevel(store.coupon_set);
+                                    const btnClass = getSuccessButtonClass(level);
+
+                                    return (
+                                      <span className={`px-3  rounded ${btnClass}`}>
+                                        {level}
+                                      </span>
+                                    );
+                                  })()}
+                                </td>
+                              </tr>
+                              <tr>
+                                <td className="p-2"><span>🏷️</span>Verified Coupon Code</td>
+                                <td className="p-2 text-right font-medium">{totalOffers}</td>
+                              </tr>
+                              {/* <tr>
+                                <td className="p-2"><span>🏷️</span> Active Coupon Codes</td>
+                                <td className="p-2 text-right font-medium">{activeCoupons}</td>
+                              </tr> */}
+                              {/* <tr>
+                                <td className="p-2"><span>🛒</span> Free Shipping</td>
+                                <td className="p-2 text-right font-medium">{freeShipping}</td>
+                              </tr> */}
+                              <tr>
+                                <td className="p-2"><span>🔥</span> Best Offer</td>
+                                <td className="p-2 text-right font-medium">{bestOffer}</td>
+                              </tr>
+                              <tr>
+                                <td className="p-2">⏰ Last Updated</td>
+                                <td className="p-2 text-right font-medium">{moment().format("MMMM D, YYYY")}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                              </div>
+                              <div className='about-store regularAside'>
+                                <div dangerouslySetInnerHTML={{ __html: paragraphs.slice(1).join("</p>") }} />
+                              </div>
+                            </>
+                          }
+                          desktop={
+                            <>
+                              
+                            </>
+                          }
+                        />
+                        <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
+
+                        </div>
+                        {/* comment */}
+                        {/* <div className="comment-box">
+                          <div id="showComment">
+                            <button onClick={toggleCommentBox} className="btn btn-primary">
+                              {showCommentBox ? 'Hide Review' : 'Leave a review'}
+                            </button>
+                          </div>
+                          {showCommentBox && (
+                            <div className="commentbox">
+                              <div className="row comment mx-auto">
+                                <h3>Let other know how much you saved</h3>
                                 <p>
-                                  <a href="https://suproffer.com/">Suproffer.com</a> has an efficient team of 6 coupon experts. Their job is to make sure users always get the best and latest offers. Our team focuses on creating a smooth and friendly user experience, so visitors can quickly find the right deals without getting misled. They keep an eye on every code and update the site regularly. We have also put a comment section on each coupon page. If a coupon doesn’t work, the team makes sure to fix the issue and try to improve the services based on user feedback.
-                                </p>
-                                <p>
-                                  If you notice anything that isn’t right on our website, you can report the issue to us and we’ll address it shortly.
+                                  Your email address will not be published. Required fields are
+                                  marked <span>*</span>
                                 </p>
                               </div>
-                              <div className="listExpert">
-                                <ul className='row'>
-                                  <li className='col-md-6 zeroMobPadding'>
-                                    <div className='li'>
-                                      <small>
-                                        <img src="/images/dinesh-v.webp" alt="dinesh" />
-                                        <p>
-                                          Dinesh
-                                          <span>{addedByData.Dinesh} coupons published</span>
-                                        </p>
-                                      </small>
-                                      <span className="exp">8 Years</span>
-                                    </div>
-                                  </li>
-                                  <li className='col-md-6 zeroMobPadding'>
-                                    <div className='li'>
-                                      <small>
-                                        <img src="/images/mashma-m.webp" alt="mashma" />
-                                        <p>
-                                          Mashma
-                                          <span>{addedByData.Mashma} coupons published</span>
-                                        </p>
-                                      </small>
-                                      <span className="exp">6 Years</span>
-                                    </div>
-                                  </li>
-                                  <li className='col-md-6 zeroMobPadding'>
-                                    <div className='li'>
-                                      <small>
-                                        <img src="/images/tanay-s.webp" alt="tanay" />
-                                        <p>
-                                          Tanay
-                                          <span>{addedByData.Tanay} coupons published</span>
-                                        </p>
-                                      </small>
-                                      <span className="exp">6 Years</span>
-                                    </div>
-                                  </li>
-                                  <li className='col-md-6 zeroMobPadding'>
-                                    <div className='li'>
-                                      <small>
-                                        <img src="/images/sikha.webp" alt="sikha" />
-                                        <p>
-                                          Sikha
-                                          <span>{addedByData.Shikha} coupons published</span>
-                                        </p>
-                                      </small>
-                                      <span className="exp">5 Years</span>
-                                    </div>
-                                  </li>
-                                  <li className='col-md-6 zeroMobPadding'>
-                                    <div className='li'>
-                                      <small>
-                                        <img src="/images/yash-c.webp" alt="yash" />
-                                        <p>
-                                          Yash
-                                          <span>{addedByData.Yash} coupons published</span>
-                                        </p>
-                                      </small>
-                                      <span className="exp">4 Years</span>
-                                    </div>
-                                  </li>
-                                  <li className='col-md-6 zeroMobPadding'>
-                                    <div className='li'>
-                                      <small>
-                                        <img src="/images/yunush.webp" alt="Yusuf" />
-                                        <p>
-                                          Yusuf
-                                          <span>{addedByData.Yusuf} coupons published</span>
-                                        </p>
-                                      </small>
-                                      <span class="exp">3 Years</span>
-                                    </div>
-                                  </li>
-                                </ul>
+                              <div className="row input mx-auto">
+                                <form className="d-block" role="post">
+                                  <label htmlFor="thought" className="d-block">
+                                    <i className="fa-regular fa-user" /> What's in your mind <span>*</span>
+                                  </label>
+                                  <textarea
+                                    name="thought"
+                                    id='thought'
+                                    className="col-sm-12 col-md-10 col-lg-10 d-block"
+                                    rows={10}
+                                    placeholder="Input your thought ..."
+                                    required=""
+                                    defaultValue={""}
+                                  />
+                                  <label htmlFor="name" className="d-block">
+                                    <i className="fa-regular fa-user" /> Name <span>*</span>
+                                  </label>
+                                  <input
+                                    id="name"
+                                    name='name'
+                                    type="text"
+                                    placeholder="Name"
+                                    required=""
+                                    className="col-sm-12 col-md-10 col-lg-10 d-block"
+                                  />
+                                  <label htmlFor="email" className="d-block">
+                                    <i className="fa-regular fa-envelope" /> Email <span>*</span>
+                                  </label>
+                                  <input
+                                    id="email"
+                                    name='email'
+                                    type="email"
+                                    className="col-sm-12 col-md-10 col-lg-10 d-block"
+                                    placeholder="Enter your email address"
+                                    required=""
+                                  />
+                                  <label htmlFor="url" className="d-block">
+                                    <i className="fa-solid fa-globe" /> Website
+                                  </label>
+                                  <input
+                                    id="url"
+                                    name='url'
+                                    type="text"
+                                    className="col-sm-12 col-md-10 col-lg-10 d-block"
+                                    placeholder="website url"
+                                  />
+                                  <button type="submit" onclick="">
+                                    Post Comment
+                                  </button>
+                                </form>
+                              </div>
+                            </div>
+                          )}
+                        </div> */}
+                        <div className="couponOffer summary-container">
+                          <div class="sidebarHeading">Coupon Summary for {store.title}</div>
+
+
+                          <table border="1" cellspacing="0" cellpadding="0">
+                            <thead>
+                              <tr>
+                                <th width="20%">Code</th>
+                                <th width="60%">Title</th>
+                                {/* <th width="20%">Coupon</th> */}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {store.coupon_set.map((coupon) => {
+                                const dealMatch = coupon.title.match(/(\d+% Off)/);
+                                const dealText = dealMatch ? dealMatch[0] : "Special Offer";
+                                return (
+                                  <tr key={coupon.id} className="border">
+                                    <td className="p-2 border text-center"><span className='deal-badge'>{dealText}</span></td>
+                                    <td className="p-2 border">{coupon.title}</td>
+                                    {/* <td className="p-2 border">
+                                      {coupon.coupon_code ? (
+                                        <span style={{cursor: 'pointer'}} className='coupon-code'onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
+                                          {coupon.coupon_code}
+                                        </span>
+                                      ) : (
+                                        
+                                        <button class="angled-button" onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
+                                        *****************
+                                        <span class="btn-angle">Get Code</span>
+                                      </button>
+                                      )}
+                                    </td> */}
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+
+                        
+                        <ResponsiveRender
+                          mobile={
+                            <>
+                                {relStores.slice(2).length > 0 && (
+                                <div className="topStore mb-4">
+                                  <div className="sidebarHeading">Related Stores</div>
+                                  <ul>
+                                    {relStores.slice(2).map((store, index) => (
+                                      <li key={index}>
+                                        <MainDomainLink
+                                          href={
+                                            store.subdomain
+                                              ? `https://${store.slug}.suproffer.com`
+                                              : `/${store.slug}`
+                                          }
+                                        >
+                                          {store.title}
+                                        </MainDomainLink>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+                            </>
+                          }
+                          desktop={
+                            <>
+                              
+                            </>
+                          }
+                      />
+
+
+
+
+                        <section className="whyTrustus">
+                          <div className="container">
+                            <div className="sidebarHeading">Why Trust Us?</div>
+                            <div className="row g-4">
+                              <div className="col-md-12 zeroMobPadding">
+                                <div className="card-custom ourExpert">
+                                  <div className="expHead">Meet Our Coupon Experts</div>
+                                  <div className="expertPara">
+                                    <p>
+                                      <a href="https://scoopcost.com/">ScoopCost.com</a> has an efficient team of 6 coupon experts. Their job is to make sure users always get the best and latest offers. Our team focuses on creating a smooth and friendly user experience, so visitors can quickly find the right deals without getting misled. They keep an eye on every code and update the site regularly. We have also put a comment section on each coupon page. If a coupon doesn’t work, the team makes sure to fix the issue and try to improve the services based on user feedback.
+                                    </p>
+                                    <p>
+                                      If you notice anything that isn’t right on our website, you can report the issue to us and we’ll address it shortly.
+                                    </p>
+                                  </div>
+                                  <div className="listExpert">
+                                    <ul className='row'>
+                                      <li className='col-md-6 zeroMobPadding'>
+                                        <div className='li'>
+                                          <small>
+                                            <img src="/images/dinesh-v.webp" alt="dinesh" />
+                                            <p>
+                                              Dinesh
+                                            </p>
+                                          </small>
+                                          <span className="exp">8 Years</span>
+                                        </div>
+                                      </li>
+                                      <li className='col-md-6 zeroMobPadding'>
+                                        <div className='li'>
+                                          <small>
+                                            <img src="/images/mashma-m.webp" alt="mashma" />
+                                            <p>
+                                              Mashma
+
+                                            </p>
+                                          </small>
+                                          <span className="exp">6 Years</span>
+                                        </div>
+                                      </li>
+                                      <li className='col-md-6 zeroMobPadding'>
+                                        <div className='li'>
+                                          <small>
+                                            <img src="/images/tanay-s.webp" alt="tanay" />
+                                            <p>
+                                              Tanay
+
+                                            </p>
+                                          </small>
+                                          <span className="exp">6 Years</span>
+                                        </div>
+                                      </li>
+                                      <li className='col-md-6 zeroMobPadding'>
+                                        <div className='li'>
+                                          <small>
+                                            <img src="/images/sikha.webp" alt="sikha" />
+                                            <p>
+                                              Sikha
+                                              
+                                            </p>
+                                          </small>
+                                          <span className="exp">5 Years</span>
+                                        </div>
+                                      </li>
+                                      <li className='col-md-6 zeroMobPadding'>
+                                        <div className='li'>
+                                          <small>
+                                            <img src="/images/yash-c.webp" alt="yash" />
+                                            <p>
+                                              Yash
+
+                                            </p>
+                                          </small>
+                                          <span className="exp">4 Years</span>
+                                        </div>
+                                      </li>
+                                      <li className='col-md-6 zeroMobPadding'>
+                                        <div className='li'>
+                                          <small>
+                                            <img src="/images/yunush.webp" alt="Yusuf" />
+                                            <p>
+                                              Yusuf
+                                              
+                                            </p>
+                                          </small>
+                                          <span class="exp">3 Years</span>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </div>
+                        </section>
               </div>
-            </section>
           </div>
         </div>
       </section>
+      
+     
 
       {/* moximize Modal  */}
       <div

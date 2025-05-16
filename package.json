@@ -43,6 +43,7 @@
     "react-string-replace": "^1.1.1",
     "sharp": "^0.33.4",
     "slugify": "^1.6.6",
-    "text-to-image": "^5.2.0"
+    "text-to-image": "^5.2.0",
+    "uuid": "^11.1.0"
   }
 }

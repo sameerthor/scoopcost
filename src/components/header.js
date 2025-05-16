@@ -63,11 +63,11 @@ export default function Header() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <MainDomainLink className="navbar-brand brandLogo" href="/">
-            <Image
-                src="/images/suproffer-logo.webp"
+              <Image
+                src="/images/scoopcost-logo.webp"
                 alt="logo"
-                width={200} // Replace with your actual width
-                height={32} // Replace with your actual height
+                width={150} // Replace with your actual width
+                height={60} // Replace with your actual height
                 loading="lazy"
               />
             </MainDomainLink>
@@ -112,12 +112,12 @@ export default function Header() {
               <li className="nav-item">
                 <MainDomainLink className="nav-link" prefetch={false}
                   href="/stores">
-                  Stores
+                  Coupons
                 </MainDomainLink>
               </li>
               <li className="nav-item">
                 <MainDomainLink className="nav-link" href="/">
-                  Blog
+                  Gift Card
                 </MainDomainLink>
               </li>
               <li className="nav-item">

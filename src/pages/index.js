@@ -8,10 +8,37 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import MainDomainLink from '@/components/MainDomainLink';
 import { useMemo } from 'react';
+import { useState, useEffect } from "react";
+import ResponsiveCarousel from "@/components/ResponsiveCarousel";
 
 
 export default function HomePage({ categories,topRatedStores,featuredStores,topOnlineStores }) {
     
+    const firstCarousel = [
+        <div className="imgItem">
+            <Image 
+                width={800}
+                height={340} 
+                src="/images/scoopcost-banner-1.png" loading="lazy" alt="logo" />
+        </div>,
+        <div className="imgItem">
+            <Image 
+                width={800}
+                height={340} 
+                src="/images/scoopcost-banner-2.png" loading="lazy" alt="logo" />
+        </div>,
+    
+    ];
+
+  const animalCards = [
+    <div className="card p-3 bg-light">🐶 Dog</div>,
+    <div className="card p-3 bg-secondary text-white">🐱 Cat</div>,
+    <div className="card p-3 bg-primary text-white">🐘 Elephant</div>,
+    <div className="card p-3 bg-dark text-white">🦊 Fox</div>,
+    <div className="card p-3 bg-success text-white">🐸 Frog</div>,
+      <div className="card p-3 bg-success text-white">🐸 Frog</div>,
+  ];
+
     const getHeading = (title) => {
         if (!title) return "";
     
@@ -44,18 +71,69 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             />
             <MetaTags />
 
-            {/* Home Banner Section */}
-            {/* Home Banner Section with react-responsive-carousel */}
-            <section className='homeImageBanner'>
-                <h1>Click to Click to Click to Reedem to get discount</h1>
-               <a  href="/stores" aria-label="Click to Click to Click to Reedem and get discount" title='Click to Click to Click to Reedem and get discount'> 
-                    <Image
-                        width={1000}
-                        height={500}
-                        loading='lazy'
-                        src="/images/suproffer-banner.webp" alt="Click  to Shop Now" />
-                </a>
-            </section>
+           <section className='firstSec'>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-7">
+                            <div className="hero">
+                                <h1>
+                                    <span className="green">Your Shortcut to Savings</span><br />
+                                    <span className="black">Gift Cards for Every Brand</span><br />
+                                    <span className="orange">You Love ❤️</span>
+                                </h1>
+
+                                <div className="cta-button">
+                                    <button>
+                                    <svg fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M10 15l5-3-5-3v6zm11-3c0-5.523-4.477-10-10-10S1 6.477 1 12s4.477 10 10 10 10-4.477 10-10zM3 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8-8-3.589-8-8z" />
+                                    </svg>
+                                    Save with scoopCost
+                                    </button>
+                                </div>
+
+                                <div className="features">
+                                    <div className="feature">
+                                    <svg fill="#ef4444" viewBox="0 0 24 24">
+                                        <path d="M12 2l3.094 6.26L22 9.27l-5 4.87 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.87 6.906-1.01z" />
+                                    </svg>
+                                    Instant Delivery
+                                    </div>
+                                    <div className="feature">
+                                    <svg fill="#10b981" viewBox="0 0 24 24">
+                                        <path d="M12 22C6.48 22 2 17.52 2 12c0-4.21 2.66-7.86 6.49-9.3l1.02 2.13C6.75 5.82 5 8.74 5 12c0 3.87 3.13 7 7 7s7-3.13 7-7c0-2.73-1.54-5.1-3.79-6.28l1.02-2.13C19.34 4.14 22 7.79 22 12c0 5.52-4.48 10-10 10z" />
+                                    </svg>
+                                    Safe & Secure
+                                    </div>
+                                    <div className="feature">
+                                    <svg fill="#3b82f6" viewBox="0 0 24 24">
+                                        <path d="M21 16.5V7.5C21 6.12 19.88 5 18.5 5h-13C4.12 5 3 6.12 3 7.5v9C3 17.88 4.12 19 5.5 19h13c1.38 0 2.5-1.12 2.5-2.5zM5.5 7h13c.28 0 .5.22.5.5v2.67l-7.02 4.12a1 1 0 01-.96 0L5 10.17V7.5c0-.28.22-.5.5-.5z" />
+                                    </svg>
+                                    24/7 Support
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-5 topCarousel">
+                                <ResponsiveCarousel
+                                    items={firstCarousel}
+                                    idPrefix="firstCarousel"
+                                    responsiveConfig={{ xs: 1, sm: 1, md: 1 }}
+                                />
+                        </div>
+                    </div>
+                </div>
+           </section>
+
+            {/* <h2>Fruits Carousel</h2>
+            
+
+            <h2>Animals Carousel</h2>
+            <ResponsiveCarousel
+                items={animalCards}
+                idPrefix="animals"
+                responsiveConfig={{ xs: 2, sm: 3, md: 2 }}
+            /> */}
+            
            
 
            

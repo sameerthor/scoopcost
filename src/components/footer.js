@@ -13,8 +13,8 @@ export default function Footer() {
                     <div className="footer-logo">  <Image 
                                                         width={220}
                                                         height={20} 
-                                                        src="/images/suproffer-logo.webp" loading="lazy" alt="logo" /></div>
-                    <p>Greetings! Welcome to suproffer.com, your ultimate destination for an extensive collection of coupons and deals. Discover unbeatable prices on top brands across various products and services. Keep an eye out for more updates!</p>
+                                                        src="/images/scoopcost-logo.webp" loading="lazy" alt="logo" /></div>
+                    <p>Hey there! Glad you stopped by ScoopCost.com. We’ve got tons of cool coupons and awesome deals on all your favorite brands. Keep checking in — there’s always something new to save on!</p>
                    
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-12 mb-3 footer-links">
@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="row pt-5">
                 <div className="col-lg-8 mb-4">
                     <div className="policyBox">
-                        <p>suproffer.com is a product of Social Labs Enterprises PVT. LTD.</p>
+                        <p>ScoopCost.com is a product of Social Labs Enterprises PVT. LTD.</p>
                     </div>
                 </div>
                 <div className="col-lg-4">
@@ -85,13 +85,13 @@ export default function Footer() {
           <div>
               <div className="row text-center px-md-5 py-2">
                   <p className="copyright-para mb-2">
-                      suproffer earns affiliate commissions on qualifying purchases as an Amazon associate. "Amazon, and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
+                      ScoopCost earns affiliate commissions on qualifying purchases as an Amazon associate. "Amazon, and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
                   </p>
                   <p className="lovtxt">
                       Made with love ❤️ from United Kingdom
                   </p>
                   <p className="lovtxt">
-                  DISCLAIMER: suproffer is owned and operated by A Private Consultancy Firm and in no way represent any relation with any Government Authority or Body.
+                  DISCLAIMER: ScoopCost is owned and operated by A Private Consultancy Firm and in no way represent any relation with any Government Authority or Body.
                   </p>
               </div>
           </div>
