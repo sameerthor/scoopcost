@@ -38,9 +38,7 @@
     background-color: #f1f1e8;
     padding: 2.2rem;
 }
-.container{
-    max-width: 1250px;
-}
+
 .categories-box h2{
     font-weight: 600;
     margin-bottom: 1.4rem;
@@ -456,9 +454,7 @@
 
 /* new cat */
  
-  .container{
-    max-width: 1200px;
- }
+
  .newCat{
    padding: 4rem 0;
    padding-bottom: 2rem;
@@ -816,6 +812,9 @@
       }
 
    /* new home */
+   .container{
+    max-width: 1400px;
+   }
    .hero {
           text-align: center;
           max-width: 800px;
@@ -928,3 +927,265 @@
         .topCarousel .carousel-indicators{
             display: none;
         }
+        /* great discount on top brands */
+        .greatDiscount{
+            padding: 2rem 0;
+        }
+        .greatDiscount .catItem{
+            border-radius: 36px;
+            display: flex;
+            padding: 1.5rem .8rem;
+            border: 1px solid #ccc;
+            flex-direction: column;
+            row-gap: .5rem;
+            transition: .3s ease-in-out;
+        }
+        .greatDiscount .catItem:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+          .greatDiscount{
+           padding: 2rem 0;
+        }
+         .greatDiscount .catItem .name{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+          .greatDiscount .catItem span{
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: #000;
+        }
+        img{
+            max-width: 100%;
+            object-fit: contain;
+        }
+        .greatDiscount .catItem .dec{
+         font-weight: 400;
+         color: #333;
+         font-size: 1rem;
+        }
+        .greatDiscount .catItem .avl{
+         font-weight: 400;
+         color: #666;
+         font-size: .8rem;
+             color: hsl(227 21% 62%);
+        }
+        /* promo section */
+        .promoSection{
+           margin-top: 4rem;
+           margin-bottom: 2rem;
+        }
+         .promo-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .promo-card {
+      display: flex;
+      align-items: center;
+      padding: 18px 20px;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      min-width: 300px;
+      flex: 1;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      position: relative;
+    }
+    .promo-card:hover {
+      transform: translateY(-4px);
+    }
+    .promo-icon {
+      font-size: 65px;
+      top: -50px;
+      position: absolute;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+     background-color: transparent;
+     border-radius: 10px;
+    }
+    .promo-text {
+      font-size: 24px;
+      font-weight: 600;
+      flex: 1;
+      margin-left: 6rem;
+    }
+    .promo-arrow {
+      font-size: 24px;
+    }
+ @media(max-width:991px){
+    .promo-card{
+       margin-bottom: 4rem; 
+    }
+ }
+  @media(max-width:600px){
+     .promo-icon {
+      font-size: 40px;
+      top: -45px;
+    
+    }
+    .promo-card{
+        padding: 10px 14px;
+        margin-bottom: 3rem;
+    }
+     .promo-text{
+        font-size: 16px;
+        margin-left: 0;
+    }
+ }
+    /* Gradient backgrounds */
+    .purple-gradient {
+      background: linear-gradient(to right, #a047f1, #5e30db);
+    }
+    .blue-gradient {
+      background: linear-gradient(to right, #2196f3, #0d8eff);
+    }
+    .centerBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem auto;
+    }
+      .centerBtn button{
+       border: none;
+       outline: none;
+       background-color: var(--primary-color);
+       color: #fff;
+       border-radius: 1.7rem;
+       padding: .6rem 1rem;
+       display: inline-block;
+       font-weight: 500;
+       font-size: .9rem;
+       letter-spacing: .5px;
+       transition: .3s ease-in-out;
+    }
+       .centerBtn button:hover{
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      background-color: #0d8eff;
+    }
+    /* top  rated brand */
+   
+  .topBrands{
+        padding: 2rem 0;
+         background: #f8fafc;
+    }
+    .brand-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      display: block;
+    }
+
+    .brand-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .brand-grid .brand-logo {
+      width: 100px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .brand-grid .brand-category {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .brand-grid .brand-name {
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-grid .brand-discount {
+      font-weight: bold;
+      font-size: 0.95rem;
+      color: #E63946;
+    }
+
+    .brand-grid .discount-badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #003B94;
+      color: white;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    
+
+    @media (max-width: 600px) {
+      .brand-grid .brand-card {
+        padding: 1rem;
+      }
+
+      .brand-grid .brand-logo {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    /* carousel store */
+    .carouselStore{
+        padding: 2rem 0;
+    }
+    .carouselStore .brand-card {
+      background-color: #f9fafb;
+      border-radius: 16px;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: block;
+      margin: 0 10px;
+    }
+
+    .carouselStore .brand-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .carouselStore .brand-logo {
+     height: 80px;
+     width: 180px;
+    object-fit: contain;
+    margin-bottom: .5rem;
+    border-bottom: 1px solid #ddd;
+    }
+
+    .carouselStore .brand-category {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .carouselStore .brand-name {
+      font-weight: 600;
+      color: #1f2937;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .carouselStore .brand-discount {
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+.carouselStore .container .carousel-control-prev{
+    justify-content: left;
+}
+.carouselStore .container .carousel-control-next{
+    justify-content: right;
+}

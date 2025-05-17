@@ -52,7 +52,7 @@ export default function ResponsiveCarousel({
       <div className="carousel-inner">
         {groupedItems.map((group, idx) => (
           <div key={idx} className={`carousel-item ${idx === 0 ? "active" : ""}`}>
-            <div className="">
+            <div className="d-flex">
               {group.map((item, i) => (
                 <div key={i} style={{ minWidth: "200px", flex: "1" }}>
                   {item}

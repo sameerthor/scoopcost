@@ -30,14 +30,102 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
     
     ];
 
-  const animalCards = [
-    <div className="card p-3 bg-light">🐶 Dog</div>,
-    <div className="card p-3 bg-secondary text-white">🐱 Cat</div>,
-    <div className="card p-3 bg-primary text-white">🐘 Elephant</div>,
-    <div className="card p-3 bg-dark text-white">🦊 Fox</div>,
-    <div className="card p-3 bg-success text-white">🐸 Frog</div>,
-      <div className="card p-3 bg-success text-white">🐸 Frog</div>,
-  ];
+    
+    const carouselStore = [
+        <a className="brand-card" href=''>
+            <Image  className='brand-logo'
+                    width={180}
+                    height={80} 
+                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
+            <div className="brand-category">Travel</div>
+            <div className="brand-name">MakeMyTrip</div>
+            <div className="brand-discount">6.75% Off</div>
+        </a>,
+        <a className="brand-card" href=''>
+            <Image  className='brand-logo'
+                    width={180}
+                    height={80} 
+                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
+            <div className="brand-category">Travel</div>
+            <div className="brand-name">MakeMyTrip</div>
+            <div className="brand-discount">6.75% Off</div>
+        </a>,
+        <a className="brand-card" href=''>
+            <Image  className='brand-logo'
+                    width={180}
+                    height={80} 
+                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
+            <div className="brand-category">Travel</div>
+            <div className="brand-name">MakeMyTrip</div>
+            <div className="brand-discount">6.75% Off</div>
+        </a>,
+        <a className="brand-card" href=''>
+            <Image  className='brand-logo'
+                    width={180}
+                    height={80} 
+                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
+            <div className="brand-category">Travel</div>
+            <div className="brand-name">MakeMyTrip</div>
+            <div className="brand-discount">6.75% Off</div>
+        </a>,
+        <a className="brand-card" href=''>
+            <Image  className='brand-logo'
+                    width={180}
+                    height={80} 
+                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
+            <div className="brand-category">Travel</div>
+            <div className="brand-name">MakeMyTrip</div>
+            <div className="brand-discount">6.75% Off</div>
+        </a>,
+        <a className="brand-card" href=''>
+            <Image  className='brand-logo'
+                    width={180}
+                    height={80} 
+                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
+            <div className="brand-category">Travel</div>
+            <div className="brand-name">MakeMyTrip</div>
+            <div className="brand-discount">6.75% Off</div>
+        </a>,
+        <a className="brand-card" href=''>
+            <Image  className='brand-logo'
+                    width={180}
+                    height={80} 
+                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
+            <div className="brand-category">Travel</div>
+            <div className="brand-name">MakeMyTrip</div>
+            <div className="brand-discount">6.75% Off</div>
+        </a>,
+        <a className="brand-card" href=''>
+            <Image  className='brand-logo'
+                    width={180}
+                    height={80} 
+                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
+            <div className="brand-category">Travel</div>
+            <div className="brand-name">MakeMyTrip</div>
+            <div className="brand-discount">6.75% Off</div>
+        </a>,
+        <a className="brand-card" href=''>
+            <Image  className='brand-logo'
+                    width={180}
+                    height={80} 
+                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
+            <div className="brand-category">Travel</div>
+            <div className="brand-name">MakeMyTrip</div>
+            <div className="brand-discount">6.75% Off</div>
+        </a>,
+        <a className="brand-card" href=''>
+            <Image  className='brand-logo'
+                    width={180}
+                    height={80} 
+                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
+            <div className="brand-category">Travel</div>
+            <div className="brand-name">MakeMyTrip</div>
+            <div className="brand-discount">6.75% Off</div>
+        </a>,
+    
+    ];
+
+  
 
     const getHeading = (title) => {
         if (!title) return "";
@@ -74,7 +162,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
            <section className='firstSec'>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-7">
+                        <div className="col-lg-7 mb-3">
                             <div className="hero">
                                 <h1>
                                     <span className="green">Your Shortcut to Savings</span><br />
@@ -93,27 +181,38 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
 
                                 <div className="features">
                                     <div className="feature">
-                                    <svg fill="#ef4444" viewBox="0 0 24 24">
-                                        <path d="M12 2l3.094 6.26L22 9.27l-5 4.87 1.18 6.89L12 17.77 5.82 21l1.18-6.89-5-4.87 6.906-1.01z" />
-                                    </svg>
-                                    Instant Delivery
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill='#ef4444'>
+                                            <path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288l111.5 0L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7l-111.5 0L349.4 44.6z"/>
+                                        </svg>
+                                        Lightning-Fast Checkout
                                     </div>
                                     <div className="feature">
-                                    <svg fill="#10b981" viewBox="0 0 24 24">
-                                        <path d="M12 22C6.48 22 2 17.52 2 12c0-4.21 2.66-7.86 6.49-9.3l1.02 2.13C6.75 5.82 5 8.74 5 12c0 3.87 3.13 7 7 7s7-3.13 7-7c0-2.73-1.54-5.1-3.79-6.28l1.02-2.13C19.34 4.14 22 7.79 22 12c0 5.52-4.48 10-10 10z" />
-                                    </svg>
-                                    Safe & Secure
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill='#10b981'>
+                                            <path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8l0 378.1C394 378 431.1 230.1 432 141.4L256 66.8s0 0 0 0z"/>
+                                        </svg>
+                                        Secure Payments
                                     </div>
                                     <div className="feature">
-                                    <svg fill="#3b82f6" viewBox="0 0 24 24">
-                                        <path d="M21 16.5V7.5C21 6.12 19.88 5 18.5 5h-13C4.12 5 3 6.12 3 7.5v9C3 17.88 4.12 19 5.5 19h13c1.38 0 2.5-1.12 2.5-2.5zM5.5 7h13c.28 0 .5.22.5.5v2.67l-7.02 4.12a1 1 0 01-.96 0L5 10.17V7.5c0-.28.22-.5.5-.5z" />
-                                    </svg>
-                                    24/7 Support
+                                        <svg width="64" height="64" viewBox="0 0 64 64" fill="#10b981" xmlns="http://www.w3.org/2000/svg">
+                                        
+                                            <circle cx="32" cy="32" r="28" stroke="#007bff" stroke-width="4" fill="none"/>
+                                            
+
+                                            <line x1="32" y1="32" x2="32" y2="18" stroke="#007bff" stroke-width="4" stroke-linecap="round"/>
+                                            
+
+                                            <line x1="32" y1="32" x2="44" y2="32" stroke="#007bff" stroke-width="3" stroke-linecap="round"/>
+
+                                            
+                                            <circle cx="32" cy="32" r="2" fill="#007bff"/>
+                                        </svg>
+
+                                        24/7 Human Support
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-5 topCarousel">
+                        <div className="col-lg-5 topCarousel">
                                 <ResponsiveCarousel
                                     items={firstCarousel}
                                     idPrefix="firstCarousel"
@@ -123,591 +222,301 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     </div>
                 </div>
            </section>
-
-            {/* <h2>Fruits Carousel</h2>
-            
-
-            <h2>Animals Carousel</h2>
-            <ResponsiveCarousel
-                items={animalCards}
-                idPrefix="animals"
-                responsiveConfig={{ xs: 2, sm: 3, md: 2 }}
-            /> */}
             
            
+            <section className='greatDiscount'>
+                <div className="container">
+                    <h2 className='secHeading'>Great discount on top brands</h2>
+                    <div className="row row-cols-lg-5 row-col-md-3 row-cols-2">
+                        <div className="col mb-3">
+                            <a className='catItem' href=''>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/books.png" loading="lazy" alt="books" />
+                                </div>
+                                <div className='dec'>Upto 60% Off</div>
+                                <div className='avl'>Offers Available on 22+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href=''>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/books.png" loading="lazy" alt="books" />
+                                </div>
+                                <div className='dec'>Upto 60% Off</div>
+                                <div className='avl'>Offers Available on 22+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href=''>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/books.png" loading="lazy" alt="books" />
+                                </div>
+                                <div className='dec'>Upto 60% Off</div>
+                                <div className='avl'>Offers Available on 22+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href=''>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/books.png" loading="lazy" alt="books" />
+                                </div>
+                                <div className='dec'>Upto 60% Off</div>
+                                <div className='avl'>Offers Available on 22+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href=''>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/books.png" loading="lazy" alt="books" />
+                                </div>
+                                <div className='dec'>Upto 60% Off</div>
+                                <div className='avl'>Offers Available on 22+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href=''>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/books.png" loading="lazy" alt="books" />
+                                </div>
+                                <div className='dec'>Upto 60% Off</div>
+                                <div className='avl'>Offers Available on 22+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href=''>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/books.png" loading="lazy" alt="books" />
+                                </div>
+                                <div className='dec'>Upto 60% Off</div>
+                                <div className='avl'>Offers Available on 22+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href=''>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/books.png" loading="lazy" alt="books" />
+                                </div>
+                                <div className='dec'>Upto 60% Off</div>
+                                <div className='avl'>Offers Available on 22+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href=''>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/books.png" loading="lazy" alt="books" />
+                                </div>
+                                <div className='dec'>Upto 60% Off</div>
+                                <div className='avl'>Offers Available on 22+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href=''>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/books.png" loading="lazy" alt="books" />
+                                </div>
+                                <div className='dec'>Upto 60% Off</div>
+                                <div className='avl'>Offers Available on 22+ brands</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div className='centerBtn'>
+                        <button>Show More</button>
+                    </div>
+                </div>
 
+            </section>
+            <section className='promoSection'>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-7 mb-3">
+                            <div class="promo-card purple-gradient">
+                                <div class="promo-icon">🎁</div>
+                                <div class="promo-text">Invite friends & get ₹100 bonus!</div>
+                                <div class="promo-arrow">→</div>
+                            </div>
+                       </div>
+                    <div className='col-lg-5'>
+                        <div class="promo-card blue-gradient">
+                            <div class="promo-icon">🛡️</div>
+                            <div class="promo-text">Safe payments guaranteed</div>
+                            <div class="promo-arrow">→</div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </section>
            
-            <section className="newPopular">
+           <section className="topBrands brand-grid">
                 <div className="container">
-                    <div className="secHeading">Most Popular Brands</div>
-                    <div className="row row-col-2 row-cols-lg-5 row-cols-md-3 g-3">
-                        <div className="col mb-4">
-                            <div className="card text-center">
-                                <div className="card-body">
-                                 <Image 
-                                    style={{
-                                        backgroundColor: '#3f51b7',
-                                        borderRadius: '4px',
-                                        padding: '5px',
-                                        marginBottom: '.5rem'
-                                      }}
-                                    src="/images/airdna.avif"
-                                    alt="Adalysis"
-                                    width={140}
-                                    height={140}
-                                    className="brand-logo"
-                                    />
-                                    
-                                    <div className="text-primary mb-2">AirDNA</div>
-                                    <p className="brand-discount">Up to 10% OFF</p>
-                                    <MainDomainLink href='https://airdna-co.suproffer.com/'class="angled-button">
-                                        ************************
-                                        <span class="btn-angle">Click to Reedem</span>
-                                    </MainDomainLink>
-                                    <div className='expTc'>
-                                        <MainDomainLink href='https://airdna-co.suproffer.com/'class="">
-                                        T &amp; C
-                                        </MainDomainLink>
-                                        <span >
-                                                Expires
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                    <h2 className='secHeading'>Top Rated Brands</h2>
+                    <div className="row row-cols-lg-5 row-col-md-3 row-cols-2">
+                        <div className="col mb-5">
+                            <a class="brand-card" href=''>
+                                <Image  className='brand-logo'
+                                        width={80}
+                                        height={80} 
+                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Udemy</div>
+                                <div class="brand-discount">8% Off</div>
+                                <div class="discount-badge">Online Shoping</div>
+                            </a>
                         </div>
-                        <div className="col mb-4">
-                            <div className="card text-center">
-                                <div className="card-body">
-                                <Image
-                                    src="/images/Luma-Soothe-Logo.webp"
-                                    alt="Luma-Soothe-Logo"
-                                    width={140}
-                                    height={140}
-                                    className="brand-logo"
-                                    />
-                                    
-                                <div className="text-primary mb-2">LumaSoothe Coupons</div>
-                                <p className="brand-discount">Up to 40% OFF</p>
-                               
-                                <MainDomainLink href='https://lumasoothe.suproffer.com/'class="angled-button">
-                                    ************************
-                                    <span class="btn-angle">Click to Reedem</span>
-                                </MainDomainLink>
-                                <div className='expTc'>
-                                        <MainDomainLink href='https://lumasoothe.suproffer.com/'class="">
-                                        T &amp; C
-                                        </MainDomainLink>
-                                        {/* <span >
-                                                Expires:  <RandomDatesList count={1} uniqueId="offer_1" />
-                                                
-                                        </span> */}
-                                        <span>Expires</span>
-                                </div>
-                                </div>
-                            </div>
+                         <div className="col mb-5">
+                            <a class="brand-card" href=''>
+                                <Image  className='brand-logo'
+                                        width={80}
+                                        height={80} 
+                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Udemy</div>
+                                <div class="brand-discount">8% Off</div>
+                                <div class="discount-badge">Online Shoping</div>
+                            </a>
                         </div>
-                        <div className="col mb-4">
-                            <div className="card text-center">
-                                <div className="card-body">
-                                <Image
-                                     style={{
-                                        backgroundColor: '#000',
-                                        borderRadius: '4px',
-                                        padding: '5px',
-                                        marginBottom: '.5rem'
-                                      }}
-                                    src="/images/toonly.webp"
-                                    alt="Adalysis"
-                                    width={140}
-                                    height={140}
-                                    className="brand-logo"
-                                    />
-                                    
-                                <div className="text-primary mb-2">Toonly Coupons</div>
-                                <p className="brand-discount">Up to 25% OFF</p>
-                               
-                                <MainDomainLink href='https://toonly.suproffer.com/'class="angled-button">
-                                    ************************
-                                    <span class="btn-angle">Click to Reedem</span>
-                                </MainDomainLink>
-                                <div className='expTc'>
-                                        <MainDomainLink href='https://toonly.suproffer.com/'class="">
-                                        T &amp; C
-                                        </MainDomainLink>
-                                        <span >
-                                                Expires
-                                        </span>
-                                </div>
-                                </div>
-                            </div>
+                        <div className="col mb-5">
+                            <a class="brand-card" href=''>
+                                <Image  className='brand-logo'
+                                        width={80}
+                                        height={80} 
+                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Udemy</div>
+                                <div class="brand-discount">8% Off</div>
+                                <div class="discount-badge">Online Shoping</div>
+                            </a>
                         </div>
-                        <div className="col mb-4">
-                            <div className="card text-center">
-                                <div className="card-body">
-                                <Image
-                                    src="/images/accerlist.svg"
-                                    alt="Adalysis"
-                                    width={140}
-                                    height={140}
-                                    className="brand-logo"
-                                    />
-                                    
-                                <div className="text-primary mb-2">AccelerList </div>
-                                <p className="brand-discount">UP TO 20% OFF </p>
-
-                                <MainDomainLink href='https://accelerlist.suproffer.com/'class="angled-button">
-                                    ************************
-                                    <span class="btn-angle">Click to Reedem</span>
-                                </MainDomainLink>
-                                <div className='expTc'>
-                                        <MainDomainLink href='https://accelerlist.suproffer.com/'class="">
-                                        T &amp; C
-                                        </MainDomainLink>
-                                        <span >
-                                                Expires
-                                        </span>
-                                </div>
-                                </div>
-                            </div>
+                        <div className="col mb-5">
+                            <a class="brand-card" href=''>
+                                <Image  className='brand-logo'
+                                        width={80}
+                                        height={80} 
+                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Udemy</div>
+                                <div class="brand-discount">8% Off</div>
+                                <div class="discount-badge">Online Shoping</div>
+                            </a>
                         </div>
-                        <div className="col mb-4">
-                            <div className="card text-center">
-                                <div className="card-body">
-                                <Image
-                                    src="/images/black.avif"
-                                    alt="Adalysis"
-                                    width={140}
-                                    height={140}
-                                    className="brand-logo"
-                                    />
-                                    
-                                <div className="text-primary mb-2">Blak Headwear Co </div>
-                                <p className="brand-discount">Up to 40% OFF</p>
-                               
-                                <MainDomainLink href='https://blakheadwear.suproffer.com/'class="angled-button">
-                                    ************************
-                                    <span class="btn-angle">Click to Reedem</span>
-                                </MainDomainLink>
-                                <div className='expTc'>
-                                        <MainDomainLink href='https://blakheadwear.suproffer.com/'class="">
-                                        T &amp; C
-                                        </MainDomainLink>
-                                        <span >
-                                                Expires
-                                        </span>
-                                </div>
-                                </div>
-                            </div>
+                        <div className="col mb-5">
+                            <a class="brand-card" href=''>
+                                <Image  className='brand-logo'
+                                        width={80}
+                                        height={80} 
+                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Udemy</div>
+                                <div class="brand-discount">8% Off</div>
+                                <div class="discount-badge">Online Shoping</div>
+                            </a>
+                        </div>
+                        <div className="col mb-5">
+                            <a class="brand-card" href=''>
+                                <Image  className='brand-logo'
+                                        width={80}
+                                        height={80} 
+                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Udemy</div>
+                                <div class="brand-discount">8% Off</div>
+                                <div class="discount-badge">Online Shoping</div>
+                            </a>
+                        </div>
+                        <div className="col mb-5">
+                            <a class="brand-card" href=''>
+                                <Image  className='brand-logo'
+                                        width={80}
+                                        height={80} 
+                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Udemy</div>
+                                <div class="brand-discount">8% Off</div>
+                                <div class="discount-badge">Online Shoping</div>
+                            </a>
+                        </div>
+                        <div className="col mb-5">
+                            <a class="brand-card" href=''>
+                                <Image  className='brand-logo'
+                                        width={80}
+                                        height={80} 
+                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Udemy</div>
+                                <div class="brand-discount">8% Off</div>
+                                <div class="discount-badge">Online Shoping</div>
+                            </a>
+                        </div>
+                        <div className="col mb-5">
+                            <a class="brand-card" href=''>
+                                <Image  className='brand-logo'
+                                        width={80}
+                                        height={80} 
+                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Udemy</div>
+                                <div class="brand-discount">8% Off</div>
+                                <div class="discount-badge">Online Shoping</div>
+                            </a>
+                        </div>
+                        <div className="col mb-5">
+                            <a class="brand-card" href=''>
+                                <Image  className='brand-logo'
+                                        width={80}
+                                        height={80} 
+                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Udemy</div>
+                                <div class="brand-discount">8% Off</div>
+                                <div class="discount-badge">Online Shoping</div>
+                            </a>
                         </div>
 
-                    {/* Add more cards as needed... */}
-
+                        
                     </div>
+                    <div className="centerBtn"><button>Show More</button></div>
                 </div>
-            </section>
-
-            <section className='topCouponCode'>
+           </section>
+           <section className='carouselStore'>
                 <div className="container">
-                    <div className='secHeading'>Today's Top Coupon Codes</div>
-                    <div className="row row-cols-lg-6 row-cols-md-3 row-cols-sm-2 row-cols-2">
-                        <div className="col mb-3">
-                            <a className='codeItem' href='https://bottleofitaly.suproffer.com/'>
-                                <div className='codeHeader'>
-                                Bottle of Italy
-                                        
-                                </div>
-                                <div className='codeFooter'>
-                                     <div className="imgBox">
-                                        <Image
-                width={400}
-                 height={400} src="/images/bottle-of-italy.webp" alt="bottle-of-italy" />
-                                     </div>
-                                     <div className="off">
-                                           UP TO 10% OFF
-                                      </div>
-                                      <div className='expTc'>
-                                            <span>
-                                            T &amp; C
-                                            </span>
-                                            <span >
-                                                    Expires
-                                            </span>
-                                      </div>
-                                </div>
-                                
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='codeItem' href='https://bettergrounds.suproffer.com/'>
-                                <div className='codeHeader'>
-                                Better Grounds
-                                        
-                                </div>
-                                <div className='codeFooter'>
-                                     <div className="imgBox">
-                                        <Image
-                width={400}
-                 height={400} src="/images/better-grounds.avif" alt="Better Grounds" />
-                                     </div>
-                                     <div className="off">
-                                            Up to 10% off
-                                      </div>
-                                      <div className='expTc'>
-                                            <span>
-                                            T &amp; C
-                                            </span>
-                                            <span >
-                                                    Expires
-                                            </span>
-                                      </div>
-                                      
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='codeItem' href='https://blessedcbd-co-uk.suproffer.com/'>
-                                <div className='codeHeader'>
-                                Blessed CBD Offer
-                                        
-                                </div>
-                                <div className='codeFooter'>
-                                     <div className="imgBox">
-                                        <Image
-                width={400}
-                 height={400} src="/images/blassed-cbd.svg" alt="Blessed CBD" />
-                                     </div>
-                                     <div className="off">
-                                            Up to 10% off
-                                      </div>
-                                      <div className='expTc'>
-                                            <span>
-                                            T &amp; C
-                                            </span>
-                                            <span >
-                                                    Expires
-                                            </span>
-                                      </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='codeItem' href='https://cycle-peak.suproffer.com/'>
-                                <div className='codeHeader'>
-                                Cycle Peak
-                                        
-                                </div>
-                                <div className='codeFooter'>
-                                     <div className="imgBox">
-                                        <Image
-                width={400}
-                 height={400} src="/images/cycle-peak.webp" alt="cycle-peak" />
-                                     </div>
-                                     <div className="off">
-                                           Free Shiping
-                                      </div>
-                                      <div className='expTc'>
-                                            <span>
-                                            T &amp; C
-                                            </span>
-                                            <span >
-                                                    Expires
-                                            </span>
-                                      </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='codeItem' href='https://colorcommall.suproffer.com/'>
-                                <div className='codeHeader'>
-                                Colorcommall Coupons
-                                        
-                                </div>
-                                <div className='codeFooter'>
-                                     <div className="imgBox">
-                                        <Image
-                width={400}
-                 height={400} src="/images/colorcommall.avif" alt="Colorcommall Coupons" />
-                                     </div>
-                                     <div className="off">
-                                            Up to 20% off
-                                      </div>
-                                      <div className='expTc'>
-                                            <span>
-                                            T &amp; C
-                                            </span>
-                                            <span >
-                                                    Expires
-                                            </span>
-                                      </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='codeItem' href='https://cbdnorth-co.suproffer.com/'>
-                                <div className='codeHeader'>
-                                CBDNorth
-                                        
-                                </div>
-                                <div className='codeFooter'>
-                                     <div className="imgBox">
-                                        <Image
-                width={400}
-                 height={400} src="/images/cbd-north.webp" alt="CBDNorth" />
-                                     </div>
-                                     <div className="off">
-                                            Up to 20% off
-                                      </div>
-                                      <div className='expTc'>
-                                            <span>
-                                            T &amp; C
-                                            </span>
-                                            <span >
-                                                    Expires
-                                            </span>
-                                      </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    <h2 className='secHeading'>Popular Brand</h2>
+                    <ResponsiveCarousel
+                                items={carouselStore}
+                                idPrefix="carouselStore"
+                                responsiveConfig={{ xs: 1, sm: 2, md: 5 }}
+                            />
                 </div>
-            </section>
-            {/* Top Rated Stores Section */}
-            <section className="topRatedStore">
-                <div className="container">
-                    <div className='secHeading'>Top Rated Stores</div>
-                    <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
-                        <div className="col">
-                            <a href='https://miami-hair-shop.suproffer.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/miami.webp'
-                                        alt='miami-hair'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                   <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
-                                    <div className="discount">
-                                       Free Shiping
-                                    </div>
-                                    <div className="description">
-                                    Buy at Miami Hair Shop - Free Shipping Included
-                                    </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://majolietoile.suproffer.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                                     width={400}
-                                     height={400}
-                                        src='/images/majolietoile.avif'
-                                        alt='majolietoile'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
-                                    
-                                    <div className="discount">
-                                        20% OFF
-                                    </div>
-                                    <div className="description">
-                                    20% Off on Wall Art at Ma Jolie Toile - Save with Verified Coupon
-                                    </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://nationalhighwaysafetyadministration.suproffer.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/national-highway.webp'
-                                        alt='national-highway'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
-                                    
-                                    <div className="discount">
-                                        15% OFF
-                                    </div>
-                                    <div className="description">
-                                    NHSA Coupon Code - Save 15% Off at Checkout
-                                    </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://orangecounty-cbd.suproffer.com/' className="toprated">
-                                <div className="topratedTop" style={{ background: "#ff6c0d"}}>
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/orange-country.webp'
-                                        alt='orangecounty'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
-                                   
-                                    <div className="discount">
-                                        10% OFF
-                                    </div>
-                                    <div className="description">
-                                    Orange County CBD Deal - 10% Off + Free Shipping over £25
-                                    </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://onetify.suproffer.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/onefity.avif'
-                                        alt='natures'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
-                                    
-                                    <div className="discount">
-                                        15% OFF
-                                    </div>
-                                    <div className="description">
-                                    15% Off on Apparel at Onetify - Save with Verified Coupon
-                                    </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://ofcasafurniture.suproffer.com/' className="toprated">
-                                <div className="topratedTop" style={{ background: "#272727"}}>
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/ofcasafurniture.avif'
-                                        alt='ofcasafurniture'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
-                                    
-                                    <div className="discount">
-                                        20% OFF
-                                    </div>
-                                    <div className="description">
-                                    Enjoy 20% Off - Save Big at Ofcasa Furniture
-                                    </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://wonderfulsubs.suproffer.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/wonderfulsubs.avif'
-                                        alt='organic'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
-                                    
-                                    <div className="discount">
-                                        15% OFF
-                                    </div>
-                                    <div className="description">
-                                    Optimize Life Coupon Code - Enjoy 15% Off at Checkout
-                                    </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://onlyformula.suproffer.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/onlyformula.avif'
-                                        alt='onlyformula'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
-                                   
-                                    <div className="discount">
-                                        25% OFF
-                                    </div>
-                                    <div className="description">
-                                    25% Off on Baby Formulas at OnlyFormula - Use this Promo Code
-                                    </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://purerawz-co.suproffer.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/pureraz.webp'
-                                        alt='purerawz-co'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
-                                    
-                                    <div className="discount">
-                                        10% OFF
-                                    </div>
-                                    <div className="description">
-                                    Don’t Miss Out - 10% Off at PureRawz
-                                    </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://peak365nutrition.suproffer.com/' className="toprated">
-                                <div className="topratedTop">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/peak365.webp'
-                                        alt='peak365nutrition'
-                                    />
-                                </div>
-                                <div className="topRatedBottom">
-                                <div class="angled-button">****************************<span class="btn-angle">Show Code</span></div>
-                                    
-                                    <div className="discount">
-                                        15% OFF
-                                    </div>
-                                    <div className="description">
-                                    15% Off on Health Supplements - Save More at Peak 365 Nutrition
-                                    </div>
-                                    <div class="expTc"><span>T &amp; C</span><span>Expires</span></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+           </section>
+          
 
             {/* Top Online Stores Section */}
             <section className="online-store">
@@ -877,74 +686,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                 </div>
             </section>
 
-            {/* Trending Blog Section */}
-            <section className="container-fluid tranding">
-                <div className="container">
-                    <div className="row tranding-blog">
-                        <div className='secHeading'>Trending Blogs</div>
-                        {[
-                            {
-                                title: 'List Of Amazon Upcoming Sale July 2023 | Prime Day Sale 50% OFF on...',
-                                image: 'amazzon-sale.webp',
-                                date: '5-Aug-2023'
-                            },
-                            {
-                                title: 'Latest Apple Student Discount 2023 | Steps to Claim This Offer and...',
-                                image: 'apple.webp',
-                                date: '5-Aug-2023'
-                            },
-                            {
-                                title: 'Yulu Bike Price And Rental Charges | Find All Details To Book Now...',
-                                image: 'yulu-bike.webp',
-                                date: '5-Aug-2023'
-                            },
-                            {
-                                title: 'Top 10 Hotel Booking Sites In India | Why You Should Choose Them?..',
-                                image: 'top-10-hotel-booking.webp',
-                                date: '5-Aug-2023'
-                            },
-                            {
-                                title: 'Emirates Student Offer | Details On Various Discount, T&C And More...',
-                                image: 'student-offer.webp',
-                                date: '5-Aug-2023'
-                            },
-                            {
-                                title: 'Woodland Heels For Ladies: Catch The Latest Deals On Exclusive Designs...',
-                                image: 'Woodland-Heels-For-Ladies.jpg.webp',
-                                date: '5-Aug-2023'
-                            },
-                            {
-                                title: 'Buy Jiobook Online: Get Details Of Price, Specifications, & Best Offers...',
-                                image: 'Buy-jiobook-online.jpg.webp',
-                                date: '5-Aug-2023'
-                            },
-                            {
-                                title: 'Croma Republic Day Sale |Avail Of The Latest Bank Offers, Discount On...',
-                                image: 'croma-republic-day-sale.jpg.webp',
-                                date: '5-Aug-2023'
-                            },
-                        ].map((blog, index) => (
-                            <div key={index} className="col-lg-3 col-md-6 col-sm-12 blog-box">
-                                <div className="blog-item shadow-sm">
-                                    <a href="/blog-details">
-                                        <Image
-                                            src={`/images/${blog.image}`}
-                                            alt={blog.title}
-                                            width={300}
-                                            height={200}
-                                        />
-                                    </a>
-                                    <a href="/blog-details"><p>{blog.title}</p></a>
-                                    <span className="date">{blog.date}</span>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="more-btn">
-                        <a href="/all-blogs" className="btn btn-primary">More Blogs</a>
-                    </div>
-                </div>
-            </section>
+           
             <section className='featuredStore'>
                 <div className="container">
                 <div className='secHeading'>Featured Stored</div>
