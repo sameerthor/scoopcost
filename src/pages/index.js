@@ -160,12 +160,12 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     
                                     <div className="text-primary mb-2">AirDNA</div>
                                     <p className="brand-discount">Up to 10% OFF</p>
-                                    <MainDomainLink href='https://airdna-co.suproffer.com/'class="angled-button">
+                                    <MainDomainLink href='https://airdna-co.scoopcost.com/'class="angled-button">
                                         ************************
                                         <span class="btn-angle">Click to Reedem</span>
                                     </MainDomainLink>
                                     <div className='expTc'>
-                                        <MainDomainLink href='https://airdna-co.suproffer.com/'class="">
+                                        <MainDomainLink href='https://airdna-co.scoopcost.com/'class="">
                                         T &amp; C
                                         </MainDomainLink>
                                         <span >
@@ -189,12 +189,12 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 <div className="text-primary mb-2">LumaSoothe Coupons</div>
                                 <p className="brand-discount">Up to 40% OFF</p>
                                
-                                <MainDomainLink href='https://lumasoothe.suproffer.com/'class="angled-button">
+                                <MainDomainLink href='https://lumasoothe.scoopcost.com/'class="angled-button">
                                     ************************
                                     <span class="btn-angle">Click to Reedem</span>
                                 </MainDomainLink>
                                 <div className='expTc'>
-                                        <MainDomainLink href='https://lumasoothe.suproffer.com/'class="">
+                                        <MainDomainLink href='https://lumasoothe.scoopcost.com/'class="">
                                         T &amp; C
                                         </MainDomainLink>
                                         {/* <span >
@@ -226,12 +226,12 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 <div className="text-primary mb-2">Toonly Coupons</div>
                                 <p className="brand-discount">Up to 25% OFF</p>
                                
-                                <MainDomainLink href='https://toonly.suproffer.com/'class="angled-button">
+                                <MainDomainLink href='https://toonly.scoopcost.com/'class="angled-button">
                                     ************************
                                     <span class="btn-angle">Click to Reedem</span>
                                 </MainDomainLink>
                                 <div className='expTc'>
-                                        <MainDomainLink href='https://toonly.suproffer.com/'class="">
+                                        <MainDomainLink href='https://toonly.scoopcost.com/'class="">
                                         T &amp; C
                                         </MainDomainLink>
                                         <span >
@@ -255,12 +255,12 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 <div className="text-primary mb-2">AccelerList </div>
                                 <p className="brand-discount">UP TO 20% OFF </p>
 
-                                <MainDomainLink href='https://accelerlist.suproffer.com/'class="angled-button">
+                                <MainDomainLink href='https://accelerlist.scoopcost.com/'class="angled-button">
                                     ************************
                                     <span class="btn-angle">Click to Reedem</span>
                                 </MainDomainLink>
                                 <div className='expTc'>
-                                        <MainDomainLink href='https://accelerlist.suproffer.com/'class="">
+                                        <MainDomainLink href='https://accelerlist.scoopcost.com/'class="">
                                         T &amp; C
                                         </MainDomainLink>
                                         <span >
@@ -284,12 +284,12 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 <div className="text-primary mb-2">Blak Headwear Co </div>
                                 <p className="brand-discount">Up to 40% OFF</p>
                                
-                                <MainDomainLink href='https://blakheadwear.suproffer.com/'class="angled-button">
+                                <MainDomainLink href='https://blakheadwear.scoopcost.com/'class="angled-button">
                                     ************************
                                     <span class="btn-angle">Click to Reedem</span>
                                 </MainDomainLink>
                                 <div className='expTc'>
-                                        <MainDomainLink href='https://blakheadwear.suproffer.com/'class="">
+                                        <MainDomainLink href='https://blakheadwear.scoopcost.com/'class="">
                                         T &amp; C
                                         </MainDomainLink>
                                         <span >
@@ -311,7 +311,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <div className='secHeading'>Today's Top Coupon Codes</div>
                     <div className="row row-cols-lg-6 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://bottleofitaly.suproffer.com/'>
+                            <a className='codeItem' href='https://bottleofitaly.scoopcost.com/'>
                                 <div className='codeHeader'>
                                 Bottle of Italy
                                         
@@ -338,7 +338,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://bettergrounds.suproffer.com/'>
+                            <a className='codeItem' href='https://bettergrounds.scoopcost.com/'>
                                 <div className='codeHeader'>
                                 Better Grounds
                                         
@@ -365,7 +365,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://blessedcbd-co-uk.suproffer.com/'>
+                            <a className='codeItem' href='https://blessedcbd-co-uk.scoopcost.com/'>
                                 <div className='codeHeader'>
                                 Blessed CBD Offer
                                         
@@ -391,7 +391,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://cycle-peak.suproffer.com/'>
+                            <a className='codeItem' href='https://cycle-peak.scoopcost.com/'>
                                 <div className='codeHeader'>
                                 Cycle Peak
                                         
@@ -417,7 +417,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://colorcommall.suproffer.com/'>
+                            <a className='codeItem' href='https://colorcommall.scoopcost.com/'>
                                 <div className='codeHeader'>
                                 Colorcommall Coupons
                                         
@@ -443,7 +443,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='codeItem' href='https://cbdnorth-co.suproffer.com/'>
+                            <a className='codeItem' href='https://cbdnorth-co.scoopcost.com/'>
                                 <div className='codeHeader'>
                                 CBDNorth
                                         
@@ -477,7 +477,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <div className='secHeading'>Top Rated Stores</div>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col">
-                            <a href='https://miami-hair-shop.suproffer.com/' className="toprated">
+                            <a href='https://miami-hair-shop.scoopcost.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -499,7 +499,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://majolietoile.suproffer.com/' className="toprated">
+                            <a href='https://majolietoile.scoopcost.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                                      width={400}
@@ -522,7 +522,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://nationalhighwaysafetyadministration.suproffer.com/' className="toprated">
+                            <a href='https://nationalhighwaysafetyadministration.scoopcost.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -545,7 +545,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://orangecounty-cbd.suproffer.com/' className="toprated">
+                            <a href='https://orangecounty-cbd.scoopcost.com/' className="toprated">
                                 <div className="topratedTop" style={{ background: "#ff6c0d"}}>
                                     <Image
                 width={400}
@@ -568,7 +568,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://onetify.suproffer.com/' className="toprated">
+                            <a href='https://onetify.scoopcost.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -591,7 +591,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://ofcasafurniture.suproffer.com/' className="toprated">
+                            <a href='https://ofcasafurniture.scoopcost.com/' className="toprated">
                                 <div className="topratedTop" style={{ background: "#272727"}}>
                                     <Image
                 width={400}
@@ -614,7 +614,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://wonderfulsubs.suproffer.com/' className="toprated">
+                            <a href='https://wonderfulsubs.scoopcost.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -637,7 +637,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://onlyformula.suproffer.com/' className="toprated">
+                            <a href='https://onlyformula.scoopcost.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -660,7 +660,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://purerawz-co.suproffer.com/' className="toprated">
+                            <a href='https://purerawz-co.scoopcost.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -683,7 +683,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://peak365nutrition.suproffer.com/' className="toprated">
+                            <a href='https://peak365nutrition.scoopcost.com/' className="toprated">
                                 <div className="topratedTop">
                                     <Image
                 width={400}
@@ -715,7 +715,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <div className='secHeading'>Top Online Stores</div>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
                         <div className="col">
-                            <a href='https://chayagallery.suproffer.com/' className="pickedStore" aria-label='chayagallery'>
+                            <a href='https://chayagallery.scoopcost.com/' className="pickedStore" aria-label='chayagallery'>
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -731,7 +731,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         </div>
                       
                         <div className="col">
-                            <a href='https://dryfarmwines.suproffer.com/' className="pickedStore">
+                            <a href='https://dryfarmwines.scoopcost.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image style={{
                                         backgroundColor: '#000'
@@ -748,7 +748,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://drshadez.suproffer.com/' className="pickedStore">
+                            <a href='https://drshadez.scoopcost.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -763,7 +763,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://designyourown-wine.suproffer.com/' className="pickedStore">
+                            <a href='https://designyourown-wine.scoopcost.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -778,7 +778,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://doodly.suproffer.com/' className="pickedStore">
+                            <a href='https://doodly.scoopcost.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                                     style={{ backgroundColor: '#1f729e' }}
@@ -794,7 +794,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://voromotors.suproffer.com/' className="pickedStore">
+                            <a href='https://voromotors.scoopcost.com/' className="pickedStore">
                                 <div className="imgBox" style={{background: '#000'}}>
                                     <Image
                 width={400}
@@ -809,7 +809,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://expertpeptides.suproffer.com/' className="pickedStore">
+                            <a href='https://expertpeptides.scoopcost.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -824,7 +824,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://echowater.suproffer.com/' className="pickedStore">
+                            <a href='https://echowater.scoopcost.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image style={{ backgroundColor: '#000' }}
                 width={400}
@@ -839,7 +839,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://fadirtools.suproffer.com/' className="pickedStore">
+                            <a href='https://fadirtools.scoopcost.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -854,7 +854,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className="col">
-                            <a href='https://gohighlevel.suproffer.com/' className="pickedStore">
+                            <a href='https://gohighlevel.scoopcost.com/' className="pickedStore">
                                 <div className="imgBox">
                                     <Image
                 width={400}
@@ -950,7 +950,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                 <div className='secHeading'>Featured Stored</div>
                     <div className="row row-cols-lg-6 row-cols-md-4 row-cols-sm-3 row-cols-3">
                         <div className='col p-0'>
-                            <a href="https://hemplucid.suproffer.com/" aria-label='hemplucid'>
+                            <a href="https://hemplucid.scoopcost.com/" aria-label='hemplucid'>
                                 <Image
                                     width={100}
                                     height={100}
@@ -960,7 +960,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="https://herbalmana.suproffer.com/" aria-label='herbalmana'>
+                            <a href="https://herbalmana.scoopcost.com/" aria-label='herbalmana'>
                                 <Image
                                     width={100}
                                     height={100}
@@ -970,7 +970,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="https://heritagetype.suproffer.com/" aria-label='heritagetype'>
+                            <a href="https://heritagetype.scoopcost.com/" aria-label='heritagetype'>
                                 <Image
                                     width={100}
                                     height={100}
@@ -980,7 +980,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="https://icedrop-de.suproffer.com/" aria-label='iiidmax'>
+                            <a href="https://icedrop-de.scoopcost.com/" aria-label='iiidmax'>
                                 <Image 
                                     style={{background: '#000'}}
                                     width={100}
@@ -991,7 +991,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="https://iubenda.suproffer.com/" aria-label='iubenda'>
+                            <a href="https://iubenda.scoopcost.com/" aria-label='iubenda'>
                                 <Image
                                     width={100}
                                     height={100}
@@ -1001,7 +1001,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="https://koinly-io.suproffer.com/" aria-label='koinly-io'>
+                            <a href="https://koinly-io.scoopcost.com/" aria-label='koinly-io'>
                                 <Image
                                     width={100}
                                     height={100}
@@ -1011,7 +1011,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="https://justonedime.suproffer.com/" aria-label='store'>
+                            <a href="https://justonedime.scoopcost.com/" aria-label='store'>
                                 <Image 
                                    style={{background: '#012f51'}}
                                     width={100}
@@ -1022,7 +1022,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="https://platinumtherapylights.suproffer.com/" aria-label='platinumtherapylights' style={{background: '#750d02'}}>
+                            <a href="https://platinumtherapylights.scoopcost.com/" aria-label='platinumtherapylights' style={{background: '#750d02'}}>
                                 <Image
                                     width={100}
                                     height={100}
@@ -1032,7 +1032,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="https://seamosskulture.suproffer.com/" aria-label='seamosskulture'>
+                            <a href="https://seamosskulture.scoopcost.com/" aria-label='seamosskulture'>
                                 <Image
                                     width={100}
                                     height={100}
@@ -1042,7 +1042,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="https://streamyard.suproffer.com/" aria-label='streamyard'>
+                            <a href="https://streamyard.scoopcost.com/" aria-label='streamyard'>
                                 <Image
                                     width={100}
                                     height={100}
@@ -1053,7 +1053,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         </div>
                         
                         <div className='col p-0'>
-                            <a href="https://smbsm.suproffer.com/" aria-label='smbsm'>
+                            <a href="https://smbsm.scoopcost.com/" aria-label='smbsm'>
                                 <Image
                                     width={100}
                                     height={100}
@@ -1063,7 +1063,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             </a>
                         </div>
                         <div className='col p-0'>
-                            <a href="https://sellerlabs.suproffer.com/" aria-label='sellerlabs'>
+                            <a href="https://sellerlabs.scoopcost.com/" aria-label='sellerlabs'>
                                 <Image
                                     width={100}
                                     height={100}

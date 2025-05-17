@@ -3,7 +3,7 @@ User-agent: *
 Disallow: /
 
 # Host
-Host: https://suproffer.com
+Host: https://scoopcost.com
 
 # Sitemaps
-Sitemap: https://suproffer.com/sitemap.xml
+Sitemap: https://scoopcost.com/sitemap.xml

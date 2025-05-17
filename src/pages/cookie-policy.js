@@ -82,7 +82,7 @@ export default function cookiePolicy({ cookiePolicy }) {
                         Contact Us
                         </div>
                         <p>
-                        If you have any questions or concerns about this Cookie Policy, reach out to us at <a href="https://suproffer.com/contact">https://suproffer.com/contact.</a>
+                        If you have any questions or concerns about this Cookie Policy, reach out to us at <a href="https://scoopcost.com/contact">https://scoopcost.com/contact.</a>
                         </p>
                         <p>
                         By using Suproffer, you consent to use cookies as described in this Cookie Policy.

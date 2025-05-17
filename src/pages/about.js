@@ -46,15 +46,15 @@ export default function aboutSaveright({ aboutSaveright }) {
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="#0077B5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
                                                 </a>
                                             </p>
-                                            <span>Founder & CEO @ suproffer.com</span>
+                                            <span>Founder & CEO @ scoopcost.com</span>
                                             </div>
                                         </div>
                                         <div className="founderNote">
                                             <p>
-                                            Rudresh Dubey is an experienced affiliate marketer with over 10 years of experience in digital marketing. His journey in the coupon industry began a decade ago to help people save money while shopping online. As the founder of <a href="https://suproffer.com/">Suproffer.com</a>, Rudresh turned his vision into a reality by creating a trusted platform that offers only tested and verified coupon codes. What started as a small idea for online shoppers has now grown into a reliable name for deals and discounts.
+                                            Rudresh Dubey is an experienced affiliate marketer with over 10 years of experience in digital marketing. His journey in the coupon industry began a decade ago to help people save money while shopping online. As the founder of <a href="https://scoopcost.com/">scoopcost.com</a>, Rudresh turned his vision into a reality by creating a trusted platform that offers only tested and verified coupon codes. What started as a small idea for online shoppers has now grown into a reliable name for deals and discounts.
                                             </p>
                                             <p>
-                                            Rudresh's goal has always been simple - make online shopping affordable and stress-free. He leads a hardworking team of 6 members who carefully pick the best promo codes across many categories like fashion, electronics, travel, and software. Every coupon goes through a proper check to make sure it is genuine and active. <a href="https://suproffer.com/">Suproffer.com</a> has become a go-to destination for online buyers who want to save money without wasting time on fake deals or expired coupons.
+                                            Rudresh's goal has always been simple - make online shopping affordable and stress-free. He leads a hardworking team of 6 members who carefully pick the best promo codes across many categories like fashion, electronics, travel, and software. Every coupon goes through a proper check to make sure it is genuine and active. <a href="https://scoopcost.com/">scoopcost.com</a> has become a go-to destination for online buyers who want to save money without wasting time on fake deals or expired coupons.
                                             </p>
                                         </div>
                                         </div>
@@ -66,7 +66,7 @@ export default function aboutSaveright({ aboutSaveright }) {
                                         <div className="expHead">Meet Our Coupon Experts</div>
                                         <div className="expertPara">
                                             <p>
-                                            <a href="https://suproffer.com/">Suproffer.com</a> has an efficient team of 6 coupon experts. Their job is to make sure users always get the best and latest offers. Our team focuses on creating a smooth and friendly user experience, so visitors can quickly find the right deals without getting misled. They keep an eye on every code and update the site regularly. We have also put a comment section on each coupon page. If a coupon doesn’t work, the team makes sure to fix the issue and try to improve the services based on user feedback.
+                                            <a href="https://scoopcost.com/">scoopcost.com</a> has an efficient team of 6 coupon experts. Their job is to make sure users always get the best and latest offers. Our team focuses on creating a smooth and friendly user experience, so visitors can quickly find the right deals without getting misled. They keep an eye on every code and update the site regularly. We have also put a comment section on each coupon page. If a coupon doesn’t work, the team makes sure to fix the issue and try to improve the services based on user feedback.
                                             </p>
                                             <p>
                                             If you notice anything that isn’t right on our website, you can report the issue to us and we’ll address it shortly.
@@ -210,7 +210,7 @@ export default function aboutSaveright({ aboutSaveright }) {
                        Get In Touch
                        </div>
                        <p>
-                       If you have any questions, suggestions or encounter any issues, please contact us at <a href="https://suproffer.com/contact">https://suproffer.com/contact</a>.
+                       If you have any questions, suggestions or encounter any issues, please contact us at <a href="https://scoopcost.com/contact">https://scoopcost.com/contact</a>.
                        </p>
                     </div> 
                 </div>   

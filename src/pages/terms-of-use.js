@@ -111,7 +111,7 @@ export default function termsOfUse({ termsOfUse }) {
                         Contact Us
                         </div>
                         <p>
-                        If you have any questions about these Terms of Use, please contact us through our <a href="https://suproffer.com/contact">contact page.</a>
+                        If you have any questions about these Terms of Use, please contact us through our <a href="https://scoopcost.com/contact">contact page.</a>
                         </p>
                         <p>
                         By using Suproffer, you acknowledge that you have read, understand, and agree to be bound by these Terms of Use. 

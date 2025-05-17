@@ -50,7 +50,7 @@ export default function affiliateDisclosure({ affiliateDisclosure }) {
                         Got Questions? 
                         </div>
                         <p>
-                        If you have questions about how affiliate links work, feel free to contact us at <a href="https://suproffer.com/contact">https://suproffer.com/contact. </a>
+                        If you have questions about how affiliate links work, feel free to contact us at <a href="https://scoopcost.com/contact">https://scoopcost.com/contact. </a>
                         </p>
                     </div> 
                 </div>   

@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import arrayShuffle from 'array-shuffle';
 import moment from "moment";
-const baseDomain="suproffer.com"
+const baseDomain="scoopcost.com"
 function Category({ category, stores, categories }) {
 
     const validImageSrc = (image) =>
@@ -197,7 +197,7 @@ function Category({ category, stores, categories }) {
 // revalidation is enabled and a new request comes in
 export async function getStaticProps({ params }) {
 
-    const res = await fetch(`https://admin.suproffer.com/categories/${params.slug}`)
+    const res = await fetch(`https://admin.scoopcost.com/categories/${params.slug}`)
     const category = await res.json()
     if (category.detail) {
         return {
@@ -206,7 +206,7 @@ export async function getStaticProps({ params }) {
     }
     const stores = category.store_set.results;
 
-    const resCategories = await fetch(`https://admin.suproffer.com/categories/?ordering=-id`)
+    const resCategories = await fetch(`https://admin.scoopcost.com/categories/?ordering=-id`)
     const categoriesData = await resCategories.json()
     const categories = arrayShuffle(categoriesData);
     return {
@@ -226,7 +226,7 @@ export async function getStaticProps({ params }) {
 // It may be called again, on a serverless function, if
 // the path has not been generated.
 export async function getStaticPaths() {
-    const res = await fetch('https://admin.suproffer.com/categories')
+    const res = await fetch('https://admin.scoopcost.com/categories')
     const categories = await res.json()
 
     // Get the paths we want to pre-render based on categories

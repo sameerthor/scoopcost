@@ -48,7 +48,7 @@ export default function privacyPolicy({ privacyPolicy }) {
                             We also collect data automatically when you use our site. This includes your IP address, browser type, device model, location, and operating system. Also, we gather user behavior such as pages visited, time spent on site, and clicks on coupons or affiliate links.
                             </p>
                             <p>
-                            We use cookies and similar technologies to gather this data. Read our <a href="https://suproffer.com/cookie-policy">Cookie Policy</a> to learn more. 
+                            We use cookies and similar technologies to gather this data. Read our <a href="https://scoopcost.com/cookie-policy">Cookie Policy</a> to learn more. 
                             </p>
                             <div className='h2'>
                             How We Use Your Information
@@ -128,7 +128,7 @@ export default function privacyPolicy({ privacyPolicy }) {
                             Contact Us
                             </div>
                             <p>
-                            Have questions, concerns or requests about your privacy? We are here to help. Reach out to us at <a href="https://suproffer.com/contact"> https://suproffer.com/contact</a>
+                            Have questions, concerns or requests about your privacy? We are here to help. Reach out to us at <a href="https://scoopcost.com/contact"> https://scoopcost.com/contact</a>
                             </p>
                             <p>
                             By using Suproffer, you consent to the terms described in this Privacy Policy. 

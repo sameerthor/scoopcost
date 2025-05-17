@@ -13,7 +13,7 @@ async function fetchStoreData(identifier) {
   if (cached) return cached;
 
   // Fetch fresh data if not in cache
-  const res = await fetch(`https://admin.suproffer.com/stores/${identifier}`, {
+  const res = await fetch(`https://admin.scoopcost.com/stores/${identifier}`, {
     next: { revalidate: 30 } // Optional: Next.js fetch caching
   });
 
@@ -29,7 +29,7 @@ export async function middleware(request) {
   const url = request.nextUrl.clone();
   const pathname = url.pathname;
 
-  const baseDomain = 'suproffer.com';
+  const baseDomain = 'scoopcost.com';
   const isMainDomain = host === baseDomain || host === `www.${baseDomain}`;
 
   // Faster asset detection using regex

@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         redirect: "follow"
       };
   
-      const response = await fetch("https://admin.suproffer.com/stores/", requestOptions)
+      const response = await fetch("https://admin.scoopcost.com/stores/", requestOptions)
   
       if (!response.ok) {
         throw new Error("Failed to fetch data from the server");
