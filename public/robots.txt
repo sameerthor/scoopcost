@@ -1,9 +1,2 @@
-# *
 User-agent: *
 Disallow: /
-
-# Host
-Host: https://scoopcost.com
-
-# Sitemaps
-Sitemap: https://scoopcost.com/sitemap.xml

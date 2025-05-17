@@ -2,7 +2,7 @@ const excludedSlugs = require('./excluded-slugs.json')
 
 module.exports = {
   siteUrl: 'https://scoopcost.com',
-  generateRobotsTxt: true,
+  generateRobotsTxt: false,
   exclude: excludedSlugs.map(slug => `/${slug}`),
     generateIndexSitemap: false, // ❌ disables sitemap-index.xml
   additionalSitemaps: ['https://scoopcost.com/store-sitemap.xml'],
