@@ -14,7 +14,7 @@ export default function Header() {
   const [filterdata, setFilterdata] = useState([]);
 
   function fetchData() {
-    axios.get('https://admin.suproffer.com/store-search')
+    axios.get('https://admin.scoopcost.com/store-search')
       .then(function (response) {
         var d = response.data.map(item => { return { key: item.slug, value: item.title,subdomain:item.subdomain } })
         setFilterdata(d);
@@ -87,9 +87,9 @@ export default function Header() {
                               const { key, subdomain } = record.item
                             
                               if (subdomain) {
-                                window.location.href = `https://${key}.suproffer.com`
+                                window.location.href = `https://${key}.scoopcost.com`
                               } else {
-                                 window.location.href = `https://suproffer.com/${key}`
+                                 window.location.href = `https://scoopcost.com/${key}`
                               }
                             }}
                                leftIcon={<svg

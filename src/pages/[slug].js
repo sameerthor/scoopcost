@@ -119,7 +119,7 @@ export default function StorePage({ store, relStores, addedByData }) {
     "name": coupon.title, // Dynamic name based on coupon title
     "description": coupon.Content, // Dynamic description
     "image": `${store.image}`, // Default or dynamic image
-    "url": `https://suproffer.com/${store.slug}#c=${coupon.id}`, // Dynamic URL
+    "url": `https://scoopcost.com/${store.slug}#c=${coupon.id}`, // Dynamic URL
     "startDate": "2025-03-10", // Use dynamic start date if available
     "endDate": "2025-06-09", // Use dynamic end date if available
     "performer": {
@@ -270,7 +270,7 @@ export default function StorePage({ store, relStores, addedByData }) {
                               <MainDomainLink
                                 href={
                                   store.subdomain
-                                    ? `https://${store.slug}.suproffer.com`
+                                    ? `https://${store.slug}.scoopcost.com`
                                     : `/${store.slug}`
                                 }
                               >
@@ -626,7 +626,7 @@ export default function StorePage({ store, relStores, addedByData }) {
                                         <MainDomainLink
                                           href={
                                             store.subdomain
-                                              ? `https://${store.slug}.suproffer.com`
+                                              ? `https://${store.slug}.scoopcost.com`
                                               : `/${store.slug}`
                                           }
                                         >
@@ -819,7 +819,7 @@ export default function StorePage({ store, relStores, addedByData }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch('https://admin.suproffer.com/stores/');
+  const res = await fetch('https://admin.scoopcost.com/stores/');
   const stores = await res.json();
 
   const paths = stores.map(store => ({
@@ -834,7 +834,7 @@ export async function getStaticProps({ params }) {
 
   const slug = params.slug || req.headers.get('host')?.split('.')[0];
 
-  const res = await fetch('https://admin.suproffer.com/stores/' + slug + '/')
+  const res = await fetch('https://admin.scoopcost.com/stores/' + slug + '/')
   var store = await res.json()
   if (store.detail) {
     return {
@@ -842,7 +842,7 @@ export async function getStaticProps({ params }) {
     };
   }
 
-  const addedByJson = await fetch(`https://admin.suproffer.com/addedby-stores/`)
+  const addedByJson = await fetch(`https://admin.scoopcost.com/addedby-stores/`)
   const addedByData = await addedByJson.json()
 
   store.coupon_set.map(coupon => {
@@ -853,7 +853,7 @@ export async function getStaticProps({ params }) {
 
   var simCat = [];
   if (store.category[0]) {
-    const resRelStores = await fetch(`https://admin.suproffer.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
+    const resRelStores = await fetch(`https://admin.scoopcost.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
     var relStores = await resRelStores.json()
     relStores = relStores.filter((s) => s.id !== store.id);
     relStores = _.shuffle(relStores).slice(0, 12)
@@ -861,7 +861,7 @@ export async function getStaticProps({ params }) {
   } else {
     var relStores = [];
   }
-  const baseDomain = "suproffer.com";
+  const baseDomain = "scoopcost.com";
   const store_names = relStores
     .filter(f => f.id !== store.id)
     .slice(0, 2)

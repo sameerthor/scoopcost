@@ -1,9 +1,2 @@
-# *
 User-agent: *
 Disallow: /
-
-# Host
-Host: https://suproffer.com
-
-# Sitemaps
-Sitemap: https://suproffer.com/sitemap.xml

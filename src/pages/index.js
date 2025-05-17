@@ -159,7 +159,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             />
             <MetaTags />
 
-           <section className='firstSec'>
+            <section className='firstSec'>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-7 mb-3">

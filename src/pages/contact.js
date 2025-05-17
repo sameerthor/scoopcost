@@ -19,7 +19,7 @@ export default function contactPage({ contact }) {
                     <div className="row">
                          <p><strong>Let’s Make Saving Easy! </strong></p>
                          <p>
-                         At <a href="https://suproffer.com/">Suproffer.com</a>, our team works best to help you score the right deals and discounts online. If you are looking forward to a great idea to share, or want to collaborate with us — we’re just a message away.
+                         At <a href="https://scoopcost.com/">scoopcost.com</a>, our team works best to help you score the right deals and discounts online. If you are looking forward to a great idea to share, or want to collaborate with us — we’re just a message away.
                          </p>
                          <p>
                              <strong>🛍 Need Help With Coupons?</strong>
@@ -36,10 +36,10 @@ export default function contactPage({ contact }) {
                             <strong>📬 Reach Out Anytime</strong>
                          </p>
                          <p>
-                         Customer Support & General Questions: brand@suproffer.com
+                         Customer Support & General Questions: brand@scoopcost.com
                          </p>
                          <p>
-                         Business & Collaborations: info@suproffer.com
+                         Business & Collaborations: info@scoopcost.com
                          </p>
                          <p><strong>📢 Stay Connected</strong></p>
                          <p>

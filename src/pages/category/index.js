@@ -29,7 +29,7 @@ function CategoryListing({ categories }) {
                     <div className="row">
                         <div className="breadcrumb">
                             <ul>
-                                <li><MainDomainLink href="/">suproffer.com</MainDomainLink> /</li>
+                                <li><MainDomainLink href="/">scoopcost.com</MainDomainLink> /</li>
                                 <li>category</li>
                             </ul>
                         </div>
@@ -94,7 +94,7 @@ function CategoryListing({ categories }) {
 }
 
 export async function getStaticProps({ params }) {
-    const res = await fetch(`https://admin.suproffer.com/categories?ordering=title`);
+    const res = await fetch(`https://admin.scoopcost.com/categories?ordering=title`);
     const categories = await res.json();
 
     return {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import "@/styles/a-z.css";
 import { NextSeo } from "next-seo";
 import MainDomainLink from '@/components/MainDomainLink';
-const baseDomain = "suproffer.com"
+const baseDomain = "scoopcost.com"
 export default function Stores({ initialStoreData }) {
     console.log(initialStoreData)
     const [storeData, setStoreData] = useState(initialStoreData);
@@ -27,7 +27,7 @@ export default function Stores({ initialStoreData }) {
         try {
             const nextPage = pageNumbers[letter] + 1;
             const response = await fetch(
-                `https://admin.suproffer.com/store-page/alphabetical-filter/?letter=${letter}&page=${nextPage}`
+                `https://admin.scoopcost.com/store-page/alphabetical-filter/?letter=${letter}&page=${nextPage}`
             );
             const data = await response.json();
 
@@ -62,7 +62,7 @@ export default function Stores({ initialStoreData }) {
                             <h1 className="text-center">Explore Our All Stores Page - Best Coupons and Deals</h1>
                             <div className="catInfo">
                                 <p>
-                                Welcome to the All Stores Page on Suproffer.com - your one-stop destination for the latest discount deals, promo codes, and verified coupons for all your favorite online stores. From fashion and beauty to electronics and travel, we bring together the best deals to help you save more every time you shop online. 
+                                Welcome to the All Stores Page on scoopcost.com - your one-stop destination for the latest discount deals, promo codes, and verified coupons for all your favorite online stores. From fashion and beauty to electronics and travel, we bring together the best deals to help you save more every time you shop online. 
                                 </p>
                                 <h2>Why Shop With Suproffer?
                                 </h2>
@@ -95,7 +95,7 @@ export default function Stores({ initialStoreData }) {
                                 Create a free account on Suproffer to receive alerts, discount notifications, holiday sales, and seasonal deal reminders. Get notified about the latest offers for events like Cyber Monday, Black Friday, New Year, Christmas, Halloween, and Valentine’s Day. 
 
                                 </p>
-                                <p>Start saving at Suproffer.com! 
+                                <p>Start saving at scoopcost.com! 
                                 </p>
                             </div>
                             <div>
@@ -174,7 +174,7 @@ export async function getStaticProps() {
     try {
         const responses = await Promise.all(
             alphabets.map((letter) =>
-                fetch(`https://admin.suproffer.com/store-page/alphabetical-filter/?letter=${letter}&page=1`)
+                fetch(`https://admin.scoopcost.com/store-page/alphabetical-filter/?letter=${letter}&page=1`)
                     .then((res) => res.json())
                     .then((data) => ({ [letter]: data.results || [] }))
             )
