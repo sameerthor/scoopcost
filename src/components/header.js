@@ -116,7 +116,7 @@ export default function Header() {
                 </MainDomainLink>
               </li>
               <li className="nav-item">
-                <MainDomainLink className="nav-link" href="/">
+                <MainDomainLink className="nav-link" href="/giftcard">
                   Gift Card
                 </MainDomainLink>
               </li>

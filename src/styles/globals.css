@@ -63,7 +63,7 @@ box-sizing: border-box;
 }
 :root {
 --primary-color: #003B94; 
---secondary-color: #702F00;
+--secondary-color: #c85a0b;
 }
 
 .navbar .brandLogo img{
@@ -83,6 +83,7 @@ max-width: 1250px;
 border: 1px solid var(--primary-color);
 padding-left: .5rem;
 position: relative;
+border-radius: 1.7rem;
 }
 .navbar .searchForm input{
 box-shadow: none;
@@ -90,6 +91,7 @@ border-radius: 0;
 border: none;
 font-weight: 500;
 color: #000;
+border-radius: 1.7rem;
 }
 .navbar .searchForm input{
 box-shadow: none;
@@ -113,6 +115,7 @@ font-weight: 600;
 text-transform: uppercase;
 font-size: .8rem;
 letter-spacing: .5px;
+border-radius: 0 1.7rem 1.7rem 0;
 }
 .navbar .searchForm button:focus{
   background-color: var(--primary-color);
@@ -161,6 +164,7 @@ letter-spacing: .5px;
   margin-left: 0 !important;
   width: 100%;
   justify-content: space-between;
+  border-radius: 1.7rem;
 }
 }
 /* footer */
