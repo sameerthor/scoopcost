@@ -516,307 +516,64 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                             />
                 </div>
            </section>
+           <section className='faqs'>
+                <div className="container">
+                    <h2 className='secHeading'>Frequently Ask Question</h2>
+
+                    <div className="row row-cols col-cols-lg-2">
+                        <div className='col-lg-7'>
+                            <div className="feature-list">
+                                <div className="feature-item">
+                                    <div className="feature-title">
+                                       What are eGift Cards?
+                                    </div>
+                                    <div className="feature-description">
+                                        eGift Cards or electronic gift cards are prepaid cards that work like cash. The recipient gets a code sent via email or text which can be used to shop online or in-store (if supported). They are a convenient way to shop, save, or give someone a thoughtful gift. 
+
+                                    </div>
+                                </div>
+                                <div className="feature-item">
+                                    <div className="feature-title">
+                                       How do Gift Cards work?
+                                    </div>
+                                    <div className="feature-description">
+                                        Once you receive a Gift card, it usually includes a unique card number and PIN. To use it, simply enter these details at checkout when shopping online. Always read the usage instructions to know how to redeem the gift card. 
+                                    </div>
+                                </div>
+                                <div className="feature-item">
+                                    <div className="feature-title">
+                                       Where can I find Gift Cards for my shopping spree? 
+                                    </div>
+                                    <div className="feature-description">
+                                        The best place to find gift cards & vouchers online is Scoopcost. Our platform helps shoppers to easily explore and purchase GCs/GVs for popular brands at great prices. We make it quick, safe, and convenient to send digital gift cards straight to someone’s inbox. 
+                                    </div>
+                                </div>
+                                <div className="feature-item">
+                                    <div className="feature-title">
+                                       What are the benefits of using Gift Cards? 
+                                    </div>
+                                    <div className="feature-description">
+                                        Gift cards are convenient and flexible. You can use them like cash when shopping at online platforms. They are great for personal shopping or gifting and sometimes come with extra discounts or rewards. 
+
+                                    </div>
+                                </div>
+                               
+                                
+
+                            </div>
+                        </div>
+                         <div className='col'>
+                            <div className="imgBox">
+                                <Image  className='brand-logo'
+                                    width={600}
+                                    height={600} 
+                                    src="/images/faqs.png" loading="lazy" alt="faqs" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </section>
           
-
-            {/* Top Online Stores Section */}
-            <section className="online-store">
-                <div className="container">
-                    <div className='secHeading'>Top Online Stores</div>
-                    <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2">
-                        <div className="col">
-                            <a href='https://chayagallery.suproffer.com/' className="pickedStore" aria-label='chayagallery'>
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/chaya.avif'
-                                        alt='Sauce Warehouse Coupon'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    9 Codes
-                                </div>
-                            </a>
-                        </div>
-                      
-                        <div className="col">
-                            <a href='https://dryfarmwines.suproffer.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image style={{
-                                        backgroundColor: '#000'
-                                      }}
-                width={400}
-                 height={400}
-                                        src='/images/dryfarmswines-text-logo-new.avif'
-                                        alt='dryfarmswines'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    8 Codes
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://drshadez.suproffer.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/dr-shadez.webp'
-                                        alt='drshadez'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    7 Codes
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://designyourown-wine.suproffer.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/designyourwine.avif'
-                                        alt='designyourown-wine'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    7 Codes
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://doodly.suproffer.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                                    style={{ backgroundColor: '#1f729e' }}
-                width={400}
-                 height={400}
-                                        src='/images/doodly.webp'
-                                        alt='turned-ninja'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    9 Codes
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://voromotors.suproffer.com/' className="pickedStore">
-                                <div className="imgBox" style={{background: '#000'}}>
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/voro-motors.avif'
-                                        alt='voro-motors'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    7 Codes
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://expertpeptides.suproffer.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/expert_peptides.webp'
-                                        alt='wave-hawaii'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    9 Codes
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://echowater.suproffer.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image style={{ backgroundColor: '#000' }}
-                width={400}
-                 height={400}
-                                        src='/images/echo.webp'
-                                        alt='echowater'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    8 Codes
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://fadirtools.suproffer.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/fadirtool.avif'
-                                        alt='zozila'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    9 Codes
-                                </div>
-                            </a>
-                        </div>
-                        <div className="col">
-                            <a href='https://gohighlevel.suproffer.com/' className="pickedStore">
-                                <div className="imgBox">
-                                    <Image
-                width={400}
-                 height={400}
-                                        src='/images/hohighlevel.webp'
-                                        alt='zozila'
-                                    />
-                                </div>
-                                <div className="dealCout">
-                                    9 Codes
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="d-flex">
-                        <div className="more-btn ms-auto">
-                            <a href="/stores" className="btn btn-primary">Explore More</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-           
-            <section className='featuredStore'>
-                <div className="container">
-                <div className='secHeading'>Featured Stored</div>
-                    <div className="row row-cols-lg-6 row-cols-md-4 row-cols-sm-3 row-cols-3">
-                        <div className='col p-0'>
-                            <a href="https://hemplucid.suproffer.com/" aria-label='hemplucid'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/helplucid.svg'
-                                    alt='hemplucid'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="https://herbalmana.suproffer.com/" aria-label='herbalmana'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/herbal-mana.avif'
-                                    alt='herbalmana'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="https://heritagetype.suproffer.com/" aria-label='heritagetype'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/heritage.avif'
-                                    alt='heritagetype'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="https://icedrop-de.suproffer.com/" aria-label='iiidmax'>
-                                <Image 
-                                    style={{background: '#000'}}
-                                    width={100}
-                                    height={100}
-                                    src='/images/icedrop.avif'
-                                    alt='iiidmax'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="https://iubenda.suproffer.com/" aria-label='iubenda'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/iubenda.svg'
-                                    alt='iubenda'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="https://koinly-io.suproffer.com/" aria-label='koinly-io'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/koinly-review-square-logo.avif'
-                                    alt='koinly-review-square-logo'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="https://justonedime.suproffer.com/" aria-label='store'>
-                                <Image 
-                                   style={{background: '#012f51'}}
-                                    width={100}
-                                    height={100}
-                                    src='/images/just-one-dime.svg'
-                                    alt='justonedime'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="https://platinumtherapylights.suproffer.com/" aria-label='platinumtherapylights' style={{background: '#750d02'}}>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/platinumtherapy.webp'
-                                    alt='platinumtherapy'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="https://seamosskulture.suproffer.com/" aria-label='seamosskulture'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/seamosskulture.avif'
-                                    alt='seamosskulture'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="https://streamyard.suproffer.com/" aria-label='streamyard'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/streamyard.svg'
-                                    alt='streamyard'
-                                            />
-                            </a>
-                        </div>
-                        
-                        <div className='col p-0'>
-                            <a href="https://smbsm.suproffer.com/" aria-label='smbsm'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/smbsm.webp'
-                                    alt='samtalbot'
-                                            />
-                            </a>
-                        </div>
-                        <div className='col p-0'>
-                            <a href="https://sellerlabs.suproffer.com/" aria-label='sellerlabs'>
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src='/images/sellerlabs.webp'
-                                    alt='sellerlabs'
-                                            />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </>
     );
 }

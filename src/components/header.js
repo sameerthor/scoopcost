@@ -63,13 +63,7 @@ export default function Header() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <MainDomainLink className="navbar-brand brandLogo" href="/">
-              <Image
-                src="/images/scoopcost-logo.webp"
-                alt="logo"
-                width={150} // Replace with your actual width
-                height={60} // Replace with your actual height
-                loading="lazy"
-              />
+               Scoop<span>Cost</span>
             </MainDomainLink>
             <div className="dummyBox"></div>
           </div>

@@ -1189,3 +1189,63 @@
 .carouselStore .container .carousel-control-next{
     justify-content: right;
 }
+/* FAQs */
+.abtGiftcard .container{
+max-width: 1000px;
+}
+ .about-giftcard-section {
+      margin: 60px auto;
+      padding: 30px 20px;
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #1f2937;
+    }
+
+    .intro-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #4b5563;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .feature-item {
+      padding: 15px 20px;
+      background-color: #f3f4f6;
+      border-left: 4px solid #2563eb;
+      border-radius: 4px;
+    }
+
+    .feature-title {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .feature-description {
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    @media (max-width: 600px) {
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .feature-item {
+        padding: 12px 16px;
+      }
+    }

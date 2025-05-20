@@ -25,40 +25,37 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             <div className='overLay'>
                    <div className='overLayBox'>
                         <div className='title'> 
-                                Pay <span>₹95,521.01</span> today to get <span>₹1,00,022</span> redemption at Zomato.
+                                ScoopCost
                         </div>
-                        <Image 
-                            width={130}
-                            height={350} 
-                            src="/images/banner-bg-1.png" loading="lazy" alt="logo" />
+                        <div className='brandName'> 
+                                Zomato Gift Card
+                        </div>
                           
                    </div>
                     <Image 
-                        width={800}
-                        height={340} 
-                        src="/images/banner-bg.png" loading="lazy" alt="logo" />
+                        width={600}
+                        height={300} 
+                        src="/images/giftcard.png" loading="lazy" alt="logo" />
             </div>
         </div>,
         <div className="imgItem">
             <div className='overLay'>
                    <div className='overLayBox'>
                         <div className='title'> 
-                               You save an additional <span>₹4,500.99</span> at this Gift cart
+                                ScoopCost
                         </div>
-                        <Image 
-                            width={130}
-                            height={350} 
-                            src="/images/banner-bg-1.png" loading="lazy" alt="logo" />
+                        <div className='brandName'> 
+                                Zomato Gift Card
+                        </div>
                           
                    </div>
                     <Image 
-                        width={800}
-                        height={340} 
-                        src="/images/banner-bg.png" loading="lazy" alt="logo" />
+                        width={600}
+                        height={300} 
+                        src="/images/giftcard.png" loading="lazy" alt="logo" />
             </div>
         </div>,
         
-    
     ];
 
     
@@ -120,7 +117,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             <section className='firstSec'>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-7 mb-3">
+                        <div className="col-lg-6 mb-3">
                             <div className="checkOutContainer">
                                 <div className='headFlex'>
                                     <div>
@@ -141,11 +138,18 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </div>
                                 <form action="#">
                                     <div className="msgBox">
-                                        <label className='err me-auto d-none'>Amount exceedec the max value</label>
-                                        <label className='ms-auto' htmlFor='cardAmount'>Max: 100000INR</label>
+                                        <label className='' htmlFor='cardAmount'>Gift Amount</label>
+                                        <label className='err  d-none'>Amount exceedec the max value</label>
+                                        <label className='' htmlFor='cardAmount'>Max: $100000</label>
+                                    </div>
+                                    <div className='giftValues'>
+                                        <button className='active'>$20</button>
+                                        <button>$25</button>
+                                        <button>$30</button>
+                                        <button>$35</button>
                                     </div>
                                     <div className='inputBox'>
-                                        <input type="text" id='cardAmount' className='form-control' value='₹100000' />
+                                        <input type="text" id='cardAmount' className='form-control' value='$20' />
                                     </div>
                                     <div className="inputBox">
                                         <label htmlFor="paymentMethod">Payment method</label>
@@ -179,12 +183,12 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <div>
                                         <label htmlFor="payAmt">You pay only</label>
                                         <div className='finalAmt'>
-                                            <span>₹ 99999</span>
-                                            <small>₹ 100022.00</small>
+                                            <span>$ 20</span>
+                                            <small>$ 25</small>
                                         </div>
                                     </div>
                                     <div className='payBtn'>
-                                        <button type='submit'>Proceed to pay | ₹95521.01</button>
+                                        <button type='submit'>Proceed to pay | $95521.01</button>
                                     </div>
                                     <div className='pgateway'>
                                         <span>Safe & Secure payment by razorpay</span>
@@ -196,12 +200,19 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </form>
                             </div>
                          </div> 
-                        <div className="col-lg-5 topCarousel">
+                        <div className="col-lg-6 topCarousel">
                                 <ResponsiveCarousel
                                     items={firstCarousel}
                                     idPrefix="firstCarousel"
                                     responsiveConfig={{ xs: 1, sm: 1, md: 1 }}
                                 />
+                                <div className='FlexBtns'>
+                                    <button data-bs-toggle='modal' data-bs-target='#redeemModal'>How To Redeem</button>
+                                    <button data-bs-toggle='modal' data-bs-target='#termsCondition'>Terms &amp; Conditions</button>
+                                </div>
+                                <div className='imp'>
+                                     <span>Important Points</span>
+                                </div>
                                 <div className="features-grid">
                                     <div className="feature-card">
                                         <div className="icon-box">
@@ -246,6 +257,20 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                 </div>
                         </div>
                     </div>
+                </div>
+           </section>
+           <section className='abtGiftcard'>
+                <div className="container">
+                        <div className="about-giftcard-section">
+                        <div className="section-title">About Zomato Gift Cards</div>
+                        <p className="intro-text">
+                            Our gift cards are a simple and flexible way to share appreciation or celebrate special occasions. Designed for convenience and ease of use, they are suitable for both personal and professional gifting.
+                        </p>
+                        <p className="intro-text">
+                            Our gift cards are a simple and flexible way to share appreciation or celebrate special occasions. Designed for convenience and ease of use, they are suitable for both personal and professional gifting.
+                        </p>
+                </div>
+
                 </div>
            </section>
            <section className='faqssec'>
@@ -323,7 +348,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
            </section>
            <section className="topBrands brand-grid">
                 <div className="container">
-                    <h2 className='secHeading'>Top Rated Brands</h2>
+                    <h2 className='secHeading'>Top Rated Gift Cards</h2>
                     <div className="row row-cols-lg-5 row-col-md-3 row-cols-2">
                         <div className="col mb-5">
                             <a class="brand-card" href=''>
@@ -383,6 +408,81 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     </div>
                 </div>
            </section>
+           {/* modals */}
+            <div
+                className="modal fade giftModal"
+                id="redeemModal"
+                tabIndex="-1"
+                aria-labelledby="redeemModal"
+                aria-hidden="true"
+                >
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLabel">How To Redeem</h5>
+                        <button
+                        type="button"
+                        className="closeBtn ms-auto"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        >x</button>
+                    </div>
+                    <div className="modal-body">
+                        <div className='listItem'>
+                            <span className='method'>Online</span>
+                            <ul className='custom-list'>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                            </ul>
+                        </div>
+                        <div className='listItem'>
+                            <span className='method'>Offline</span>
+                            <ul className='custom-list'>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            {/* terms */}
+             <div
+                className="modal fade giftModal"
+                id="termsCondition"
+                tabIndex="-1"
+                aria-labelledby="redeemModal"
+                aria-hidden="true"
+                >
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLabel">Terms &amp; Conditions</h5>
+                        <button
+                        type="button"
+                        className="closeBtn ms-auto"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        >x</button>
+                    </div>
+                    <div className="modal-body">
+                        <div className='listItem'>
+                            <ul className='custom-list'>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                                <li>Open the Zomato app and click on “Profile”</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    </div>
+                </div>
+            </div>
             
         </>
     );

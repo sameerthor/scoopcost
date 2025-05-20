@@ -10,10 +10,9 @@ export default function Footer() {
  <footer className="footer-box px-lg-5 px-md-3 px-2">
             <div className="row mx-auto">
                 <div className="col-lg-6 col-md-12 col-sm-12 mb-3 about-scoop footer-items">
-                    <div className="footer-logo">  <Image 
-                                                        width={220}
-                                                        height={20} 
-                                                        src="/images/scoopcost-logo.webp" loading="lazy" alt="logo" /></div>
+                    <div className="footer-logo"> 
+                        Scoop<span>Cost</span>
+                    </div>
                     <p>Hey there! Glad you stopped by ScoopCost.com. We’ve got tons of cool coupons and awesome deals on all your favorite brands. Keep checking in — there’s always something new to save on!</p>
                    
                 </div>
@@ -33,18 +32,7 @@ export default function Footer() {
                     <MainDomainLink href="/cookie-policy"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>Cookie Policy</MainDomainLink>
                     <MainDomainLink href="/contact"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>Contact Us</MainDomainLink>
                 </div>
-                {/* <div className="col-lg-3 col-md-4 col-sm-12 mb-3 footer-links">
-                    <div className="linksHeading">Stay Updated</div>
-                    <div className="subscribe">
-                        <div className="subscribe-item">
-                            <div action="" className="form">
-                                <input type="text" placeholder="Your Email" />
-                                <button>Subscribe</button>
-                            </div>
-                        </div>
-                        <span>You can opt out of our newsletters at any time. See our <a className="privacyLink" href="https://scoopcost.com/privacy-policy">privacy policy.</a></span>
-                    </div>
-                </div> */}
+                
             </div>
             <div className="row pt-5">
                 <div className="col-lg-8 mb-4">
