@@ -1,0 +1,99 @@
+.loginPage .login-container {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      transition: transform 0.3s ease;
+    }
+
+    .loginPage .login-container:hover {
+      transform: scale(1.02);
+    }
+
+    .loginPage .login-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .loginPage .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .loginPage label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .loginPage input[type="email"],
+    .loginPage input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+   .loginPage  input[type="email"]:focus,
+   .loginPage input[type="password"]:focus {
+      border-color: #2575fc;
+      outline: none;
+    }
+
+   .loginPage .btn {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+  .loginPage .btn:hover {
+      background-color: #1a5ed6;
+    }
+
+   .loginPage .form-footer {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .loginPage .form-footer a {
+      color: #2575fc;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    @media (max-width: 480px) {
+    .loginPage .login-container {
+        padding: 2rem 1.5rem;
+      }
+    }
+.loginPage{
+    padding: 3rem 0;
+}
+.loginPage .container{
+  display: flex;
+  justify-content: center;
+}
+.loginPage h1{
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+@media(max-width: 991px){
+    .loginBtn{
+    display: none;
+}
+}

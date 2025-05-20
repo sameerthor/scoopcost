@@ -4,7 +4,6 @@ import RandomDatesList from '@/components/RandomDatesList';
 import Image from 'next/image';
 import Link from 'next/link';
 import "@/styles/giftcard.css";
-import { Carousel } from 'react-responsive-carousel';
 import MainDomainLink from '@/components/MainDomainLink';
 import { useMemo } from 'react';
 import { useState, useRef, useEffect } from 'react';
@@ -12,9 +11,7 @@ import ResponsiveCarousel from "@/components/ResponsiveCarousel";
 import CustomSelect from '@/components/CustomSelect';
 
 
-export default function HomePage({ categories,topRatedStores,featuredStores,topOnlineStores }) {
-    // const accordionId = `accordion-${index}`;
-    // const collapseId = `collapse-${index}`;
+export default function GiftCardPage({ categories,topRatedStores,featuredStores,topOnlineStores }) {
     const options = [
             { value: 'udemy', label: 'Udemy', image: '/images/udemy.svg' },
             { value: 'coursera', label: 'Coursera', image: '/images/coursera.svg' },
@@ -117,89 +114,6 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             <section className='firstSec'>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6 mb-3">
-                            <div className="checkOutContainer">
-                                <div className='headFlex'>
-                                    <div>
-                                        <h1 className='brandName'>Zomato</h1>
-                                        <div className='brandCat'>
-                                            <label htmlFor="">Food</label>
-                                        </div>
-                                        <div className="brandDiscount">
-                                                22% OFF
-                                        </div>
-                                    </div>
-                                    <div className='brandImg'>
-                                            <Image 
-                                                width={150}
-                                                height={50} 
-                                                src="/images/zomato.webp" loading="lazy" alt="logo" />
-                                    </div>
-                                </div>
-                                <form action="#">
-                                    <div className="msgBox">
-                                        <label className='' htmlFor='cardAmount'>Gift Amount</label>
-                                        <label className='err  d-none'>Amount exceedec the max value</label>
-                                        <label className='' htmlFor='cardAmount'>Max: $100000</label>
-                                    </div>
-                                    <div className='giftValues'>
-                                        <button className='active'>$20</button>
-                                        <button>$25</button>
-                                        <button>$30</button>
-                                        <button>$35</button>
-                                    </div>
-                                    <div className='inputBox'>
-                                        <input type="text" id='cardAmount' className='form-control' value='$20' />
-                                    </div>
-                                    <div className="inputBox">
-                                        <label htmlFor="paymentMethod">Payment method</label>
-                                         <CustomSelect />
-                                    </div>
-                                    <div>
-                                        <button
-                                            className="promobtn"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#showInput"
-                                            aria-expanded="false"
-                                            aria-controls="showInput"
-                                        >
-                                           Have a promo code? Apply here
-                                        </button>
-                                    </div>
-                                    <div
-                                        id="showInput"
-                                        className="accordion-collapse collapse"
-                                        aria-labelledby="headingOne"
-                                        data-bs-parent="#accordionExample"
-                                    >
-                                        <div className="accordion-body">
-                                            <div className='promoInputBox'>
-                                                <input type="text" className='form-control' placeholder='Eg. SCOOP20' />
-                                                <button>Apply Here</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label htmlFor="payAmt">You pay only</label>
-                                        <div className='finalAmt'>
-                                            <span>$ 20</span>
-                                            <small>$ 25</small>
-                                        </div>
-                                    </div>
-                                    <div className='payBtn'>
-                                        <button type='submit'>Proceed to pay | $95521.01</button>
-                                    </div>
-                                    <div className='pgateway'>
-                                        <span>Safe & Secure payment by razorpay</span>
-                                         <Image 
-                                                width={150}
-                                                height={50} 
-                                                src="/images/razorpay.svg" loading="lazy" alt="logo" />
-                                    </div>
-                                </form>
-                            </div>
-                         </div> 
                         <div className="col-lg-6 topCarousel">
                                 <ResponsiveCarousel
                                     items={firstCarousel}
@@ -211,7 +125,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     <button data-bs-toggle='modal' data-bs-target='#termsCondition'>Terms &amp; Conditions</button>
                                 </div>
                                 <div className='imp'>
-                                     <span>Important Points</span>
+                                     <h2>Important Points</h2>
                                 </div>
                                 <div className="features-grid">
                                     <div className="feature-card">
@@ -255,20 +169,168 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                                     </div>
  
                                 </div>
+                                 <div className='barndInfo'>
+                                    <div className='left'>
+                                        <div className='ttl'>Zomato</div>
+                                        <div className='stars'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
+                                            </svg>
+                                        </div>
+                                        <div className='infoBox'>
+                                            <div className='infoItem'>
+                                                (800) 848-2542
+                                            </div>
+                                        </div>
+                                        <div className='infoBox'>
+                                            <div className='infoHead'>
+                                                Categories
+                                            </div>
+                                            <div className='infoItem'>
+                                                Vitamins & Supplements
+                                            </div>
+                                        </div>
+                                        <div className='infoBox'>
+                                            <div className='infoHead'>
+                                                Location
+                                            </div>
+                                            <div className='infoItem'>
+                                                11 Delta Dr, Londonderry, NH
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='right'>
+                                    <div className="brandLogo">
+                                            <Image 
+                                                            width={150}
+                                                            height={50} 
+                                                            src="/images/zomato.webp" loading="lazy" alt="logo" />
+                                    </div>
+                                    </div>
+                                </div>
                         </div>
+                           <div className="col-lg-6 mb-3">
+                            <div className="checkOutContainer">
+                                <div className='headFlex'>
+                                    <div>
+                                        <h1 className='brandName'>Zomato Gift Card</h1>
+                                        <div className='brandCat'>
+                                            <label htmlFor="">Food</label>
+                                        </div>
+                                        <div className="brandDiscount">
+                                                22% OFF
+                                        </div>
+                                    </div>
+                                    <div className='brandImg'>
+                                            <Image 
+                                                width={150}
+                                                height={50} 
+                                                src="/images/zomato.webp" loading="lazy" alt="logo" />
+                                    </div>
+                                </div>
+                                <form action="#">
+                                    <div className="msgBox">
+                                        <label className='' htmlFor='cardAmount'>Gift Amount</label>
+                                        <label className='err  d-none'>Amount exceedec the max value</label>
+                                        <label className='' htmlFor='cardAmount'>Max: $100000</label>
+                                    </div>
+                                    <div className='giftValues'>
+                                        <button className='active'>$20</button>
+                                        <button>$25</button>
+                                        <button>$30</button>
+                                        <button>$35</button>
+                                    </div>
+                                    <div className='inputBox'>
+                                        <input type="text" id='cardAmount' className='form-control amtInput' value='$20' />
+                                    </div>
+                                    <div className="inputBox">
+                                        <label htmlFor="paymentMethod">Payment method</label>
+                                         <CustomSelect />
+                                    </div>
+                                    <div className="inputBox">
+                                        <label htmlFor="paymentMethod">Billing Address</label>
+                                         <input type="text" className='form-control'  placeholder='Address'/>
+                                    </div>
+                                     <div className="inputBox">
+                                         <label htmlFor="paymentMethod">Email Address where Gift Card to be send</label>
+                                         <input type="email" className='form-control'  placeholder='Email'/>
+                                    </div>
+                                    <div>
+                                        <button
+                                            className="promobtn"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#showInput"
+                                            aria-expanded="false"
+                                            aria-controls="showInput"
+                                        >
+                                           Have a promo code? Apply here
+                                        </button>
+                                    </div>
+                                    <div
+                                        id="showInput"
+                                        className="accordion-collapse collapse"
+                                        aria-labelledby="headingOne"
+                                        data-bs-parent="#accordionExample"
+                                    >
+                                        <div className="accordion-body">
+                                            <div className='promoInputBox'>
+                                                <input type="text" className='form-control' placeholder='Eg. SCOOP20' />
+                                                <button>Apply Here</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="payAmt">You pay only</label>
+                                        <div className='finalAmt'>
+                                            <span>$ 20</span>
+                                            <small>$ 25</small>
+                                        </div>
+                                    </div>
+                                    <div className='payBtn'>
+                                        <div className='btnGrp d-none'>
+                                            <button type='submit' disabled>Proceed to pay | $95521.01</button>
+                                            <button className='cartBtn'>Add to Card <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20l44 0 0 44c0 11 9 20 20 20s20-9 20-20l0-44 44 0c11 0 20-9 20-20s-9-20-20-20l-44 0 0-44c0-11-9-20-20-20s-20 9-20 20l0 44-44 0c-11 0-20 9-20 20z"/></svg></button>
+                                        </div>
+                                        <div className='outOfStock'>
+                                            This Gift Card is Out Of Stock!
+                                        </div>
+                                    </div>
+                                    <div className='pgateway'>
+                                        <span>Safe & Secure payment by razorpay</span>
+                                         <Image 
+                                                width={150}
+                                                height={50} 
+                                                src="/images/razorpay.svg" loading="lazy" alt="logo" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div> 
                     </div>
                 </div>
            </section>
            <section className='abtGiftcard'>
                 <div className="container">
-                        <div className="about-giftcard-section">
-                        <div className="section-title">About Zomato Gift Cards</div>
-                        <p className="intro-text">
-                            Our gift cards are a simple and flexible way to share appreciation or celebrate special occasions. Designed for convenience and ease of use, they are suitable for both personal and professional gifting.
-                        </p>
-                        <p className="intro-text">
-                            Our gift cards are a simple and flexible way to share appreciation or celebrate special occasions. Designed for convenience and ease of use, they are suitable for both personal and professional gifting.
-                        </p>
+                    <div className="about-giftcard-section">
+                    <h2 className="section-title">About Zomato Gift Cards</h2>
+                    <p className="intro-text">
+                        Our gift cards are a simple and flexible way to share appreciation or celebrate special occasions. Designed for convenience and ease of use, they are suitable for both personal and professional gifting.
+                    </p>
+                    <p className="intro-text">
+                        Our gift cards are a simple and flexible way to share appreciation or celebrate special occasions. Designed for convenience and ease of use, they are suitable for both personal and professional gifting.
+                    </p>
                 </div>
 
                 </div>

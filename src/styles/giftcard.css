@@ -87,6 +87,7 @@
         }
            .firstSec {
           padding: 2rem 0;
+          padding-bottom: 0;
         }
         .topCarousel img{
             border-radius: 20px;
@@ -135,23 +136,26 @@
    font-size: 1.2rem;
    margin-bottom: .8rem;
   }
-  .checkOutContainer .inputBox .form-control{
+  .checkOutContainer .inputBox .form-control.amtInput{
    font-weight: 700;
-   box-shadow: none;
+
    font-size: 1.8rem;
+  
+  }
+    .checkOutContainer .inputBox .form-control{
+   font-weight: 500;
+   box-shadow: none;
+   font-size: 1rem;
    letter-spacing: .5px;
    border: 2px solid #ccc;
-   height: 55px;
+   height: 50px;
    border-radius: 4px;
   }
     .checkOutContainer .inputBox{
    margin-bottom: 1rem;
   }
   .checkOutContainer .inputBox .form-control:focus{
-   font-weight: 700;
    box-shadow: none;
-   font-size: 1.8rem;
-   letter-spacing: .5px;
    border: 2px solid var(--primary-color);
   }
   .giftValues{
@@ -265,12 +269,32 @@
    color: #fff;
    padding: .5rem;
    border-radius: 1.7rem;
-   min-width: 300px;
+   min-width: 250px;
    transition: .3s ease-in-out;
+}
+.payBtn button.cartBtn{
+   background-color: #ffa41d;
+   color: #000;
+}
+.payBtn button.cartBtn svg{
+   width: 18px;
+   margin-left: .5rem;
+   fill: #000;
+}
+.payBtn .btnGrp{
+  margin-bottom: .5rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 .payBtn button:hover{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     background-color: #0d8eff;
+}
+@media(max-width:600px){
+  .payBtn .btnGrp{
+ flex-direction: column;
+}
 }
 .overLay{
     position: relative;
@@ -535,7 +559,7 @@
 max-width: 1000px;
 }
  .about-giftcard-section {
-      margin: 60px auto;
+      margin: 20px auto;
       padding: 30px 20px;
       background-color: #ffffff;
       border: 1px solid #e5e7eb;
@@ -590,7 +614,7 @@ max-width: 1000px;
         padding: 12px 16px;
       }
     }
-      .imp span{
+      .imp h2{
       font-weight: 600;
       color: #222;
       margin-bottom: .6rem;
@@ -688,4 +712,77 @@ ul.custom-list li {
 }
 .d-none{
   display: none !important;
+}
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.barndInfo{
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-top: 1.2rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.barndInfo .ttl{
+ font-weight: 600;
+ margin-bottom: .5rem;
+ font-size: 1.4rem;
+ color: #222;
+}
+.barndInfo .stars{
+  display: flex;
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+.barndInfo .stars svg{
+ width: 16px;
+ height: 16px;
+ fill: #ffd43a;
+}
+.barndInfo .infoItem{
+font-weight: 500;
+  color: rgba(81, 89, 107);
+  margin-bottom: .5rem;
+  font-size: .9rem;
+}
+.barndInfo .infoHead{
+font-weight: 600;
+ color: #000;
+  font-size: 1rem;
+}
+.barndInfo .infoBox{
+  margin-bottom: 1rem;
+}
+.barndInfo .right .brandLogo{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    border-radius: 5px;
+    height: 100px;
+    width: 100px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+@media(max-width:991px){
+  .barndInfo .right{
+    display: none;
+  }
+}
+@media(max-width: 600px){
+  .FlexBtns button{
+    padding: .8rem;
+    min-height: 40px;
+    font-size: .7rem;
+  }
+}
+.outOfStock{
+  background-color: #ffa41d;
+  color: #222;
+  font-weight: 500;
+  border-radius: 1.7rem;
+  padding: .5rem;
 }
