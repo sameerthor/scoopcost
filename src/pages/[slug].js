@@ -146,7 +146,7 @@ export default function StorePage({ store, relStores, addedByData }) {
   const handleScroll = () => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
+const imageSrc = store?.image ? store.image : '/default-placeholder.webp';
 
 
 
@@ -182,7 +182,7 @@ export default function StorePage({ store, relStores, addedByData }) {
                   <a className="strLogo" rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
                     <div className="logo">
                       <Image
-                        src={`${store.image}`}
+                        src={imageSrc}
                         alt={`${store.title} Store Logo`}
                         width={128}
                         height={128}
@@ -302,7 +302,7 @@ export default function StorePage({ store, relStores, addedByData }) {
                                   <a className="strLogo" rel="nofollow" target="_blank" title={store.title} href={store.affiliate_url}>
                                     <div className="logo">
                                       <Image
-                                        src={`${store.image}`}
+                                        src={imageSrc}
                                         alt={`${store.title} Store Logo`}
                                         width={128}
                                         height={128}
@@ -500,79 +500,83 @@ export default function StorePage({ store, relStores, addedByData }) {
                             </>
                           }
                         />
-                        <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
+                        {/* <div className="faq-section" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
 
-                        </div>
-                        {/* comment */}
-                        {/* <div className="comment-box">
-                          <div id="showComment">
-                            <button onClick={toggleCommentBox} className="btn btn-primary">
-                              {showCommentBox ? 'Hide Review' : 'Leave a review'}
-                            </button>
-                          </div>
-                          {showCommentBox && (
-                            <div className="commentbox">
-                              <div className="row comment mx-auto">
-                                <h3>Let other know how much you saved</h3>
-                                <p>
-                                  Your email address will not be published. Required fields are
-                                  marked <span>*</span>
-                                </p>
-                              </div>
-                              <div className="row input mx-auto">
-                                <form className="d-block" role="post">
-                                  <label htmlFor="thought" className="d-block">
-                                    <i className="fa-regular fa-user" /> What's in your mind <span>*</span>
-                                  </label>
-                                  <textarea
-                                    name="thought"
-                                    id='thought'
-                                    className="col-sm-12 col-md-10 col-lg-10 d-block"
-                                    rows={10}
-                                    placeholder="Input your thought ..."
-                                    required=""
-                                    defaultValue={""}
-                                  />
-                                  <label htmlFor="name" className="d-block">
-                                    <i className="fa-regular fa-user" /> Name <span>*</span>
-                                  </label>
-                                  <input
-                                    id="name"
-                                    name='name'
-                                    type="text"
-                                    placeholder="Name"
-                                    required=""
-                                    className="col-sm-12 col-md-10 col-lg-10 d-block"
-                                  />
-                                  <label htmlFor="email" className="d-block">
-                                    <i className="fa-regular fa-envelope" /> Email <span>*</span>
-                                  </label>
-                                  <input
-                                    id="email"
-                                    name='email'
-                                    type="email"
-                                    className="col-sm-12 col-md-10 col-lg-10 d-block"
-                                    placeholder="Enter your email address"
-                                    required=""
-                                  />
-                                  <label htmlFor="url" className="d-block">
-                                    <i className="fa-solid fa-globe" /> Website
-                                  </label>
-                                  <input
-                                    id="url"
-                                    name='url'
-                                    type="text"
-                                    className="col-sm-12 col-md-10 col-lg-10 d-block"
-                                    placeholder="website url"
-                                  />
-                                  <button type="submit" onclick="">
-                                    Post Comment
-                                  </button>
-                                </form>
-                              </div>
-                            </div>
-                          )}
                         </div> */}
+                        <div className='faqssec'>
+                          <div className="container p-0">
+                              <h2 className="sidebarHeading ">Faqs for {store.title}</h2>
+
+                              <div className="accordion" id="giftCardFaq">
+                                  <div className="accordion-item">
+                                  <h2 className="accordion-header" id="faq1">
+                                      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        What is a gift card and how does it work?
+                                        
+                                      </button>
+                                  </h2>
+                                  <div id="collapse1" className="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#giftCardFaq">
+                                      <div className="accordion-body">
+                                      A gift card is a prepaid card that can be used to make purchases at specific stores or websites. Simply use it like a debit card at checkout.
+                                      </div>
+                                  </div>
+                                  </div>
+
+                                  <div className="accordion-item">
+                                  <h2 className="accordion-header" id="faq2">
+                                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                      Can I reload or top up my gift card?
+                                      </button>
+                                  </h2>
+                                  <div id="collapse2" className="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#giftCardFaq">
+                                      <div className="accordion-body">
+                                      Most gift cards are not reloadable, but some brands offer reloadable options. Check the card's terms or the issuing store’s policy.
+                                      </div>
+                                  </div>
+                                  </div>
+
+                                  <div className="accordion-item">
+                                  <h2 className="accordion-header" id="faq3">
+                                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                      Do gift cards expire?
+                                      </button>
+                                  </h2>
+                                  <div id="collapse3" className="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#giftCardFaq">
+                                      <div className="accordion-body">
+                                      Some gift cards have expiration dates, while others do not. Always check the expiration terms printed on the card or packaging.
+                                      </div>
+                                  </div>
+                                  </div>
+
+                                  <div className="accordion-item">
+                                  <h2 className="accordion-header" id="faq4">
+                                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                      What happens if I lose my gift card?
+                                      </button>
+                                  </h2>
+                                  <div id="collapse4" className="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#giftCardFaq">
+                                      <div className="accordion-body">
+                                      Lost gift cards are generally not replaceable unless they are registered and the provider offers a recovery policy. Always register your card if possible.
+                                      </div>
+                                  </div>
+                                  </div>
+
+                                  <div className="accordion-item">
+                                  <h2 className="accordion-header" id="faq5">
+                                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                      Can I use a gift card for online purchases?
+                                      </button>
+                                  </h2>
+                                  <div id="collapse5" className="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#giftCardFaq">
+                                      <div className="accordion-body">
+                                      Yes, most gift cards can be used online. Ensure the site accepts gift cards, and you may need to enter the card number and security code.
+                                      </div>
+                                  </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                        
                         <div className="couponOffer summary-container">
                           <div class="sidebarHeading">Coupon Summary for {store.title}</div>
 

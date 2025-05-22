@@ -1,5 +1,6 @@
 import { NextSeo } from 'next-seo';
 import MetaTags from '@/components/MetaTags';
+import "@/styles/choose-cat.css";
 export default function catType({ categories,topRatedStores,featuredStores,topOnlineStores }) {
 
     const getHeading = (title) => {
@@ -34,31 +35,25 @@ export default function catType({ categories,topRatedStores,featuredStores,topOn
                 description="Find the best coupons, deals, and discounts for top brands"
             />
             <MetaTags />
-            <section className='loginPage'>
-                <div className="container">
-                    <div class="login-container">
-                        <h1>Register</h1>
-                        <form>
-                            <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" id="email" placeholder="Enter your email" required />
+            <section className='catType'>
+                    <div className="container">
+                        <div className="row row-cols-md-4">
+                            <div className="col">
+                                <a href="/coupons" class="card">
+                                    <div className="card-icon">🎟️</div>
+                                    <h2>Coupons</h2>
+                                    <p>Browse exclusive discounts and deals on top brands.</p>
+                                </a>
                             </div>
-                            <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" placeholder="Enter your password" required />
+                            <div className='col'>
+                                <a href="/giftcards" class="card">
+                                    <div className="card-icon">🎁</div>
+                                    <h2>Gift Cards</h2>
+                                    <p>Shop gift cards for any occasion, any brand.</p>
+                                </a>
                             </div>
-                            <div class="form-group">
-                            <label for="password">Confirm Password</label>
-                            <input type="password" id="password" placeholder="Enter your password" required />
-                            </div>
-                            <button type="submit" class="btn">Register</button>
-                        </form>
-                        <div class="form-footer">
-                           Already have an account?
-                            <a href="/login">Login</a>
                         </div>
                     </div>
-                </div>
             </section>
         </>
     );

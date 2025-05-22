@@ -1,0 +1,39 @@
+ .catType .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      text-decoration: none;
+      color: #212529;
+      transition: transform 0.3s, box-shadow 0.3s;
+      min-height: 100%;
+    }
+
+    .catType .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+   .catType .card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #343a40;
+    }
+
+    .catType .card p {
+      font-size: 1rem;
+      color: #6c757d;
+    }
+
+    .catType .card-icon {
+      font-size: 60px;
+       margin-bottom: 15px;
+      color: #007bff;
+    }
+    .catType{
+        padding: 3rem 0;
+    }
+    .container{
+        max-width: 1200px;
+    }
