@@ -39,14 +39,14 @@ export default function catType({ categories,topRatedStores,featuredStores,topOn
                     <div className="container">
                         <div className="row row-cols-md-4">
                             <div className="col">
-                                <a href="/coupons" class="card">
+                                <a href="/category" class="card">
                                     <div className="card-icon">🎟️</div>
                                     <h2>Coupons</h2>
                                     <p>Browse exclusive discounts and deals on top brands.</p>
                                 </a>
                             </div>
                             <div className='col'>
-                                <a href="/giftcards" class="card">
+                                <a href="/category" class="card">
                                     <div className="card-icon">🎁</div>
                                     <h2>Gift Cards</h2>
                                     <p>Shop gift cards for any occasion, any brand.</p>

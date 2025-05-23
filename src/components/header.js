@@ -117,7 +117,7 @@ export default function Header() {
               </li>
               <li className="nav-item">
               <MainDomainLink className="nav-link" prefetch={false}
-                  href="/category">
+                  href="/choose-category">
                   Category
                 </MainDomainLink>
               </li>
