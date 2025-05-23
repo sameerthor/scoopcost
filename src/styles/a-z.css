@@ -94,6 +94,14 @@
     padding-left: 20px;
     flex-wrap: wrap;
     margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.alpha-store .storeList ul li img{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
 }
 .alpha-store .storeList ul li a{
     font-weight: 500;

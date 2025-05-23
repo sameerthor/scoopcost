@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import "@/styles/a-z.css";
+import Image from 'next/image';
 import { NextSeo } from "next-seo";
 import MainDomainLink from '@/components/MainDomainLink';
 const baseDomain = "scoopcost.com"
@@ -129,6 +130,14 @@ export default function Stores({ initialStoreData }) {
                                         <ul>
                                             {storeData[c].map((item, index) => (
                                                 <li key={index}>
+                                                    <Image
+                                                        src={item.image}
+                                                        alt={`${item.title} Store Logo`}
+                                                        width={25}
+                                                        height={25}
+                                                        className="attachment-wpcoupon_small_thumb size-wpcoupon_small_thumb"
+                                                        loading="lazy"
+                                                    />
                                                     <MainDomainLink href={
                                                         item.subdomain
                                                             ? `https://${item.slug}.${baseDomain}`
