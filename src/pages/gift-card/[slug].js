@@ -42,7 +42,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                 <Image
                     width={600}
                     height={300}
-                    src={`${gift_card.image}`} loading="lazy" alt="logo" />
+                    src="/images/giftcard-2.webp" loading="lazy" alt="giftcard" />
             </div>
         </div>,
         <div className="imgItem">
@@ -59,7 +59,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                 <Image
                     width={600}
                     height={300}
-                    src="/images/giftcard.png" loading="lazy" alt="logo" />
+                    src="/images/giftcard.webp" loading="lazy" alt="giftcard" />
             </div>
         </div>,
 
@@ -162,8 +162,8 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                         💳
                                     </div>
                                     <div className="feature-text">
-                                        <h4>Multi Use</h4>
-                                        <p>Spend in parts until balance is used.</p>
+                                        <h4>Multi Card Acceptable</h4>
+                                        <p>Multiple Cards are acceptable for payment</p>
                                     </div>
                                 </div>
 
@@ -362,13 +362,13 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                             </div>
                                         )}
                                     </div>
-                                    <div className='pgateway'>
+                                    {/* <div className='pgateway'>
                                         <span>Safe & Secure payment by razorpay</span>
                                         <Image
                                             width={150}
                                             height={50}
                                             src="/images/razorpay.svg" loading="lazy" alt="logo" />
-                                    </div>
+                                    </div> */}
                                 </form>
                             </div>
                         </div>
