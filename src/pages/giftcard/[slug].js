@@ -170,6 +170,20 @@ export default function GiftCardPage({ gift_card, faqs }) {
                                         <p>Combine with discounts and promos.</p>
                                     </div>
                                 </div>
+                                <div className="feature-card">
+                                    <div className="icon-box">
+                                        <Image
+                                            width={40}
+                                            height={40}
+                                            src='/images/non-refundable.svg' loading="lazy" alt="logo" />
+                                    </div>
+                                    <div className="feature-text">
+                                        <h4>Non Refundable</h4>
+                                        <p>Gift card once purchased, can't be refunded.</p>
+                                    </div>
+                                </div>
+                                
+                                
 
                             </div>
                             <div className='barndInfo'>
