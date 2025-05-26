@@ -291,7 +291,7 @@ const imageSrc = store?.image ? store.image : '/default-placeholder.webp';
                   <div className="breadcrumb">
                 
                     <div className="storeCat">
-                      <MainDomainLink title='categoy page' href={`/category/${store.category[0].slug}`}>{store.category[0].title}</MainDomainLink>
+                      <MainDomainLink title='categoy page' href={`/category/${store.category[0]?.slug}`}>{store.category[0]?.title}</MainDomainLink>
                     </div>
               </div>
                     <ResponsiveRender
