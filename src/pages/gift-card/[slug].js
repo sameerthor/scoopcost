@@ -12,15 +12,16 @@ import CustomSelect from '@/components/CustomSelect';
 import moment from 'moment';
 import { JSDOM } from 'jsdom';
 
-export default function GiftCardPage({ gift_card, faqs }) {
+export default function GiftCardPage({ gift_card, faqs,toprated }) {
+    console.log(faqs)
     const options = [
         { value: 'udemy', label: 'Udemy', image: '/images/udemy.svg' },
         { value: 'coursera', label: 'Coursera', image: '/images/coursera.svg' },
         { value: 'edx', label: 'edX', image: '/images/edx.svg' },
     ];
-    const [selectedAmount, setSelectedAmount] = useState('$20');
+    const [selectedAmount, setSelectedAmount] = useState('20');
 
-    const giftAmounts = ['$20', '$25', '$30', '$35'];
+    const giftAmounts = ['20', '25', '30', '35'];
 
     const handleClick = (amount) => {
         setSelectedAmount(amount);
@@ -115,8 +116,8 @@ export default function GiftCardPage({ gift_card, faqs }) {
     return (
         <>
             <NextSeo
-                title="SuprOffer - Best Coupons & Deals"
-                description="Find the best coupons, deals, and discounts for top brands"
+                title={gift_card.seo_title}
+                description={gift_card.seo_description}
             />
             <MetaTags />
 
@@ -261,11 +262,9 @@ export default function GiftCardPage({ gift_card, faqs }) {
                                     <div>
                                         <h1 className='brandName'>{gift_card.store_name} Gift Card</h1>
                                         <div className='brandCat'>
-                                            <label htmlFor="">{gift_card.category.title}</label>
+                                            <Link href={`/gift-card/category/${gift_card.category?.slug}`}>{gift_card.category.title}</Link>
                                         </div>
-                                        <div className="brandDiscount">
-                                            22% OFF
-                                        </div>
+                                        
                                     </div>
                                     <div className='brandImg'>
                                         <Image
@@ -281,8 +280,9 @@ export default function GiftCardPage({ gift_card, faqs }) {
                                                 key={amount}
                                                 className={selectedAmount === amount ? 'active' : ''}
                                                 onClick={() => handleClick(amount)}
+                                                type='button'
                                             >
-                                                {amount}
+                                               ${amount}
                                             </button>
                                         ))}
                                     </div>
@@ -293,7 +293,7 @@ export default function GiftCardPage({ gift_card, faqs }) {
                                             id="cardAmount"
                                             className="form-control amtInput"
                                             value={selectedAmount}
-                                            readOnly
+                                            onChange={(e)=>setSelectedAmount(e.target.value)}
                                         />
                                     </div>
 
@@ -337,8 +337,7 @@ export default function GiftCardPage({ gift_card, faqs }) {
                                     <div>
                                         <label htmlFor="payAmt">You pay only</label>
                                         <div className='finalAmt'>
-                                            <span>$ 20</span>
-                                            <small>$ 25</small>
+                                            <span>${selectedAmount}</span>
                                         </div>
                                     </div>
                                     <div className='payBtn'>
@@ -431,61 +430,17 @@ export default function GiftCardPage({ gift_card, faqs }) {
                 <div className="container">
                     <h2 className='secHeading'>Top Rated Gift Cards</h2>
                     <div className="row row-cols-lg-5 row-col-md-3 row-cols-2">
-                        <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                        {toprated.map(item=> <div className="col mb-5">
+                            <a class="brand-card" href={`/gift-card/${item.slug}`}>
                                 <Image className='brand-logo'
                                     width={80}
                                     height={80}
-                                    src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                    src={`${item.image}`} loading="lazy" alt={`${item.store_name}`} />
+                                <div class="brand-name">{item.store_name}</div>
+                                <div class="discount-badge">{item.category?.title}</div>
                             </a>
-                        </div>
-                        <div className="col mb-5">
-                            <a class="brand-card" href=''>
-                                <Image className='brand-logo'
-                                    width={80}
-                                    height={80}
-                                    src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
-                            </a>
-                        </div>
-                        <div className="col mb-5">
-                            <a class="brand-card" href=''>
-                                <Image className='brand-logo'
-                                    width={80}
-                                    height={80}
-                                    src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
-                            </a>
-                        </div>
-                        <div className="col mb-5">
-                            <a class="brand-card" href=''>
-                                <Image className='brand-logo'
-                                    width={80}
-                                    height={80}
-                                    src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
-                            </a>
-                        </div>
-                        <div className="col mb-5">
-                            <a class="brand-card" href=''>
-                                <Image className='brand-logo'
-                                    width={80}
-                                    height={80}
-                                    src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
-                            </a>
-                        </div>
+                        </div>)}
+                       
                     </div>
                 </div>
             </section>
@@ -568,33 +523,51 @@ export async function getStaticPaths() {
 
 function parseHtmlToFaqs(htmlString) {
     const dom = new JSDOM(htmlString);
-    const text = dom.window.document.body.textContent || '';
-    const lines = text.split(/\r?\n|\r|<br>/).map(l => l.trim()).filter(Boolean);
-
-    const faqs = [];
-    let question = '';
-    let answer = [];
+    const document = dom.window.document;
 
     const questionRegex = /^[A-Z].+\?$/;
+    const faqs = [];
 
-    for (let line of lines) {
-        if (questionRegex.test(line)) {
-            if (question && answer.length > 0) {
-                faqs.push({ question, answer: answer.join('<br />') });
-                answer = [];
+    // Check if there are <p> tags — preferred parsing
+    const paragraphs = document.querySelectorAll('p');
+    if (paragraphs.length > 0) {
+        // Parse by <p> blocks
+        for (const p of paragraphs) {
+            const innerHtml = p.innerHTML.trim();
+            const [firstLine, ...rest] = innerHtml.split(/<br\s*\/?>/i);
+            const question = firstLine?.trim();
+            const answer = rest.join('<br />').trim();
+
+            if (question && questionRegex.test(question) && answer) {
+                faqs.push({ question, answer });
             }
-            question = line;
-        } else {
-            answer.push(line);
         }
-    }
+    } else {
+        // Fallback: parse whole text by splitting on double <br><br>
+        const rawHtml = document.body.innerHTML;
 
-    if (question && answer.length > 0) {
-        faqs.push({ question, answer: answer.join('<br />') });
+        // Split by 2 or more <br> tags
+        const blocks = rawHtml
+            .split(/(<br\s*\/?>\s*){2,}/i)
+            .map(block => block.trim())
+            .filter(Boolean);
+
+        for (const block of blocks) {
+            // Replace <br> with newline for splitting lines
+            const cleanBlock = block.replace(/<br\s*\/?>/gi, '\n');
+            const lines = cleanBlock.split('\n').map(l => l.trim()).filter(Boolean);
+
+            if (lines.length > 0 && questionRegex.test(lines[0])) {
+                const question = lines[0];
+                const answer = lines.slice(1).join('<br />');
+                faqs.push({ question, answer });
+            }
+        }
     }
 
     return faqs;
 }
+
 
 export async function getStaticProps({ params }) {
 
@@ -606,7 +579,6 @@ export async function getStaticProps({ params }) {
             notFound: true
         };
     }
-    console.log(gift_card)
     let currentYear = moment().format('YYYY');
     let title = gift_card.store_name;
     let metaTitle = gift_card.seo_title
@@ -621,14 +593,17 @@ export async function getStaticProps({ params }) {
     gift_card.store_h1 = gift_card.h1
         .replace(/Storename/g, title)
         .replace(/%%Year%%/g, currentYear)
-
+    console.log(gift_card.faqs)
     const faqs = parseHtmlToFaqs(gift_card.faqs);
     delete gift_card.faqs;
-
+    const res2 = await fetch('https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false&id='+gift_card.id)
+    var toprated = await res2.json()
+    console.log(toprated)
     return {
         props: {
             gift_card,
-            faqs
+            faqs,
+            toprated
         },
         // Next.js will attempt to re-generate the page:
         // - When a request comes in
