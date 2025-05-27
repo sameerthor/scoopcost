@@ -96,7 +96,7 @@ function Category({ category, stores, categories }) {
                                                 .slice(0, 4)
                                                 .map(item => (
                                                     <li key={item.id}>
-                                                        <MainDomainLink href={`/category/${item.slug}`}>{item.title}</MainDomainLink>
+                                                        <MainDomainLink href={`/coupon/category/${item.slug}`}>{item.title}</MainDomainLink>
                                                     </li>
                                                 ))}
                                         </ul>

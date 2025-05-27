@@ -68,7 +68,7 @@ function CategoryListing({ categories }) {
                             <div className="col-lg-2 col-md-3 col-sm-4 category-box" key={index}>
                                 <div className="category-item">
                                     <div className="cat-img">
-                                        <MainDomainLink href={`/category/${category.slug}`}>
+                                        <MainDomainLink href={`/coupon/category/${category.slug}`}>
                                             <Image
                                                 width={100}
                                                 height={100}
@@ -78,7 +78,7 @@ function CategoryListing({ categories }) {
                                         </MainDomainLink>
                                     </div>
                                     <div className="category-title">
-                                        <MainDomainLink href={`/category/${category.slug}`}>
+                                        <MainDomainLink href={`/coupon/category/${category.slug}`}>
                                             {category.title}
                                             <span>{calculateCouponString(category.store_set || [])}</span>
                                         </MainDomainLink>
