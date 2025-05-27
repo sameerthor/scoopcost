@@ -18,7 +18,7 @@ export default function cookiePolicy({ cookiePolicy }) {
                     <div className="row">
                         <h1 className="text-center">Cookie Policy</h1>
                         <p>
-                            This Cookie Policy explains how SuprOffer ("we", "us", or "our") uses cookies and similar technologies on our website. By using our site, you consent to the use of cookies in accordance with this policy.At ScoopCost, we use cookies to offer you a faster, smoother, and more personalized browsing experience. This Cookie Policy explains how ScoopCost (the “Website”, “we”, “our”, “us”) uses cookies and similar technologies to gather information when you visit our site. It also outlines how you can manage or control your cookie preferences. 
+                                At ScoopCost, we use cookies to offer you a faster, smoother, and more personalized browsing experience. This Cookie Policy explains how ScoopCost (the “Website”, “we”, “our”, “us”) uses cookies and similar technologies to gather information when you visit our site. It also outlines how you can manage or control your cookie preferences. 
                         </p>
                         <div className="h2">What are Cookies?</div>
                         <p>
