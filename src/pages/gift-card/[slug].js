@@ -130,6 +130,132 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                 idPrefix="firstCarousel"
                                 responsiveConfig={{ xs: 1, sm: 1, md: 1 }}
                             />
+                            <ResponsiveRender
+                                mobile={
+                                    <>
+                                        <div className="checkOutContainer">
+                                            <div className='headFlex'>
+                                                <div>
+                                                    <h1 className='brandName'>{gift_card.store_name} Gift Card</h1>
+                                                    <div className='brandCat'>
+                                                        <Link href={`/gift-card/category/${gift_card.category?.slug}`}>{gift_card.category.title}</Link>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div className='brandImg'>
+                                                    <Image
+                                                        width={150}
+                                                        height={50}
+                                                        src={`${gift_card.image}`} loading="lazy" alt="logo" />
+                                                </div>
+                                            </div>
+                                            <form action="#">
+                                                <div className="giftValues">
+                                                    {giftAmounts.map((amount) => (
+                                                        <button
+                                                            key={amount}
+                                                            className={selectedAmount === amount ? 'active' : ''}
+                                                            onClick={() => handleClick(amount)}
+                                                            type='button'
+                                                        >
+                                                        ${amount}
+                                                        </button>
+                                                    ))}
+                                                </div>
+
+                                                <div className="inputBox">
+                                                    <input
+                                                        type="text"
+                                                        id="cardAmount"
+                                                        className="form-control amtInput"
+                                                        value={selectedAmount}
+                                                        onChange={(e)=>setSelectedAmount(e.target.value)}
+                                                    />
+                                                </div>
+
+                                                <div className="inputBox">
+                                                    <label htmlFor="paymentMethod">Payment method</label>
+                                                    <CustomSelect />
+                                                </div>
+                                                <div className="inputBox">
+                                                    <label htmlFor="paymentMethod">Billing Address</label>
+                                                    <input type="text" className='form-control' placeholder='Address' />
+                                                </div>
+                                                <div className="inputBox">
+                                                    <label htmlFor="paymentMethod">Email Address where Gift Card to be send</label>
+                                                    <input type="email" className='form-control' placeholder='Email' />
+                                                </div>
+                                                <div>
+                                                    <button
+                                                        className="promobtn"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#showInput"
+                                                        aria-expanded="false"
+                                                        aria-controls="showInput"
+                                                    >
+                                                        Have a promo code? Apply here
+                                                    </button>
+                                                </div>
+                                                <div
+                                                    id="showInput"
+                                                    className="accordion-collapse collapse"
+                                                    aria-labelledby="headingOne"
+                                                    data-bs-parent="#accordionExample"
+                                                >
+                                                    <div className="accordion-body">
+                                                        <div className='promoInputBox'>
+                                                            <input type="text" className='form-control' placeholder='Eg. SCOOP20' />
+                                                            <button>Apply Here</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="payAmt">You pay only</label>
+                                                    <div className='finalAmt'>
+                                                        <span>${selectedAmount}</span>
+                                                    </div>
+                                                </div>
+                                                <div className='payBtn'>
+                                                    <div className='btnGrp d-none'>
+                                                        <button type='submit' disabled>Proceed to pay</button>
+                                                        <button className='cartBtn'>Add to Card <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20l44 0 0 44c0 11 9 20 20 20s20-9 20-20l0-44 44 0c11 0 20-9 20-20s-9-20-20-20l-44 0 0-44c0-11-9-20-20-20s-20 9-20 20l0 44-44 0c-11 0-20 9-20 20z" /></svg></button>
+                                                    </div>
+                                                    
+                                                    {gift_card.affiliate_url ? (
+                                                        <a
+                                                            href={gift_card.affiliate_url}
+                                                            target="_blank"
+                                                            className="outOfStock"
+                                                            style={{
+                                                                width: '100%'
+                                                            }}
+                                                        >
+                                                            Buy Now
+                                                        </a>
+                                                    ) : (
+                                                        <div className="outOfStock">
+                                                            This Gift Card is Out Of Stock!
+                                                        </div>
+                                                    )}
+                                                </div>
+                                                {/* <div className='pgateway'>
+                                                    <span>Safe & Secure payment by razorpay</span>
+                                                    <Image
+                                                        width={150}
+                                                        height={50}
+                                                        src="/images/razorpay.svg" loading="lazy" alt="logo" />
+                                                </div> */}
+                                            </form>
+                                        </div>
+                                    </>
+                                }
+                                desktop={
+                                    <>
+                                    
+                                    </>
+                                }
+                            />
                             <div className='FlexBtns'>
                                 <button data-bs-toggle='modal' data-bs-target='#redeemModal'>How To Redeem</button>
                                 <button data-bs-toggle='modal' data-bs-target='#termsCondition'>Terms &amp; Conditions</button>
@@ -203,35 +329,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
 
 
                             </div>
-                            <div className="payBtn">
-                                  <ResponsiveRender
-                                            mobile={
-                                                <>
-                                                     {gift_card.affiliate_url ? (
-                                                        <a
-                                                            href={gift_card.affiliate_url}
-                                                            target="_blank"
-                                                            className="outOfStock"
-                                                            style={{
-                                                                width: '100%'
-                                                            }}
-                                                        >
-                                                            Buy Now
-                                                        </a>
-                                                    ) : (
-                                                        <div className="outOfStock">
-                                                            This Gift Card is Out Of Stock!
-                                                        </div>
-                                                    )}
-                                                </>
-                                            }
-                                            desktop={
-                                                <>
-                                                    
-                                                </>
-                                            }
-                                        />
-                            </div>
+                           
                             <div className='barndInfo'>
                                 <div className='left'>
                                     <div className='ttl'>   {gift_card.store_name}</div>
@@ -286,132 +384,132 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                             </div>
                         </div>
                         <div className="col-lg-6 mb-3">
-                            <div className="checkOutContainer">
-                                <div className='headFlex'>
-                                    <div>
-                                        <h1 className='brandName'>{gift_card.store_name} Gift Card</h1>
-                                        <div className='brandCat'>
-                                            <Link href={`/gift-card/category/${gift_card.category?.slug}`}>{gift_card.category.title}</Link>
-                                        </div>
-                                        
-                                    </div>
-                                    <div className='brandImg'>
-                                        <Image
-                                            width={150}
-                                            height={50}
-                                            src={`${gift_card.image}`} loading="lazy" alt="logo" />
-                                    </div>
-                                </div>
-                                <form action="#">
-                                    <div className="giftValues">
-                                        {giftAmounts.map((amount) => (
-                                            <button
-                                                key={amount}
-                                                className={selectedAmount === amount ? 'active' : ''}
-                                                onClick={() => handleClick(amount)}
-                                                type='button'
-                                            >
-                                               ${amount}
-                                            </button>
-                                        ))}
-                                    </div>
-
-                                    <div className="inputBox">
-                                        <input
-                                            type="text"
-                                            id="cardAmount"
-                                            className="form-control amtInput"
-                                            value={selectedAmount}
-                                            onChange={(e)=>setSelectedAmount(e.target.value)}
-                                        />
-                                    </div>
-
-                                    <div className="inputBox">
-                                        <label htmlFor="paymentMethod">Payment method</label>
-                                        <CustomSelect />
-                                    </div>
-                                    <div className="inputBox">
-                                        <label htmlFor="paymentMethod">Billing Address</label>
-                                        <input type="text" className='form-control' placeholder='Address' />
-                                    </div>
-                                    <div className="inputBox">
-                                        <label htmlFor="paymentMethod">Email Address where Gift Card to be send</label>
-                                        <input type="email" className='form-control' placeholder='Email' />
-                                    </div>
-                                    <div>
-                                        <button
-                                            className="promobtn"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#showInput"
-                                            aria-expanded="false"
-                                            aria-controls="showInput"
-                                        >
-                                            Have a promo code? Apply here
-                                        </button>
-                                    </div>
-                                    <div
-                                        id="showInput"
-                                        className="accordion-collapse collapse"
-                                        aria-labelledby="headingOne"
-                                        data-bs-parent="#accordionExample"
-                                    >
-                                        <div className="accordion-body">
-                                            <div className='promoInputBox'>
-                                                <input type="text" className='form-control' placeholder='Eg. SCOOP20' />
-                                                <button>Apply Here</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label htmlFor="payAmt">You pay only</label>
-                                        <div className='finalAmt'>
-                                            <span>${selectedAmount}</span>
-                                        </div>
-                                    </div>
-                                    <div className='payBtn'>
-                                        <div className='btnGrp d-none'>
-                                            <button type='submit' disabled>Proceed to pay</button>
-                                            <button className='cartBtn'>Add to Card <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20l44 0 0 44c0 11 9 20 20 20s20-9 20-20l0-44 44 0c11 0 20-9 20-20s-9-20-20-20l-44 0 0-44c0-11-9-20-20-20s-20 9-20 20l0 44-44 0c-11 0-20 9-20 20z" /></svg></button>
-                                        </div>
-                                        
-                                        <ResponsiveRender
-                                            mobile={
-                                                <>
-                                                
-                                                </>
-                                            }
-                                            desktop={
-                                                <>
-                                                    {gift_card.affiliate_url ? (
-                                                        <a
-                                                            href={gift_card.affiliate_url}
-                                                            target="_blank"
-                                                            className="outOfStock"
-                                                            style={{
-                                                                width: '100%'
-                                                            }}
-                                                        >
-                                                            Buy Now
-                                                        </a>
-                                                    ) : (
-                                                        <div className="outOfStock">
-                                                            This Gift Card is Out Of Stock!
+                            <ResponsiveRender
+                                mobile={
+                                    <>
+                                    
+                                    </>
+                                }
+                                desktop={
+                                    <>
+                                             <div className="checkOutContainer">
+                                                <div className='headFlex'>
+                                                    <div>
+                                                        <h1 className='brandName'>{gift_card.store_name} Gift Card</h1>
+                                                        <div className='brandCat'>
+                                                            <Link href={`/gift-card/category/${gift_card.category?.slug}`}>{gift_card.category.title}</Link>
                                                         </div>
-                                                    )}
-                                                </>
-                                            }
-                                        />
-                                    </div>
-                                    {/* <div className='pgateway'>
-                                        <span>Safe & Secure payment by razorpay</span>
-                                        <Image
-                                            width={150}
-                                            height={50}
-                                            src="/images/razorpay.svg" loading="lazy" alt="logo" />
-                                    </div> */}
-                                </form>
-                            </div>
+                                                        
+                                                    </div>
+                                                    <div className='brandImg'>
+                                                        <Image
+                                                            width={150}
+                                                            height={50}
+                                                            src={`${gift_card.image}`} loading="lazy" alt="logo" />
+                                                    </div>
+                                                </div>
+                                                <form action="#">
+                                                    <div className="giftValues">
+                                                        {giftAmounts.map((amount) => (
+                                                            <button
+                                                                key={amount}
+                                                                className={selectedAmount === amount ? 'active' : ''}
+                                                                onClick={() => handleClick(amount)}
+                                                                type='button'
+                                                            >
+                                                            ${amount}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="inputBox">
+                                                        <input
+                                                            type="text"
+                                                            id="cardAmount"
+                                                            className="form-control amtInput"
+                                                            value={selectedAmount}
+                                                            onChange={(e)=>setSelectedAmount(e.target.value)}
+                                                        />
+                                                    </div>
+
+                                                    <div className="inputBox">
+                                                        <label htmlFor="paymentMethod">Payment method</label>
+                                                        <CustomSelect />
+                                                    </div>
+                                                    <div className="inputBox">
+                                                        <label htmlFor="paymentMethod">Billing Address</label>
+                                                        <input type="text" className='form-control' placeholder='Address' />
+                                                    </div>
+                                                    <div className="inputBox">
+                                                        <label htmlFor="paymentMethod">Email Address where Gift Card to be send</label>
+                                                        <input type="email" className='form-control' placeholder='Email' />
+                                                    </div>
+                                                    <div>
+                                                        <button
+                                                            className="promobtn"
+                                                            type="button"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#showInput"
+                                                            aria-expanded="false"
+                                                            aria-controls="showInput"
+                                                        >
+                                                            Have a promo code? Apply here
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        id="showInput"
+                                                        className="accordion-collapse collapse"
+                                                        aria-labelledby="headingOne"
+                                                        data-bs-parent="#accordionExample"
+                                                    >
+                                                        <div className="accordion-body">
+                                                            <div className='promoInputBox'>
+                                                                <input type="text" className='form-control' placeholder='Eg. SCOOP20' />
+                                                                <button>Apply Here</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <label htmlFor="payAmt">You pay only</label>
+                                                        <div className='finalAmt'>
+                                                            <span>${selectedAmount}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className='payBtn'>
+                                                        <div className='btnGrp d-none'>
+                                                            <button type='submit' disabled>Proceed to pay</button>
+                                                            <button className='cartBtn'>Add to Card <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20l44 0 0 44c0 11 9 20 20 20s20-9 20-20l0-44 44 0c11 0 20-9 20-20s-9-20-20-20l-44 0 0-44c0-11-9-20-20-20s-20 9-20 20l0 44-44 0c-11 0-20 9-20 20z" /></svg></button>
+                                                        </div>
+                                                        
+                                                        {gift_card.affiliate_url ? (
+                                                            <a
+                                                                href={gift_card.affiliate_url}
+                                                                target="_blank"
+                                                                className="outOfStock"
+                                                                style={{
+                                                                    width: '100%'
+                                                                }}
+                                                            >
+                                                                Buy Now
+                                                            </a>
+                                                        ) : (
+                                                            <div className="outOfStock">
+                                                                This Gift Card is Out Of Stock!
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                    {/* <div className='pgateway'>
+                                                        <span>Safe & Secure payment by razorpay</span>
+                                                        <Image
+                                                            width={150}
+                                                            height={50}
+                                                            src="/images/razorpay.svg" loading="lazy" alt="logo" />
+                                                    </div> */}
+                                                </form>
+                                            </div>
+                                    </>
+                                }
+                            />
                         </div>
                     </div>
                 </div>
