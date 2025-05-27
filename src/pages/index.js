@@ -244,7 +244,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className='catItem' href='https://scoopcost.com/gift-card/category/jewelry'>
                                 <div className='name'>
-                                    <span>Food</span>
+                                    <span>Jewelry</span>
                                     <Image 
                                         width={40}
                                         height={40} 
@@ -257,7 +257,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         <div className="col mb-3">
                             <a className='catItem' href='https://scoopcost.com/gift-card/category/art-and-craft'>
                                 <div className='name'>
-                                    <span>Food</span>
+                                    <span>Art & Craft</span>
                                     <Image 
                                         width={40}
                                         height={40} 
