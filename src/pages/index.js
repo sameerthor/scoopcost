@@ -229,133 +229,133 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <h2 className='secHeading'>Great discount on top brands</h2>
                     <div className="row row-cols-lg-5 row-col-md-3 row-cols-2">
                         <div className="col mb-3">
-                            <a className='catItem' href=''>
+                            <a className='catItem' href='https://scoopcost.com/gift-card/category/automotive'>
+                                <div className='name'>
+                                    <span>Automotive </span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/automotive.webp" loading="lazy" alt="automotive" />
+                                </div>
+                                <div className='dec'>Upto 20% Off</div>
+                                <div className='avl'>Offers Available on 5+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href='https://scoopcost.com/gift-card/category/jewelry'>
                                 <div className='name'>
                                     <span>Food</span>
                                     <Image 
                                         width={40}
                                         height={40} 
-                                        src="/images/books.png" loading="lazy" alt="books" />
+                                        src="/images/jewelry.webp" loading="lazy" alt="jewelry" />
+                                </div>
+                                <div className='dec'>Upto 22% Off</div>
+                                <div className='avl'>Offers Available on 4+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href='https://scoopcost.com/gift-card/category/art-and-craft'>
+                                <div className='name'>
+                                    <span>Food</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/art-and-craft.webp" loading="lazy" alt="art-and-craft" />
+                                </div>
+                                <div className='dec'>Upto 10% Off</div>
+                                <div className='avl'>Offers Available on 2+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href='https://scoopcost.com/gift-card/category/clothing-and-accessories'>
+                                <div className='name'>
+                                    <span>Clothing & Accessories </span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/clothing-and-accessories.webp" loading="lazy" alt="Clothing & Accessories " />
+                                </div>
+                                <div className='dec'>Upto 22% Off</div>
+                                <div className='avl'>Offers Available on 6+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href='https://scoopcost.com/gift-card/category/toys-and-games'>
+                                <div className='name'>
+                                    <span>Toys & Games</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/toys.webp" loading="lazy" alt="toys" />
+                                </div>
+                                <div className='dec'>Upto 12% Off</div>
+                                <div className='avl'>Offers Available on 4+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href='https://scoopcost.com/gift-card/category/footwear'>
+                                <div className='name'>
+                                    <span>Footwear </span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/footwear.webp" loading="lazy" alt="Footwear " />
+                                </div>
+                                <div className='dec'>Upto 6% Off</div>
+                                <div className='avl'>Offers Available on 2+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href='https://scoopcost.com/gift-card/category/food-and-drink'>
+                                <div className='name'>
+                                    <span>Food & Drink</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/food-drink.webp" loading="lazy" alt="Food & Drink" />
+                                </div>
+                                <div className='dec'>Upto 15% Off</div>
+                                <div className='avl'>Offers Available on 3+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href='https://scoopcost.com/gift-card/category/sports-and-outdoors'>
+                                <div className='name'>
+                                    <span>Sports & Outdoors</span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/sports-outdoor.webp" loading="lazy" alt="Sports & Outdoors" />
+                                </div>
+                                <div className='dec'>Upto 25% Off</div>
+                                <div className='avl'>Offers Available on 5+ brands</div>
+                            </a>
+                        </div>
+                        <div className="col mb-3">
+                            <a className='catItem' href='https://scoopcost.com/gift-card/category/health-and-wellness'>
+                                <div className='name'>
+                                    <span>Health & Wellness </span>
+                                    <Image 
+                                        width={40}
+                                        height={40} 
+                                        src="/images/health-and-wellness.webp" loading="lazy" alt="Health & Wellness " />
                                 </div>
                                 <div className='dec'>Upto 60% Off</div>
                                 <div className='avl'>Offers Available on 22+ brands</div>
                             </a>
                         </div>
                         <div className="col mb-3">
-                            <a className='catItem' href=''>
+                            <a className='catItem' href='https://scoopcost.com/gift-card/category/perfumes-and-fragrances'>
                                 <div className='name'>
-                                    <span>Food</span>
+                                    <span>Perfumes & Fragrances</span>
                                     <Image 
                                         width={40}
                                         height={40} 
-                                        src="/images/books.png" loading="lazy" alt="books" />
+                                        src="/images/perfume.webp" loading="lazy" alt="Perfumes & Fragrances" />
                                 </div>
-                                <div className='dec'>Upto 60% Off</div>
-                                <div className='avl'>Offers Available on 22+ brands</div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='catItem' href=''>
-                                <div className='name'>
-                                    <span>Food</span>
-                                    <Image 
-                                        width={40}
-                                        height={40} 
-                                        src="/images/books.png" loading="lazy" alt="books" />
-                                </div>
-                                <div className='dec'>Upto 60% Off</div>
-                                <div className='avl'>Offers Available on 22+ brands</div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='catItem' href=''>
-                                <div className='name'>
-                                    <span>Food</span>
-                                    <Image 
-                                        width={40}
-                                        height={40} 
-                                        src="/images/books.png" loading="lazy" alt="books" />
-                                </div>
-                                <div className='dec'>Upto 60% Off</div>
-                                <div className='avl'>Offers Available on 22+ brands</div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='catItem' href=''>
-                                <div className='name'>
-                                    <span>Food</span>
-                                    <Image 
-                                        width={40}
-                                        height={40} 
-                                        src="/images/books.png" loading="lazy" alt="books" />
-                                </div>
-                                <div className='dec'>Upto 60% Off</div>
-                                <div className='avl'>Offers Available on 22+ brands</div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='catItem' href=''>
-                                <div className='name'>
-                                    <span>Food</span>
-                                    <Image 
-                                        width={40}
-                                        height={40} 
-                                        src="/images/books.png" loading="lazy" alt="books" />
-                                </div>
-                                <div className='dec'>Upto 60% Off</div>
-                                <div className='avl'>Offers Available on 22+ brands</div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='catItem' href=''>
-                                <div className='name'>
-                                    <span>Food</span>
-                                    <Image 
-                                        width={40}
-                                        height={40} 
-                                        src="/images/books.png" loading="lazy" alt="books" />
-                                </div>
-                                <div className='dec'>Upto 60% Off</div>
-                                <div className='avl'>Offers Available on 22+ brands</div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='catItem' href=''>
-                                <div className='name'>
-                                    <span>Food</span>
-                                    <Image 
-                                        width={40}
-                                        height={40} 
-                                        src="/images/books.png" loading="lazy" alt="books" />
-                                </div>
-                                <div className='dec'>Upto 60% Off</div>
-                                <div className='avl'>Offers Available on 22+ brands</div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='catItem' href=''>
-                                <div className='name'>
-                                    <span>Food</span>
-                                    <Image 
-                                        width={40}
-                                        height={40} 
-                                        src="/images/books.png" loading="lazy" alt="books" />
-                                </div>
-                                <div className='dec'>Upto 60% Off</div>
-                                <div className='avl'>Offers Available on 22+ brands</div>
-                            </a>
-                        </div>
-                        <div className="col mb-3">
-                            <a className='catItem' href=''>
-                                <div className='name'>
-                                    <span>Food</span>
-                                    <Image 
-                                        width={40}
-                                        height={40} 
-                                        src="/images/books.png" loading="lazy" alt="books" />
-                                </div>
-                                <div className='dec'>Upto 60% Off</div>
-                                <div className='avl'>Offers Available on 22+ brands</div>
+                                <div className='dec'>Upto 14% Off</div>
+                                <div className='avl'>Offers Available on 2+ brands</div>
                             </a>
                         </div>
                     </div>
