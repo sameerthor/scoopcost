@@ -10,8 +10,8 @@ export default function termsOfUse({ termsOfUse }) {
     return (
         <>
             <NextSeo
-                title="SuprOffer - Best Coupons & Deals"
-                description="Find the best coupons, deals, and discounts for top brands"
+                title="Scoopcost.com - terms of use"
+                description="Terms of Use - ScoopCost.com"
             />
             <section className="sitePolicy">            
                 <div className="container">                   

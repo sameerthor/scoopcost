@@ -154,8 +154,8 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
     return (
         <>
             <NextSeo
-                title="SuprOffer - Best Coupons & Deals"
-                description="Find the best coupons, deals, and discounts for top brands"
+                title="ScoopCost - Best Gift Card For 2025"
+                description="Find the best Gift Card online. We have curated the largest gift card store. 200+ brands across 20+ categories. Avail exclusive offers on top brand gift cards. Instant delivery."
             />
             <MetaTags />
 

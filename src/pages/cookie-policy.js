@@ -10,8 +10,8 @@ export default function cookiePolicy({ cookiePolicy }) {
     return (
         <>
             <NextSeo
-                title="SuprOffer - Best Coupons & Deals"
-                description="Find the best coupons, deals, and discounts for top brands"
+                title="Scoopcost.com - Cookie Policy"
+                description="Cookie Policy"
             />
             <section className="sitePolicy">            
                 <div className="container">                   

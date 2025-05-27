@@ -10,8 +10,8 @@ export default function aboutSaveright({ aboutSaveright }) {
     return (
         <>
             <NextSeo
-                title="SuprOffer - Best Coupons & Deals"
-                description="Find the best coupons, deals, and discounts for top brands"
+                title="About - ScoopCost.com"
+                description="Read how Scoopcost was formed and more information related to the company. How Scoopcost help with Gift cards and coupons."
             />
 
             <section className="sitePolicy">            

@@ -1289,6 +1289,19 @@ max-width: 1000px;
       .feature-item {
         padding: 12px 16px;
       }
+      .greatDiscount .catItem .name{
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+      .greatDiscount .catItem span{
+        display: block;
+        text-align: center;
+        font-size: 1rem;
+      }
+      .greatDiscount .catItem .dec {
+
+          font-size: .8rem;
+      }
     }
 @media(max-width:600px){
   .mobilePadding{
