@@ -88,7 +88,7 @@
 }
 .alpha-store .storeList ul li {
    width: calc(98%/4);
-    line-height: 20px;
+   
     margin-bottom: 10px;
     word-break: break-word;
     padding-left: 20px;
@@ -97,6 +97,7 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
+    flex-wrap: wrap;
 }
 .alpha-store .storeList ul li img{
   width: 25px;
@@ -107,6 +108,11 @@
     font-weight: 500;
     color: #2e2e2e;
     font-size: .9rem;
+   display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
  }
  .alpha-store .storeList ul li a span{
    display: block;

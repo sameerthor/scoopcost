@@ -17,105 +17,89 @@ export default function termsOfUse({ termsOfUse }) {
                 <div className="container">                   
                     <div className="row">
                         <h1 className="text-center">Terms of Use</h1>
+                        <p>Welcome to ScoopCost! </p>
                         <p>
-                            Welcome to Suproffer! These Terms of Use lay out the rules and expectations of how you can use our website and the services we offer. By browsing, using or interacting with Suproffer, you are agreeing to follow these terms. Please take a moment to read them carefully. 
+                            Before you explore the deals, discounts, and third-party offers we have on our platform, please take a few minutes to read our ‘Terms of Use’. By using our website, you agree to the terms outlined below. 
                         </p>
                         <div className='h2'>
-                        Agreement of Terms 
+                            Agreement of Terms
                         </div>
                         <p>
-                            By using Suproffer (the “Website”), you agree to follow these Terms of Use. If you do not agree with anything stated there, kindly don’t use our site. Using the website means you have read, understood and accepted these terms. 
+                            When you visit or use ScoopCost (the ‘Website’), you are confirming that you have read, understood and agreed to everything stated in this Terms of Use. If you don’t agree with any section, we kindly ask you not to use the site. Continued use of ScoopCost means you accept and are bound by these terms and conditions.
                         </p>
                         <div className='h2'>
-                        What Suproffer Does
+                             Use of the Website
                         </div>
                         <p>
-                        Suproffer is a platform that helps users discover the latest coupons, discounts, and deals from third-party retailers and brands. We do not sell any products or services directly. Our aim is to help you save money by making it easier to find special offers and promo codes all in one convenient place.
+                            To use ScoopCost, you must agree to the following: 
                         </p>
+                        <ul>
+                            <li>You must be at least 18 years old to agree to this agreement and use the site.</li>
+                            <li>You can browse and use the site for your own, non-commercial purposes only. </li>
+                            <li>You may not copy, distribute, or reuse any part of the site for business purposes without written permission.</li>
+                            <li>Avoid anything that could harm the site, disrupt its operation or violate the privacy of other users.</li>
+                            <li>Bots, crawlers or automated tools are not allowed to collect information from our website unless we have approved it. </li>
+                        </ul>
                         <div className='h2'>
-                        Use of the Website
+                           Accuracy of Coupons and Gift Cards
                         </div>
                         <p>
-                        To use Suproffer:
+                                We do our best to provide only valid promo codes and digital gift cards. However, 
 
                         </p>
                         <ul>
-                            <li>You need to be at least 18 years old. 
-                            </li>
-                            <li>You also agree to use our website only for personal, non-commercial use.</li>
-                            <li>You can’t copy, share or use anything from our website for any commercial purpose without our permission.</li>
-                            <li>Don’t misuse the site or do anything that could harm the site or violate the privacy of other users.</li>
-                            <li>You agree not to use bots, crawlers or scraping tools to collect information from the website without our prior permission.</li>
+                            <li>All offers on ScoopCost come from external websites and brands.</li>
+                            <li>We can’t guarantee that a deal will work or give the exact discount promised. </li>
+                            <li>Coupons may expire, change or be withdrawn at any time by the merchant.</li>
+                            <li>If you run into issues with a discount, it’s best to contact the retailer directly. ScoopCost isn’t responsible for any errors or misrepresentations involved in transactions or offer’s terms.</li>
                         </ul>
-                        <div className='h2'>
-                        Accuracy of Coupons and Deals
-                        </div>
                         <p>
-                        We always try our best to make sure coupons and deals listed on Suproffer are accurate and up to date. However, all coupons and promotions come from third-party retailers. We can not guarantee that every coupon will always work or be exactly as described. Offers may change or expire based on the retailer’s own terms.
+                                We also reserve the right to update, change or remove any coupon or e-gift card from our site at any time with or without notice.
                         </p>
+                        <div className="h2">Intellectual Property</div>
                         <p>
-                            The businesses offering coupons are responsible for them. Any issues you have with a discount code or deal are between you and the retailer. Suproffer is not responsible for any errors or misrepresentations made by the merchants regarding their offers. 
-                            It is your responsibility to verify the terms and conditions of any coupon or offer before making a purchase.
-
-                        </p>
-                        <p>
-                        Additionally, we can change or remove coupons and deals from our website at any time without notice.
-                        </p>
-                        <div className='h2'>
-                        Intellectual Property
-                        </div>
-                        <p>
-                        All the content on Suproffer including name, logo, images, text, and graphics are owned by us and are protected by copyright laws. Please don’t copy, reproduce or share anything from the site. You can’t use our trademarks or logos without our permission. 
-                        </p>
-                        <div className='h2'>
-                        Links to Other Websites
-                        </div>
-                        <p>
-                        You will find third-party links on Suproffer that redirect you to other websites. These are typically retailer sites or offer pages. We don’t control those sites and we are not responsible for their content, privacy policies or practices. Be sure to check their terms and policies and access these websites at your own discretion. 
-                        </p>
-                        <div className='h2'>
-                        Limitation Of Liability
-                        </div>
-                        <p>
-                        Suproffer is provided to you “as is” with no warranties of any kind. While we do our best to keep everything working smoothly, we can’t guarantee that every coupon will be valid or the site will always be error-free. We are not responsible for any problems, losses or damage that come from using the site or clicking on third-party offers.
-                        </p>
-                        <div className='h2'>
-                        Indemnification
-                        </div>
-                        <p>
-                        By using Suproffer, you agree to defend, indemnify and hold us harmless from any claims, damages, losses, liabilities, costs and expenses (including legal fees) that arise from: 
+                                All content on ScoopCost including name, logo, design, images, and text are protected under copyright and trademark laws. You may not:
                         </p>
                         <ul>
-                            <li>Your use of the website. 
-                            </li>
-                            <li>Your violation of these terms. </li>
-                            <li>Any content you submit or share.</li>
-                            <li>Any interactions or transactions you make with third-party sites.</li>
+                                <li>Copy or reuse our content without permission.</li>
+                                <li>Use our name or branding for your own project or business. </li>
                         </ul>
+                        <div className="h2">Third-Party Links</div>
                         <p>
-                        Basically, if your actions cause legal trouble for use, you agree to cover it. 
+                                At ScoopCost, you will find links that lead you to third-party websites. These include retailer homepages, product pages, or checkout pages for deals. Please make sure to carefully consider the terms and conditions of any third-party websites listed on ScoopCost. We are not responsible for any errors, outdated information, misleading content or issues related to the products, services, or policies of those external sites. ScoopCost does not guarantee the accuracy, availability, or quality of any offers, prices or services provided by third-party parties. Use them at your own discretion. 
                         </p>
-                        <div className='h2'>
-                        Termination of Use
-                        </div>
+                        <div className="h2">Limitation Of Liability</div>
                         <p>
-                        We reserve the right to suspend or terminate your access to Suproffer with or without notice if we believe you have violated these Terms of Use or misused the site in any way. 
+                                ScoopCost is provided on an “as-is” basis. While we work hard to keep things smooth and error-free:
                         </p>
-                        <div className='h2'>
-                        Changes to Terms of Use
-                        </div>
+                        <ul>
+                                <li>We don’t make guarantees about every coupon/gift card accuracy or availability.</li>
+                                <li>We can’t ensure that the website will always be running or error-free.</li>
+                                <li>We are not responsible for any inaccuracies, misrepresentations, product or service liability, viruses or other computer problems resulting from use of such sites.</li>
+                        </ul>
+                        <div className="h2">Indemnification</div>
                         <p>
-                        We may make changes to these Terms of Use from time to time. If we do, we will update this page. By continuing to use Suproffer after we make changes, you are agreeing to the new terms. We recommend you to review these terms periodically.
+                                By using ScoopCost, you agree to take full responsibility for your actions. If something you do causes legal issues or costs for us, you agree to cover those expenses (including legal fees). Specifically, you agree to defend, indemnify and hold ScoopCost and our team harmless from any claims, damages, losses or expenses that result from:
                         </p>
-                        <div className='h2'>
-                        Contact Us
-                        </div>
+                        <ul>
+                            <li>Your use of the ScoopCost website.</li>
+                            <li>Any violation of these Terms of Use.</li>
+                            <li>Content you submit, share, or publish on our platform.</li>
+                        </ul>
+                        <div className="h2">Termination of Use</div>
                         <p>
-                        If you have any questions about these Terms of Use, please contact us through our <a href="https://scoopcost.com/contact">contact page.</a>
+                             We hold the right to suspend or terminate your access at any time, especially if we believe you’ve violated these terms or misused our platform. This can happen with or without prior notice. Our goal is to keep ScoopCost safe and helpful for everyone, so please use the site responsibly.
+                        </p>
+                        <div className="h2">Changes to These Terms</div>
+                        <p>
+                                We may update these Terms of Use from time to time to reflect changes in our services, legal requirements or policies. Whenever we do, the updated version will be posted right here. Continued use of ScoopCost after changes means you accept and agree to the updated terms. We recommend checking this page occasionally to stay informed.
+                        </p>
+                        <div className="h2">Contact Us</div>
+                        <p>
+                                We are here to help to solve your queries or concerns. Head to our <a href="https://scoopcost.com/contact">Contact Page</a> and reach out to us! 
                         </p>
                         <p>
-                        By using Suproffer, you acknowledge that you have read, understand, and agree to be bound by these Terms of Use. 
-
+                                By using ScoopCost, you confirm that you have read, understood and agreed these Terms of Use. 
                         </p>
                     </div> 
                 </div>   

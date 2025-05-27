@@ -16,78 +16,65 @@ export default function cookiePolicy({ cookiePolicy }) {
             <section className="sitePolicy">            
                 <div className="container">                   
                     <div className="row">
-                        <h1 className="text-center">Suproffer Cookie Policy</h1>
+                        <h1 className="text-center">Cookie Policy</h1>
                         <p>
-                        At Suproffer, we use cookies to make your browsing experience easier, faster and more personalized. This Cookie Policy explains how Suproffer (the “Website”) uses cookies and similar technologies to collect information when you visit our site. It explains what cookies are, how we use them and how you can manage your cookie preferences.
+                            This Cookie Policy explains how SuprOffer ("we", "us", or "our") uses cookies and similar technologies on our website. By using our site, you consent to the use of cookies in accordance with this policy.At ScoopCost, we use cookies to offer you a faster, smoother, and more personalized browsing experience. This Cookie Policy explains how ScoopCost (the “Website”, “we”, “our”, “us”) uses cookies and similar technologies to gather information when you visit our site. It also outlines how you can manage or control your cookie preferences. 
                         </p>
-                        <div className='h2'>
-                        What are Cookies?
-                        </div>
+                        <div className="h2">What are Cookies?</div>
                         <p>
-                        Cookies are small text files stored on your device (such as a computer or smartphone) when you visit a website. These files help websites remember your preferences, recognize you on future visits, and improve your overall experience. Cookies help the website remember certain information such as your preferences, browsing history and language settings. Some cookies are temporary (session cookies) and disappear once you close your browser. While others remain on your device until you delete them (persistent cookies).
+                                Cookies are small data files that are stored on your device (computer, phone, tablet) by a website when you visit it. They include an anonymous unique identifier and allow the site’s systems to recognize your web browser and remember certain kinds of information. 
                         </p>
-                        <div className='h2'>
-                        Purpose of Using Cookies
-                        </div>
-                        <p>Suproffer uses cookies for several important reasons:</p>
-                        <ul>
-                            <li>Some cookies are necessary to make the website work properly. </li>
-                            <li>
-                            Cookies help remember your settings like your preferred language, location, or last-searched deals.
-                            </li>
-                            <li>
-                            We may use cookies to show you coupons and offers based on your activity and interests.
-                            </li>
-                            <li>
-                            Cookies help us understand how users interact with the website so we can improve our content, design and performance.
-                            </li>
-                        </ul>
-                        <div className='h2'>
-                        Third-Party Cookies
-                        </div>
+                        <div className="h2">Types of Cookies We Use</div>
                         <p>
-                        In some cases, third party tools like analytics, advertising platforms or partners may place cookies on your device. These third-party cookies can track your browsing behavior across different websites. These cookies are governed by the third party policies and we do not control these cookies directly. For details on how these services use your data, we recommend reviewing their individual cookie or privacy policies. 
+                                <strong>Session Cookies:</strong> We use Session Cookies to operate our website smoothly.
                         </p>
-                        <div className='h2'>
-                        How to Manage Your Cookie Preferences
+                        <p>
+                            <strong>Preference Cookies:</strong> We use Preference Cookies to remember your preferences and various settings like language or location. 
+                        </p>
+                        <p>
+                                <strong>Security Cookies:</strong> We use Security Cookies to identify and prevent security risks, protecting your data and our services.
+                        </p>
+                        <div className="h2">Third-Party Cookies</div>
+                        <p>
+                                In addition to our cookies, we may use cookies provided by trusted third parties. These include analytics services, advertising platforms or affiliate networks. These third party cookies may track your activity across multiple websites. Please note ScoopCost does not control these cookies and is not responsible for how third-parties handle your data. We recommend you to review their respective privacy and cookie policies for details. 
 
-                        </div>
+                        </p>
+                        <div className="h2">How to Manage Your Cookie Preferences</div>
                         <p>
-                        You have control over how cookies are used on your device. Most web browsers let you:
+                                You can choose to accept or reject cookies through your browser settings. Most browsers let you:
                         </p>
                         <ul>
-                            <li>Accept or decline all cookies. </li>
-                            <li>Delete specific cookies or all cookies.</li>
-                            <li>Block third-party cookies.</li>
-                            <li>Set alerts before cookies are saved. </li>
+                            <li>Block all cookies.</li>
+                            <li>Allow only specific cookies.</li>
+                            <li>Get alerts before a cookie is saved.</li>
+                            <li>Delete existing cookies. </li>
                         </ul>
                         <p>
-                        To manage cookies:
+                            Here’s how you can manage cookies:
+
                         </p>
                         <ul>
-                            <li>Check your browser settings under ‘Privacy’ or ‘Security’ tab. </li>
-                            <li>Use ‘Incognito’ or ‘Private Browsing’ to prevent cookie storage.</li>
-                            <li>Use browser extensions or plugins to manage tracking and cookie use more effectively.</li>
+                            <li>Go to browser settings under ‘Privacy’ or ‘Security’ tab.</li>
+                            <li>Use ‘Incognito’ or ‘Private Browsing’ mode to limit cookie storage.</li>
+                            <li>Install browser extensions or plugins that manage tracking and cookies.</li>
+
                         </ul>
                         <p>
-                        Turning off certain cookies may limit some features of the website and may affect how the website works.
+                               <strong> Note:</strong> Disabling or blocking some cookies may affect how certain features or pages on ScoopCost work. 
                         </p>
-                        <div className='h2'>
-                        Updates to this Cookie Policy
-                        </div>
+                        <div className="h2">Updates to this Cookie Policy</div>
                         <p>
-                        We may occasionally revise this Cookie Policy to reflect changes in technology, legal requirements or how we use cookies. When we do, we’ll post an updated policy on this page with the new effective date. Your continued use of the website after such changes constitutes your acceptance of the revised Cookie Policy. We recommend you to review this Cookie Policy periodically.
+                                We may update this Cookie Policy from time to time to make changes in our cookie practices, new legal requirements or improvements in technology. When we make any changes, we’ll revise the “effective date” at the top and post the new policy on this page. We advise you to review this page periodically so you are always informed about how cookies are used on our platform. 
                         </p>
-                        <div className='h2'>
-                        Contact Us
-                        </div>
+                        <div className="h2">Contact Us</div>
                         <p>
-                        If you have any questions or concerns about this Cookie Policy, reach out to us at <a href="https://scoopcost.com/contact">https://scoopcost.com/contact.</a>
+                                If you have any questions or concerns about our Cookie Policy, reach out to us at <a href='https://scoopcost.com/contact'>https://scoopcost.com/contact</a>.
+
                         </p>
                         <p>
-                        By using Suproffer, you consent to use cookies as described in this Cookie Policy.
+                                By using ScoopCost, you consent to use cookies as described in this Cookie Policy.
                         </p>
-                    </div> 
+                   </div> 
                 </div>   
             </section>
         </>

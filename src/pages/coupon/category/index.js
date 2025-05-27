@@ -30,37 +30,36 @@ function CategoryListing({ categories }) {
                         <div className="breadcrumb">
                             <ul>
                                 <li><MainDomainLink href="/">scoopcost.com</MainDomainLink> /</li>
-                                <li>category</li>
+                                <li>coupon / category</li>
                             </ul>
                         </div>
                     </div>
-                    <h1 className='text-center pageH1'>All Categories</h1>
+                    <h1 className='text-center pageH1'>Save More on What You Love – Browse Coupon Categories</h1>
                     <div className='catInfo allcatInfo'>
                          <p>
-                         Welcome to our Categories Coupons page! At Suproffer, we bring together the best deals and discount codes across all major categories. From daily essentials to luxury items, we help you enjoy the best prices on your desired products and services. Whether you are upgrading your gadgets, refreshing your wardrobe, or booking your next vacation, Suproffer has handpicked coupon codes that will save you up to 40% Off on your online purchase. 
-
+                            At ScoopCost, saving money is easy. We bring the best coupons, promo codes, and discounts for almost all product categories. From tech gadgets and fashion to travel and groceries, we have offers that help you spend less and save more. Our platform brings together exclusive discounts, seasonal promotions, and limited-time deals you hardly find anywhere else. 
                          </p>
                          <p>
-                         On our website, you will find the top deals on home goods, fashion trends, beauty products, pet supplies, sports goods, toys & games, and more. We provide you with the best online discounts, seasonal sales, limited-time offers, free shipping deals, buy-one-get-one offers, and verified promo codes.
-                         </p>
-                         <h2>Explore Our Top Categories and Start Saving Today! </h2>
-                         <p>
-                        <strong> Electronics Coupons & Deals:</strong> Find great discounts on phones, laptops, smartwatches, headphones, speakers, and other high-tech electronics. Upgrade your tech collection without breaking the bank! 
+                                Whether you are shopping for yourself, your home, or planning your next trip, browse through these shopping categories to unlock amazing savings from top brands and retailers. Our aim is to make your shopping experience better and more affordable.
                          </p>
                          <p>
-                         <strong>Fashion Deals & Discounts:</strong> Discover the latest offers for clothing, shoes, bags, and accessories for men, women, and kids from the most popular brands.
+                                On our website, you will find top offers across a wide range of categories like home decor, fashion, electronics, pet supplies, beauty products, toys, sports gear, and much more.
+                         </p>
+                         <h2>Some Top Categories You’ll Find on ScoopCost</h2>
+                         <p>
+                                <strong>Fashion Discounts:</strong> Grab exciting deals on all your favorite fashion brands. Shop the newest trends in clothing, shoes, and accessories for men, women, and kids at much lower prices. Our fashion coupons help you stay stylish without overspending.
                          </p>
                          <p>
-                         <strong>Beauty Deals:</strong> Treat yourself to skincare, haircare, cosmetics, beauty tools, and makeup products at discounted prices you’ll love.
+                            <strong>Electronics Deals:</strong> Get the best online discounts on the latest gadgets and devices. Enjoy deals on smartphones, laptops, headphones, smartwatches, computer peripherals, and other high-tech electronic items. 
                          </p>
                          <p>
-                         <strong>Health & Fitness Coupons:</strong> Save big on gym equipment, supplements, yoga gear, and other health products that support your active lifestyle.
+                                <strong>Home & Garden Coupons:</strong> Upgrade up your space with savings on home decor, appliances, furniture, and garden supplies. Here, you will discover exclusive deals and coupon codes for kitchenware, home & office furniture, kitchen appliances, wall decor, and more. Our home products coupons help you save more money every time you shop online.
                          </p>
                          <p>
-                         <strong>Home & Kitchen Appliances Offers:</strong> Get huge discounts on small kitchen appliances, cookware, coffee machines, water purifiers, kitchenware, and other home products. Our home essentials coupons help you save a lot of money on your online shopping for top brands.
+                            <strong>Beauty Deals:</strong> Save big on skincare, makeup, hair care, and beauty tools. Our beauty & cosmetics category brings you offers from trusted brands and retailers. We feature deals from the most popular beauty brands so you can maintain your without making a hole in your pocket.
                          </p>
                          <p>
-                         <strong>Restaurants & Travel Coupons:</strong> Get great deals on hotel bookings, flights, car rentals, and vacation packages from travel providers.
+                            <strong>Health & Fitness Offers:</strong> Fuel your fitness journey with discounts on gym gear, activewear, yoga mats, exercise machines, and health supplements. Whether you are working out at home or at the gym, our health & fitness coupons help you stay healthy without spending too much.
                          </p>
                     </div>
                     <div className="row row-cols-2">

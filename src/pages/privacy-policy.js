@@ -16,125 +16,61 @@ export default function privacyPolicy({ privacyPolicy }) {
             <section className="sitePolicy">            
                 <div className="container">                   
                     <div className="row">
-                        <h1 className='text-center'> Suproffer Privacy Policy </h1>
+                        <h1 className='text-center'>  Privacy Policy </h1>
                         <p>
-                             Welcome to Suproffer! Your privacy matters to us and we are committed to protecting your personal data. This Privacy Policy explains how we collect, use, share and protect your information when you browse our website or use our services. By accessing Suproffer, you agree to the terms outlined in this policy.
+                                ScoopCost (“us”, “we”, or “our”) operates the website <a href="https://scoopcost.com/">https://scoopcost.com/</a> (the “Site” or “Service”). This Privacy Policy explains how we collect, use and protect your information when you use our website. By visiting or using ScoopCost, you agree to the terms outlined in this policy. 
                         </p>
-                        <div className='h2'>
-                        Information We Collect
-                        </div>
-                        <p>
-                        We collect two types of information when you visit or use Suproffer:
-
-                        </p>
-                        <p>
-                            <strong>i. Personal Information
-                            </strong>
-                            <p>
-                            This refers to any data that can identify you as an individual. It may include:
-
-                            </p>
-                            <ul>
-                                <li>Your name and email address (if you sign up for our newsletter or contact us). 
-                                </li>
-                                <li>Any other personal details you voluntarily provide via forms or account creation. 
-                                </li>
-                            </ul>
-                            <p>
-                                <strong>ii. Non-Personal Information
-                                </strong>
-                            </p>
-                            <p>
-                            We also collect data automatically when you use our site. This includes your IP address, browser type, device model, location, and operating system. Also, we gather user behavior such as pages visited, time spent on site, and clicks on coupons or affiliate links.
-                            </p>
-                            <p>
-                            We use cookies and similar technologies to gather this data. Read our <a href="https://scoopcost.com/cookie-policy">Cookie Policy</a> to learn more. 
-                            </p>
-                            <div className='h2'>
-                            How We Use Your Information
-
-                            </div>
-                            <p>
-                            We use your data to enhance your experience and maintain the performance of Suproffer. We may use  your information to:
-
-                            </p>
-                            <ul>
-                                <li>Show you relevant coupons, discount codes, and deals. 
-                                </li>
-                                <li>Improve our website and user experience.</li>
-                                <li>Send email updates, exclusive deals and offers (only if you opt-in).</li>
-                                <li>Ensure security, detect abuse, and protect against fraud.</li>
-                                <li>Enforce our Terms of Use.</li>
-                            </ul>
-                            <div className='h2'>
-                            Sharing of Information
-                            </div>
-                            <p>
-                            Your trust is essential to us. We do not sell or trade your personal data. We may share limited info with trusted partners like analytics providers and email marketing services who help us operate smoothly. These providers are contractually bound to keep your data secure and confidential. We may also disclose your information if we are required to comply with a law, enforce our site policies or protect Suproffer and its users.
-                            </p>
-                            <div className='h2'>
-                            Data Security
-                            </div>
-                            <p>
-                            We use various security measures to protect your data. 
-                            </p>
-                            <ul>
-                                <li>Encryption: Sensitive data is encrypted in transit using secure protocols.</li>
-                                <li>Access Controls: Only authorized personnel have access to your personal data.</li>
-                                <li>Monitoring & Updates: Our systems are regularly monitored and updated to prevent breaches.</li>
-                            </ul>
-                            <p>
-                            While we do our best to safeguard your data, no online system can guarantee complete security.
-                            </p>
-                            <div className='h2'>
-                            Links to Third-Party Websites
-                            </div>
-                            <p>
-                            Suproffer Privacy Policy applies only to our services. Our website includes links to third-party websites that we do not control. These sites have their own privacy policies which are different from us and we do not control these third-party sites. Also, we are not responsible for their data practices, content or safety. We recommend you to review the policies of any linked websites before sharing personal data or using their promotions.
-                            </p>
-                            <div className='h2'>
-                            Children's Privacy
-
-                            </div>
-                            <p>
-                            Suproffer is designed for users aged 13 and above. We do not knowingly collect personal information from children under thirteen years of age. If you find that a child has provided us with their data please contact us immediately and we will take appropriate steps to remove it.
-                            </p>
-                            <div className='h2'>
-                            Your Rights and Choices
-
-                            </div>
-                            <p>
-                            You have the right to:
-                            </p>
-                            <ul>
-                                <li>Access or review the information we have about you. </li>
-                                <li>Update or delete your personal data upon request.</li>
-                                <li>Unsubscribe from our emails or newsletters at any time.</li>
-                                <li>Refuse cookies from browser settings.</li>
-                            </ul>
-                            <div className='h2'>
-                            International Data Transfers
-                            </div>
-                            <p>
-                            If you are using Suproffer from outside our country of operation, your information may be processed and stored with different data laws. By using our site, you agree to data transfer internationally.
-                            </p>
-                            <div className='h2'>
-                            Updates to this Privacy Policy
-                            </div>
-                            <p>
-                            We may update this policy from time to time to reflect legal requirements or service improvements. When we do, we will post the latest version here with a new date. We encourage you to review our Privacy Policy periodically to stay informed. If you do not agree with any part of the updated policy, you may discontinue using our services.
-                            </p>
-                            <div className='h2'>
-                            Contact Us
-                            </div>
-                            <p>
-                            Have questions, concerns or requests about your privacy? We are here to help. Reach out to us at <a href="https://scoopcost.com/contact"> https://scoopcost.com/contact</a>
-                            </p>
-                            <p>
-                            By using Suproffer, you consent to the terms described in this Privacy Policy. 
-
-                            </p>
-                        </p>
+                       <div className="h2">Information We Collect</div>
+                       <p>To provide you with the best experience, we collect a few different types of information: </p>
+                       <p><strong>i. Personal Data:</strong></p>
+                       <p>
+                            We may ask for some personal details like your name, email address or other contact information while signing up for newsletters, contacting us or interacting with some features. This data enables us to reach you or enhance how we serve you.
+                       </p>
+                       <p><strong>ii. Non-Personal Data:</strong></p>
+                       <p>
+                            If you visit ScoopCost, we automatically collect some technical information such as IP address, browser type, device information, pages visited, time on the site and more. This helps us know how our website is being used and how we can make it better.
+                       </p>
+                       <div className="h2">Usage of Information</div>
+                       <p>We use your data to:</p>
+                       <ul>
+                           <li>Run and maintain the Website.</li>
+                           <li>Inform you about changes or updates.</li>
+                           <li>Allow you to use any interactive features we provide.</li>
+                           <li>Offer customer support and service.</li>
+                           <li>Examine worthwhile information to enhance the Service.</li>
+                           <li>Check the site for any suspicious activity.</li>
+                           <li>Fix technical issues.</li>
+                       </ul>
+                       <p>We don't sell your information to any third party.</p>
+                       <div className="h2">Sharing Your Information</div>
+                       <p>We may share your data only when necessary and in limited situations, such as:</p>
+                       <ul>
+                           <li>If we are required by law or government authorities.</li>
+                           <li>To protect ScoopCoost’s rights, safety or property.</li>
+                           <li>To investigate misuse or fraud.</li>
+                           <li>With trusted third-party sites that help us operate our website (like hosting, analytics, etc.). However, they are bound to keep your data secure and confidential.</li>
+                       </ul>
+                       <div className="h2">Security Of Data</div>
+                       <p>
+                            We always try to protect your data and use reasonable security measures to do so. However, please remember that no method of internet transmission or digital storage is ever 100% secure. We do our best but we can’t guarantee its absolute security.
+                       </p>
+                       <div className="h2">Service Providers</div>
+                       <p>
+                            ScoopCost may use services or tools provided by third parties. These third-parties may have access to some of your data, but only help us run our website efficiently. They are not allowed to use your data for anything beyond the tasks they perform for us.
+                       </p>
+                       <div className="h2">Links to Third-Party Websites</div>
+                       <p>
+                            Our website contains links to other websites (usually third-party brands/retailers). Please note that we don’t control these websites and we are not responsible for their content or privacy practices. We encourage you to review their privacy policies before sharing any information with them.
+                       </p>
+                       <div className="h2">Children’s Privacy</div>
+                       <p>ScoopCost is meant for users aged 18 and older. We do not knowingly collect personal data from anyone under the age of 18. If you believe your child has shared personal information with us, please contact us. We take steps to remove the information from our servers.</p>
+                       <div className="h2">Changes To This Privacy Policy</div>
+                       <p>
+                            We may update this Privacy Policy from time to time. If we make changes, we’ll notify you by posting the new Privacy Policy on the site and also update the effective date at the top of this Privacy Policy. You are advised to check back our Privacy Policy occasionally for any changes.
+                       </p>
+                       <div className="h2">Contact Us</div>
+                       <p>Have questions about our privacy practices? Reach out to us at <a href="https://scoopcost.com/contact">https://scoopcost.com/contact</a>.</p>
+                       <p>By using ScoopCost, you consent to the terms mentioned in this Privacy Policy.</p>
                     </div>
                 </div>   
             </section>

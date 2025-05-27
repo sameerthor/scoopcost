@@ -30,37 +30,77 @@ function CategoryListing({ categories }) {
                         <div className="breadcrumb">
                             <ul>
                                 <li><MainDomainLink href="/">scoopcost.com</MainDomainLink> /</li>
-                                <li>category</li>
+                                <li>gift-card / category</li>
                             </ul>
                         </div>
                     </div>
-                    <h1 className='text-center pageH1'>All Categories</h1>
+                    <h1 className='text-center pageH1'>Discover Gift Cards by Interest, Brand & More</h1>
                     <div className='catInfo allcatInfo'>
                          <p>
-                         Welcome to our Categories Coupons page! At Suproffer, we bring together the best deals and discount codes across all major categories. From daily essentials to luxury items, we help you enjoy the best prices on your desired products and services. Whether you are upgrading your gadgets, refreshing your wardrobe, or booking your next vacation, Suproffer has handpicked coupon codes that will save you up to 40% Off on your online purchase. 
+                                Welcome to our Gift Cards Page! 
+                         </p>
+                         <p>
+                                At ScoopCost, we believe saving money should be simple. Our e-gift cards give you that freedom. Whether you are shopping for someone else or treating yourself, our gift cards are a smart and flexible way to enjoy great savings across many categories. You can use them but fashion items, electronics, groceries, beauty products, and more while still taking advantage of the deals and discounts on our platform. 
 
                          </p>
                          <p>
-                         On our website, you will find the top deals on home goods, fashion trends, beauty products, pet supplies, sports goods, toys & games, and more. We provide you with the best online discounts, seasonal sales, limited-time offers, free shipping deals, buy-one-get-one offers, and verified promo codes.
+                                Our gift cards or gift vouchers make a smart option for:
                          </p>
-                         <h2>Explore Our Top Categories and Start Saving Today! </h2>
+                         <ul>
+                                <li>Last minute gifts</li>
+                                <li>Rewarding employees or clients</li>
+                                <li>Surprising a loved one</li>
+                                <li>Treating yourself during festive sales</li>
+                         </ul>
+                         <h2>What are Gift Cards? </h2>
                          <p>
-                        <strong> Electronics Coupons & Deals:</strong> Find great discounts on phones, laptops, smartwatches, headphones, speakers, and other high-tech electronics. Upgrade your tech collection without breaking the bank! 
+                                Gift cards are digital cards you can use like cash on online stores. They are available for many popular brands and cover all major shopping categories. You can either buy them for yourself or send them to someone as a thoughtful gift. These gift vouchers are convenient, easy to use, and often come with special promotions or discounts. 
+                         </p>
+                         <h2>How to Use ScoopCost Gift Cards? </h2>
+                         <p>
+                                Using your gift card is easy. Here’s how:
+                         </p>
+                         <ul>
+                                <li>Pick a gift card from your preferred category or brand</li>
+                                <li>Choose the amount you want to load (options usually start from $100).</li>
+                                <li>Add to the cart and complete the payment.</li>
+                                <li>Receive the card in your email or send it directly to someone else.</li>
+                                <li>Use it at checkout on the brand’s website with the code provided.</li>
+                         </ul>
+                         <p>There is no long process or hidden terms - just simple steps and instant access.</p>
+                         <h2>Why Use Gift Cards from ScoopCost? </h2>
+                         <p><strong>1. Great for Gifting and Personal Use</strong></p>
+                         <p>
+                                While many people buy gift cards for birthdays, holidays, or special occasions, they are just as useful for your own purchases. Use our gift cards for online purchases and spend the value at your own convenience. It’s a flexible option that works for both giving and saving.
+                         </p>
+                         <p><strong>2. Easy to Buy and Send</strong></p>
+                         <p>
+                                You don’t need to wait for delivery. ScoopCost gift cards are digital which means you can purchase one in a few clicks. Want to gift it to someone? Just enter their email address and the card is delivered instantly. Prefer to use it yourself? You will get it in your inbox, ready to go. 
+                         </p>
+                         <p><strong>3. Wide Range of Categories</strong></p>
+                         <p>We offer gift cards for almost every category, including:</p>
+                         <ul>
+                                <li>Clothing & Accessories</li>
+                                <li>Electronics</li>
+                                <li>Beauty & Personal Care</li>
+                                <li>Groceries & Food Delivery</li>
+                                <li>Tours & Travel</li>
+                                <li>Home & Garden</li>
+                                <li>Health & Fitness</li>
+                                <li>Baby Products</li>
+                                <li>Pet Supplies</li>
+                                <li>And many more…</li>
+                         </ul>
+                         <p><strong>4. Budget-Friendly Shopping</strong></p>
+                         <p>
+                                ScoopCost e-gift cards are a great way to manage your spending. You choose how much money to put on the card and use only the amount. This way you don’t spend more than planned while staying within a budget.
+                         </p>
+                         <p><strong>5. Mobile Accessibility</strong></p>
+                         <p>
+                                Our E-gift cards can be accessed and used on smartphones and tablets, making them a convenient savings option for on-the-go shopping and gifting.
                          </p>
                          <p>
-                         <strong>Fashion Deals & Discounts:</strong> Discover the latest offers for clothing, shoes, bags, and accessories for men, women, and kids from the most popular brands.
-                         </p>
-                         <p>
-                         <strong>Beauty Deals:</strong> Treat yourself to skincare, haircare, cosmetics, beauty tools, and makeup products at discounted prices you’ll love.
-                         </p>
-                         <p>
-                         <strong>Health & Fitness Coupons:</strong> Save big on gym equipment, supplements, yoga gear, and other health products that support your active lifestyle.
-                         </p>
-                         <p>
-                         <strong>Home & Kitchen Appliances Offers:</strong> Get huge discounts on small kitchen appliances, cookware, coffee machines, water purifiers, kitchenware, and other home products. Our home essentials coupons help you save a lot of money on your online shopping for top brands.
-                         </p>
-                         <p>
-                         <strong>Restaurants & Travel Coupons:</strong> Get great deals on hotel bookings, flights, car rentals, and vacation packages from travel providers.
+                                Explore our gift card collection now and start enjoying the benefits of smart shopping! 
                          </p>
                     </div>
                     <div className="row row-cols-2">

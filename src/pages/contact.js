@@ -17,38 +17,27 @@ export default function contactPage({ contact }) {
 <section className="sitePolicy"> 
                 <div className="container">                   
                     <div className="row">
-                         <p><strong>Let’s Make Saving Easy! </strong></p>
+                         <p><strong>Let’s Make Savings Simple (And Fun)! </strong></p>
                          <p>
-                         At <a href="https://scoopcost.com/">scoopcost.com</a>, our team works best to help you score the right deals and discounts online. If you are looking forward to a great idea to share, or want to collaborate with us — we’re just a message away.
-                         </p>
-                         <p>
-                             <strong>🛍 Need Help With Coupons?</strong>
-                         </p>
-                         <p>
-                         If you are not able to apply any coupon code or if you are not sure how to apply a discount? Don’t worry — our team is here to guide you through it.
+                                At Scoopcost.com, we help you grab the best online deals, promo codes, and digital gift cards without the hassle. Whether you want to share an idea, ask a question or collaborate with us, send us a message. Our team is always happy to hear from you. 
+
 
                          </p>
-                         <p><strong>💭 Got Feedback or Suggestions?</strong></p>
-                         <p>
-                         We love hearing from our users! If there’s something we can do better or a feature you’d like to see, let us know — we’re all ears.
-                         </p>
-                         <p>
-                            <strong>📬 Reach Out Anytime</strong>
-                         </p>
-                         <p>
-                         Customer Support & General Questions: brand@scoopcost.com
-                         </p>
-                         <p>
-                         Business & Collaborations: info@scoopcost.com
-                         </p>
-                         <p><strong>📢 Stay Connected</strong></p>
-                         <p>
-                         Never miss a deal! Follow us for the latest offers, tips, and coupon codes:
-                         </p>
-                         <p><strong>Facebook</strong>: Suproffer Facebook</p>
-                         <p><strong>Twitter</strong>: Suproffer Twitter</p>
-                         <p><strong>Instagram</strong>: Suproffer Instagram</p>
-                         <p>We’re here to help you save smarter — and we’re excited to have you with us.</p>
+                        <p><strong>Need Help Using Coupons? </strong></p>
+                        <p>
+                                Not sure how to apply a coupon code at checkout? Tried a coupon and it didn’t work? No worries - just drop us a message and we will guide you through the process. 
+                        </p>
+                        <p><strong>Got Suggestions or Feedback? </strong></p>
+                        <p>We genuinely value your ideas! If there is something we could do better, a feature you’d like to see or even a store you wish we covered - tell us! Your feedback helps us grow and improve ScoopCost every day.</p>
+                        <p><strong>Get in Touch </strong></p>
+                        <p>Customer Support & General Questions: brand@scoopcost.com</p>
+                        <p>Business Inquiries & Collaborations: info@scoopcost.com</p>
+                        <p><strong>Stay Connected</strong></p>
+                        <p><strong>Facebook:</strong> ScoopCost Facebook</p>
+                        <p><strong>Twitter:</strong> @ScoopCost Twitter</p>
+                        <p><strong>Instagram:</strong> @ScoopCost Instagram</p>
+                        <p>We reply quickly and love hearing from our users. </p>
+
                     </div>
                 </div>   
             </section>   
