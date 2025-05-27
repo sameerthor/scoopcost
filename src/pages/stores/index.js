@@ -60,43 +60,47 @@ export default function Stores({ initialStoreData }) {
                 <div className="container">
                     <div className="storeBox">
                         <div className="alpha-store">
-                            <h1 className="text-center">Explore Our All Stores Page - Best Coupons and Deals</h1>
+                            <h1 className="text-center">Discover All Your Favorite Stores - Best Deals & Verified Coupons on ScoopCost</h1>
                             <div className="catInfo">
                                 <p>
-                                Welcome to the All Stores Page on scoopcost.com - your one-stop destination for the latest discount deals, promo codes, and verified coupons for all your favorite online stores. From fashion and beauty to electronics and travel, we bring together the best deals to help you save more every time you shop online. 
+                                        Welcome to the All Stores Page at Scoopcost.com - your ultimate savings hub! We bring updated coupons, promo codes and deals for hundreds of popular online stores/retailers. Whether you are shopping for clothes, electronics, travel, beauty or home essentials, we help you save more with every purchase. Our goal is simple - to help our users grab discounted prices on their favorite products/services. 
                                 </p>
-                                <h2>Why Shop With Suproffer?
+                                <h2>Why Browse Our All Stores Page?
                                 </h2>
                                 <p>
-                                    <strong>Huge Collection of Coupon Codes and Deals </strong>
+                                    <strong>Huge Collection of Storewide Deals</strong>
                                 </p>
                                 <p>
-                                Browse an ever-growing list of top online stores offering exclusive discounts, limited-time offers, flash sales, and clearance events. We cover all product categories - clothing, gadgets, home decor, fitness gear, and more. Our team regularly updates the list so you will always find the latest offers and discounts. Shop and save online! 
+                                        Get a massive collection of discount codes, flash sales, limited-time offers, BOGO deals, clearance offers and exclusive deals. From top brands to niche favorites, our site has the latest discount deals for all. Simply put, we bring the deals and discounts for you - all in one convenient place. So, no more endless searching or guessing if a coupon works.
                                 </p>
                                 <p>
-                                    <strong>Verified & Working Promo Codes
+                                    <strong>Only Verified, Working Coupons
                                     </strong>
                                 </p>
                                 <p>
-                                Say goodbye to expired or fake codes. At Suproffer, we check and verify every single coupon code before listing it on our site. You get access to real-time offers that actually save you money. Shop confidently and explore daily deals and weekly sales without worrying about invalid coupons.
-
+                                        Every coupon on ScoopCost is tested and verified by our team. Our platform has only working deals that actually give you the discount you see. No expired or invalid promo codes! Here, you get working coupon codes and deals that are updated frequently.
                                 </p>
                                 <p>
-                                        <strong>Easy Search & Filter Options </strong>
+                                       <strong>Quick Search, Easy Filters, Instant Results</strong>
                                 </p>
                                 <p>
-                                Looking for a deal or coupon? Use our filters to find stores by name, category, or even keywords like “free shipping”, “coupon codes”, or “student discounts”. Whether you are shopping for home essentials, fashion, tech gadgets, pet supplies, or wellness products, finding the right deal is quick and simple. 
-
+                                        Finding the right coupon is easy with ScoopCost. Our simple search bar and filter options let you narrow your search by store name, shopping category or keywords like “free shipping”, “today’s deals”, “first order discount”, “student discount”, etc. Whatever you are shopping for, we make it simple to discover deals that match exactly what you need. Just quick, hassle-free savings for you!
                                 </p>
                                 <p>
-                                    <strong>Personalized Alerts for Your Favorite Stores
+                                    <strong>Stay Ahead with Personalized Alerts
                                     </strong>
                                 </p>
                                 <p>
-                                Create a free account on Suproffer to receive alerts, discount notifications, holiday sales, and seasonal deal reminders. Get notified about the latest offers for events like Cyber Monday, Black Friday, New Year, Christmas, Halloween, and Valentine’s Day. 
-
+                                        Sign up for a free ScoopCost account and never miss a deal again. Get instant alerts when your favorite stores drop new coupons or run sales on events like Black Friday, Cyber Monday, New Year, Christmas, Halloween, and Valentine’s Day. Be the first to grab them! 
                                 </p>
-                                <p>Start saving at scoopcost.com! 
+                                <p>
+                                    <strong>Mobile-Friendly Site</strong>
+                                </p>
+                                <p>
+                                        Shopping on the go? ScoopCost is fully optimized for mobile devices. So you can browse the latest deals and coupons anytime, anywhere. Whether you are on your phone or tablet, finding discounts is simple - shop and save even while you’re on the move. 
+                                </p>
+                                <p>
+                                        Explore your favorite stores, grab verified coupons and enjoy a better way to shop! Visit Scoopcost.com and start saving on every purchase you make!
                                 </p>
                             </div>
                             <div>

@@ -32,95 +32,95 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
 
     
     const carouselStore = [
-        <a className="brand-card" href=''>
+        <a className="brand-card" href='https://scoopcost.com/gift-card/theiuga'>
             <Image  className='brand-logo'
                     width={180}
                     height={80} 
-                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
-            <div className="brand-category">Travel</div>
-            <div className="brand-name">MakeMyTrip</div>
-            <div className="brand-discount">6.75% Off</div>
+                    src="/images/theiuga.webp" loading="lazy" alt="IUGA " />
+            <div className="brand-category">Clothing &amp; Accessories</div>
+            <div className="brand-name">IUGA </div>
+            <div className="brand-discount">22% Off</div>
         </a>,
-        <a className="brand-card" href=''>
+        <a className="brand-card" href='https://scoopcost.com/gift-card/insighthealthapps'>
             <Image  className='brand-logo'
                     width={180}
                     height={80} 
-                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
-            <div className="brand-category">Travel</div>
-            <div className="brand-name">MakeMyTrip</div>
-            <div className="brand-discount">6.75% Off</div>
+                    src="/images/insighthealthandwellness.avif" loading="lazy" alt="Insight Health Apps" />
+            <div className="brand-category">Health &amp; Wellness</div>
+            <div className="brand-name">Insight Health Apps</div>
+            <div className="brand-discount">22% Off</div>
         </a>,
-        <a className="brand-card" href=''>
+        <a className="brand-card" href='https://scoopcost.com/gift-card/justwater'>
             <Image  className='brand-logo'
                     width={180}
                     height={80} 
-                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
-            <div className="brand-category">Travel</div>
-            <div className="brand-name">MakeMyTrip</div>
-            <div className="brand-discount">6.75% Off</div>
+                    src="/images/just.webp" loading="lazy" alt="Just Water" />
+            <div className="brand-category">Food &amp; Drink</div>
+            <div className="brand-name">Just Water</div>
+            <div className="brand-discount">22% Off</div>
         </a>,
-        <a className="brand-card" href=''>
+        <a className="brand-card" href='https://scoopcost.com/gift-card/pix-brix'>
             <Image  className='brand-logo'
                     width={180}
                     height={80} 
-                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
-            <div className="brand-category">Travel</div>
-            <div className="brand-name">MakeMyTrip</div>
-            <div className="brand-discount">6.75% Off</div>
+                    src="/images/pix-brix.avif" loading="lazy" alt="Pix Brix" />
+            <div className="brand-category">Toys &amp; Games</div>
+            <div className="brand-name">Pix Brix</div>
+            <div className="brand-discount">22% Off</div>
         </a>,
-        <a className="brand-card" href=''>
+        <a className="brand-card" href='https://scoopcost.com/gift-card/questhealth'>
             <Image  className='brand-logo'
                     width={180}
                     height={80} 
-                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
-            <div className="brand-category">Travel</div>
-            <div className="brand-name">MakeMyTrip</div>
-            <div className="brand-discount">6.75% Off</div>
+                    src="/images/quest.svg" loading="lazy" alt="Quest Health" />
+            <div className="brand-category">Health &amp; Wellness</div>
+            <div className="brand-name">Quest Health</div>
+            <div className="brand-discount">22% Off</div>
         </a>,
-        <a className="brand-card" href=''>
+        <a className="brand-card" href='https://scoopcost.com/gift-card/rejuvahealth'>
             <Image  className='brand-logo'
                     width={180}
                     height={80} 
-                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
-            <div className="brand-category">Travel</div>
-            <div className="brand-name">MakeMyTrip</div>
-            <div className="brand-discount">6.75% Off</div>
+                    src="/images/rejuvahealth.avif" loading="lazy" alt="Rejuva Health" />
+            <div className="brand-category">Clothing &amp; Accessories</div>
+            <div className="brand-name">Rejuva Health</div>
+            <div className="brand-discount">20% Off</div>
         </a>,
-        <a className="brand-card" href=''>
+        <a className="brand-card" href='https://scoopcost.com/gift-card/bambooclothes'>
             <Image  className='brand-logo'
                     width={180}
                     height={80} 
-                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
-            <div className="brand-category">Travel</div>
-            <div className="brand-name">MakeMyTrip</div>
-            <div className="brand-discount">6.75% Off</div>
+                    src="/images/bambooclothes.avif" loading="lazy" alt="Spun Bamboo Clothing" />
+            <div className="brand-category">Clothing &amp; Accessories</div>
+            <div className="brand-name">Spun Bamboo Clothing</div>
+            <div className="brand-discount">25% Off</div>
         </a>,
-        <a className="brand-card" href=''>
+        <a className="brand-card" href='https://scoopcost.com/gift-card/surfsidesupply'>
             <Image  className='brand-logo'
                     width={180}
                     height={80} 
-                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
-            <div className="brand-category">Travel</div>
-            <div className="brand-name">MakeMyTrip</div>
-            <div className="brand-discount">6.75% Off</div>
+                    src="/images/surfsidesupply.webp" loading="lazy" alt="Surfside Supply" />
+            <div className="brand-category">Clothing &amp; Accessories</div>
+            <div className="brand-name">Surfside Supply</div>
+            <div className="brand-discount">15% Off</div>
         </a>,
-        <a className="brand-card" href=''>
+        <a className="brand-card" href='https://scoopcost.com/gift-card/sewingsupplydepot'>
             <Image  className='brand-logo'
                     width={180}
                     height={80} 
-                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
-            <div className="brand-category">Travel</div>
-            <div className="brand-name">MakeMyTrip</div>
-            <div className="brand-discount">6.75% Off</div>
+                    src="/images/sewingsupplydepot.webp" loading="lazy" alt="Sewing Supply Depot" />
+            <div className="brand-category">Art &amp; Craft</div>
+            <div className="brand-name">Sewing Supply Depot</div>
+            <div className="brand-discount">10% Off</div>
         </a>,
-        <a className="brand-card" href=''>
+        <a className="brand-card" href='https://scoopcost.com/gift-card/trendystraps'>
             <Image  className='brand-logo'
                     width={180}
                     height={80} 
-                    src="/images/wonderfulsubs.avif" loading="lazy" alt="udemy" />
-            <div className="brand-category">Travel</div>
-            <div className="brand-name">MakeMyTrip</div>
-            <div className="brand-discount">6.75% Off</div>
+                    src="/images/trendystraps.webp" loading="lazy" alt="Trendystraps " />
+            <div className="brand-category">Accessories</div>
+            <div className="brand-name">Trendystraps </div>
+            <div className="brand-discount">20% Off</div>
         </a>,
     
     ];
@@ -391,119 +391,118 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                     <h2 className='secHeading'>Top Rated Brands</h2>
                     <div className="row row-cols-lg-5 row-col-md-3 row-cols-2">
                         <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                            <a class="brand-card" href='https://scoopcost.com/gift-card/8000kicks'>
                                 <Image  className='brand-logo'
                                         width={80}
                                         height={80} 
-                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                        src="/images/800-kicks.webp" loading="lazy" alt="800-kicks" />
+                                <div class="brand-name">8000Kicks</div>
+                                <div class="discount-badge">Footwear</div>
                             </a>
                         </div>
                          <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                            <a class="brand-card" href='https://scoopcost.com/gift-card/alethahealth'>
                                 <Image  className='brand-logo'
                                         width={80}
                                         height={80} 
-                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                        src="/images/alethahealth.webp" loading="lazy" alt="alethahealth" />
+                                <div class="brand-name">Aletha Health</div>
+                               
+                                <div class="discount-badge">Health &amp; Wellness</div>
                             </a>
                         </div>
                         <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                            <a class="brand-card" href='https://scoopcost.com/gift-card/camelicioususa'>
                                 <Image  className='brand-logo'
                                         width={80}
                                         height={80} 
-                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                        src="/images/camelicioususa.avif" loading="lazy" alt="Camelicious" />
+                                <div class="brand-name">Camelicious USA</div>
+                       
+                                <div class="discount-badge">Food &amp; Drink</div>
                             </a>
                         </div>
                         <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                            <a class="brand-card" href='https://scoopcost.com/gift-card/drmorses'>
                                 <Image  className='brand-logo'
                                         width={80}
                                         height={80} 
-                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                        src="/images/drmorses.avif" loading="lazy" alt="udemy" />
+                                <div class="brand-name">Dr. Morse's Herbal Health Club</div>
+                                
+                                <div class="discount-badge">Health &amp; Wellness</div>
                             </a>
                         </div>
                         <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                            <a class="brand-card" href='https://scoopcost.com/gift-card/dorado'>
                                 <Image  className='brand-logo'
                                         width={80}
                                         height={80} 
-                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                        src="/images/dorado.webp" loading="lazy" alt="Dorado" />
+                                <div class="brand-name">Dorado </div>
+                                
+                                <div class="discount-badge">Jewelry</div>
                             </a>
                         </div>
                         <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                            <a class="brand-card" href='https://scoopcost.com/gift-card/vivarays'>
                                 <Image  className='brand-logo'
                                         width={80}
                                         height={80} 
-                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                        src="/images/vivarays.webp" loading="lazy" alt="Automotive" />
+                                <div class="brand-name">VivaRays </div>
+                                
+                                <div class="discount-badge">Eyewear</div>
                             </a>
                         </div>
                         <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                            <a class="brand-card" href='https://scoopcost.com/gift-card/everlywell'>
                                 <Image  className='brand-logo'
                                         width={80}
                                         height={80} 
-                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                        src="/images/everlywell.webp" loading="lazy" alt="Everlywell" />
+                                <div class="brand-name">Everlywell </div>
+                                <div class="discount-badge">Health &amp; Wellness</div>
                             </a>
                         </div>
                         <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                            <a class="brand-card" href='https://scoopcost.com/gift-card/echowater'>
                                 <Image  className='brand-logo'
                                         width={80}
                                         height={80} 
-                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                       
+                                        src="/images/waterdrop.svg" loading="lazy" alt="Waterdrop" />
+                                <div class="brand-name">Waterdrop </div>
+                               
+                                <div class="discount-badge">Food &amp; Drink</div>
                             </a>
                         </div>
                         <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                            <a class="brand-card" href='https://scoopcost.com/gift-card/gelblaster'>
                                 <Image  className='brand-logo'
                                         width={80}
                                         height={80} 
-                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                        src="/images/gelblaster.avif" loading="lazy" alt="Gel Blaster Gift" />
+                                <div class="brand-name">Gel Blaster Gift</div>
+                               
+                                <div class="discount-badge">Toys &amp; Games</div>
                             </a>
                         </div>
                         <div className="col mb-5">
-                            <a class="brand-card" href=''>
+                            <a class="brand-card" href='https://scoopcost.com/gift-card/hydrohbottle'>
                                 <Image  className='brand-logo'
                                         width={80}
                                         height={80} 
-                                        src="/images/udemy.svg" loading="lazy" alt="udemy" />
-                                <div class="brand-name">Udemy</div>
-                                <div class="brand-discount">8% Off</div>
-                                <div class="discount-badge">Online Shoping</div>
+                                        src="/images/hydroh.avif" loading="lazy" alt="Hydroh Bottle" />
+                                <div class="brand-name">Hydroh Bottle</div>
+                           
+                                <div class="discount-badge">Health &amp; Wellness</div>
                             </a>
                         </div>
 
                         
                     </div>
-                    <div className="centerBtn"><button>Show More</button></div>
+                    <div className="centerBtn"><a href='https://scoopcost.com/gift-card'>Show More</a></div>
                 </div>
            </section>
            <section className='carouselStore'>
@@ -520,8 +519,8 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                 <div className="container">
                     <h2 className='secHeading'>Frequently Ask Question</h2>
 
-                    <div className="row row-cols col-cols-lg-2">
-                        <div className='col-lg-7'>
+                    <div className="row row-cols col-cols-lg-2 flex-lg-row flex-column-reverse">
+                        <div className='col-lg-7 mobilePadding'>
                             <div className="feature-list">
                                 <div className="feature-item">
                                     <div className="feature-title">
@@ -588,3 +587,4 @@ export async function getStaticProps() {
         revalidate: 10, // ISR - revalidate every 10 seconds
     };
 }
+// Hello this line is for testing purposes only

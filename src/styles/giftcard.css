@@ -130,6 +130,16 @@
     margin-bottom: .5rem;
     display: block;
   }
+  .checkOutContainer .brandCat a{
+    font-weight: 500;
+    font-size: .875rem;
+    color: hsl(227 21% 62%);
+    margin-bottom: .5rem;
+    display: block;
+  }
+  .checkOutContainer .brandCat a:hover{
+    text-decoration: underline;
+  }
     .checkOutContainer .brandDiscount{
    font-weight: 700;
    color: var(--primary-color);
@@ -232,7 +242,7 @@
     background-color: var(--secondary-color);
     padding: 0 .5rem;
     border-radius: 0 4px 4px 0;
-    color: #fff;
+    color: #000;
     font-size: .9rem;
 }
 .promoInputBox .form-control{
@@ -272,6 +282,21 @@
    min-width: 250px;
    transition: .3s ease-in-out;
 }
+.payBtn a{
+   border: none;
+   outline: none;
+   height: 55px;
+   background-color: #ffa41d;
+   color: #000;
+   padding: .5rem;
+   border-radius: 1.7rem;
+   min-width: 250px;
+   transition: .3s ease-in-out;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   max-width: 200px;
+}
 .payBtn button.cartBtn{
    background-color: #ffa41d;
    color: #000;
@@ -290,6 +315,11 @@
 .payBtn button:hover{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     background-color: #0d8eff;
+}
+.payBtn a:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: #0d8eff;
+    color: #fff;
 }
 @media(max-width:600px){
   .payBtn .btnGrp{
@@ -439,7 +469,8 @@
     border: none;
     outline: none;
     padding: .8rem .5rem;
-    display: flex
+    display: flex;
+    box-shadow: none;
 }
 
 
@@ -460,7 +491,7 @@
     .faqssec .accordion-body {
       background-color: #ffffff;
       border-radius: 0 0 8px 8px;
-      padding: 1rem 1.25rem;
+      padding: 1rem .5rem;
     }
 .accordion-button::after {
   content: "";
@@ -552,6 +583,10 @@
       .brand-grid .brand-logo {
         width: 50px;
         height: 50px;
+      }
+      .brand-grid .discount-badge{
+        font-size: .6rem;
+        padding: .25rem .5rem;
       }
     }
 /* abt gift card */
@@ -709,6 +744,7 @@ ul.custom-list li {
  font-weight: 500;
  font-size: .9rem;
  margin-bottom: .8rem;
+ display: flex;
 }
 .d-none{
   display: none !important;

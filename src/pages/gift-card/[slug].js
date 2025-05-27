@@ -42,7 +42,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                 <Image
                     width={600}
                     height={300}
-                    src={`${gift_card.image}`} loading="lazy" alt="logo" />
+                    src="/images/giftcard-2.webp" loading="lazy" alt="giftcard" />
             </div>
         </div>,
         <div className="imgItem">
@@ -59,7 +59,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                 <Image
                     width={600}
                     height={300}
-                    src="/images/giftcard.png" loading="lazy" alt="logo" />
+                    src="/images/giftcard.webp" loading="lazy" alt="giftcard" />
             </div>
         </div>,
 
@@ -162,8 +162,8 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                         💳
                                     </div>
                                     <div className="feature-text">
-                                        <h4>Multi Use</h4>
-                                        <p>Spend in parts until balance is used.</p>
+                                        <h4>Multi Card Acceptable</h4>
+                                        <p>Multiple Cards are acceptable for payment</p>
                                     </div>
                                 </div>
 
@@ -362,13 +362,13 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                             </div>
                                         )}
                                     </div>
-                                    <div className='pgateway'>
+                                    {/* <div className='pgateway'>
                                         <span>Safe & Secure payment by razorpay</span>
                                         <Image
                                             width={150}
                                             height={50}
                                             src="/images/razorpay.svg" loading="lazy" alt="logo" />
-                                    </div>
+                                    </div> */}
                                 </form>
                             </div>
                         </div>
@@ -570,44 +570,66 @@ function parseHtmlToFaqs(htmlString) {
 
 
 export async function getStaticProps({ params }) {
+  const slug = params.slug;
 
-    const slug = params.slug || req.headers.get('host')?.split('.')[0];
-    const res = await fetch('https://admin.scoopcost.com/gift-cards/' + slug + '/')
-    var gift_card = await res.json()
-    if (gift_card.detail) {
-        return {
-            notFound: true
-        };
+  try {
+    const res = await fetch(`https://admin.scoopcost.com/gift-cards/${slug}/`);
+
+    if (!res.ok) {
+      console.error(`Failed to fetch gift card for slug: ${slug}. Status: ${res.status}`);
+      return { notFound: true };
     }
-    let currentYear = moment().format('YYYY');
-    let title = gift_card.store_name;
-    let metaTitle = gift_card.seo_title
-        .replace(/Storename/g, title)
-        .replace(/%%Year%%/g, currentYear)
-        .replace(/\d{4}/, currentYear);
 
-    gift_card.seo_title = metaTitle;
+    const contentType = res.headers.get('content-type');
+    if (!contentType || !contentType.includes('application/json')) {
+      console.error(`Expected JSON, but got: ${contentType}`);
+      return { notFound: true };
+    }
 
-    gift_card.seo_description = gift_card.seo_description.replace(/Storename/g, title)
+    const gift_card = await res.json();
+
+    if (gift_card.detail) {
+      return { notFound: true };
+    }
+
+    const currentYear = moment().format('YYYY');
+    const title = gift_card.store_name;
+
+    gift_card.seo_title = gift_card.seo_title
+      .replace(/Storename/g, title)
+      .replace(/%%Year%%/g, currentYear)
+      .replace(/\d{4}/, currentYear);
+
+    gift_card.seo_description = gift_card.seo_description.replace(/Storename/g, title);
 
     gift_card.store_h1 = gift_card.h1
-        .replace(/Storename/g, title)
-        .replace(/%%Year%%/g, currentYear)
-    console.log(gift_card.faqs)
+      .replace(/Storename/g, title)
+      .replace(/%%Year%%/g, currentYear);
+
     const faqs = parseHtmlToFaqs(gift_card.faqs);
     delete gift_card.faqs;
-    const res2 = await fetch('https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false&id='+gift_card.id)
-    var toprated = await res2.json()
-    console.log(toprated)
-    return {
-        props: {
-            gift_card,
-            faqs,
-            toprated
-        },
-        // Next.js will attempt to re-generate the page:
-        // - When a request comes in
-        // - At most once every 10 seconds
-        revalidate: 60, // In seconds
+
+    // Second fetch - handle errors
+    const res2 = await fetch(`https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false&id=${gift_card.id}`);
+    let toprated = [];
+
+    if (res2.ok && res2.headers.get('content-type')?.includes('application/json')) {
+      toprated = await res2.json();
+    } else {
+      console.warn(`Toprated fetch failed or returned non-JSON for slug: ${slug}`);
     }
+
+    return {
+      props: {
+        gift_card,
+        faqs,
+        toprated
+      },
+      revalidate: 60
+    };
+  } catch (error) {
+    console.error(`Error in getStaticProps for slug: ${slug}`, error);
+    return { notFound: true };
+  }
 }
+

@@ -13,31 +13,31 @@ export default function Header() {
   const router = useRouter();
   const [filterdata, setFilterdata] = useState([]);
 
-const fetchData = () => {
-  Promise.all([
-    axios.get("https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false"),
-    axios.get("https://admin.scoopcost.com/store-search")
-  ])
-    .then(([giftCardRes, storeRes]) => {
-      console.log(giftCardRes)
-      const giftCards = (giftCardRes.data || []).map(gift_card => ({
-        key: gift_card.slug,
-        value: gift_card.store_name,
-        is_gift_card: 1
-      }));
+  const fetchData = () => {
+    Promise.all([
+      axios.get("https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false"),
+      axios.get("https://admin.scoopcost.com/store-search")
+    ])
+      .then(([giftCardRes, storeRes]) => {
+        console.log(giftCardRes)
+        const giftCards = (giftCardRes.data || []).map(gift_card => ({
+          key: gift_card.slug,
+          value: gift_card.store_name,
+          is_gift_card: 1
+        }));
 
-      const stores = (storeRes.data || []).map(store => ({
-        key: store.slug,
-        value: store.title,
-        is_gift_card: 0
-      }));
+        const stores = (storeRes.data || []).map(store => ({
+          key: store.slug,
+          value: store.title,
+          is_gift_card: 0
+        }));
 
-      setFilterdata([...giftCards, ...stores]);
-    })
-    .catch(error => {
-      console.error("Error fetching data:", error);
-    });
-};
+        setFilterdata([...giftCards, ...stores]);
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+      });
+  };
 
 
 
@@ -134,12 +134,15 @@ const fetchData = () => {
             </li>
             <li className="nav-item">
               <MainDomainLink className="nav-link" prefetch={false}
+
                 href="/choose-category">
                 Category
               </MainDomainLink>
             </li>
           </ul>
         </div>
+
+
 
       </div>
       <div className="loginBtn">
