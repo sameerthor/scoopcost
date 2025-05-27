@@ -121,12 +121,12 @@ export default function Header() {
 
         <div className="collapse navbar-collapse justify-content-center order-lg-1" id="navbarNav">
           <ul className="navbar-nav navLinks">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <MainDomainLink className="nav-link" prefetch={false}
                 href="/stores">
                 Coupons
               </MainDomainLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <MainDomainLink className="nav-link" href="/gift-card">
                 Gift Card

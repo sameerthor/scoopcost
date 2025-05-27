@@ -1,0 +1,35 @@
+.store-bg-1 {
+    padding: 20px;
+    background: linear-gradient(135deg, #003B94, #0062D2);
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px;
+    background-image: url('../../public/images/giftcard-2.webp'); background-size: cover;
+    background-position: center;  
+    background-repeat: no-repeat;
+    width: 100%;
+   text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.6); /* Blue with transparency */
+
+}
+.storeItem .dealBtnBox{
+    justify-content: center;
+}
+.storeItem .dealBtnBox .giftCardBtn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 1.7rem;
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.storeItem .dealBtnBox .giftCardBtn:hover{
+    background-color: #0062D2;
+}
+.storeItem .dealBtnBox .giftCardBtn svg{
+  fill: #fff;
+  width: 16px;
+}

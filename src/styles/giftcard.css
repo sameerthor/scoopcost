@@ -807,6 +807,9 @@ font-weight: 600;
   .barndInfo .right{
     display: none;
   }
+  .payBtn{
+    margin-top: 2rem;
+  }
 }
 @media(max-width: 600px){
   .FlexBtns button{
