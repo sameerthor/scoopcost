@@ -587,3 +587,4 @@ export async function getStaticProps() {
         revalidate: 10, // ISR - revalidate every 10 seconds
     };
 }
+// Deployment Fixes
