@@ -60,9 +60,32 @@ export default function GiftCard({ initialStoreData }) {
                 <div className="container">
                     <div className="storeBox">
                         <div className="alpha-store">
-                            <h1 className="text-center">Explore Our All Gift Card Pages </h1>
+                            <h1 className="text-center">Find the Perfect Gift Card for Every Occasion </h1>
                             <div className="catInfo">
-                                
+                                <p>
+                                        Looking for a simple way to save money while shopping online? Try ScoopCost digital gift cards. Whether you are buying one for yourself or giving it to someone else, our gift vouchers make it easy to enjoy top deals, discounts and offers from popular brands. We offer egift cards from 1000+ reputed brands for every occasion.
+                                </p>
+                                <p>
+                                        ScoopCost eGift Cards are a great way to set a shopping budget, treat yourself to a special deal or save money on things you need like clothing, electronics, groceries, beauty products, and more.
+                                </p>
+                                <h2>Why Buy Gift Cards from ScoopCost? </h2>
+                                <ul>
+                                     <li><strong>Simple to use -</strong> No need for physical cards. Everything is digital.</li>
+                                     <li><strong>Instant Delivery - </strong>Delivered instantly via email after purchase.</li>
+                                     <li><strong>Choose your amount -</strong> From small to large budgets, pick what works best. </li>
+                                     <li><strong>Flexible use -</strong> Use them across a wide range of categories and brands.</li>
+                                     <li><strong>Perfect for Gifting -</strong> Best for birthdays, anniversaries, and celebrations. </li>
+                                </ul>
+                                <h2>How to Use an e-Gift Card? </h2>
+                                <ul>
+                                    <li><strong>Buy the eGift Card - </strong>Select the amount you want and enter your or the recipient’s email address. </li>
+                                    <li><strong>Receive by email - </strong>You’ll get the eGift card code instantly in your inbox.</li>
+                                    <li><strong>Start Saving - </strong>Use the card to unlock deals, exclusive offers, or savings on your online purchase. </li>
+                                </ul>
+                                <h2>Safe, Secure, and Hassle-free</h2>
+                                <p>
+                                        We make sure our eGift Vouchers are easy to use and secure. YOu don’t need to worry about lost cards, delivery delays, or complicated steps. Just open your email, copy the code and start saving.
+                                </p>
                             </div>
                             <div>
                                 <p className="all_list">
