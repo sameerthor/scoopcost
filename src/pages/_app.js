@@ -46,19 +46,19 @@ export default function App({ Component, pageProps }) {
       {/* Google Analytics - Only load if user consents */}
       {hasConsent && (
         <>
-         
-          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-P0PSQ4W4GS"
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-P0PSQ4W4GS');
-            `}
-          </Script>
+          {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P0PSQ4W4GS"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P0PSQ4W4GS');
+          `}
+        </Script>
         </>
       )}
 
