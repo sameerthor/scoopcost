@@ -360,7 +360,7 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
                         </div>
                     </div>
                     <div className='centerBtn'>
-                        <button>Show More</button>
+                        <div className="centerBtn"><a href='https://scoopcost.com/gift-card/category'>Show More</a></div>
                     </div>
                 </div>
 

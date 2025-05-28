@@ -37,6 +37,8 @@ export default function App({ Component, pageProps }) {
     <main>
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+        <meta name="theme-color" content="#003b94"/>
+
         <style>{dom.css()}</style>
       </Head>
      
