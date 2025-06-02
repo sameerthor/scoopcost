@@ -142,7 +142,7 @@ export default function Header() {
             <li className="nav-item">
               <MainDomainLink className="nav-link" prefetch={false}
 
-                href="/Blog">
+                href="/blog">
                 Blog
               </MainDomainLink>
             </li>
