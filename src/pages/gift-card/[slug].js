@@ -517,7 +517,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
             <section className='abtGiftcard'>
                 <div className="container">
                     <div className="about-giftcard-section">
-                        <h2 className="section-title">About {gift_card.store_name} Cards</h2>
+                        <h2 className="section-title">About {gift_card.store_name}</h2>
                         <div dangerouslySetInnerHTML={{ __html: gift_card.about }}></div>
                     </div>
 
@@ -525,7 +525,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
             </section>
             <section className='faqssec'>
                 <div className="container py-5">
-                    <h2 className="mb-4 text-center secHeading">Frequently Asked Questions About Gift Cards</h2>
+                    <h2 className="mb-4 text-center secHeading">Frequently Asked Questions About {gift_card.store_name} Gift Cards</h2>
 
                     <div className="accordion" id="giftCardFaq">
                         {faqs.map((faq, index) => {
