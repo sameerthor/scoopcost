@@ -78,6 +78,7 @@
 }
 .blogBox {
     margin: 1rem auto;
+    margin-top: 0;
 }
 
 @media(min-width: 768px){
@@ -114,6 +115,13 @@
    font-size: .9rem;
    text-transform: capitalize;
    color: #2e2e2e;
+   margin-right: .5rem;
+}
+.blogContent .autorbox .date{
+   font-weight: 500;
+   font-size: .8rem;
+   text-transform: capitalize;
+   color: #333;
 }
 .blogContent .firstImage{
     margin: .5rem auto;
@@ -156,6 +164,9 @@
  .blogContent .blogcontentData ul {
    padding-left: 25px;
  }
+  .blogContent .blogcontentData ol {
+   padding-left: 25px;
+ }
  .blogContent .blogcontentData ul li{
     color: #1a1a1b;
     font-size: .95rem;
@@ -164,6 +175,15 @@
     line-height: 1.4;
     text-align: left;
     list-style-type: disc;
+ }
+  .blogContent .blogcontentData ol li{
+    color: #1a1a1b;
+    font-size: .95rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    line-height: 1.4;
+    text-align: left;
+    list-style-type: decimal;
  }
  strong{
     font-weight: 700;
@@ -242,6 +262,7 @@
     min-width: 600px;
     border-collapse: collapse;
     background-color: #fff;
+    margin-bottom: 1rem;
   }
   .table-section thead th{
     position: sticky;
@@ -261,6 +282,12 @@
    line-height: 1.5;
    min-width: 120px;
   }
+  @media(max-width:600px){
+    table th, table td{
+   min-width: fit-content;
+   font-size: .7rem;
+  }
+  }
   table tbody tr:nth-of-type(2n){
     background-color: #f2f2f2;
   }
@@ -279,11 +306,6 @@
   }
   table, th, td {
     border: 1px solid #e5e1e1;
-  }
-  @media(max-width:600px){
-    table th, table td{
-        min-width: 150px;
-       }
   }
 
   /* ====================Comment Box================ */
@@ -551,3 +573,16 @@
  .container{
     max-width: 1000px;
  }
+
+.blogContent  ol li {
+   padding-left: 25px !important;
+ }
+ .blogcontentData table{
+    margin-bottom: 1rem;
+ }
+ .blogContent .blogcontentData ol p{
+    margin-bottom: 0;
+ }
+.blogContent table{
+    margin-bottom: 1rem;
+}
