@@ -639,7 +639,6 @@ export async function getStaticProps({ params }) {
     gift_card.seo_title = gift_card.seo_title
       .replace(/Storename/g, title)
       .replace(/%%Year%%/g, currentYear)
-      .replace(/\d{4}/, currentYear);
 
     gift_card.seo_description = gift_card.seo_description.replace(/Storename/g, title);
 
