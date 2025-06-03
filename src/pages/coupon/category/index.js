@@ -20,8 +20,8 @@ function CategoryListing({ categories }) {
     return (
         <>
             <NextSeo
-                title="Categories 2025"
-                description="Browse our Category page to find the latest coupons, promo codes, and deals. Shoppers will save on electronics, fashion, beauty essentials, travel, sports goods, groceries, pet supplies, health products, and more. Use our updated coupon codes to enjoy big discounts on your favorite products & services."
+                title="ScoopCost Coupon Category 2025"
+                description="Browse our Category and save on electronics, fashion, beauty essentials, travel, sports goods, groceries, pet supplies, health products, and more."
             />
              <MetaTags />
             <section className="categorySection">

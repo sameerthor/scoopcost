@@ -10,8 +10,8 @@ export default function contactPage({ contact }) {
     return (
         <>
             <NextSeo
-                title="SuprOffer - Best Coupons & Deals"
-                description="Find the best coupons, deals, and discounts for top brands"
+                title="Contact - Scoopcost.com"
+                description="Contact now for more details. If you have any questions just email us and we will get back to you"
             />
 
 <section className="sitePolicy"> 

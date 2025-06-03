@@ -10,8 +10,8 @@ export default function privacyPolicy({ privacyPolicy }) {
     return (
         <>
             <NextSeo
-                title="SuprOffer - Best Coupons & Deals"
-                description="Find the best coupons, deals, and discounts for top brands"
+                title="Scoopcost.com - Privacy Policy"
+                description="Privacy Policy"
             />
             <section className="sitePolicy">            
                 <div className="container">                   

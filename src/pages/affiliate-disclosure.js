@@ -10,8 +10,8 @@ export default function affiliateDisclosure({ affiliateDisclosure }) {
     return (
         <>
             <NextSeo
-                title="SuprOffer - Best Coupons & Deals"
-                description="Find the best coupons, deals, and discounts for top brands"
+                title="Scoopcost.com - Affiliate Disclosure"
+                description="Affiliate Disclosure"
             />
 
             <section className="sitePolicy">            

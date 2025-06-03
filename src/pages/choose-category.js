@@ -32,8 +32,8 @@ export default function catType({ categories,topRatedStores,featuredStores,topOn
     return (
         <>
             <NextSeo
-                title="SuprOffer - Best Coupons & Deals"
-                description="Find the best coupons, deals, and discounts for top brands"
+                title="Choose Category - Scoopcost.com"
+                description="Choose your category between Giftcards and Coupons. We bring you different categories for both Gift card and coupons"
             />
             <MetaTags />
             <section className='catType'>

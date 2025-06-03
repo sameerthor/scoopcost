@@ -531,6 +531,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       display: block;
+      min-height: 100%;
     }
 
     .brand-card:hover {
@@ -807,16 +808,36 @@ font-weight: 600;
   .barndInfo .right{
     display: none;
   }
-  .payBtn{
-    margin-top: 2rem;
-  }
+
 }
 @media(max-width: 600px){
   .FlexBtns button{
-    padding: .8rem;
-    min-height: 40px;
+    padding: 0;
+   color: #1a0dab;
     font-size: .7rem;
+    background-color: transparent;
+    font-weight: 600;
   }
+  .FlexBtns button:focus{
+   background-color: transparent;
+   color: #1a0dab;
+   box-shadow: none;
+  }
+  .overLay .brandName{
+    font-size: 1.4rem;
+    left: 12px;
+  }
+  .checkOutContainer .brandName {
+    font-size: 1.3rem;
+  }
+  .overLay .title{
+    left: 12px;
+  }
+  .headFlex .brandImg {
+    height: 70px;
+    width: 70px;
+  }
+  
 }
 .outOfStock{
   background-color: #ffa41d;
