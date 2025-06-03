@@ -61,7 +61,14 @@ export default function BlogListing({ allPosts }) {
                 </h2>
                 <div className="listingImage">
                   <Link href={`/blog/${item.slug}`}>
-                    <img src={item.image} alt={item.title} />
+                    <Image 
+                          src={item.image && item.image.trim() !== "" ? item.image : "/images/placeholder.webp"}
+                          alt={item.title} 
+                          width={400} 
+                          height={200} 
+                          layout="responsive"
+                          priority 
+                    />
                   </Link>
                 </div>
                 <div className="blogDesc">

@@ -103,14 +103,15 @@ export default function BlogDetail() {
                                 </div>
                                 <div className="firstImage">
                                     <Image 
-                                        src={`${post.image}`}
+                                        src={post.image && post.image.trim() !== "" ? post.image : "/images/placeholder.webp"}
                                         alt="Featured Image" 
                                         width={400} 
-                                        height={200} 
+                                        height={300} 
                                         layout="responsive"
                                         priority 
                                     />
                                 </div>
+
                                 <div className="blogcontentData" dangerouslySetInnerHTML={
                                     { __html: post.body }}>
 
