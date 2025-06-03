@@ -72,7 +72,7 @@ export default function BlogListing({ allPosts }) {
                   </Link>
                 </div>
                 <div className="blogDesc">
-                  <p>{item.meta_title || 'No description available'}</p>
+                  <p>{item.meta_description || 'No description available'}</p>
                 </div>
               </div>
             ))}
