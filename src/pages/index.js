@@ -19,13 +19,19 @@ export default function HomePage({ categories,topRatedStores,featuredStores,topO
             <Image 
                 width={800}
                 height={340} 
-                src="/images/scoopcost-banner-1.png" loading="lazy" alt="logo" />
+                src="/images/sale-banner-3.webp" loading="lazy" alt="logo" />
         </div>,
         <div className="imgItem">
             <Image 
                 width={800}
                 height={340} 
-                src="/images/scoopcost-banner-2.png" loading="lazy" alt="logo" />
+                src="/images/sale-banner-1.webp" loading="lazy" alt="logo" />
+        </div>,
+        <div className="imgItem">
+            <Image 
+                width={800}
+                height={340} 
+                src="/images/sale-banner-2.webp" loading="lazy" alt="logo" />
         </div>,
     
     ];
