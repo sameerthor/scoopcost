@@ -32,7 +32,15 @@ const nextConfig = {
   rewrites: async () => [
     {
       source: '/store-sitemap.xml',
-      destination: '/sitemap',
+      destination: '/sitemap/store.js',
+    },
+      {
+      source: '/blog-sitemap.xml',
+      destination: '/sitemap/blog.js',
+    },
+      {
+      source: '/gift-card-sitemap.xml',
+      destination: '/sitemap/gift-card.js',
     }
   ]
 };
