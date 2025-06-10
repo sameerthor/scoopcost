@@ -13,10 +13,17 @@ module.exports = {
     if (path.startsWith('/gift-card/')) {
       return null;
     }
+
+       let priority = 0.7;
+
+    // ✅ Set higher priority for exact matches
+    if (path === '/gift-card' || path === '/coupon/category') {
+      priority = 0.9;
+    }
     return {
       loc: path,
       changefreq: 'daily',
-      priority: 0.7,
+      priority:priority,
       lastmod: new Date().toISOString(),
     }
   },
