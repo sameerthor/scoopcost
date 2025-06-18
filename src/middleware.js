@@ -39,7 +39,7 @@ export async function middleware(request) {
 
   // 🌐 Main domain logic
   if (isMainDomain) {
-    const slug = pathname.split('/')[1];
+    const slug = pathname.split('/')[2];
     if (!slug) return NextResponse.next();
 
     const storeData = await fetchStoreData(slug);
@@ -63,7 +63,7 @@ export async function middleware(request) {
   }
 
   // ✅ Rewrite to internal path
-  url.pathname = `/${subdomain}`;
+  url.pathname = `/coupons/${subdomain}`;
   return NextResponse.rewrite(url);
 }
 

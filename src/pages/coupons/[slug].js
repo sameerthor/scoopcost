@@ -154,7 +154,9 @@ const imageSrc = store?.image ? store.image : '/default-placeholder.webp';
     <>
       <Head>
         <title>{store.seo_title}</title>
+       <meta name="robots" content="noindex, nofollow" />
         <meta name="description" content={store.seo_description} />
+        <meta name="twitter:title" content={store.seo_title} />
         <meta name="twitter:title" content={store.seo_title} />
         <meta name="twitter:description" content={store.seo_description} />
         <meta property="og:title" content={store.seo_title} />
