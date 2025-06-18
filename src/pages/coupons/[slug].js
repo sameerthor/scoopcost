@@ -1,7 +1,7 @@
 import MainDomainLink from '@/components/MainDomainLink';
 import MetaTags from '@/components/MetaTags';
 import Head from 'next/head';
-import Coupon from '../components/coupon';
+import Coupon from '../../components/coupon';
 import ResponsiveRender from '@/components/ResponsiveRender';
 import _ from 'lodash'
 import "@/styles/store.css";
