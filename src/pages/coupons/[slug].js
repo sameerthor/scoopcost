@@ -947,9 +947,7 @@ export async function getStaticProps({ params }) {
     .replace(/XXX/g, firstCouponCode)
     .replace(/CouponCount/g, couponCount)
     .replace(/%percentage%/g, perc)
-    .replace(/%%Year%%/g, currentYear)
-    .replace(/%/g, perc)
-
+    .replace(/%%Year%%/g, currentYear);
 
   return {
     props: {

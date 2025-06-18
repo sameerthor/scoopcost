@@ -5,9 +5,10 @@ const nextConfig = {
   reactStrictMode: false,
   images: {
     remotePatterns: [
-      {
-        hostname: '**',
-      },
+       {
+      protocol: 'https',
+      hostname: '*',
+    },
     ]
   },
   webpack(config) {
