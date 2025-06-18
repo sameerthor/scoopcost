@@ -17,7 +17,7 @@ export default function aboutSaveright({ aboutSaveright }) {
             <section className="sitePolicy">            
                 <div className="container">                   
                     <div className="row">
-                        <h1 className="text-center">About Suproffer</h1>
+                        <h1 className="text-center">About ScoopCost</h1>
                         <p>
                                 ScoopCost is your trusted platform for real, working coupon codes, discounts, and daily deals. But that’s not all - our platform is also offering digital gift cards to make your savings more flexible and fun! Whether you are gifting someone or treating yourself, these gift cards make it easy to save money on your online purchase. 
                         </p>

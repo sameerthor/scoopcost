@@ -869,7 +869,7 @@ export async function getStaticProps({ params }) {
   const store_names = relStores
     .filter(f => f.id !== store.id)
     .slice(0, 2)
-    .map(item => `<a href="${item.subdomain ? `https://${item.slug}.${baseDomain}` : `/${item.slug}`}">${item.title}</a>`)
+    .map(item => `<a href="${item.subdomain ? `https://${item.slug}.${baseDomain}/coupons` : `/${item.slug}`}">${item.title}</a>`)
     .join(', ');
 
   const title = store.title || store.Title;
