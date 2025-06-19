@@ -22,6 +22,8 @@ function CategoryListing({ categories }) {
             <NextSeo
                 title="ScoopCost Coupon Category 2025"
                 description="Browse our Category and save on electronics, fashion, beauty essentials, travel, sports goods, groceries, pet supplies, health products, and more."
+                noindex={true}
+                nofollow={true}
             />
              <MetaTags />
             <section className="categorySection">
