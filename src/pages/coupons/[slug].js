@@ -68,7 +68,7 @@ const getSuccessButtonClass = (level) => {
 
 
 export default function StorePage({ store, relStores, addedByData, faqs }) {
-  console.log(faq)
+
   const storeDescription = store.store_description;
   const paragraphs = storeDescription.split("</p>");
   const [activeCouponsType, setActiveCouponsType] = useState("All");
