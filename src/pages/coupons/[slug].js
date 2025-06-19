@@ -323,11 +323,10 @@ const imageSrc = store?.image ? store.image : '/default-placeholder.webp';
                       }
                       desktop={
                         <>
-                          
+                           <h1> {store.store_h1.replace("%%Year%%", moment().format('YYYY'))}</h1>
                         </>
                       }
                   />
-                  <h1> {store.store_h1.replace("%%Year%%", moment().format('YYYY'))}</h1>
                   <div className="couponFilter">
                       <div className='fiilterPanel'>
                         <button className='active'>All <span className='badge'>10</span></button>
