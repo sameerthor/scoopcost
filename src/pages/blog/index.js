@@ -52,30 +52,34 @@ export default function BlogListing({ allPosts }) {
 
         <div className="container">
           <div className="list-blog">
-            {posts.map((item, index) => (
-              <div className="listingItem" key={index}>
-                <h2 className="listingTitle">
-                  <Link href={`/blog/${item.slug}`}>
-                    {item.title}
-                  </Link>
-                </h2>
-                <div className="listingImage">
-                  <Link href={`/blog/${item.slug}`}>
-                    <Image 
-                          src={item.image && item.image.trim() !== "" ? item.image : "/images/placeholder.webp"}
-                          alt={item.title} 
-                          width={400} 
-                          height={200} 
-                          layout="responsive"
-                          priority 
-                    />
-                  </Link>
-                </div>
-                <div className="blogDesc">
-                  <p>{item.meta_description || 'No description available'}</p>
-                </div>
-              </div>
-            ))}
+            <div className="row row-cols-1 row-cols-lg-3 row-cols-md-3">
+               {posts.map((item, index) => (
+                  <div className="col mb-3">
+                      <div className="listingItem" key={index}>
+                        <h2 className="listingTitle">
+                          <Link href={`/blog/${item.slug}`}>
+                            {item.title}
+                          </Link>
+                        </h2>
+                        <div className="listingImage">
+                          <Link href={`/blog/${item.slug}`}>
+                            <Image 
+                                  src={item.image && item.image.trim() !== "" ? item.image : "/images/placeholder.webp"}
+                                  alt={item.title} 
+                                  width={400} 
+                                  height={200} 
+                                  layout="responsive"
+                                  priority 
+                            />
+                          </Link>
+                        </div>
+                        <div className="blogDesc">
+                          <p>{item.meta_description || 'No description available'}</p>
+                        </div>
+                      </div>
+                  </div>
+                ))}
+            </div>
 
             {/* Pagination */}
             <div className="pagination">

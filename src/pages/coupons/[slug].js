@@ -432,6 +432,13 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                 </div>
 
               )}
+               <div className="checkOutgift">
+                    <a className="promo-card purple-gradient" href=''>
+                        <div className="promo-icon">🎁</div>
+                        <div className="promo-text">Checkout {store.title} Gift Cards</div>
+                        <div className="promo-arrow">→</div>
+                    </a>
+               </div>
 
               <div className='about-store' ref={sectionRef}>
                 <div className="sidebarHeading ratingHeading">
