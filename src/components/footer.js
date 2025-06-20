@@ -75,9 +75,7 @@ export default function Footer() {
                   <p className="copyright-para mb-2">
                       ScoopCost earns affiliate commissions on qualifying purchases as an Amazon associate. "Amazon, and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
                   </p>
-                  <p className="lovtxt">
-                      Made with love ❤️ from United Kingdom
-                  </p>
+                  
                   <p className="lovtxt">
                   DISCLAIMER: ScoopCost is owned and operated by A Private Consultancy Firm and in no way represent any relation with any Government Authority or Body.
                   </p>
