@@ -4,8 +4,7 @@ import { Poppins } from 'next/font/google';
 import Head from "next/head";
 
 import { useEffect, useState } from "react"
-// import { config, dom } from '@fortawesome/-svg-core';
-// config.autoAddCss = false;
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Script from 'next/script';

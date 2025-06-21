@@ -3,9 +3,7 @@ import { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import FeedbackComponent from '../components/FeedbackComponent';
 
-import {
-  faCartShopping,
-} from "@fortawesome/free-solid-svg-icons";
+
 import Image from "next/image";
 const getHeading = (title) => {
   if (!title) return "";

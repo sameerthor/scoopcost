@@ -5,7 +5,6 @@ import Image from 'next/image'
 import _ from 'lodash'
 import { NextSeo } from 'next-seo';
 import Link from "next/link";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import arrayShuffle from 'array-shuffle';
 import moment from "moment";
 const baseDomain = "scoopcost.com"
