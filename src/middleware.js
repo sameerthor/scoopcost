@@ -56,18 +56,21 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  // 🧭 Subdomain logic
-  const subdomain = host.replace(`.${baseDomain}`, '');
-  const storeData = await fetchStoreData(subdomain);
+ const subdomain = host.replace(`.${baseDomain}`, '');
+const storeData = await fetchStoreData(subdomain);
 
-  if (!storeData || !storeData.subdomain) {
-    // Custom 404 page
-    return NextResponse.rewrite(new URL('/404', request.url));
-  }
+if (!storeData || !storeData.subdomain) {
+  return NextResponse.rewrite(new URL('/404', request.url));
+}
 
-  // ✅ Rewrite to internal path
-  url.pathname = `/coupons/${subdomain}`;
-  return NextResponse.rewrite(url);
+// ❗ Enforce `/coupons` path only for subdomains
+if (!pathname.startsWith('/coupons')) {
+  return NextResponse.rewrite(new URL('/404', request.url));
+}
+
+// ✅ Allow and rewrite to internal path (optional if SSR needs it)
+url.pathname = `/coupons/${subdomain}`;
+return NextResponse.rewrite(url);
 }
 
 export const config = {
