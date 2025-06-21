@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import arrayShuffle from 'array-shuffle';
 import moment from "moment";
-const baseDomain="scoopcost.com"
+const baseDomain = "scoopcost.com"
 function Category({ category, stores, categories }) {
 
     const validImageSrc = (image) =>
@@ -44,7 +44,7 @@ function Category({ category, stores, categories }) {
                 title={category.meta_title.replaceAll("%%currentyear%%", moment().format('YYYY')) || `${category.title} Coupons`}
                 description={category.meta_description.replaceAll("%%currentyear%%", moment().format('YYYY')) || `Best ${category.title} coupons and deals`}
             />
-             <MetaTags />
+            <MetaTags />
             <section className="categorySection">
                 <div className="container">
                     <div className="top-bar-store-bg">
@@ -106,13 +106,16 @@ function Category({ category, stores, categories }) {
                         </div>
                     </div>
                     <div className='catInfo'>
-                          <div dangerouslySetInnerHTML={{ __html: category.body }} />
+                        <div dangerouslySetInnerHTML={{ __html: category.body }} />
                     </div>
                     <div className="subCatBox">
                         <div className="row">
-                            {stores.map((store) => (
-                                store.coupon_set?.map((coupon, index) => (
-                                    <div key={`${store.id}-${index}`}  className="col-lg-4 col-md-6 col-sm-12 p-1 mb-2">
+                            {stores.map((store) => {
+                                const coupon = store.coupon_set?.[0]; // 👈 only the first coupon
+                                if (!coupon) return null; // skip if no coupon
+
+                                return (
+                                    <div key={store.id} className="col-lg-4 col-md-6 col-sm-12 p-1 mb-2">
                                         <div className="storeItem">
                                             <div className="storeInfo">
                                                 <div className="storeData">
@@ -120,7 +123,7 @@ function Category({ category, stores, categories }) {
                                                     <MainDomainLink href={
                                                         (store.subdomain
                                                             ? `https://${store.slug}.${baseDomain}`
-                                                            : `/${store.slug}`)+`#code=${index+1}`
+                                                            : `/${store.slug}`) + `#code=1`
                                                     } className="storeUrl">
                                                         {store.title}
                                                     </MainDomainLink>
@@ -130,7 +133,7 @@ function Category({ category, stores, categories }) {
                                                         <MainDomainLink title={store.title} href={
                                                             (store.subdomain
                                                                 ? `https://${store.slug}.${baseDomain}`
-                                                                : `/${store.slug}`)+`#code=${index+1}`
+                                                                : `/${store.slug}`) + `#code=1`
                                                         }>
                                                             <img
                                                                 src={store.image || "/images/default-placeholder.png"}
@@ -141,49 +144,44 @@ function Category({ category, stores, categories }) {
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div className="storeData">
                                                 <MainDomainLink href={
                                                     (store.subdomain
                                                         ? `https://${store.slug}.${baseDomain}`
-                                                        : `/${store.slug}`)+`#code=${index+1}`
+                                                        : `/${store.slug}`) + `#code=1`
                                                 } className="storeName">
                                                     <p dangerouslySetInnerHTML={{ __html: coupon.title }} />
                                                 </MainDomainLink>
                                             </div>
+
                                             <div className="dealBtnBox">
                                                 <MainDomainLink className='tNc' href={
-                                                        (store.subdomain
-                                                            ? `https://${store.slug}.${baseDomain}`
-                                                            : `/${store.slug}`)+`#code=${index+1}`
-                                                    }  onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
-                                                       
-                                                        T & C
-                                                    </MainDomainLink>
+                                                    (store.subdomain
+                                                        ? `https://${store.slug}.${baseDomain}`
+                                                        : `/${store.slug}`) + `#code=1`
+                                                } onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
+                                                    T & C
+                                                </MainDomainLink>
 
                                                 <span className='tNc'>Expires{coupon.expires ? ` On:${coupon.expires}` : ''}</span>
+
                                                 <p className="grabDeal">
-                                                    {/* <MainDomainLink href={
-                                                        store.subdomain
-                                                            ? `https://${store.slug}.${baseDomain}`
-                                                            : `/${store.slug}`
-                                                    }>
-                                                        Get Code
-                                                       
-                                                    </MainDomainLink> */}
                                                     <MainDomainLink href={
                                                         (store.subdomain
-                                                            ? `https://${store.slug}.${baseDomain}`
-                                                            : `/${store.slug}`)+`#code=${index+1}`
-                                                    } class="angled-button">
+                                                            ? `https://${store.slug}.${baseDomain}/coupons`
+                                                            : `/coupons/${store.slug}`) + `#code=1`
+                                                    } className="angled-button">
                                                         *****************
-                                                        <span class="btn-angle">Get Code</span>
+                                                        <span className="btn-angle">Get Code</span>
                                                     </MainDomainLink>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
-                                ))
-                            ))}
+                                );
+                            })}
+
                         </div>
                     </div>
                 </div>
