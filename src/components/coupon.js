@@ -249,7 +249,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         </div>
         {coupon.term_condition != "" &&
           <div id={accordionId} className="accordion">
-            <div id={collapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
+            <div id={collapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
               <div className="card-body">
                 <div className="tNcBox tNcTop">
                   <div dangerouslySetInnerHTML={{ __html: coupon.term_condition }} />
@@ -259,7 +259,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
           </div>
         }
          <div id={historyAccordionId} className="accordion">
-          <div id={historyCollapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${historyAccordionId}`}>
+          <div id={historyCollapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${historyAccordionId}`}>
             <div className="card-body">
               <div className="historyBox tNcBox">
                 <ul>

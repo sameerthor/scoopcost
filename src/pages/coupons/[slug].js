@@ -649,7 +649,13 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                  <img src="/images/dinesh-v.webp" alt="dinesh" />
+                                  <Image
+                                   width={32}
+                                   height={32}
+                                   src={'/images/dinesh-v.webp'}
+                                   loading='lazy'
+                                  alt='dinesh'
+                                 />
                                   <p>
                                     Dinesh
                                   </p>
@@ -660,7 +666,14 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                  <img src="/images/mashma-m.webp" alt="mashma" />
+                                   <Image
+                                   width={32}
+                                   height={32}
+                                   src={'/images/mashma-m.webp'}
+                                   loading='lazy'
+                                  alt='dinesh'
+                                 />
+                                 
                                   <p>
                                     Mashma
 
@@ -672,7 +685,14 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                  <img src="/images/tanay-s.webp" alt="tanay" />
+                                   <Image
+                                   width={32}
+                                   height={32}
+                                   src={'/images/tanay-s.webp'}
+                                   loading='lazy'
+                                  alt='tanay'
+                                 />
+                                 
                                   <p>
                                     Tanay
 
@@ -684,7 +704,14 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                  <img src="/images/sikha.webp" alt="sikha" />
+                                   <Image
+                                   width={32}
+                                   height={32}
+                                   src={'/images/sikha.webp'}
+                                   loading='lazy'
+                                  alt='sikha'
+                                 />
+                                 
                                   <p>
                                     Sikha
 
@@ -696,7 +723,14 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                  <img src="/images/yash-c.webp" alt="yash" />
+                                   <Image
+                                   width={32}
+                                   height={32}
+                                   src={'/images/yash-c.webp'}
+                                   loading='lazy'
+                                  alt='yash'
+                                 />
+                                 
                                   <p>
                                     Yash
 
@@ -708,7 +742,14 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                  <img src="/images/yunush.webp" alt="Yusuf" />
+                                   <Image
+                                   width={32}
+                                   height={32}
+                                   src={'/images/yunush.webp'}
+                                   loading='lazy'
+                                  alt='yusuf'
+                                 />
+                                 
                                   <p>
                                     Yusuf
 
