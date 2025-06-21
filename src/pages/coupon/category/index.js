@@ -95,7 +95,11 @@ function CategoryListing({ categories }) {
 }
 
 export async function getStaticProps({ params }) {
-    const res = await fetch(`https://admin.scoopcost.com/categories?ordering=title`);
+    const res = await fetch(`https://admin.scoopcost.com/categories?ordering=title`,{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+});
     const categories = await res.json();
 
     return {

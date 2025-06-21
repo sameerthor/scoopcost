@@ -19,7 +19,11 @@ export async function getServerSideProps({ res }) {
   const urlList = []
 
   const result = await fetch(
-    'https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false'
+    'https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false',{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+}
   )
   const json = await result.json()
   const gift_cards =  json

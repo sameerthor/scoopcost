@@ -8,7 +8,8 @@ export default async function handler(req, res) {
     try {
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
-  
+      myHeaders.append("x-api-key", process.env.SECRET_KEY);
+
       const raw = JSON.stringify(req.body);
   
       const requestOptions = {

@@ -19,7 +19,11 @@ export async function getServerSideProps({ res }) {
   const urlList = []
 
   const result = await fetch(
-    'https://admin.scoopcost.com/posts/'
+    'https://admin.scoopcost.com/posts/',{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+}
   )
   const json = await result.json()
   const posts =  json

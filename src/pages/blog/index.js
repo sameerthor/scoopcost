@@ -7,7 +7,11 @@ import Image from 'next/image'
 import { NextSeo } from 'next-seo';
 
 export async function getStaticProps() {
-  const res = await fetch('https://admin.scoopcost.com/posts/');
+  const res = await fetch('https://admin.scoopcost.com/posts/',{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+});
   const data = await res.json();
 
   return {

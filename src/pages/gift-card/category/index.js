@@ -134,7 +134,11 @@ function CategoryListing({ categories }) {
 }
 
 export async function getStaticProps({ params }) {
-    const res = await fetch(`https://admin.scoopcost.com/gift-card-categories/?count=true`);
+    const res = await fetch(`https://admin.scoopcost.com/gift-card-categories/?count=true`,{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+});
     const categories = await res.json();
 
     return {

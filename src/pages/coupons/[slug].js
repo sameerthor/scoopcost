@@ -799,7 +799,11 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch('https://admin.scoopcost.com/stores/');
+  const res = await fetch('https://admin.scoopcost.com/stores/',{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+});
   const stores = await res.json();
 
   const paths = stores.map(store => ({
@@ -836,7 +840,11 @@ async function parseHtmlToFaqs(htmlString) {
 export async function getStaticProps({ params }) {
   const slug = params.slug || req.headers.get('host')?.split('.')[0];
 
-  const res = await fetch('https://admin.scoopcost.com/stores/' + slug + '/')
+  const res = await fetch('https://admin.scoopcost.com/stores/' + slug + '/',{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+})
   var store = await res.json()
   if (store.detail) {
     return {
@@ -844,7 +852,11 @@ export async function getStaticProps({ params }) {
     };
   }
 
-  const addedByJson = await fetch(`https://admin.scoopcost.com/addedby-stores/`)
+  const addedByJson = await fetch(`https://admin.scoopcost.com/addedby-stores/`,{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+})
   const addedByData = await addedByJson.json()
 
   store.coupon_set.map(coupon => {
@@ -855,7 +867,11 @@ export async function getStaticProps({ params }) {
 
   var simCat = [];
   if (store.category[0]) {
-    const resRelStores = await fetch(`https://admin.scoopcost.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
+    const resRelStores = await fetch(`https://admin.scoopcost.com/stores/?category__id=${store.category[0].id}&ordering=-id`,{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+})
     var relStores = await resRelStores.json()
     relStores = relStores.filter((s) => s.id !== store.id);
     relStores = _.shuffle(relStores).slice(0, 12)

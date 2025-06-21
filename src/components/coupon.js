@@ -93,7 +93,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'x-api-key': process.env.SECRET_KEY,
           }
         }
       );
@@ -112,7 +113,9 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+             'x-api-key': process.env.SECRET_KEY,
+
           },
           body: JSON.stringify({ is_worked }) // Pass is_worked in the request body
         }

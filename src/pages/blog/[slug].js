@@ -16,13 +16,17 @@ export default function BlogDetail() {
   useEffect(() => {
     if (!slug) return;
 
-    fetch('https://admin.scoopcost.com/posts/')
-      .then((res) => res.json())
-      .then((data) => {
-        const found = data.find((p) => p.slug === slug);
-        setPost(found || null);
-        setLoading(false);
-      });
+   fetch('https://admin.scoopcost.com/posts/', {
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+})
+  .then((res) => res.json())
+  .then((data) => {
+    const found = data.find((p) => p.slug === slug);
+    setPost(found || null);
+    setLoading(false);
+  });
   }, [slug]);
 
   if (loading) return <p>Loading...</p>;

@@ -1,13 +1,20 @@
 const fs = require('fs')
 const path = require('path')
 const https = require('https')
+require('dotenv').config()
 
 const API_URL = 'https://admin.scoopcost.com/store-search/'
 const OUT_PATH = path.join(__dirname, '..', 'excluded-slugs.json')
 
 function fetchJson(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, res => {
+    const options = {
+      headers: {
+        'x-api-key': process.env.SECRET_KEY
+      }
+    }
+
+    https.get(url, options, res => {
       let data = ''
       res.on('data', chunk => data += chunk)
       res.on('end', () => {
@@ -25,9 +32,7 @@ function fetchJson(url) {
 async function run() {
   try {
     const json = await fetchJson(API_URL)
-    const stores = json
-
-    const excluded = stores.map(s => s.slug).filter(Boolean)
+    const excluded = json.map(s => s.slug).filter(Boolean)
 
     fs.writeFileSync(OUT_PATH, JSON.stringify(excluded, null, 2))
     console.log(`✅ excluded-slugs.json updated with ${excluded.length} slugs`)
