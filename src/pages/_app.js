@@ -10,9 +10,9 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Script from 'next/script';
 const poppins = Poppins({
-  weight: ['400', '500', '600'],  // You can include more if needed
-  subsets: ['latin'],             // Required
-  display: 'swap',                // Eliminates layout shift
+  weight: ['400', '500', '600'],  
+  subsets: ['latin'],             
+  display: 'swap',             
 });
 
 
