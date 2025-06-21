@@ -156,6 +156,7 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
       <Head>
         <title>{store.seo_title}</title>
         <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="noindex, nofollow" />
         <meta name="description" content={store.seo_description} />
         <meta name="twitter:title" content={store.seo_title} />
         <meta name="twitter:title" content={store.seo_title} />
@@ -431,6 +432,13 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                 </div>
 
               )}
+               <div className="checkOutgift">
+                    <a className="promo-card purple-gradient" href=''>
+                        <div className="promo-icon">🎁</div>
+                        <div className="promo-text">Checkout {store.title} Gift Cards</div>
+                        <div className="promo-arrow">→</div>
+                    </a>
+               </div>
 
               <div className='about-store' ref={sectionRef}>
                 <div className="sidebarHeading ratingHeading">

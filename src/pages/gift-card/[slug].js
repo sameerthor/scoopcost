@@ -523,6 +523,15 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
 
                 </div>
             </section>
+            <section className='checkOutgift'>
+               <div className="container">
+                    <a className="promo-card purple-gradient" href=''>
+                        <div className="promo-icon">🏷️</div>
+                        <div className="promo-text">Checkout {gift_card.store_name} Coupon Code</div>
+                        <div className="promo-arrow">→</div>
+                    </a>
+               </div>
+            </section>
             <section className='faqssec'>
                 <div className="container py-5">
                     <h2 className="mb-4 text-center secHeading">Frequently Asked Questions About {gift_card.store_name} Gift Cards</h2>
