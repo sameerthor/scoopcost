@@ -14,7 +14,10 @@ async function fetchStoreData(identifier) {
 
   // Fetch fresh data if not in cache
   const res = await fetch(`https://admin.scoopcost.com/stores/${identifier}`, {
-    next: { revalidate: 30 } // Optional: Next.js fetch caching
+    next: { revalidate: 30 }, // Optional: Next.js fetch caching,
+    headers: {
+      'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+    }
   });
 
   if (!res.ok) return null;
@@ -69,5 +72,5 @@ export async function middleware(request) {
 
 export const config = {
   matcher: ['/((?!_next|static|favicon.ico|api|_vercel).*)'],
- runtime: 'nodejs'     
+  runtime: 'nodejs'
 };
