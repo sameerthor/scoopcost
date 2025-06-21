@@ -188,8 +188,8 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                           <Image
                             src={imageSrc}
                             alt={`${store.title} Store Logo`}
-                            width={128}
-                            height={128}
+                            width={98}
+                            height={98}
                             className="attachment-wpcoupon_small_thumb size-wpcoupon_small_thumb"
                             loading="lazy"
                           />

@@ -1,15 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import "@/styles/globals.css";
-import "@/styles/fonts.css";
+import { Poppins } from 'next/font/google';
 import Head from "next/head";
 
 import { useEffect, useState } from "react"
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import { config, dom } from '@fortawesome/fontawesome-svg-core';
-config.autoAddCss = false;
+// import { config, dom } from '@fortawesome/-svg-core';
+// config.autoAddCss = false;
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Script from 'next/script';
+const poppins = Poppins({
+  weight: ['400', '500', '600'],  // You can include more if needed
+  subsets: ['latin'],             // Required
+  display: 'swap',                // Eliminates layout shift
+});
+
 
 export default function App({ Component, pageProps }) {
   const [hasConsent, setHasConsent] = useState(null); // null for undecided
@@ -34,12 +39,12 @@ export default function App({ Component, pageProps }) {
     localStorage.setItem('ga_consent', 'denied');
   };
   return (
-    <main>
+    <main className={poppins.className}>
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
         <meta name="theme-color" content="#003b94"/>
 
-        <style>{dom.css()}</style>
+        {/* <style>{dom.css()}</style> */}
       </Head>
      
       <Header />

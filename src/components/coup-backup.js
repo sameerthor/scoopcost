@@ -1,5 +1,4 @@
 import MainDomainLink from '@/components/MainDomainLink';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import FeedbackComponent from '../components/FeedbackComponent';

@@ -1,13 +1,7 @@
-import MainDomainLink from '@/components/MainDomainLink';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import { formatDistanceToNow } from "date-fns";
 import FeedbackComponent from '../components/FeedbackComponent';
 import { useRef } from 'react';
-
-import {
-  faCartShopping,
-} from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
 const stripPTags = (html) => html.replace(/^<p>|<\/p>$/g, '');
@@ -172,8 +166,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       <Image
                         src={`${storeImage}`}
                         alt={`${storeName} Store Logo`}
-                        width={128}
-                        height={128}
+                        width={30}
+                        height={30}
                         loading="lazy"
                       />
                       <span> {storeName}</span>
