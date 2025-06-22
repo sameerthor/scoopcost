@@ -1,13 +1,7 @@
-import MainDomainLink from '@/components/MainDomainLink';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import { formatDistanceToNow } from "date-fns";
 import FeedbackComponent from '../components/FeedbackComponent';
 import { useRef } from 'react';
-
-import {
-  faCartShopping,
-} from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
 const stripPTags = (html) => html.replace(/^<p>|<\/p>$/g, '');
@@ -172,8 +166,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       <Image
                         src={`${storeImage}`}
                         alt={`${storeName} Store Logo`}
-                        width={128}
-                        height={128}
+                        width={30}
+                        height={30}
                         loading="lazy"
                       />
                       <span> {storeName}</span>
@@ -249,7 +243,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         </div>
         {coupon.term_condition != "" &&
           <div id={accordionId} className="accordion">
-            <div id={collapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
+            <div id={collapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
               <div className="card-body">
                 <div className="tNcBox tNcTop">
                   <div dangerouslySetInnerHTML={{ __html: coupon.term_condition }} />
@@ -259,7 +253,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
           </div>
         }
          <div id={historyAccordionId} className="accordion">
-          <div id={historyCollapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${historyAccordionId}`}>
+          <div id={historyCollapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${historyAccordionId}`}>
             <div className="card-body">
               <div className="historyBox tNcBox">
                 <ul>

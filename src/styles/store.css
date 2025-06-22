@@ -1109,7 +1109,8 @@ body{
 .strLogoBx .strLogo .logo img{
  max-width: 100%;
  object-fit: contain;
- max-height: 98px;
+ height: 98px;
+ width: 98px;
 }
 .strLogoBx .affiname{
  display: flex;
