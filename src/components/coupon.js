@@ -195,8 +195,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                         }
 
                         const url = usesSubdomain
-                          ? `https://${storeSlug}.${baseDomain}#code=${index + 1}`
-                          : `/${storeSlug}#code=${index + 1}`;
+                          ? `https://${storeSlug}.${baseDomain}/coupons#code=${index + 1}`
+                          : `/${storeSlug}/coupons#code=${index + 1}`;
 
                         window.open(url, "_blank");
 
@@ -219,8 +219,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                           localStorage.setItem('copied_code', coupon.id)
 
                           const url = usesSubdomain
-                            ? `https://${storeSlug}.${baseDomain}#code=${index + 1}`
-                            : `/${storeSlug}#code=${index + 1}`
+                            ? `https://${storeSlug}.${baseDomain}/coupons#code=${index + 1}`
+                            : `/${storeSlug}/coupons#code=${index + 1}`
 
                           window.open(url, "_blank");
                           setTimeout(() => {
