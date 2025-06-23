@@ -149,7 +149,7 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
   };
   const imageSrc = store?.image ? store.image : '/default-placeholder.webp';
 
-
+ const [activeButton, setActiveButton] = useState('all'); // active filter btn
 
   return (
     <>
@@ -331,12 +331,30 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                 />
                 
                 <div className="couponFilter">
-                  <div className='fiilterPanel'>
-                    <button className='active'>All <span className='badge'>10</span></button>
-                    <button>Verified <span className='badge'>10</span></button>
-                    <button>Codes <span className='badge'>10</span></button>
+                    <div className="fiilterPanel">
+                      <button
+                        className={activeButton === 'all' ? 'active' : ''}
+                        onClick={() => setActiveButton('all')}
+                      >
+                        All <span className="badge">10</span>
+                      </button>
+
+                      <button
+                        className={activeButton === 'verified' ? 'active' : ''}
+                        onClick={() => setActiveButton('verified')}
+                      >
+                        Verified <span className="badge">10</span>
+                      </button>
+
+                      <button
+                        className={activeButton === 'codes' ? 'active' : ''}
+                        onClick={() => setActiveButton('codes')}
+                      >
+                        Codes <span className="badge">10</span>
+                      </button>
+                    </div>
                   </div>
-                </div>
+
                 <div className="costCoupons">
                   <div className="store-listing">
                     {store.coupon_set
@@ -629,7 +647,7 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
 
 
 
-              <section className="whyTrustus">
+              <section className="whyTrustus" id='couponExperts'>
                 <div className="container">
                   <div className="sidebarHeading">Why Trust Us?</div>
                   <div className="row g-4">

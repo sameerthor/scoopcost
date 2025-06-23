@@ -234,6 +234,9 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${historyCollapseId}`} title="Show History">Coupon History</button>
                 </div>
                 <div>
+                    <button className="showTncBox tnc tncBtns" onClick={() => scrollToSection('scrollToScreenShot')}>Coupon Screenshot History</button>
+                </div>
+                <div>
                   {coupon.term_condition != "" &&
                     <button className="showTncBox tnc tncBtns" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} title="Show T &amp; C">Terms &amp; Conditions</button>
                   }
@@ -243,7 +246,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
         </div>
         {coupon.term_condition != "" &&
           <div id={accordionId} className="accordion">
-            <div id={collapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
+            <div id={collapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${accordionId}`}>
               <div className="card-body">
                 <div className="tNcBox tNcTop">
                   <div dangerouslySetInnerHTML={{ __html: coupon.term_condition }} />
@@ -253,7 +256,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
           </div>
         }
          <div id={historyAccordionId} className="accordion">
-          <div id={historyCollapseId} className="collapse show" aria-labelledby={`heading-${index}`} data-bs-parent={`#${historyAccordionId}`}>
+          <div id={historyCollapseId} className="collapse" aria-labelledby={`heading-${index}`} data-bs-parent={`#${historyAccordionId}`}>
             <div className="card-body">
               <div className="historyBox tNcBox">
                 <ul>
@@ -268,7 +271,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       This coupon was used by shoppers {formatDistanceToNow(new Date(coupon.last_used_at), { addSuffix: true })} {coupon.is_worked && (coupon.is_worked === "True" ? "and it worked." : "and it didn't work.")}
                     </li>
                   }
-                  <li>{`Added ${formatDistanceToNow(storeCreateTime, { addSuffix: true })}`} by {coupon.added_by}  - <button onClick={() => scrollToSection('scrollToScreenShot')}> Check Coupon Sreenshot History</button></li>
+                  <li> Added by - <button onClick={() => scrollToSection('couponExperts')}> Coupon Experts</button></li>
                 </ul>
               </div>
             </div>
