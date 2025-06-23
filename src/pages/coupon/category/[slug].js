@@ -120,8 +120,8 @@ function Category({ category, stores, categories }) {
                                                     <span className="discountValue">{getHeading(coupon.title)}</span>
                                                     <MainDomainLink href={
                                                         (store.subdomain
-                                                            ? `https://${store.slug}.${baseDomain}`
-                                                            : `/${store.slug}`) + `#code=1`
+                                                            ? `https://${store.slug}.${baseDomain}/coupons/`
+                                                            : `/coupons/${store.slug}`) + `#code=1`
                                                     } className="storeUrl">
                                                         {store.title}
                                                     </MainDomainLink>
@@ -130,8 +130,8 @@ function Category({ category, stores, categories }) {
                                                     <div className="storeImage">
                                                         <MainDomainLink title={store.title} href={
                                                             (store.subdomain
-                                                                ? `https://${store.slug}.${baseDomain}`
-                                                                : `/${store.slug}`) + `#code=1`
+                                                                ? `https://${store.slug}.${baseDomain}/coupons/`
+                                                                : `/coupons/${store.slug}`) + `#code=1`
                                                         }>
                                                             <img
                                                                 src={store.image || "/images/default-placeholder.png"}
@@ -146,8 +146,8 @@ function Category({ category, stores, categories }) {
                                             <div className="storeData">
                                                 <MainDomainLink href={
                                                     (store.subdomain
-                                                        ? `https://${store.slug}.${baseDomain}`
-                                                        : `/${store.slug}`) + `#code=1`
+                                                        ? `https://${store.slug}.${baseDomain}/coupons/`
+                                                        : `/coupons/${store.slug}`) + `#code=1`
                                                 } className="storeName">
                                                     <p dangerouslySetInnerHTML={{ __html: coupon.title }} />
                                                 </MainDomainLink>
@@ -156,8 +156,8 @@ function Category({ category, stores, categories }) {
                                             <div className="dealBtnBox">
                                                 <MainDomainLink className='tNc' href={
                                                     (store.subdomain
-                                                        ? `https://${store.slug}.${baseDomain}`
-                                                        : `/${store.slug}`) + `#code=1`
+                                                        ? `https://${store.slug}.${baseDomain}/coupons/`
+                                                        : `/coupons/${store.slug}`) + `#code=1`
                                                 } onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
                                                     T & C
                                                 </MainDomainLink>
