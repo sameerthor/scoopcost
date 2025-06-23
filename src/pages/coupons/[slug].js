@@ -155,8 +155,8 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
     <>
       <Head>
         <title>{store.seo_title}</title>
-        <meta name="robots" content="noindex, nofollow" />
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
         <meta name="description" content={store.seo_description} />
         <meta name="twitter:title" content={store.seo_title} />
         <meta name="twitter:title" content={store.seo_title} />

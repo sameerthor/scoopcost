@@ -2287,6 +2287,12 @@ table>thead>tr>th, table>thead>tr>td {
 .checkOutgift{
   margin: 5rem auto 2rem auto;
 }
+.desccont{
+  font-weight: 500;
+  font-size: .9rem;
+  line-height: 1.4;
+  margin-bottom: .5rem;
+}
 @media(max-width:600px){
   .rightFooter .tncBtns {
     font-size: .6rem;
@@ -2299,4 +2305,7 @@ table>thead>tr>th, table>thead>tr>td {
         font-size: 16px;
         margin-left: 0;
     }
+    .desccont{
+  font-size: .8rem;
+}
 }

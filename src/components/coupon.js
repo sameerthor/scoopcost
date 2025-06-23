@@ -173,6 +173,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       <span> {storeName}</span>
                     </div>
                      <h2 className='title'> {coupon.title}</h2>
+                     <p className="desccont">{coupon.content}</p>
                   </div>
                    <div className='btns'>
                     {coupon.coupon_type === 'code' ? (
