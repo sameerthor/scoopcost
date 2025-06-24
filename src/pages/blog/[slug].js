@@ -1,35 +1,10 @@
-import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
 import Link from "next/link";
 import "@/styles/blog-details.css";
 import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 
-export default function BlogDetail() {
-  const router = useRouter();
-  const { slug } = router.query;
-
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (!slug) return;
-
-   fetch('https://admin.scoopcost.com/posts/', {
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-})
-  .then((res) => res.json())
-  .then((data) => {
-    const found = data.find((p) => p.slug === slug);
-    setPost(found || null);
-    setLoading(false);
-  });
-  }, [slug]);
-
-  if (loading) return <p>Loading...</p>;
+export default function BlogDetail({ post }) {
   if (!post) return <p>Blog not found</p>;
 
   const formatDate = (dateString) => {
@@ -56,10 +31,7 @@ export default function BlogDetail() {
 
   return (
     <>
-      <NextSeo
-        title={post.meta_title}
-        description={post.meta_description}
-      />
+      <NextSeo title={post.meta_title} description={post.meta_description} />
       <section className="blog-details-page">
         <div className="container">
           <div className="row">
@@ -73,18 +45,15 @@ export default function BlogDetail() {
             </div>
           </div>
         </div>
+
         <div className="container">
           <div className="row">
             <div className="col-12 p-0">
-              <div className="searchBlog">
-                {/* <div className="dateCat">
-                  <span className="date">{label}: {displayDate}</span>
-                  <span className="catg">{categoryTitle}</span>
-                </div> */}
-              </div>
+              <div className="searchBlog"></div>
             </div>
           </div>
         </div>
+
         <div className="container">
           <div className="blogBox">
             <div className="blogdetail">
@@ -123,4 +92,33 @@ export default function BlogDetail() {
       </section>
     </>
   );
+}
+export async function getServerSideProps(context) {
+  const { slug } = context.params;
+
+  try {
+    const res = await fetch('https://admin.scoopcost.com/posts/', {
+      headers: {
+        'x-api-key': process.env.SECRET_KEY,
+      },
+    });
+
+    if (!res.ok) throw new Error('Failed to fetch');
+
+    const allPosts = await res.json();
+    const post = allPosts.find((p) => p.slug === slug) || null;
+
+    return {
+      props: {
+        post,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching post:", error);
+    return {
+      props: {
+        post: null,
+      },
+    };
+  }
 }

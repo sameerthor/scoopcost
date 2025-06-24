@@ -166,14 +166,18 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       <Image
                         src={`${storeImage}`}
                         alt={`${storeName} Store Logo`}
-                        width={30}
-                        height={30}
+                        width={20}
+                        height={20}
                         loading="lazy"
                       />
                       <span> {storeName}</span>
                     </div>
                      <h2 className='title'> {coupon.title}</h2>
-                     <p className="desccont">{coupon.content}</p>
+                     <p
+                      className="desccont"
+                      dangerouslySetInnerHTML={{ __html: coupon.content }}
+                    />
+
                   </div>
                    <div className='btns'>
                     {coupon.coupon_type === 'code' ? (
