@@ -178,7 +178,7 @@ async function trackCouponUsage(couponComponentId) {
 
                         setTimeout(() => {
                           window.open(affiliateUrl, "_self");
-                        }, 100);
+                        }, 500);
                       }}
                       data-type="code"
                       className="angled-button"
@@ -201,7 +201,7 @@ async function trackCouponUsage(couponComponentId) {
                           window.open(url, "_blank");
                           setTimeout(() => {
                             window.open(affiliateUrl, "_self");
-                          }, 100);
+                          }, 200);
                         }}
                         >
                           ********************************
