@@ -320,7 +320,7 @@ async function trackCouponUsage(couponComponentId) {
                       </a>
                     </div>
 
-                  <FeedbackComponent couponId={coupon.id} storeSlug={storeSlug} />
+                  <FeedbackComponent couponComponentId={coupon.id} storeSlug={storeSlug} />
                   </div>
                   <div className="modal-footer"></div>
                 </div>
@@ -397,7 +397,7 @@ async function trackCouponUsage(couponComponentId) {
                       </a>
                     </div>
 
-                   <FeedbackComponent couponId={coupon.id} storeSlug={storeSlug} />
+                   <FeedbackComponent couponComponentId={coupon.id} storeSlug={storeSlug} />
 
                   </div>
                   <div className="modal-footer"></div>
