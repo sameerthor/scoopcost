@@ -79,47 +79,24 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   
 
 
-  async function trackCouponUsage(couponComponentId) {
-    setTotalUsed(totalUsed + 1);
-    try {
-      const response = await fetch(
-        `https://admin.scoopcost.com/stores/${storeSlug}/track-coupon-usage/${couponComponentId}/`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': process.env.SECRET_KEY,
-          }
-        }
-      );
+async function trackCouponUsage(couponComponentId) {
+  setTotalUsed(totalUsed + 1);
 
-      return await response.json();
-    } catch (error) {
-      console.error('Tracking failed:', error);
-    }
+  try {
+    const response = await fetch('/api/track-coupon', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ couponComponentId, storeSlug }),
+    });
+
+    return await response.json();
+  } catch (error) {
+    console.error('Client tracking failed:', error);
   }
+}
 
-  async function isWorked(couponComponentId, is_worked) {
-    setTotalUsed(totalUsed + 1);
-    try {
-      const response = await fetch(
-        `https://admin.scoopcost.com/stores/${storeSlug}/coupon-worked/${couponComponentId}/`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-             'x-api-key': process.env.SECRET_KEY,
+  
 
-          },
-          body: JSON.stringify({ is_worked }) // Pass is_worked in the request body
-        }
-      );
-
-      return await response.json();
-    } catch (error) {
-      console.error('Tracking failed:', error);
-    }
-  }
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -343,7 +320,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       </a>
                     </div>
 
-                    <FeedbackComponent />
+                  <FeedbackComponent couponId={coupon.id} storeSlug={storeSlug} />
                   </div>
                   <div className="modal-footer"></div>
                 </div>
@@ -420,7 +397,8 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
                       </a>
                     </div>
 
-                    <FeedbackComponent />
+                   <FeedbackComponent couponId={coupon.id} storeSlug={storeSlug} />
+
                   </div>
                   <div className="modal-footer"></div>
                 </div>
