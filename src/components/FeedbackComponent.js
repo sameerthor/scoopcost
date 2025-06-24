@@ -1,7 +1,7 @@
 import MainDomainLink from '@/components/MainDomainLink';
 import React, { useState } from 'react';
 
-function FeedbackComponent() {
+function FeedbackComponent({ couponComponentId, storeSlug }) {
   const [isWorkedVisible, setIsWorkedVisible] = useState(true);
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
 
@@ -11,8 +11,8 @@ function FeedbackComponent() {
     setIsFeedbackVisible(true);
   };
 
-    async function isWorked(is_worked) {
-    setTotalUsed(totalUsed + 1);
+  async function isWorked(is_worked) {
+
 
     try {
       const response = await fetch('/api/coupon-worked', {
