@@ -8,12 +8,13 @@ export default async function handler(req, res) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': process.env.SECRET_API_KEY, // safe: not exposed to frontend
+          'x-api-key': process.env.SECRET_KEY, // safe: not exposed to frontend
         },
       }
     );
 
     const data = await response.json();
+    console.log(data)
     res.status(200).json(data);
   } catch (error) {
     console.error('Server-side tracking failed:', error);
