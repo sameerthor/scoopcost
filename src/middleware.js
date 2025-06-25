@@ -64,7 +64,7 @@ if (!storeData || !storeData.subdomain) {
 }
 
 // ❗ Enforce `/coupons` path only for subdomains
-if (!pathname.startsWith('/coupons')) {
+if (!/^\/coupons(\/|$)/.test(pathname)) {
   return NextResponse.rewrite(new URL('/404', request.url));
 }
 
