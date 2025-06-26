@@ -148,8 +148,8 @@ export default function Stores({ initialStoreData }) {
                                                     />
                                                     <MainDomainLink href={
                                                         item.subdomain
-                                                            ? `https://${item.slug}.${baseDomain}/coupons`
-                                                            : `/coupons/${item.slug}`
+                                                            ? `https://${item.slug}.${baseDomain}/${item.url_suffix}`
+                                                            : `/${item.url_suffix}/${item.slug}`
                                                     }>
                                                         {item.title}
                                                         <span>{item.coupon_set.length} Codes</span>

@@ -64,12 +64,12 @@ if (!storeData || !storeData.subdomain) {
 }
 
 // ❗ Enforce `/coupons` path only for subdomains
-if (!/^\/coupons(\/|$)/.test(pathname)) {
+if (!/^\/coupons(\/|$)/.test(pathname) || !/^\/promo-codes(\/|$)/.test(pathname)) {
   return NextResponse.rewrite(new URL('/404', request.url));
 }
 
 // ✅ Allow and rewrite to internal path (optional if SSR needs it)
-url.pathname = `/coupons/${subdomain}`;
+url.pathname = `/${storeData.url_suffix}/${subdomain}`;
 return NextResponse.rewrite(url);
 }
 

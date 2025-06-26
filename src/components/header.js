@@ -7,7 +7,7 @@ import MainDomainLink from '@/components/MainDomainLink';
 
 import ReactSearchBox from "react-search-box";
 import { useRouter } from 'next/router';
-
+const baseDomain = scoopcost.com
 export default function Header() {
 
   const router = useRouter();
@@ -27,7 +27,7 @@ export default function Header() {
         }));
 
         const stores = (storeRes.data || []).map(store => ({
-          key: store.slug,
+          key: (store.subdomain? `https://${store.slug}.${baseDomain}/${store.url_suffix}`: `/${store.url_suffix}/${store.slug}`),
           value: store.title,
           is_gift_card: 0
         }));

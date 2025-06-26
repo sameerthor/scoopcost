@@ -32,8 +32,8 @@ export async function getServerSideProps({ res }) {
     if (!store.slug) return
 
     const url = store.subdomain
-      ? `https://${store.slug}.${baseDomain}/coupons`
-      : `https://${baseDomain}/coupons/${store.slug}`
+      ? `https://${store.slug}.${baseDomain}/${store.url_suffix}`
+      : `https://${baseDomain}/${store.url_suffix}/${store.slug}`
 
     urlList.push({ url })
   })
