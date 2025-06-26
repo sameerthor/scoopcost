@@ -7,7 +7,7 @@ import MainDomainLink from '@/components/MainDomainLink';
 
 import ReactSearchBox from "react-search-box";
 import { useRouter } from 'next/router';
-const baseDomain = scoopcost.com
+const baseDomain = 'scoopcost.com'
 export default function Header() {
 
   const router = useRouter();
