@@ -14,7 +14,29 @@ export default function Footer() {
                         Scoop<span>Cost</span>
                     </div>
                     <p>Hey there! Glad you stopped by ScoopCost.com. We’ve got tons of cool coupons and awesome deals on all your favorite brands. Keep checking in — there’s always something new to save on!</p>
-                   
+                   <div className="isoBox">
+                        <div className="isoItem">
+                            <div>
+                                <Image 
+                                width={45}
+                                height={45}
+                                 src="/images/iso-white.webp" loading="lazy" alt="iso"  />
+                            </div>
+                            <p>
+                                ISO 27001 <br />
+                                Data Center
+                            </p>
+                        </div>
+                        <div className="isoItem">
+                            <div>
+                                <Image src="/images/ssl-white.webp" loading="lazy" alt="ssl" width={45} height={45} />
+                            </div>
+                            <p>
+                                SSL Certified Site <br />
+                                128-bit encryption
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-12 mb-3 footer-links">
                     <div className="linksHeading">NAVIGATIONS</div>
@@ -34,7 +56,7 @@ export default function Footer() {
                 </div>
                 
             </div>
-            <div className="row pt-5">
+            {/* <div className="row pt-5">
                 <div className="col-lg-8 mb-4">
                     <div className="policyBox">
                         <p>ScoopCost.com is a product of Social Labs Enterprises PVT. LTD.</p>
@@ -65,7 +87,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
         </footer>
         <div id="securitySealContainer"  />
