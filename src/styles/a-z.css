@@ -127,7 +127,7 @@
 }
 @media(max-width:600px){
     .allStorePage .container{
-        padding: 0;
+        padding: .5rem;
      }
      .alpha-store .storeList .storeTag {
         width: 40px;

@@ -37,7 +37,7 @@ export default function aboutSaveright({ aboutSaveright }) {
                                 <div className="container">
                                     <div className="row g-4">
                                     {/* Left Column */}
-                                    <div className="col-md-6 mb-3 zeroMobPadding">
+                                    {/* <div className="col-md-6 mb-3 zeroMobPadding">
                                         <div className="card-custom">
                                         <div className="founder">
                                             <div className="img">
@@ -67,10 +67,10 @@ export default function aboutSaveright({ aboutSaveright }) {
                                             </p>
                                         </div>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     {/* Right Column */}
-                                    <div className="col-md-6 zeroMobPadding">
+                                    <div className="col-md-12 zeroMobPadding">
                                         <div className="card-custom ourExpert">
                                         <div className="expHead">Meet Our Coupon Experts</div>
                                         <div className="expertPara">
@@ -82,50 +82,50 @@ export default function aboutSaveright({ aboutSaveright }) {
                                             <p>If in case you find something that isn’t right on our website, you can report the issue to us and we’ll address it as soon as possible.</p>
                                         </div>
                                         <div className="listExpert">
-                                            <ul>
-                                            <li>
-                                                <small>
-                                                    <img src="/images/dinesh-v.webp" alt="dinesh" />
-                                                    <p>Dinesh</p>
-                                                </small>
-                                                <span className="exp">8 Years</span>
-                                            </li>
-                                            <li>
-                                                <small>
-                                                <img src="/images/mashma-m.webp" alt="mashma" />
-                                                <p>Mashma</p>
-                                                </small>
-                                                <span className="exp">6 Years</span>
-                                            </li>
-                                            <li>
-                                                <small>
-                                                <img src="/images/tanay-s.webp" alt="tanay" />
-                                                <p>Tanay</p>
-                                                </small>
-                                                <span className="exp">6 Years</span>
-                                            </li>
-                                            <li>
-                                                <small>
-                                                <img src="/images/sikha.webp" alt="sikha" /> 
-                                                <p>Sikha</p>
-                                                </small>
-                                                <span className="exp">5 Years</span>
-                                            </li>
-                                            <li>
-                                                <small>
-                                                <img src="/images/yash-c.webp" alt="yash" /> 
-                                                <p>Yash</p>
-                                                </small>
-                                                <span className="exp">4 Years</span>
-                                            </li>
-                                            <li>
-                                                <small><img src="/images/yunush.webp" alt="Yusuf" /> 
-                                                <p>Yusuf</p>
-                                                
-                                                </small>
-                                                
-                                                <span class="exp">3 Years</span>
-                                            </li>
+                                            <ul className='row g-3 justify-content-center'>
+                                                <li className='col-md-5'>
+                                                    <small>
+                                                        <img src="/images/dinesh-v.webp" alt="dinesh" />
+                                                        <p>Dinesh</p>
+                                                    </small>
+                                                    <span className="exp">8 Years</span>
+                                                </li>
+                                                <li className='col-md-5'>
+                                                    <small>
+                                                    <img src="/images/mashma-m.webp" alt="mashma" />
+                                                    <p>Mashma</p>
+                                                    </small>
+                                                    <span className="exp">6 Years</span>
+                                                </li>
+                                                <li className='col-md-5'>
+                                                    <small>
+                                                    <img src="/images/tanay-s.webp" alt="tanay" />
+                                                    <p>Tanay</p>
+                                                    </small>
+                                                    <span className="exp">6 Years</span>
+                                                </li>
+                                                <li className='col-md-5'>
+                                                    <small>
+                                                    <img src="/images/sikha.webp" alt="sikha" /> 
+                                                    <p>Sikha</p>
+                                                    </small>
+                                                    <span className="exp">5 Years</span>
+                                                </li>
+                                                <li className='col-md-5'>
+                                                    <small>
+                                                    <img src="/images/yash-c.webp" alt="yash" /> 
+                                                    <p>Yash</p>
+                                                    </small>
+                                                    <span className="exp">4 Years</span>
+                                                </li>
+                                                <li className='col-md-5'>
+                                                    <small><img src="/images/yunush.webp" alt="Yusuf" /> 
+                                                    <p>Yusuf</p>
+                                                    
+                                                    </small>
+                                                    
+                                                    <span class="exp">3 Years</span>
+                                                </li>
                                             </ul>
                                         </div>
                                         </div>

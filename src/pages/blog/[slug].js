@@ -47,14 +47,6 @@ export default function BlogDetail({ post }) {
         </div>
 
         <div className="container">
-          <div className="row">
-            <div className="col-12 p-0">
-              <div className="searchBlog"></div>
-            </div>
-          </div>
-        </div>
-
-        <div className="container">
           <div className="blogBox">
             <div className="blogdetail">
               <div className="blogContent">
