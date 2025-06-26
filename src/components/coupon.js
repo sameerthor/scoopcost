@@ -32,7 +32,7 @@ const getHeading = (title) => {
 };
 const baseDomain = 'scoopcost.com';
 
-export default function Coupon({ expiryDate, index, coupon, storeImage, storeName, affiliateUrl, homeUrl, storeSlug, storeId, storeCreateTime, usesSubdomain }) {
+export default function Coupon({ expiryDate, index, coupon, storeImage, storeName, affiliateUrl, homeUrl, storeSlug, storeId, storeCreateTime, usesSubdomain, urlPrefix }) {
   const [worked, setWorked] = useState(coupon.is_worked);
   const [totalUsed, setTotalUsed] = useState(coupon.total_used);
 
@@ -171,8 +171,8 @@ async function trackCouponUsage(couponComponentId) {
                         }
 
                         const url = usesSubdomain
-                          ? `https://${storeSlug}.${baseDomain}/coupons#code=${index + 1}`
-                          : `/${storeSlug}/coupons#code=${index + 1}`;
+                          ? `https://${storeSlug}.${baseDomain}/${urlPrefix}#code=${index + 1}`
+                          : `/${storeSlug}/${urlPrefix}#code=${index + 1}`;
 
                         window.open(url, "_blank");
 
@@ -195,8 +195,8 @@ async function trackCouponUsage(couponComponentId) {
                           localStorage.setItem('copied_code', coupon.id)
 
                           const url = usesSubdomain
-                            ? `https://${storeSlug}.${baseDomain}/coupons#code=${index + 1}`
-                            : `/${storeSlug}/coupons#code=${index + 1}`
+                            ? `https://${storeSlug}.${baseDomain}/${urlPrefix}#code=${index + 1}`
+                            : `/${storeSlug}/${urlPrefix}#code=${index + 1}`
 
                           window.open(url, "_blank");
                           setTimeout(() => {

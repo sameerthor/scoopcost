@@ -62,12 +62,11 @@ const storeData = await fetchStoreData(subdomain);
 if (!storeData || !storeData.subdomain) {
   return NextResponse.rewrite(new URL('/404', request.url));
 }
-
+const url_suffix = storeData.url_suffix;
 // ❗ Enforce `/coupons` path only for subdomains
-if (!/^\/coupons(\/|$)/.test(pathname) || !/^\/promo-codes(\/|$)/.test(pathname)) {
+if (!new RegExp(`^/${url_suffix}(/|$)`).test(pathname)) {
   return NextResponse.rewrite(new URL('/404', request.url));
 }
-
 // ✅ Allow and rewrite to internal path (optional if SSR needs it)
 url.pathname = `/${storeData.url_suffix}/${subdomain}`;
 return NextResponse.rewrite(url);
