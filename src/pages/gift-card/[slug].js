@@ -12,20 +12,40 @@ import CustomSelect from '@/components/CustomSelect';
 import moment from 'moment';
 import { JSDOM } from 'jsdom';
 
-export default function GiftCardPage({ gift_card, faqs,toprated }) {
-    console.log(faqs)
+export default function GiftCardPage({ gift_card, faqs, toprated }) {
+
     const options = [
         { value: 'udemy', label: 'Udemy', image: '/images/udemy.svg' },
         { value: 'coursera', label: 'Coursera', image: '/images/coursera.svg' },
         { value: 'edx', label: 'edX', image: '/images/edx.svg' },
     ];
     const [selectedAmount, setSelectedAmount] = useState('20');
+    const [storeSlug, setStoreSlug] = useState("");
 
     const giftAmounts = ['20', '25', '30', '35'];
 
     const handleClick = (amount) => {
         setSelectedAmount(amount);
     };
+
+
+    useEffect(() => {
+        async function loadSlugs() {
+            try {
+                const res = await fetch(`/api/gift-store-slugs?title=${gift_card.store_name}`);
+                const data = await res.json();
+                if (data.store_slug && data.store_slug !== "") {
+                    setStoreSlug(data.subdomain == true ? `https://${data.store_slug}.scoopcost.com/${data.url_suffix}/` : `/${data.url_suffix}/${data.store.slug}`);
+                }
+            } catch (err) {
+                console.error('Failed to fetch slugs', err);
+            } finally {
+
+            }
+        }
+
+        loadSlugs();
+    }, []);
 
     const firstCarousel = [
         <div className="imgItem">
@@ -140,7 +160,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                                     <div className='brandCat'>
                                                         <Link href={`/gift-card/category/${gift_card.category?.slug}`}>{gift_card.category.title}</Link>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <div className='brandImg'>
                                                     <Image
@@ -158,7 +178,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                                             onClick={() => handleClick(amount)}
                                                             type='button'
                                                         >
-                                                        ${amount}
+                                                            ${amount}
                                                         </button>
                                                     ))}
                                                 </div>
@@ -169,7 +189,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                                         id="cardAmount"
                                                         className="form-control amtInput"
                                                         value={selectedAmount}
-                                                        onChange={(e)=>setSelectedAmount(e.target.value)}
+                                                        onChange={(e) => setSelectedAmount(e.target.value)}
                                                     />
                                                 </div>
 
@@ -221,7 +241,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                                         <button type='submit' disabled>Proceed to pay</button>
                                                         <button className='cartBtn'>Add to Card <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20l44 0 0 44c0 11 9 20 20 20s20-9 20-20l0-44 44 0c11 0 20-9 20-20s-9-20-20-20l-44 0 0-44c0-11-9-20-20-20s-20 9-20 20l0 44-44 0c-11 0-20 9-20 20z" /></svg></button>
                                                     </div>
-                                                    
+
                                                     {gift_card.affiliate_url ? (
                                                         <a
                                                             href={gift_card.affiliate_url}
@@ -252,7 +272,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                 }
                                 desktop={
                                     <>
-                                    
+
                                     </>
                                 }
                             />
@@ -329,7 +349,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
 
 
                             </div>
-                           
+
                             <div className='barndInfo'>
                                 <div className='left'>
                                     <div className='ttl'>   {gift_card.store_name}</div>
@@ -387,126 +407,126 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                             <ResponsiveRender
                                 mobile={
                                     <>
-                                    
+
                                     </>
                                 }
                                 desktop={
                                     <>
-                                             <div className="checkOutContainer">
-                                                <div className='headFlex'>
-                                                    <div>
-                                                        <h1 className='brandName'>{gift_card.store_name} Gift Card</h1>
-                                                        <div className='brandCat'>
-                                                            <Link href={`/gift-card/category/${gift_card.category?.slug}`}>{gift_card.category.title}</Link>
-                                                        </div>
-                                                        
+                                        <div className="checkOutContainer">
+                                            <div className='headFlex'>
+                                                <div>
+                                                    <h1 className='brandName'>{gift_card.store_name} Gift Card</h1>
+                                                    <div className='brandCat'>
+                                                        <Link href={`/gift-card/category/${gift_card.category?.slug}`}>{gift_card.category.title}</Link>
                                                     </div>
-                                                    <div className='brandImg'>
-                                                        <Image
-                                                            width={150}
-                                                            height={50}
-                                                            src={`${gift_card.image}`} loading="lazy" alt="logo" />
+
+                                                </div>
+                                                <div className='brandImg'>
+                                                    <Image
+                                                        width={150}
+                                                        height={50}
+                                                        src={`${gift_card.image}`} loading="lazy" alt="logo" />
+                                                </div>
+                                            </div>
+                                            <form action="#">
+                                                <div className="giftValues">
+                                                    {giftAmounts.map((amount) => (
+                                                        <button
+                                                            key={amount}
+                                                            className={selectedAmount === amount ? 'active' : ''}
+                                                            onClick={() => handleClick(amount)}
+                                                            type='button'
+                                                        >
+                                                            ${amount}
+                                                        </button>
+                                                    ))}
+                                                </div>
+
+                                                <div className="inputBox">
+                                                    <input
+                                                        type="text"
+                                                        id="cardAmount"
+                                                        className="form-control amtInput"
+                                                        value={selectedAmount}
+                                                        onChange={(e) => setSelectedAmount(e.target.value)}
+                                                    />
+                                                </div>
+
+                                                <div className="inputBox">
+                                                    <label htmlFor="paymentMethod">Payment method</label>
+                                                    <CustomSelect />
+                                                </div>
+                                                <div className="inputBox">
+                                                    <label htmlFor="paymentMethod">Billing Address</label>
+                                                    <input type="text" className='form-control' placeholder='Address' />
+                                                </div>
+                                                <div className="inputBox">
+                                                    <label htmlFor="paymentMethod">Email Address where Gift Card to be send</label>
+                                                    <input type="email" className='form-control' placeholder='Email' />
+                                                </div>
+                                                <div>
+                                                    <button
+                                                        className="promobtn"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#showInput"
+                                                        aria-expanded="false"
+                                                        aria-controls="showInput"
+                                                    >
+                                                        Have a promo code? Apply here
+                                                    </button>
+                                                </div>
+                                                <div
+                                                    id="showInput"
+                                                    className="accordion-collapse collapse"
+                                                    aria-labelledby="headingOne"
+                                                    data-bs-parent="#accordionExample"
+                                                >
+                                                    <div className="accordion-body">
+                                                        <div className='promoInputBox'>
+                                                            <input type="text" className='form-control' placeholder='Eg. SCOOP20' />
+                                                            <button>Apply Here</button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <form action="#">
-                                                    <div className="giftValues">
-                                                        {giftAmounts.map((amount) => (
-                                                            <button
-                                                                key={amount}
-                                                                className={selectedAmount === amount ? 'active' : ''}
-                                                                onClick={() => handleClick(amount)}
-                                                                type='button'
-                                                            >
-                                                            ${amount}
-                                                            </button>
-                                                        ))}
+                                                <div>
+                                                    <label htmlFor="payAmt">You pay only</label>
+                                                    <div className='finalAmt'>
+                                                        <span>${selectedAmount}</span>
+                                                    </div>
+                                                </div>
+                                                <div className='payBtn'>
+                                                    <div className='btnGrp d-none'>
+                                                        <button type='submit' disabled>Proceed to pay</button>
+                                                        <button className='cartBtn'>Add to Card <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20l44 0 0 44c0 11 9 20 20 20s20-9 20-20l0-44 44 0c11 0 20-9 20-20s-9-20-20-20l-44 0 0-44c0-11-9-20-20-20s-20 9-20 20l0 44-44 0c-11 0-20 9-20 20z" /></svg></button>
                                                     </div>
 
-                                                    <div className="inputBox">
-                                                        <input
-                                                            type="text"
-                                                            id="cardAmount"
-                                                            className="form-control amtInput"
-                                                            value={selectedAmount}
-                                                            onChange={(e)=>setSelectedAmount(e.target.value)}
-                                                        />
-                                                    </div>
-
-                                                    <div className="inputBox">
-                                                        <label htmlFor="paymentMethod">Payment method</label>
-                                                        <CustomSelect />
-                                                    </div>
-                                                    <div className="inputBox">
-                                                        <label htmlFor="paymentMethod">Billing Address</label>
-                                                        <input type="text" className='form-control' placeholder='Address' />
-                                                    </div>
-                                                    <div className="inputBox">
-                                                        <label htmlFor="paymentMethod">Email Address where Gift Card to be send</label>
-                                                        <input type="email" className='form-control' placeholder='Email' />
-                                                    </div>
-                                                    <div>
-                                                        <button
-                                                            className="promobtn"
-                                                            type="button"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#showInput"
-                                                            aria-expanded="false"
-                                                            aria-controls="showInput"
+                                                    {gift_card.affiliate_url ? (
+                                                        <a
+                                                            href={gift_card.affiliate_url}
+                                                            target="_blank"
+                                                            className="outOfStock"
+                                                            style={{
+                                                                width: '100%'
+                                                            }}
                                                         >
-                                                            Have a promo code? Apply here
-                                                        </button>
-                                                    </div>
-                                                    <div
-                                                        id="showInput"
-                                                        className="accordion-collapse collapse"
-                                                        aria-labelledby="headingOne"
-                                                        data-bs-parent="#accordionExample"
-                                                    >
-                                                        <div className="accordion-body">
-                                                            <div className='promoInputBox'>
-                                                                <input type="text" className='form-control' placeholder='Eg. SCOOP20' />
-                                                                <button>Apply Here</button>
-                                                            </div>
+                                                            Buy Now
+                                                        </a>
+                                                    ) : (
+                                                        <div className="outOfStock">
+                                                            This Gift Card is Out Of Stock!
                                                         </div>
-                                                    </div>
-                                                    <div>
-                                                        <label htmlFor="payAmt">You pay only</label>
-                                                        <div className='finalAmt'>
-                                                            <span>${selectedAmount}</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className='payBtn'>
-                                                        <div className='btnGrp d-none'>
-                                                            <button type='submit' disabled>Proceed to pay</button>
-                                                            <button className='cartBtn'>Add to Card <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20l44 0 0 44c0 11 9 20 20 20s20-9 20-20l0-44 44 0c11 0 20-9 20-20s-9-20-20-20l-44 0 0-44c0-11-9-20-20-20s-20 9-20 20l0 44-44 0c-11 0-20 9-20 20z" /></svg></button>
-                                                        </div>
-                                                        
-                                                        {gift_card.affiliate_url ? (
-                                                            <a
-                                                                href={gift_card.affiliate_url}
-                                                                target="_blank"
-                                                                className="outOfStock"
-                                                                style={{
-                                                                    width: '100%'
-                                                                }}
-                                                            >
-                                                                Buy Now
-                                                            </a>
-                                                        ) : (
-                                                            <div className="outOfStock">
-                                                                This Gift Card is Out Of Stock!
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                    {/* <div className='pgateway'>
+                                                    )}
+                                                </div>
+                                                {/* <div className='pgateway'>
                                                         <span>Safe & Secure payment by razorpay</span>
                                                         <Image
                                                             width={150}
                                                             height={50}
                                                             src="/images/razorpay.svg" loading="lazy" alt="logo" />
                                                     </div> */}
-                                                </form>
-                                            </div>
+                                            </form>
+                                        </div>
                                     </>
                                 }
                             />
@@ -523,15 +543,17 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
 
                 </div>
             </section>
-            <section className='checkOutgift'>
-               <div className="container">
-                    <a className="promo-card purple-gradient" href=''>
-                        <div className="promo-icon">🏷️</div>
-                        <div className="promo-text">Checkout {gift_card.store_name} Coupon Code</div>
-                        <div className="promo-arrow">→</div>
-                    </a>
-               </div>
-            </section>
+            {storeSlug != "" &&
+                <section className='checkOutgift'>
+                    <div className="container">0
+                        <a className="promo-card purple-gradient" href={`${storeSlug}`}>
+                            <div className="promo-icon">🏷️</div>
+                            <div className="promo-text">Checkout {gift_card.store_name} Coupon Code</div>
+                            <div className="promo-arrow">→</div>
+                        </a>
+                    </div>
+                </section>
+            }
             <section className='faqssec'>
                 <div className="container py-5">
                     <h2 className="mb-4 text-center secHeading">Frequently Asked Questions About {gift_card.store_name} Gift Cards</h2>
@@ -578,7 +600,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                 <div className="container">
                     <h2 className='secHeading'>Top Rated Gift Cards</h2>
                     <div className="row row-cols-lg-5 row-col-md-3 row-cols-2">
-                        {toprated.map(item=> <div className="col mb-5">
+                        {toprated.map(item => <div className="col mb-5">
                             <a class="brand-card" href={`/gift-card/${item.slug}`}>
                                 <Image className='brand-logo'
                                     width={80}
@@ -588,7 +610,7 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
                                 <div class="discount-badge">{item.category?.title}</div>
                             </a>
                         </div>)}
-                       
+
                     </div>
                 </div>
             </section>
@@ -659,11 +681,11 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
 
 
 export async function getStaticPaths() {
-    const res = await fetch('https://admin.scoopcost.com/gift-cards/',{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-});
+    const res = await fetch('https://admin.scoopcost.com/gift-cards/', {
+        headers: {
+            'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+        },
+    });
     const gift_cards = await res.json();
 
     const paths = gift_cards.map(store => ({
@@ -722,73 +744,73 @@ function parseHtmlToFaqs(htmlString) {
 
 
 export async function getStaticProps({ params }) {
-  const slug = params.slug;
+    const slug = params.slug;
 
-  try {
-    const res = await fetch(`https://admin.scoopcost.com/gift-cards/${slug}/`,{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-});
+    try {
+        const res = await fetch(`https://admin.scoopcost.com/gift-cards/${slug}/`, {
+            headers: {
+                'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+            },
+        });
 
-    if (!res.ok) {
-      console.error(`Failed to fetch gift card for slug: ${slug}. Status: ${res.status}`);
-      return { notFound: true };
+        if (!res.ok) {
+            console.error(`Failed to fetch gift card for slug: ${slug}. Status: ${res.status}`);
+            return { notFound: true };
+        }
+
+        const contentType = res.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            console.error(`Expected JSON, but got: ${contentType}`);
+            return { notFound: true };
+        }
+
+        const gift_card = await res.json();
+
+        if (gift_card.detail) {
+            return { notFound: true };
+        }
+
+        const currentYear = moment().format('YYYY');
+        const title = gift_card.store_name;
+
+        gift_card.seo_title = gift_card.seo_title
+            .replace(/Storename/g, title)
+            .replace(/%%Year%%/g, currentYear)
+
+        gift_card.seo_description = gift_card.seo_description.replace(/Storename/g, title);
+
+        gift_card.store_h1 = gift_card.h1
+            .replace(/Storename/g, title)
+            .replace(/%%Year%%/g, currentYear);
+
+        const faqs = parseHtmlToFaqs(gift_card.faqs);
+        delete gift_card.faqs;
+
+        // Second fetch - handle errors
+        const res2 = await fetch(`https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false&id=${gift_card.id}`, {
+            headers: {
+                'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+            },
+        });
+        let toprated = [];
+
+        if (res2.ok && res2.headers.get('content-type')?.includes('application/json')) {
+            toprated = await res2.json();
+        } else {
+            console.warn(`Toprated fetch failed or returned non-JSON for slug: ${slug}`);
+        }
+
+        return {
+            props: {
+                gift_card,
+                faqs,
+                toprated
+            },
+            revalidate: 60
+        };
+    } catch (error) {
+        console.error(`Error in getStaticProps for slug: ${slug}`, error);
+        return { notFound: true };
     }
-
-    const contentType = res.headers.get('content-type');
-    if (!contentType || !contentType.includes('application/json')) {
-      console.error(`Expected JSON, but got: ${contentType}`);
-      return { notFound: true };
-    }
-
-    const gift_card = await res.json();
-
-    if (gift_card.detail) {
-      return { notFound: true };
-    }
-
-    const currentYear = moment().format('YYYY');
-    const title = gift_card.store_name;
-
-    gift_card.seo_title = gift_card.seo_title
-      .replace(/Storename/g, title)
-      .replace(/%%Year%%/g, currentYear)
-
-    gift_card.seo_description = gift_card.seo_description.replace(/Storename/g, title);
-
-    gift_card.store_h1 = gift_card.h1
-      .replace(/Storename/g, title)
-      .replace(/%%Year%%/g, currentYear);
-
-    const faqs = parseHtmlToFaqs(gift_card.faqs);
-    delete gift_card.faqs;
-
-    // Second fetch - handle errors
-    const res2 = await fetch(`https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false&id=${gift_card.id}`,{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-});
-    let toprated = [];
-
-    if (res2.ok && res2.headers.get('content-type')?.includes('application/json')) {
-      toprated = await res2.json();
-    } else {
-      console.warn(`Toprated fetch failed or returned non-JSON for slug: ${slug}`);
-    }
-
-    return {
-      props: {
-        gift_card,
-        faqs,
-        toprated
-      },
-      revalidate: 60
-    };
-  } catch (error) {
-    console.error(`Error in getStaticProps for slug: ${slug}`, error);
-    return { notFound: true };
-  }
 }
 

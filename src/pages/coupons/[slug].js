@@ -73,6 +73,7 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
   const paragraphs = storeDescription.split("</p>");
   const [activeCouponsType, setActiveCouponsType] = useState("All");
   const [screenshotURL, setScreenshotURL] = useState("");
+  const [giftCardSlug, setGiftCardSlug] = useState("");
 
   const totalOffers = store.coupon_set.length;
   const activeCoupons = store.coupon_set.filter(
@@ -92,6 +93,24 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
   const toggleCommentBox = () => {
     setShowCommentBox(!showCommentBox);
   };
+
+  useEffect(() => {
+    async function loadSlugs() {
+      try {
+        const res = await fetch(`/api/gift-store-slugs?store_name=${store.title}`);
+        const data = await res.json();
+        if (data.giftcard_slug && data.giftcard_slug !== "") {
+          setGiftCardSlug(data.giftcard_slug);
+        }
+      } catch (err) {
+        console.error('Failed to fetch slugs', err);
+      } finally {
+
+      }
+    }
+
+    loadSlugs();
+  }, []);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -149,7 +168,7 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
   };
   const imageSrc = store?.image ? store.image : '/default-placeholder.webp';
 
- const [activeButton, setActiveButton] = useState('all'); // active filter btn
+  const [activeButton, setActiveButton] = useState('all'); // active filter btn
 
   return (
     <>
@@ -325,35 +344,35 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                   }
                   desktop={
                     <>
-                        <h1> {store.store_h1.replace("%%Year%%", moment().format('YYYY'))}</h1>
+                      <h1> {store.store_h1.replace("%%Year%%", moment().format('YYYY'))}</h1>
                     </>
                   }
                 />
-                
+
                 <div className="couponFilter">
-                    <div className="fiilterPanel">
-                      <button
-                        className={activeButton === 'all' ? 'active' : ''}
-                        onClick={() => setActiveButton('all')}
-                      >
-                        All <span className="badge">10</span>
-                      </button>
+                  <div className="fiilterPanel">
+                    <button
+                      className={activeButton === 'all' ? 'active' : ''}
+                      onClick={() => setActiveButton('all')}
+                    >
+                      All <span className="badge">10</span>
+                    </button>
 
-                      <button
-                        className={activeButton === 'verified' ? 'active' : ''}
-                        onClick={() => setActiveButton('verified')}
-                      >
-                        Verified <span className="badge">10</span>
-                      </button>
+                    <button
+                      className={activeButton === 'verified' ? 'active' : ''}
+                      onClick={() => setActiveButton('verified')}
+                    >
+                      Verified <span className="badge">10</span>
+                    </button>
 
-                      <button
-                        className={activeButton === 'codes' ? 'active' : ''}
-                        onClick={() => setActiveButton('codes')}
-                      >
-                        Codes <span className="badge">10</span>
-                      </button>
-                    </div>
+                    <button
+                      className={activeButton === 'codes' ? 'active' : ''}
+                      onClick={() => setActiveButton('codes')}
+                    >
+                      Codes <span className="badge">10</span>
+                    </button>
                   </div>
+                </div>
 
                 <div className="costCoupons">
                   <div className="store-listing">
@@ -451,14 +470,16 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                 </div>
 
               )}
-               <div className="checkOutgift">
-                    <a className="promo-card purple-gradient" href=''>
-                        <div className="promo-icon">🎁</div>
-                        <div className="promo-text">Checkout {store.title} Gift Cards</div>
-                        <div className="promo-arrow">→</div>
-                    </a>
-               </div>
-
+              {
+                giftCardSlug != "" &&
+                <div className="checkOutgift">
+                  <a className="promo-card purple-gradient" href={`/gift-card/${giftCardSlug}`}>
+                    <div className="promo-icon">🎁</div>
+                    <div className="promo-text">Checkout {store.title} Gift Cards</div>
+                    <div className="promo-arrow">→</div>
+                  </a>
+                </div>
+              }
               <div className='about-store' ref={sectionRef}>
                 <div className="sidebarHeading ratingHeading">
                   <div>
@@ -669,12 +690,12 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                               <div className='li'>
                                 <small>
                                   <Image
-                                   width={32}
-                                   height={32}
-                                   src={'/images/dinesh-v.webp'}
-                                   loading='lazy'
-                                  alt='dinesh'
-                                 />
+                                    width={32}
+                                    height={32}
+                                    src={'/images/dinesh-v.webp'}
+                                    loading='lazy'
+                                    alt='dinesh'
+                                  />
                                   <p>
                                     Dinesh
                                   </p>
@@ -685,14 +706,14 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                   <Image
-                                   width={32}
-                                   height={32}
-                                   src={'/images/mashma-m.webp'}
-                                   loading='lazy'
-                                  alt='dinesh'
-                                 />
-                                 
+                                  <Image
+                                    width={32}
+                                    height={32}
+                                    src={'/images/mashma-m.webp'}
+                                    loading='lazy'
+                                    alt='dinesh'
+                                  />
+
                                   <p>
                                     Mashma
 
@@ -704,14 +725,14 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                   <Image
-                                   width={32}
-                                   height={32}
-                                   src={'/images/tanay-s.webp'}
-                                   loading='lazy'
-                                  alt='tanay'
-                                 />
-                                 
+                                  <Image
+                                    width={32}
+                                    height={32}
+                                    src={'/images/tanay-s.webp'}
+                                    loading='lazy'
+                                    alt='tanay'
+                                  />
+
                                   <p>
                                     Tanay
 
@@ -723,14 +744,14 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                   <Image
-                                   width={32}
-                                   height={32}
-                                   src={'/images/sikha.webp'}
-                                   loading='lazy'
-                                  alt='sikha'
-                                 />
-                                 
+                                  <Image
+                                    width={32}
+                                    height={32}
+                                    src={'/images/sikha.webp'}
+                                    loading='lazy'
+                                    alt='sikha'
+                                  />
+
                                   <p>
                                     Sikha
 
@@ -742,14 +763,14 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                   <Image
-                                   width={32}
-                                   height={32}
-                                   src={'/images/yash-c.webp'}
-                                   loading='lazy'
-                                  alt='yash'
-                                 />
-                                 
+                                  <Image
+                                    width={32}
+                                    height={32}
+                                    src={'/images/yash-c.webp'}
+                                    loading='lazy'
+                                    alt='yash'
+                                  />
+
                                   <p>
                                     Yash
 
@@ -761,14 +782,14 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                             <li className='col-md-6 zeroMobPadding'>
                               <div className='li'>
                                 <small>
-                                   <Image
-                                   width={32}
-                                   height={32}
-                                   src={'/images/yunush.webp'}
-                                   loading='lazy'
-                                  alt='yusuf'
-                                 />
-                                 
+                                  <Image
+                                    width={32}
+                                    height={32}
+                                    src={'/images/yunush.webp'}
+                                    loading='lazy'
+                                    alt='yusuf'
+                                  />
+
                                   <p>
                                     Yusuf
 
@@ -859,11 +880,11 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch('https://admin.scoopcost.com/stores/',{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-});
+  const res = await fetch('https://admin.scoopcost.com/stores/', {
+    headers: {
+      'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+    },
+  });
   const stores = await res.json();
 
   const paths = stores.map(store => ({
@@ -900,11 +921,11 @@ async function parseHtmlToFaqs(htmlString) {
 export async function getStaticProps({ params }) {
   const slug = params.slug || req.headers.get('host')?.split('.')[0];
 
-  const res = await fetch('https://admin.scoopcost.com/stores/' + slug + '/',{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-})
+  const res = await fetch('https://admin.scoopcost.com/stores/' + slug + '/', {
+    headers: {
+      'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+    },
+  })
   var store = await res.json()
   if (store.detail) {
     return {
@@ -912,11 +933,11 @@ export async function getStaticProps({ params }) {
     };
   }
 
-  const addedByJson = await fetch(`https://admin.scoopcost.com/addedby-stores/`,{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-})
+  const addedByJson = await fetch(`https://admin.scoopcost.com/addedby-stores/`, {
+    headers: {
+      'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+    },
+  })
   const addedByData = await addedByJson.json()
 
   store.coupon_set.map(coupon => {
@@ -927,11 +948,11 @@ export async function getStaticProps({ params }) {
 
   var simCat = [];
   if (store.category[0]) {
-    const resRelStores = await fetch(`https://admin.scoopcost.com/stores/?category__id=${store.category[0].id}&ordering=-id`,{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-})
+    const resRelStores = await fetch(`https://admin.scoopcost.com/stores/?category__id=${store.category[0].id}&ordering=-id`, {
+      headers: {
+        'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+      },
+    })
     var relStores = await resRelStores.json()
     relStores = relStores.filter((s) => s.id !== store.id);
     relStores = _.shuffle(relStores).slice(0, 12)
