@@ -355,21 +355,21 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                       className={activeButton === 'all' ? 'active' : ''}
                       onClick={() => setActiveButton('all')}
                     >
-                      All <span className="badge">10</span>
+                      All <span className="badge">{store.coupon_set.length}</span>
                     </button>
 
                     <button
                       className={activeButton === 'verified' ? 'active' : ''}
                       onClick={() => setActiveButton('verified')}
                     >
-                      Verified <span className="badge">10</span>
+                      Verified <span className="badge">{store.coupon_set.length}</span>
                     </button>
 
                     <button
                       className={activeButton === 'codes' ? 'active' : ''}
                       onClick={() => setActiveButton('codes')}
                     >
-                      Codes <span className="badge">10</span>
+                      Codes <span className="badge">{store.coupon_set.length}</span>
                     </button>
                   </div>
                 </div>
@@ -473,7 +473,7 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
               {
                 giftCardSlug != "" &&
                 <div className="checkOutgift">
-                  <a className="promo-card purple-gradient" href={`/gift-card/${giftCardSlug}`}>
+                  <a className="promo-card purple-gradient" href={`https://scoopcost.com/gift-card/${giftCardSlug}`}>
                     <div className="promo-icon">🎁</div>
                     <div className="promo-text">Checkout {store.title} Gift Cards</div>
                     <div className="promo-arrow">→</div>
