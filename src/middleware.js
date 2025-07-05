@@ -69,12 +69,12 @@ const url_suffix = storeData.url_suffix;
   // If not exact match, redirect to /offers/ on subdomain
   if (!isExactMatch) {
     const redirectUrl = new URL(request.url);
-    redirectUrl.hostname = `${storeData.slug}.scoopcost.com`;
     redirectUrl.pathname = `/${url_suffix}/`;
+    redirectUrl.hostname = `${subdomain}.${baseDomain}`;
 
-    return NextResponse.redirect(redirectUrl, 301); // Permanent redirect
+    return NextResponse.redirect(redirectUrl, 301);
   }
-  
+
 // ✅ Allow and rewrite to internal path (optional if SSR needs it)
 url.pathname = `/${storeData.url_suffix}/${subdomain}`;
 return NextResponse.rewrite(url);
