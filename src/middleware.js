@@ -63,10 +63,18 @@ if (!storeData || !storeData.subdomain) {
   return NextResponse.rewrite(new URL('/404', request.url));
 }
 const url_suffix = storeData.url_suffix;
-// ❗ Enforce `/coupons` path only for subdomains
-if (!new RegExp(`^/${url_suffix}/?$`).test(pathname)) {
-  return NextResponse.rewrite(new URL('/404', request.url));
-}
+
+  const isExactMatch = new RegExp(`^/${url_suffix}/?$`).test(pathname);
+
+  // If not exact match, redirect to /offers/ on subdomain
+  if (!isExactMatch) {
+    const redirectUrl = new URL(request.url);
+    redirectUrl.hostname = `${storeData.slug}.scoopcost.com`;
+    redirectUrl.pathname = `/${url_suffix}/`;
+
+    return NextResponse.redirect(redirectUrl, 301); // Permanent redirect
+  }
+  
 // ✅ Allow and rewrite to internal path (optional if SSR needs it)
 url.pathname = `/${storeData.url_suffix}/${subdomain}`;
 return NextResponse.rewrite(url);
