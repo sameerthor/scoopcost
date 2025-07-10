@@ -404,6 +404,31 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                   </div>
                 </div>
               </div>
+              {/* <div className='sidebarHeading'>Aferiy P310</div>
+
+              <div className="deal-box">
+                <Image
+                  src="/images/quest.svg"
+                  height={100}
+                  width={100}
+                />
+
+                <div className="deal-content">
+                  <div className="deal-title">AFERIY P310 3600W 3840Wh Expandable Portable Power Station</div>
+
+                  <div className="deal-desc">
+                    The AFERIY P310 Expandable Portable Power Station with a 3840Wh capacity is suitable for home backups. 
+                    You can supply electricity to high-wattage appliances through this AFERIY P310 Portable Power Station. 
+                    Check the AFERIY P310 Reviews if you are likely to order it. 
+                    The batterie AFERIY P310 is a LiFePO₄ battery with a lifespan of 10 years.
+                  </div>
+
+                  <div className="deal-price">On Sale : <span>£1,950</span></div>
+
+                  <a href="#" className="deal-button">GET DEAL</a>
+                </div>
+              </div> */}
+              
               {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot != "" && coupon.coupon_type === "code") && (
                 <div className="testHistory" id="scrollToScreenShot">
                   <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
