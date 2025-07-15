@@ -11,6 +11,7 @@ import { formatDistanceToNow } from "date-fns";
 import { useState, useEffect } from 'react'
 import Image from 'next/image';
 import { useRef } from 'react';
+import Deals from '@/components/Deals';
 
 
 const RatingBox = dynamic(() => import('@/components/ratingbox'),
@@ -404,6 +405,9 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                   </div>
                 </div>
               </div>
+              {store.product_data.trim() != "" &&
+                              <Deals productData={store.product_data} affURL={store.affiliate_url} />
+                            }
               {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot != "" && coupon.coupon_type === "code") && (
                 <div className="testHistory" id="scrollToScreenShot">
                   <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
