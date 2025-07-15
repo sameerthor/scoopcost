@@ -405,9 +405,13 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                   </div>
                 </div>
               </div>
-              {store.product_data.trim() != "" &&
-                              <Deals productData={store.product_data} affURL={store.affiliate_url} />
-                            }
+              {typeof store.product_data === 'string' &&
+                store.product_data.trim() !== '' && (
+                  <Deals
+                    productData={store.product_data}
+                    affURL={store.affiliate_url}
+                  />
+                )}
               {store.coupon_set.some(coupon => coupon.screenshot && coupon.screenshot != "" && coupon.coupon_type === "code") && (
                 <div className="testHistory" id="scrollToScreenShot">
                   <div className="sidebarHeading">{store.title} Coupon Code Test History</div>
