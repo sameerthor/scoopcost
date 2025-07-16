@@ -3,30 +3,51 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-export default function Deals({ productData,affURL }) {
+export default function Deals({ productData, affURL }) {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    const lines = productData.split('\n').filter(Boolean);
+    const lines = productData
+      .replace(/\r\n/g, '\n')
+      .split('\n')
+      .map(line => line.trim())
+      .filter(Boolean);
+
     const parsed = [];
     let current = null;
 
     lines.forEach((line) => {
-      if (line.includes('$')) {
-        const [rawTitle, rawPrice,image] = line.split(' - ');
-        console.log(image)
-        const title = rawTitle.trim();
-        const price = rawPrice?.match(/\$[\d.]+/)?.[0] ?? '';
-        current = { title, price,image, description: '' };
+      // Match price like $95.00 or $98
+      const priceMatch = line.match(/\$[\d,.]+/);
+
+      // Match image URL ending with .jpg, .jpeg, .png, .webp
+      const imageMatch = line.match(/https?:\/\/[^\s]+?\.(?:jpg|jpeg|png|webp)/i);
+
+      // Start a new product only if BOTH price and image are present in the line
+      if (priceMatch && imageMatch) {
+        const price = priceMatch[0];
+        const image = decodeURIComponent(imageMatch[0]).replace(/[\r\n]/g, '');
+        
+        // Remove image and price from title line
+        const title = line.split('-')[0]
+
+        current = {
+          title,
+          price,
+          image,
+          description: '',
+          affURL,
+        };
+
         parsed.push(current);
       } else if (current) {
-        current.description += line.trim() + ' ';
+        // Add any following lines as description
+        current.description += line + ' ';
       }
-      current.affURL=affURL;
     });
 
     setDeals(parsed);
-  }, [productData]);
+  }, [productData, affURL]);
 
   return (
     <div className="deal-list">
@@ -37,18 +58,30 @@ export default function Deals({ productData,affURL }) {
   );
 }
 
-function DealBox({ title, price,image, description,affURL }) {
+function DealBox({ title, price, image, description, affURL }) {
   const [imageUrl, setImageUrl] = useState(image);
-console.log(image)
 
   return (
     <div className="deal-box">
-      <Image src={imageUrl} height={100} width={100} alt={title} />
+      <Image
+        src={imageUrl}
+        height={100}
+        width={100}
+        alt={title}
+        onError={() => setImageUrl('/fallback.jpg')}
+      />
       <div className="deal-content">
         <div className="deal-title">{title}</div>
         <div className="deal-desc">{description.trim()}</div>
         <div className="deal-price">Price: <span>{price}</span></div>
-        <a href={`${affURL}`}  target='_blank' className="deal-button">GET DEAL</a>
+        <a
+          href={affURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="deal-button"
+        >
+          GET DEAL
+        </a>
       </div>
     </div>
   );
