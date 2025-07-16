@@ -13,10 +13,11 @@ export default function Deals({ productData,affURL }) {
 
     lines.forEach((line) => {
       if (line.includes('$')) {
-        const [rawTitle, rawPrice] = line.split(/[-–]/);
+        const [rawTitle, rawPrice,image] = line.split(' - ');
+        console.log(image)
         const title = rawTitle.trim();
         const price = rawPrice?.match(/\$[\d.]+/)?.[0] ?? '';
-        current = { title, price, description: '' };
+        current = { title, price,image, description: '' };
         parsed.push(current);
       } else if (current) {
         current.description += line.trim() + ' ';
@@ -36,22 +37,9 @@ export default function Deals({ productData,affURL }) {
   );
 }
 
-function DealBox({ title, price, description,affURL }) {
-  const [imageUrl, setImageUrl] = useState('/images/placeholder.png');
-
-  useEffect(() => {
-    async function fetchImage() {
-      try {
-        const res = await fetch(`/api/image?q=${encodeURIComponent(title)}`);
-        const data = await res.json();
-        if (res.ok && data.image) setImageUrl(data.image);
-      } catch (err) {
-        console.error(`Failed to fetch image for ${title}`, err);
-      }
-    }
-
-    fetchImage();
-  }, [title]);
+function DealBox({ title, price,image, description,affURL }) {
+  const [imageUrl, setImageUrl] = useState(image);
+console.log(image)
 
   return (
     <div className="deal-box">
