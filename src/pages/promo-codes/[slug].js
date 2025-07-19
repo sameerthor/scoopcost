@@ -1018,13 +1018,7 @@ export async function getStaticProps({ params }) {
 
   }
 
-  // If title is below 50 characters and doesn't already contain "Discount"
-  if (metaTitle.length < 50 && !metaTitle.includes("Discount")) {
-    const lastCodeIndex = metaTitle.lastIndexOf("Code");
-    if (lastCodeIndex !== -1) {
-      metaTitle = metaTitle.substring(0, lastCodeIndex) + "Discount Code" + metaTitle.substring(lastCodeIndex + 4);
-    }
-  }
+
 
   store.seo_title = metaTitle;
 
@@ -1051,6 +1045,23 @@ export async function getStaticProps({ params }) {
     .replace(/%%Year%%/g, currentYear);
   const faqs = await parseHtmlToFaqs(store.extra_info);
   delete store.extra_info
+
+  if (store.seo_description && store.seo_description.length > 160) {
+    store.seo_description = store.seo_description.replace(/including/g, '+');
+  }
+
+  if (store.seo_title && store.seo_title.length > 60) {
+    let words = store.seo_title.trim().split(' ');
+    while (store.seo_title.length > 60 && words.length > 1) {
+      words.pop();
+      store.seo_title = words.join(' ');
+    }
+  }
+
+  if (store.store_h1?.length > 60) {
+    store.store_h1 = store.store_h1.replace(/ and Promo Codes$/, '');
+  }
+
   return {
     props: {
       store,
