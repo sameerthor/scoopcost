@@ -41,9 +41,11 @@ export default function App({ Component, pageProps }) {
     <main className={poppins.className}>
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+        <meta property="og:image" content="https://scoopcost.com/images/favicon.ico" />
         <meta name="theme-color" content="#003b94"/>
 
-        {/* <style>{dom.css()}</style> */}
+        <meta property="og:image:width" content="60" />
+        <meta property="og:image:height" content="60" />
       </Head>
      
       <Header />
