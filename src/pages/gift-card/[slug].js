@@ -11,8 +11,10 @@ import ResponsiveRender from '@/components/ResponsiveRender';
 import CustomSelect from '@/components/CustomSelect';
 import moment from 'moment';
 import { JSDOM } from 'jsdom';
+import GiftCardFeatures from '@/components/GiftCardFeatures';
 
 export default function GiftCardPage({ gift_card, faqs, toprated }) {
+    console.log(gift_card)
 
     const options = [
         { value: 'udemy', label: 'Udemy', image: '/images/udemy.svg' },
@@ -283,72 +285,7 @@ export default function GiftCardPage({ gift_card, faqs, toprated }) {
                             <div className='imp'>
                                 <h2>Important Points</h2>
                             </div>
-                            <div className="features-grid">
-                                <div className="feature-card">
-                                    <div className="icon-box">
-                                        💻
-                                    </div>
-                                    <div className="feature-text">
-                                        <h4>Pay Online</h4>
-                                        <p>Use it on apps and websites securely.</p>
-                                    </div>
-                                </div>
-
-                                <div className="feature-card">
-                                    <div className="icon-box">
-                                        🔁
-                                    </div>
-                                    <div className="feature-text">
-                                        <h4>Multi Use</h4>
-                                        <p>Spend in parts until balance is used.</p>
-                                    </div>
-                                </div>
-                                <div className="feature-card">
-                                    <div className="icon-box">
-                                        💳
-                                    </div>
-                                    <div className="feature-text">
-                                        <h4>Multi Card Acceptable</h4>
-                                        <p>Multiple Cards are acceptable for payment</p>
-                                    </div>
-                                </div>
-
-
-                                <div className="feature-card">
-                                    <div className="icon-box">
-                                        📅
-                                    </div>
-                                    <div className="feature-text">
-                                        <h4>Valid for 4 Years</h4>
-                                        <p>Redeemable up to 4 years after purchase.</p>
-                                    </div>
-                                </div>
-
-                                <div className="feature-card">
-                                    <div className="icon-box">
-                                        🎁
-                                    </div>
-                                    <div className="feature-text">
-                                        <h4>Clubbed with Offers</h4>
-                                        <p>Combine with discounts and promos.</p>
-                                    </div>
-                                </div>
-                                <div className="feature-card">
-                                    <div className="icon-box">
-                                        <Image
-                                            width={40}
-                                            height={40}
-                                            src='/images/non-refundable.svg' loading="lazy" alt="logo" />
-                                    </div>
-                                    <div className="feature-text">
-                                        <h4>Non Refundable</h4>
-                                        <p>Gift card once purchased, can't be refunded.</p>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
+                                  <GiftCardFeatures htmlString={gift_card.important_points} />
 
                             <div className='barndInfo'>
                                 <div className='left'>
