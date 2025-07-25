@@ -22,13 +22,13 @@ export default function Header() {
         console.log(giftCardRes)
         const giftCards = (giftCardRes.data || []).map(gift_card => ({
           key: gift_card.slug,
-          value: gift_card.store_name,
+          value: gift_card.store_name + " Gift Cards",
           is_gift_card: 1
         }));
 
         const stores = (storeRes.data || []).map(store => ({
           key: (store.subdomain? `https://${store.slug}.${baseDomain}/${store.url_suffix}`: `https://scoopcost.com/${store.url_suffix}/${store.slug}`),
-          value: store.title,
+          value: store.title + " Coupons",
           is_gift_card: 0
         }));
 
