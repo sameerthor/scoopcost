@@ -10,7 +10,7 @@ module.exports = {
     if (excludedSlugs.some(slug => path === `/${slug}` || path.startsWith(`/${slug}/`))) {
       return null
     }
-    if (path.startsWith('/gift-card/')) {
+    if (path.startsWith('/gift-card/') && path.startsWith('/coupons/') && path.startsWith('/promo-codes/')) {
       return null;
     }
 
