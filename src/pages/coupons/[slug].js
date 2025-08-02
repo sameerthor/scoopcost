@@ -891,17 +891,22 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
 export async function getStaticPaths() {
   const res = await fetch('https://admin.scoopcost.com/stores/', {
     headers: {
-      'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+      'x-api-key': process.env.SECRET_KEY,
     },
   });
+
   const stores = await res.json();
 
-  const paths = stores.map(store => ({
-    params: { slug: store.slug },
-  }));
+  // ✅ Filter only stores with url_suffix === 'coupons'
+  const paths = stores
+    .filter(store => store.url_suffix === 'coupons')
+    .map(store => ({
+      params: { slug: store.slug },
+    }));
 
   return { paths, fallback: "blocking" };
 }
+
 
 
 async function parseHtmlToFaqs(htmlString) {
