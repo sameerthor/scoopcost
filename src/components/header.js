@@ -27,7 +27,9 @@ export default function Header() {
         }));
 
         const stores = (storeRes.data || []).map(store => ({
-          key: (store.subdomain? `https://${store.slug}.${baseDomain}/${store.url_suffix}`: `https://scoopcost.com/${store.url_suffix}/${store.slug}`),
+          key: store.subdomain
+            ? `https://${store.slug}.${baseDomain}${store.url_suffix ? '/' + store.url_suffix : ''}`
+            : `https://scoopcost.com${store.url_suffix ? '/' + store.url_suffix : ''}/${store.slug}`,
           value: store.title + " Coupons",
           is_gift_card: 0
         }));
@@ -100,7 +102,7 @@ export default function Header() {
               if (is_gift_card) {
                 window.location.href = `https://scoopcost.com/gift-card/${key}`
               } else {
-                window.location.href =key
+                window.location.href = key
               }
             }}
             leftIcon={<svg

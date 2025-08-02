@@ -19,21 +19,21 @@ export async function getServerSideProps({ res }) {
   const urlList = []
 
   const result = await fetch(
-    'https://admin.scoopcost.com/store-search',{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-}
+    'https://admin.scoopcost.com/store-search', {
+    headers: {
+      'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+    },
+  }
   )
   const json = await result.json()
-  const stores =  json
+  const stores = json
 
   stores.forEach((store) => {
     if (!store.slug) return
 
     const url = store.subdomain
-      ? `https://${store.slug}.${baseDomain}/${store.url_suffix}`
-      : `https://${baseDomain}/${store.url_suffix}/${store.slug}`
+      ? `https://${store.slug}.${baseDomain}${store.url_suffix ? '/' + store.url_suffix : ''}`
+      : `https://${baseDomain}${store.url_suffix ? '/' + store.url_suffix : ''}/${store.slug}`;
 
     urlList.push({ url })
   })

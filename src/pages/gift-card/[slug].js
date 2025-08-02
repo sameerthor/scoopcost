@@ -37,7 +37,11 @@ export default function GiftCardPage({ gift_card, faqs, toprated }) {
                 const res = await fetch(`/api/gift-store-slugs?title=${gift_card.store_name}`);
                 const data = await res.json();
                 if (data.store_slug && data.store_slug !== "") {
-                    setStoreSlug(data.subdomain == true ? `https://${data.store_slug}.scoopcost.com/${data.url_suffix}/` : `/${data.url_suffix}/${data.store.slug}`);
+                    setStoreSlug(
+                        data.subdomain
+                            ? `https://${data.store_slug}.scoopcost.com${data.url_suffix ? '/' + data.url_suffix + '/' : '/'}`
+                            : `${data.url_suffix ? '/' + data.url_suffix : ''}/${data.store.slug}`
+                    );
                 }
             } catch (err) {
                 console.error('Failed to fetch slugs', err);
@@ -285,7 +289,7 @@ export default function GiftCardPage({ gift_card, faqs, toprated }) {
                             <div className='imp'>
                                 <h2>Important Points</h2>
                             </div>
-                                  <GiftCardFeatures htmlString={gift_card.important_points} />
+                            <GiftCardFeatures htmlString={gift_card.important_points} />
 
                             <div className='barndInfo'>
                                 <div className='left'>

@@ -119,9 +119,12 @@ function Category({ category, stores, categories }) {
                                                 <div className="storeData">
                                                     <span className="discountValue">{getHeading(coupon.title)}</span>
                                                     <MainDomainLink href={
-                                                        (store.subdomain
-                                                            ? `https://${store.slug}.${baseDomain}/${store.url_suffix}/`
-                                                            : `/${store.url_suffix}/${store.slug}`) + `#code=1`
+                                                        (
+                                                            store.subdomain
+                                                                ? `https://${store.slug}.${baseDomain}${store.url_suffix ? '/' + store.url_suffix : ''}/`
+                                                                : `${store.url_suffix ? '/' + store.url_suffix : ''}/${store.slug}`
+                                                        ) + `#code=1`
+
                                                     } className="storeUrl">
                                                         {store.title}
                                                     </MainDomainLink>
@@ -129,9 +132,12 @@ function Category({ category, stores, categories }) {
                                                 <div className="storeData">
                                                     <div className="storeImage">
                                                         <MainDomainLink title={store.title} href={
-                                                            (store.subdomain
-                                                                ? `https://${store.slug}.${baseDomain}/${store.url_suffix}/`
-                                                                : `/${store.url_suffix}/${store.slug}`) + `#code=1`
+                                                            (
+                                                                store.subdomain
+                                                                    ? `https://${store.slug}.${baseDomain}${store.url_suffix ? '/' + store.url_suffix + '/' : '/'}`
+                                                                    : `${store.url_suffix ? '/' + store.url_suffix : ''}/${store.slug}`
+                                                            ) + '#code=1'
+
                                                         }>
                                                             <img
                                                                 src={store.image || "/images/default-placeholder.png"}
@@ -146,8 +152,9 @@ function Category({ category, stores, categories }) {
                                             <div className="storeData">
                                                 <MainDomainLink href={
                                                     (store.subdomain
-                                                        ? `https://${store.slug}.${baseDomain}/${store.url_suffix}/`
-                                                        : `/${store.url_suffix}/${store.slug}`) + `#code=1`
+                                                        ? `https://${store.slug}.${baseDomain}${store.url_suffix ? '/' + store.url_suffix + '/' : '/'}`
+                                                        : `${store.url_suffix ? '/' + store.url_suffix : ''}/${store.slug}`) + '#code=1'
+
                                                 } className="storeName">
                                                     <p dangerouslySetInnerHTML={{ __html: coupon.title }} />
                                                 </MainDomainLink>
@@ -156,8 +163,9 @@ function Category({ category, stores, categories }) {
                                             <div className="dealBtnBox">
                                                 <MainDomainLink className='tNc' href={
                                                     (store.subdomain
-                                                        ? `https://${store.slug}.${baseDomain}/${store.url_suffix}/`
-                                                        : `/${store.url_suffix}/${store.slug}`) + `#code=1`
+                                                        ? `https://${store.slug}.${baseDomain}${store.url_suffix ? '/' + store.url_suffix + '/' : '/'}`
+                                                        : `${store.url_suffix ? '/' + store.url_suffix : ''}/${store.slug}`) + '#code=1'
+
                                                 } onClick={() => window.open(store.affiliate_url, '_blank', 'noopener,noreferrer')}>
                                                     T & C
                                                 </MainDomainLink>
@@ -167,8 +175,9 @@ function Category({ category, stores, categories }) {
                                                 <p className="grabDeal">
                                                     <MainDomainLink href={
                                                         (store.subdomain
-                                                            ? `https://${store.slug}.${baseDomain}/${store.url_suffix}`
-                                                            : `/${store.url_suffix}/${store.slug}`) + `#code=1`
+                                                            ? `https://${store.slug}.${baseDomain}${store.url_suffix ? '/' + store.url_suffix : ''}`
+                                                            : `${store.url_suffix ? '/' + store.url_suffix : ''}/${store.slug}`) + '#code=1'
+
                                                     } className="angled-button">
                                                         *****************
                                                         <span className="btn-angle">Get Code</span>
@@ -193,11 +202,11 @@ function Category({ category, stores, categories }) {
 // revalidation is enabled and a new request comes in
 export async function getStaticProps({ params }) {
 
-    const res = await fetch(`https://admin.scoopcost.com/categories/${params.slug}`,{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-})
+    const res = await fetch(`https://admin.scoopcost.com/categories/${params.slug}`, {
+        headers: {
+            'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+        },
+    })
     const category = await res.json()
     if (category.detail) {
         return {
@@ -206,11 +215,11 @@ export async function getStaticProps({ params }) {
     }
     const stores = category.store_set.results;
 
-    const resCategories = await fetch(`https://admin.scoopcost.com/categories/?ordering=-id`,{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-})
+    const resCategories = await fetch(`https://admin.scoopcost.com/categories/?ordering=-id`, {
+        headers: {
+            'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+        },
+    })
     const categoriesData = await resCategories.json()
     const categories = arrayShuffle(categoriesData);
     return {
@@ -230,11 +239,11 @@ export async function getStaticProps({ params }) {
 // It may be called again, on a serverless function, if
 // the path has not been generated.
 export async function getStaticPaths() {
-    const res = await fetch('https://admin.scoopcost.com/categories',{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-})
+    const res = await fetch('https://admin.scoopcost.com/categories', {
+        headers: {
+            'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+        },
+    })
     const categories = await res.json()
 
     // Get the paths we want to pre-render based on categories

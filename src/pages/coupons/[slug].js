@@ -294,8 +294,8 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                                 <MainDomainLink
                                   href={
                                     store.subdomain
-                                      ? `https://${store.slug}.scoopcost.com/${store.url_suffix}`
-                                      : `/${store.url_suffix}/${store.slug}`
+                                      ? `https://${store.slug}.scoopcost.com${store.url_suffix ? '/' + store.url_suffix : ''}`
+                                      : `${store.url_suffix ? '/' + store.url_suffix : ''}/${store.slug}`
                                   }
                                 >
                                   {store.title}
@@ -973,7 +973,9 @@ export async function getStaticProps({ params }) {
   const store_names = relStores
     .filter(f => f.id !== store.id)
     .slice(0, 2)
-    .map(item => `<a href="${item.subdomain ? `https://${item.slug}.${baseDomain}/${item.url_suffix}` : `/${item.url_suffix}/${item.slug}`}">${item.title}</a>`)
+    .map(item => `<a href="${item.subdomain
+      ? `https://${item.slug}.${baseDomain}${item.url_suffix ? '/' + item.url_suffix : ''}`
+      : `${item.url_suffix ? '/' + item.url_suffix : ''}/${item.slug}`}">${item.title}</a>`)
     .join(', ');
 
   const title = store.title || store.Title;

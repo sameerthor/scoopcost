@@ -1,7 +1,7 @@
 import MainDomainLink from '@/components/MainDomainLink';
 import MetaTags from '@/components/MetaTags';
 import Head from 'next/head';
-import Coupon from '../../components/coupon';
+import Coupon from '../components/coupon';
 import ResponsiveRender from '@/components/ResponsiveRender';
 import _ from 'lodash'
 import "@/styles/store.css";
@@ -296,6 +296,7 @@ export default function StorePage({ store, relStores, addedByData, faqs }) {
                                     store.subdomain
                                       ? `https://${store.slug}.scoopcost.com${store.url_suffix ? '/' + store.url_suffix : ''}`
                                       : `${store.url_suffix ? '/' + store.url_suffix : ''}/${store.slug}`
+
                                   }
                                 >
                                   {store.title}
@@ -972,9 +973,8 @@ export async function getStaticProps({ params }) {
   const store_names = relStores
     .filter(f => f.id !== store.id)
     .slice(0, 2)
-    .map(item => `<a href="${item.subdomain
-      ? `https://${item.slug}.${baseDomain}${item.url_suffix ? '/' + item.url_suffix : ''}`
-      : `${item.url_suffix ? '/' + item.url_suffix : ''}/${item.slug}`}">${item.title}</a>`).join(', ');
+    .map(item => `<a href="${item.subdomain ? `https://${item.slug}.${baseDomain}${item.url_suffix ? '/' + item.url_suffix : ''}` : `${item.url_suffix ? '/' + item.url_suffix : ''}/${item.slug}`}">${item.title}</a>`)
+    .join(', ');
 
   const title = store.title || store.Title;
   const firstCouponCode = store.coupon_set?.find(c => c.coupon_type === 'code')?.coupon_code || '';

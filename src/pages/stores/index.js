@@ -27,11 +27,11 @@ export default function Stores({ initialStoreData }) {
         try {
             const nextPage = pageNumbers[letter] + 1;
             const response = await fetch(
-                `https://admin.scoopcost.com/store-page/alphabetical-filter/?letter=${letter}&page=${nextPage}`,{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-}
+                `https://admin.scoopcost.com/store-page/alphabetical-filter/?letter=${letter}&page=${nextPage}`, {
+                headers: {
+                    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+                },
+            }
             );
             const data = await response.json();
 
@@ -51,7 +51,7 @@ export default function Stores({ initialStoreData }) {
         }
     };
 
-   
+
 
     return (
         <>
@@ -66,7 +66,7 @@ export default function Stores({ initialStoreData }) {
                             <h1 className="text-center">Discover All Your Favorite Stores - Best Deals & Verified Coupons on ScoopCost</h1>
                             <div className="catInfo">
                                 <p>
-                                        Welcome to the All Stores Page at Scoopcost.com - your ultimate savings hub! We bring updated coupons, promo codes and deals for hundreds of popular online stores/retailers. Whether you are shopping for clothes, electronics, travel, beauty or home essentials, we help you save more with every purchase. Our goal is simple - to help our users grab discounted prices on their favorite products/services. 
+                                    Welcome to the All Stores Page at Scoopcost.com - your ultimate savings hub! We bring updated coupons, promo codes and deals for hundreds of popular online stores/retailers. Whether you are shopping for clothes, electronics, travel, beauty or home essentials, we help you save more with every purchase. Our goal is simple - to help our users grab discounted prices on their favorite products/services.
                                 </p>
                                 <h2>Why Browse Our All Stores Page?
                                 </h2>
@@ -74,36 +74,36 @@ export default function Stores({ initialStoreData }) {
                                     <strong>Huge Collection of Storewide Deals</strong>
                                 </p>
                                 <p>
-                                        Get a massive collection of discount codes, flash sales, limited-time offers, BOGO deals, clearance offers and exclusive deals. From top brands to niche favorites, our site has the latest discount deals for all. Simply put, we bring the deals and discounts for you - all in one convenient place. So, no more endless searching or guessing if a coupon works.
+                                    Get a massive collection of discount codes, flash sales, limited-time offers, BOGO deals, clearance offers and exclusive deals. From top brands to niche favorites, our site has the latest discount deals for all. Simply put, we bring the deals and discounts for you - all in one convenient place. So, no more endless searching or guessing if a coupon works.
                                 </p>
                                 <p>
                                     <strong>Only Verified, Working Coupons
                                     </strong>
                                 </p>
                                 <p>
-                                        Every coupon on ScoopCost is tested and verified by our team. Our platform has only working deals that actually give you the discount you see. No expired or invalid promo codes! Here, you get working coupon codes and deals that are updated frequently.
+                                    Every coupon on ScoopCost is tested and verified by our team. Our platform has only working deals that actually give you the discount you see. No expired or invalid promo codes! Here, you get working coupon codes and deals that are updated frequently.
                                 </p>
                                 <p>
-                                       <strong>Quick Search, Easy Filters, Instant Results</strong>
+                                    <strong>Quick Search, Easy Filters, Instant Results</strong>
                                 </p>
                                 <p>
-                                        Finding the right coupon is easy with ScoopCost. Our simple search bar and filter options let you narrow your search by store name, shopping category or keywords like “free shipping”, “today’s deals”, “first order discount”, “student discount”, etc. Whatever you are shopping for, we make it simple to discover deals that match exactly what you need. Just quick, hassle-free savings for you!
+                                    Finding the right coupon is easy with ScoopCost. Our simple search bar and filter options let you narrow your search by store name, shopping category or keywords like “free shipping”, “today’s deals”, “first order discount”, “student discount”, etc. Whatever you are shopping for, we make it simple to discover deals that match exactly what you need. Just quick, hassle-free savings for you!
                                 </p>
                                 <p>
                                     <strong>Stay Ahead with Personalized Alerts
                                     </strong>
                                 </p>
                                 <p>
-                                        Sign up for a free ScoopCost account and never miss a deal again. Get instant alerts when your favorite stores drop new coupons or run sales on events like Black Friday, Cyber Monday, New Year, Christmas, Halloween, and Valentine’s Day. Be the first to grab them! 
+                                    Sign up for a free ScoopCost account and never miss a deal again. Get instant alerts when your favorite stores drop new coupons or run sales on events like Black Friday, Cyber Monday, New Year, Christmas, Halloween, and Valentine’s Day. Be the first to grab them!
                                 </p>
                                 <p>
                                     <strong>Mobile-Friendly Site</strong>
                                 </p>
                                 <p>
-                                        Shopping on the go? ScoopCost is fully optimized for mobile devices. So you can browse the latest deals and coupons anytime, anywhere. Whether you are on your phone or tablet, finding discounts is simple - shop and save even while you’re on the move. 
+                                    Shopping on the go? ScoopCost is fully optimized for mobile devices. So you can browse the latest deals and coupons anytime, anywhere. Whether you are on your phone or tablet, finding discounts is simple - shop and save even while you’re on the move.
                                 </p>
                                 <p>
-                                        Explore your favorite stores, grab verified coupons and enjoy a better way to shop! Visit Scoopcost.com and start saving on every purchase you make!
+                                    Explore your favorite stores, grab verified coupons and enjoy a better way to shop! Visit Scoopcost.com and start saving on every purchase you make!
                                 </p>
                             </div>
                             <div>
@@ -147,8 +147,8 @@ export default function Stores({ initialStoreData }) {
                                                     /> */}
                                                     <MainDomainLink href={
                                                         item.subdomain
-                                                            ? `https://${item.slug}.${baseDomain}/${item.url_suffix}`
-                                                            : `/${item.url_suffix}/${item.slug}`
+                                                            ? `https://${item.slug}.${baseDomain}${item.url_suffix ? '/' + item.url_suffix : ''}`
+                                                            : `${item.url_suffix ? '/' + item.url_suffix : ''}/${item.slug}`
                                                     }>
                                                         {item.title}
                                                         <span>{item.coupon_set.length} Codes</span>
@@ -190,11 +190,11 @@ export async function getStaticProps() {
     try {
         const responses = await Promise.all(
             alphabets.map((letter) =>
-                fetch(`https://admin.scoopcost.com/store-page/alphabetical-filter/?letter=${letter}&page=1`,{
-  headers: {
-    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
-  },
-})
+                fetch(`https://admin.scoopcost.com/store-page/alphabetical-filter/?letter=${letter}&page=1`, {
+                    headers: {
+                        'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+                    },
+                })
                     .then((res) => res.json())
                     .then((data) => ({ [letter]: data.results || [] }))
             )
