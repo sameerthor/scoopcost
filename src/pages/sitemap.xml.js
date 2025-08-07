@@ -50,7 +50,7 @@ export async function getServerSideProps({ res }) {
             },
         })
         const data = await response.json();
-        categorySlugs = data.map(cat => `/category/${cat.slug}`);
+        categorySlugs = data.map(cat => `/coupon/category/${cat.slug}`);
     } catch (err) {
         console.error('Failed to fetch categories', err);
     }
