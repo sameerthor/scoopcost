@@ -63,16 +63,20 @@ export async function getServerSideProps({ res }) {
             },
         })
         const data = await response.json();
-        categorySlugs = data.map(cat => `/gift-card/category/${cat.slug}`);
+        giftCategorySlugs = data.map(cat => `/gift-card/category/${cat.slug}`);
     } catch (err) {
         console.error('Failed to fetch categories', err);
     }
 
     categorySlugs.push('/coupon/category');
     giftCategorySlugs.push('/gift-card/category')
+var allUrls = [
+  ...staticPaths,
+  ...categorySlugs,
+  ...giftCategorySlugs
+];
 
-    const allUrls = [...staticPaths, ...categorySlugs,...giftCategorySlugs];
-
+console.log(allUrls);
     const urls = allUrls.map((route) => `
   <url>
     <loc>${baseUrl}${route}</loc>
