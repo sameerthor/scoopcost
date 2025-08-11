@@ -52,19 +52,24 @@ export default function App({ Component, pageProps }) {
       {/* Google Analytics - Only load if user consents */}
       {hasConsent && (
         <>
-          {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-P0PSQ4W4GS"
-          strategy="afterInteractive"
+    
+         {/* Google Analytics in body */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-F15H7MZYYW"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-F15H7MZYYW', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
         />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-P0PSQ4W4GS');
-          `}
-        </Script>
         </>
       )}
 
@@ -82,7 +87,10 @@ export default function App({ Component, pageProps }) {
           </div>
         </div>
       )}
+
+      
       <Component {...pageProps} />
+      
       <Footer />
     </main>)
 }
