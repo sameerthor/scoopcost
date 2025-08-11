@@ -43,6 +43,7 @@ export async function getServerSideProps({ res }) {
 
     // 🟢 Fetch category slugs
     let categorySlugs = [];
+    let giftCategorySlugs = [];
     try {
         const response = await fetch('https://admin.scoopcost.com/categories', {
             headers: {
@@ -54,9 +55,28 @@ export async function getServerSideProps({ res }) {
     } catch (err) {
         console.error('Failed to fetch categories', err);
     }
-    categorySlugs.push('/coupon/category');
-    const allUrls = [...staticPaths, ...categorySlugs];
 
+     try {
+        const response = await fetch('https://admin.scoopcost.com/gift-card-categories', {
+            headers: {
+                'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+            },
+        })
+        const data = await response.json();
+        giftCategorySlugs = data.map(cat => `/gift-card/category/${cat.slug}`);
+    } catch (err) {
+        console.error('Failed to fetch categories', err);
+    }
+
+    categorySlugs.push('/coupon/category');
+    giftCategorySlugs.push('/gift-card/category')
+var allUrls = [
+  ...staticPaths,
+  ...categorySlugs,
+  ...giftCategorySlugs
+];
+
+console.log(allUrls);
     const urls = allUrls.map((route) => `
   <url>
     <loc>${baseUrl}${route}</loc>
