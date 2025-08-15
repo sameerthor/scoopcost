@@ -54,11 +54,7 @@ async function fetchRedirect(sourceUrl) {
   if (!res.ok) return null;
 
   const data = await res.json();
-  const redirectData = Array.isArray(data) ? data.find(r => true) : null;
-
-  
-
-  return redirectData;
+  return Array.isArray(data) && data.length > 0 ? data[0] : null;
 }
 
 export async function middleware(request) {
@@ -66,11 +62,6 @@ export async function middleware(request) {
   const url = request.nextUrl.clone();
   const fullUrl = normalizeUrl(url.toString());
 
-  // 🚀 Step 1: Check Redirect API first
-  const redirectData = await fetchRedirect(fullUrl);
-  if (redirectData) {
-    return NextResponse.redirect(new URL(redirectData.target_url), 301);
-  }
   const pathname = url.pathname;
 
   const baseDomain = 'scoopcost.com';
@@ -81,6 +72,12 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
+  // 🚀 Step 1: Check Redirect API first
+  const redirectData = await fetchRedirect(fullUrl);
+
+  if (redirectData) {
+    return NextResponse.redirect(new URL(redirectData.target_url), 301);
+  }
   // 🌐 Main domain logic
   if (isMainDomain) {
     const slug = pathname.split('/')[2];
