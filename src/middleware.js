@@ -45,7 +45,7 @@ function normalizeUrl(url) {
 }
 
 async function fetchRedirect(sourceUrl) {
-  const normalizedSource = normalizeUrl(sourceUrl.replace('localhost', 'scoopcost.com'));
+  const normalizedSource = normalizeUrl(sourceUrl).replace('localhost', 'scoopcost.com');
   console.log(normalizedSource)
 
   const res = await fetch(`https://admin.scoopcost.com/redirects/?source_url=${encodeURIComponent(normalizedSource)}`, {
