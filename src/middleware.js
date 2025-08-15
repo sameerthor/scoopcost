@@ -45,7 +45,7 @@ async function fetchRedirect(sourceUrl) {
   const normalizedSource = normalizeUrl(sourceUrl);
 
 
-  const res = await fetch(`https://admin.scoopcost.com/api/redirects/?source_url=${encodeURIComponent(normalizedSource)}`, {
+  const res = await fetch(`https://admin.scoopcost.com/redirects/?source_url=${encodeURIComponent(normalizedSource)}`, {
     headers: {
       'x-api-key': process.env.SECRET_KEY,
     }
