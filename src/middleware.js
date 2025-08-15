@@ -45,8 +45,8 @@ function normalizeUrl(url) {
 }
 
 async function fetchRedirect(sourceUrl) {
-  const normalizedSource = normalizeUrl(sourceUrl);
-
+  const normalizedSource = normalizeUrl(sourceUrl.replace('localhost', 'scoopcost.com'));
+  console.log(normalizedSource)
 
   const res = await fetch(`https://admin.scoopcost.com/redirects/?source_url=${encodeURIComponent(normalizedSource)}`, {
     headers: {
@@ -64,7 +64,7 @@ export async function middleware(request) {
   const host = request.headers.get('host') || '';
   const url = request.nextUrl.clone();
   const fullUrl = normalizeUrl(url.toString());
-console.log(fullUrl)
+
   const pathname = url.pathname;
 
   const baseDomain = 'scoopcost.com';
