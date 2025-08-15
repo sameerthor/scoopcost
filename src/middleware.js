@@ -32,9 +32,12 @@ function normalizeUrl(url) {
     const parsed = new URL(url);
     parsed.hash = ''; // remove fragment
     parsed.search = ''; // remove query params
+    parsed.port = '';  // remove port
+
     if (parsed.pathname.endsWith('/') && parsed.pathname !== '/') {
       parsed.pathname = parsed.pathname.slice(0, -1);
     }
+
     return parsed.toString();
   } catch {
     return url;
@@ -61,7 +64,7 @@ export async function middleware(request) {
   const host = request.headers.get('host') || '';
   const url = request.nextUrl.clone();
   const fullUrl = normalizeUrl(url.toString());
-
+console.log(fullUrl)
   const pathname = url.pathname;
 
   const baseDomain = 'scoopcost.com';
