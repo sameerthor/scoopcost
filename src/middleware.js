@@ -54,11 +54,9 @@ async function fetchRedirect(sourceUrl) {
   if (!res.ok) return null;
 
   const data = await res.json();
-  const redirectData = Array.isArray(data) ? data.find(r => r.is_active) : null;
+  const redirectData = Array.isArray(data) ? data.find(r => true) : null;
 
-  if (redirectData) {
-    redirectCache.set(normalizedSource, redirectData);
-  }
+  
 
   return redirectData;
 }
