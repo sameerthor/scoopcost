@@ -27,44 +27,9 @@ async function fetchStoreData(identifier) {
   return storeData;
 }
 
-function normalizeUrl(url) {
-  try {
-    const parsed = new URL(url);
-    parsed.hash = ''; // remove fragment
-    parsed.search = ''; // remove query params
-    parsed.port = '';  // remove port
-
-    if (parsed.pathname.endsWith('/') && parsed.pathname !== '/') {
-      parsed.pathname = parsed.pathname.slice(0, -1);
-    }
-
-    return parsed.toString();
-  } catch {
-    return url;
-  }
-}
-
-async function fetchRedirect(sourceUrl) {
-  const normalizedSource = normalizeUrl(sourceUrl).replace('localhost', 'scoopcost.com');
-  console.log(normalizedSource)
-
-  const res = await fetch(`https://admin.scoopcost.com/redirects/?source_url=${encodeURIComponent(normalizedSource)}`, {
-    headers: {
-      'x-api-key': process.env.SECRET_KEY,
-    }
-  });
-
-  if (!res.ok) return null;
-
-  const data = await res.json();
-  return Array.isArray(data) && data.length > 0 ? data[0] : null;
-}
-
 export async function middleware(request) {
   const host = request.headers.get('host') || '';
   const url = request.nextUrl.clone();
-  const fullUrl = normalizeUrl(url.toString());
-
   const pathname = url.pathname;
 
   const baseDomain = 'scoopcost.com';
@@ -75,12 +40,6 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  // 🚀 Step 1: Check Redirect API first
-  const redirectData = await fetchRedirect(fullUrl);
-
-  if (redirectData) {
-    return NextResponse.redirect(new URL(redirectData.target_url), 301);
-  }
   // 🌐 Main domain logic
   if (isMainDomain) {
     const slug = pathname.split('/')[2];
@@ -97,25 +56,25 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  const subdomain = host.replace(`.${baseDomain}`, '');
-  const storeData = await fetchStoreData(subdomain);
+ const subdomain = host.replace(`.${baseDomain}`, '');
+const storeData = await fetchStoreData(subdomain);
 
-  if (!storeData || !storeData.subdomain) {
-    return NextResponse.rewrite(new URL('/404', request.url));
-  }
-  const url_suffix = storeData.url_suffix;
+if (!storeData || !storeData.subdomain) {
+  return NextResponse.rewrite(new URL('/404', request.url));
+}
+const url_suffix = storeData.url_suffix;
 
   const isExactMatch = new RegExp(`^/${url_suffix}/?$`).test(pathname);
 
   // If not exact match, redirect to /offers/ on subdomain
   if (!isExactMatch) {
     const redirectUrl = new URL(`https://${storeData.slug}.scoopcost.com/${url_suffix}/`);
-    return NextResponse.redirect(redirectUrl, 301); // Permanent SEO-safe redirect
+return NextResponse.redirect(redirectUrl, 301); // Permanent SEO-safe redirect
   }
-
-  // ✅ Allow and rewrite to internal path (optional if SSR needs it)
-  url.pathname = `/${storeData.url_suffix}/${subdomain}`;
-  return NextResponse.rewrite(url);
+  
+// ✅ Allow and rewrite to internal path (optional if SSR needs it)
+url.pathname = `/${storeData.url_suffix}/${subdomain}`;
+return NextResponse.rewrite(url);
 }
 
 export const config = {
