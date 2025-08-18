@@ -1,16 +1,17 @@
 /** @type {import('next').NextConfig} */
 import path from "path";
+import fs from "fs";
+
+let redirectsArray = [];
+try {
+  redirectsArray = JSON.parse(fs.readFileSync("redirects.json", "utf-8"));
+} catch (e) {
+  console.warn("No redirects.json found, using empty array");
+}
 
 const nextConfig = {
   async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'test.scoopcost.com' }],
-        destination: 'https://test1.scoopcost.com/:path*',
-        permanent: true,
-      },
-    ]
+    return redirectsArray;
   },
   reactStrictMode: false,
   images: {

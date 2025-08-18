@@ -1,0 +1,7 @@
+[
+  {
+    "source": "/apeiron.store/:path*",
+    "destination": "https://scoopcost.com/apeiron-elementals-coupons/:path*",
+    "permanent": true
+  }
+]
