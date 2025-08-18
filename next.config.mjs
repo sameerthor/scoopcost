@@ -2,13 +2,23 @@
 import path from "path";
 
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'test.scoopcost.com' }],
+        destination: 'https://test1.scoopcost.com/:path*',
+        permanent: true,
+      },
+    ]
+  },
   reactStrictMode: false,
   images: {
     remotePatterns: [
-       {
-      protocol: 'https',
-      hostname: '*',
-    },
+      {
+        protocol: 'https',
+        hostname: '*',
+      },
     ]
   },
   webpack(config) {
@@ -35,11 +45,11 @@ const nextConfig = {
       source: '/store-sitemap.xml',
       destination: '/sitemap/store.js',
     },
-      {
+    {
       source: '/blog-sitemap.xml',
       destination: '/sitemap/blog.js',
     },
-      {
+    {
       source: '/gift-card-sitemap.xml',
       destination: '/sitemap/gift-card.js',
     }
