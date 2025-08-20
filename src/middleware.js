@@ -62,7 +62,7 @@ export async function middleware(request) {
   }
 
  const subdomain = host.replace(`.${baseDomain}`, '');
-const storeData = await fetchStoreData(subdomain);
+const storeData = subdomain ? await fetchStoreData(subdomain) : null
 
 if (!storeData || !storeData.subdomain) {
   return NextResponse.rewrite(new URL('/404', request.url));
