@@ -24,7 +24,7 @@ async function fetchStoreData(identifier) {
   const storeData = await res.json();
 
   // 🚨 detect "not found" response
-  if (storeData.detail && storeData.detail.includes("No Store")) {
+  if (storeData.detail) {
     return null;
   }
 
