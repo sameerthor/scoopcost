@@ -41,9 +41,14 @@ export async function middleware(request) {
   const isMainDomain = host === baseDomain || host === `www.${baseDomain}`;
 
   // Faster asset detection using regex
-  if (/^\/(_next|static|favicon\.ico|.*\..*)/.test(pathname)) {
-    return NextResponse.next();
-  }
+ const isAsset = pathname.startsWith('/_next') ||
+                pathname.startsWith('/static') ||
+                pathname === '/favicon.ico' ||
+                /\.(css|js|png|jpg|jpeg|gif|svg|webp|ico|woff2?|ttf|eot)$/.test(pathname);
+
+if (isAsset) {
+  return NextResponse.next();
+}
 
   // 🌐 Main domain logic
   if (isMainDomain) {
