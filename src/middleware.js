@@ -56,25 +56,28 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
- const subdomain = host.replace(`.${baseDomain}`, '');
-const storeData = await fetchStoreData(subdomain);
+  const subdomain = host.replace(`.${baseDomain}`, '');
+  const storeData = await fetchStoreData(subdomain);
 
-if (!storeData || !storeData.subdomain) {
-  return NextResponse.rewrite(new URL('/404', request.url));
-}
-const url_suffix = storeData.url_suffix;
+  if (!storeData || !storeData.subdomain) {
+    // 🔴 Proper 404 response (not rewrite)
+    return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  }
+
+
+  const url_suffix = storeData.url_suffix;
 
   const isExactMatch = new RegExp(`^/${url_suffix}/?$`).test(pathname);
 
   // If not exact match, redirect to /offers/ on subdomain
   if (!isExactMatch) {
     const redirectUrl = new URL(`https://${storeData.slug}.scoopcost.com/${url_suffix}/`);
-return NextResponse.redirect(redirectUrl, 301); // Permanent SEO-safe redirect
+    return NextResponse.redirect(redirectUrl, 301); // Permanent SEO-safe redirect
   }
-  
-// ✅ Allow and rewrite to internal path (optional if SSR needs it)
-url.pathname = `/${storeData.url_suffix}/${subdomain}`;
-return NextResponse.rewrite(url);
+
+  // ✅ Allow and rewrite to internal path (optional if SSR needs it)
+  url.pathname = `/${storeData.url_suffix}/${subdomain}`;
+  return NextResponse.rewrite(url);
 }
 
 export const config = {
